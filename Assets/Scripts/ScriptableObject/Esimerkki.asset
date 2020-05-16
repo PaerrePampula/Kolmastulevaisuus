@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3988d24cb1bd2346883d752ebe1e1b3, type: 3}
+  m_Name: Esimerkki
+  m_EditorClassIdentifier: 
+  dialogtext:
+  - "Normi teksti\xE4"
+  - "Ei mit\xE4\xE4n ihmeellisemp\xE4\xE4."
+  dialogCharacterImage: {fileID: 0}
+  advancedDialogs:
+  - dialogText: Esimerkki
+    reactionImage: {fileID: 0}
+  - dialogText: "T\xE4ss\xE4 on lis\xE4\xE4, t\xE4ss\xE4 voi olla vaikka eri reaktiokuva"
+    reactionImage: {fileID: 0}
+  - dialogText: 'D:'
+    reactionImage: {fileID: 0}
