@@ -591,6 +591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 309917645}
   - component: {fileID: 309917646}
+  - component: {fileID: 309917647}
   m_Layer: 0
   m_Name: EventController
   m_TagString: Untagged
@@ -629,6 +630,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0608b84af9ecf8649b89ec97c4b0572e, type: 2}
   - {fileID: 11400000, guid: 6a1f1e9a4e4703a41b9edd8930826af2, type: 2}
   - {fileID: 11400000, guid: 3a6605d2ce2185844b76bea13887d12f, type: 2}
+--- !u!114 &309917647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309917644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc4a9bb9b16b954681dc87db9fd1f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &355526882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7613981854692831998, guid: 49aef7cfb5fc4da4c9d538e8e4a3ab36,

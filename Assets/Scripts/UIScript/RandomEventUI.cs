@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class RandomEventUI : MonoBehaviour
+public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift, niin kommentoitu melko huonosti, kun etsin itekkin tälle järkevämpää pohjaa... :)
 {
     public RandomEventScriptable eventScriptable;
     public TextMeshProUGUI eventText; //Boksin eventin teksti.
@@ -14,10 +14,6 @@ public class RandomEventUI : MonoBehaviour
     public void setRandomEvent(RandomEventScriptable scriptable)
     {
         eventScriptable = scriptable; //Asettaa boksille oikean eventtidatan (tekstit, valinnat).
-    }
-    void applyScriptable()
-    {
-
     }
     public void populateChoiceContainer() //nimensä mukaan täyttää choicecontainerin button tyyppisillä valintanäppäimillä.
     {

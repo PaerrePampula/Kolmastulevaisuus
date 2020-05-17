@@ -18,7 +18,10 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: 1
       choiceDescriptor: Okei...
+      clickActions:
+      - {fileID: 11400000, guid: a1f7b0577764227478babaf1df4d8fc8, type: 2}
   - eventDialog: Moi moi!
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: Hei hei!
+      clickActions: []

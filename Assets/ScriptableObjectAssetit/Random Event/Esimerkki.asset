@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Esimerkki
+  m_EditorClassIdentifier: 
+  eventTexts:
+  - eventDialog: "T\xE4m\xE4 on testi. T\xE4m\xE4 teksti vaihtuu dynaamisesti"
+    eventDialogChoices:
+    - nextDialog: 1
+      choiceDescriptor: "T\xE4st\xE4 pelaaja \"saa 50 valuuttaa\""
+      clickActions:
+      - {fileID: 11400000, guid: a1f7b0577764227478babaf1df4d8fc8, type: 2}
+    - nextDialog: -1
+      choiceDescriptor: "T\xE4st\xE4 pelaaja ei saa mit\xE4\xE4n ja poistuu dialogista"
+      clickActions: []
+  - eventDialog: "T\xE4nne p\xE4\xE4see ensimm\xE4isest\xE4 n\xE4pp\xE4imest\xE4"
+    eventDialogChoices:
+    - nextDialog: 2
+      choiceDescriptor: "T\xE4st\xE4 saa lis\xE4\xE4 rahaa"
+      clickActions:
+      - {fileID: 11400000, guid: 8bb760bead0fa844ea37fb365971537a, type: 2}
+  - eventDialog: "N\xE4kemiin!"
+    eventDialogChoices:
+    - nextDialog: -1
+      choiceDescriptor: "N\xE4kemiin!"
+      clickActions: []
