@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a2c09a1e49eb84d8d82789bab4a1ff, type: 3}
-  m_Name: MoneyChange
+  m_Script: {fileID: 11500000, guid: fda0f7ad2612ef647aec2095807b791a, type: 3}
+  m_Name: Red
   m_EditorClassIdentifier: 
-  amount: 50
-  kukkaro: {fileID: 0}
+  color:
+    serializedVersion: 2
+    rgba: 255

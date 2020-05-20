@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Kukkaro : MonoBehaviour
-{
+{ 
     //Tämä on prototyyppi lopullisesta pelaajan taloudenlaskemisen simuloinnista, toistaiseksi melko yksinkertainen
     float money; //Yksiselitteisesti pelaajan rahatilanne.
     public delegate void IncreaseAction(float amount); 
@@ -11,9 +11,10 @@ public class Kukkaro : MonoBehaviour
     //Delegatesta ja eventistä. Näillä kukkaro saa lähetettyä rahanmuutoksesta viestin kaikille onincreasen tilanneille 
     //classeille viestin siitä, että rahatilanne on muuttunut, delegaten ja eventin avulla näitä tilaajia ei tarvitse
     //erikseen unityn editorissä määritellä, eli toisinsanoen pelaajan kukkaron ei tarvitse tietää, kenelle tätä viestiä lähetetään.
-    public void setMoney(float increase)
+    public void setMoney(EventInfo info)
     {
-        money += increase;
+        FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
+        money += floatChangeInfo.changeofFloat;
         if (OnIncrease != null) //Jos tapahtumalle OnIncrease on tilaajia, lähetä viesti
         {
             OnIncrease(money);
@@ -26,7 +27,7 @@ public class Kukkaro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventSystem.Current.RegisterListener(EventSystem.Event_Type.FLOAT_CHANGE, setMoney);
     }
 
     // Update is called once per frame
@@ -34,4 +35,6 @@ public class Kukkaro : MonoBehaviour
     {
         
     }
+
+
 }

@@ -36,9 +36,17 @@ public class ChoiceButton : MonoBehaviour
     public void AdvanceDialog()
     {
         transformGrandParentScript.AdvanceDialogTo(choiceofThisButton.nextDialog);
-        for (int i = 0; i < clickActions.Length; i++)
+        if (clickActions.Length < 1)
         {
-            clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
+            return;
         }
+        else
+        {
+            for (int i = 0; i < clickActions.Length; i++)
+            {
+                clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
+            }
+        }
+
     }
 }

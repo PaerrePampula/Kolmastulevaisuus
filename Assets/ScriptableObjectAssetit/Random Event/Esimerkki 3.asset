@@ -19,7 +19,7 @@ MonoBehaviour:
     - nextDialog: 1
       choiceDescriptor: Okei...
       clickActions:
-      - {fileID: 11400000, guid: a1f7b0577764227478babaf1df4d8fc8, type: 2}
+      - {fileID: 11400000, guid: b0cdf50b39a2f6b4a8a4d68e4674b73c, type: 2}
   - eventDialog: Moi moi!
     eventDialogChoices:
     - nextDialog: -1

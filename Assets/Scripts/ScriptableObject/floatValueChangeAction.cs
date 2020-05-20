@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+[CreateAssetMenu(menuName ="Actions/FloatValueChange")]
+public class floatValueChangeAction : ScriptableAction //Tämä on scriptableaction esimerkki, näitä käytetään dialogeissa, kun on tarve nostaa joku actioni valinnan perusteella.
+{
+    public float amount;
+
+    public override void PerformAction()
+    {
+        FloatChangeInfo valueChangeAction = new FloatChangeInfo();
+        valueChangeAction.changeofFloat = amount;
+        Debug.Log("Pelaaja sai rahaa!, määrä on " + valueChangeAction.changeofFloat);
+        EventSystem.Current.DoEvent(
+            EventSystem.Event_Type.FLOAT_CHANGE,
+            valueChangeAction
+            );
+    }
+}
