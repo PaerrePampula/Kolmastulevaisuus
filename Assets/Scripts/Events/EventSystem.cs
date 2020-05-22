@@ -29,7 +29,8 @@ public class EventSystem : MonoBehaviour
         FLOAT_SET,
         JOB_APPLY,
         JOB_FIRED,
-        DEBUG_COLOR_CHANGE
+        DEBUG_COLOR_CHANGE,
+        CAMERA_TURN
 
     }
     Dictionary<Event_Type, List<EventListener>> eventListeners;

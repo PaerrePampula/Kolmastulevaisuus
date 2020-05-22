@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62a2c09a1e49eb84d8d82789bab4a1ff, type: 3}
-  m_Name: ValueChange
+  m_Name: 90DegreeAngleTurn
   m_EditorClassIdentifier: 
-  Event_Type: 0
-  Description: Rahan saanti 500e
-  amount: 500
+  Event_Type: 5
+  Description: "K\xE4\xE4nt\xE4\xE4 kameraa 90 astetta"
+  amount: 90

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a2c09a1e49eb84d8d82789bab4a1ff, type: 3}
   m_Name: ValueChangeDown
   m_EditorClassIdentifier: 
+  Event_Type: 0
+  Description: Rahan menetys 500e
   amount: -500

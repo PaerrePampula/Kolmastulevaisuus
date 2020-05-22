@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift, niin kommentoitu melko huonosti, kun etsin itekkin tälle järkevämpää pohjaa... :)
 {
-    public RandomEventScriptable eventScriptable;
+    GameEvent gameEvent;
     public TextMeshProUGUI eventText; //Boksin eventin teksti.
     public Transform choiceContainer;
     GameObject choiceButton; //valmis resurssi jota käytetään valintojen näppäimenä
     eventText currentEventText;
 
-    public void setRandomEvent(RandomEventScriptable scriptable)
+    public void setRandomEvent(GameEvent gameEvent)
     {
-        eventScriptable = scriptable; //Asettaa boksille oikean eventtidatan (tekstit, valinnat).
+        this.gameEvent = gameEvent; //Asettaa boksille oikean eventtidatan (tekstit, valinnat).
     }
     public void populateChoiceContainer() //nimensä mukaan täyttää choicecontainerin button tyyppisillä valintanäppäimillä.
     {
@@ -41,11 +41,12 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     {
         if (index < 0) //Jos seuraavan index on -1 tai alle, niin dialogista poistutaan.
         {
-            Destroy(transform.gameObject);
+            Destroy(transform.gameObject); //Periaatteessa tänne voisi lisätä broadcastin tapahtumasta CAMERA_TURN, mutta
+            //Voitaisiin toistaiseksi mahdollistaa perättäiset eventit sijainneissa, jos se onkin tarpeellista.
         }
         else
         {
-            currentEventText = eventScriptable.eventTexts[index];
+            currentEventText = gameEvent.getData().eventTexts[index];
             setTextToEvent();
             populateChoiceContainer();
         }
@@ -53,7 +54,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     // Start is called before the first frame update
     void Start()
     {
-        currentEventText = eventScriptable.eventTexts[0]; //Haetaan ensimmäinen event teksti ja asetetaan sen tämänhetkiseksi tekstivalinnaksi.
+        currentEventText = gameEvent.getData().eventTexts[0]; //Haetaan ensimmäinen event teksti ja asetetaan sen tämänhetkiseksi tekstivalinnaksi.
         setTextToEvent();
         populateChoiceContainer();
     }

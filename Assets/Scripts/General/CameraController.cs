@@ -20,11 +20,15 @@ public class CameraController : MonoBehaviour
     Vector3 referenceRotation; //Tämä on pelaajan kameran kulma ennen kameran kääntämistä, asetetaan aina uudelleen kun kameran kääntämispyyntöä tehdään
     Vector3 endRotation; //Tämä on taas kameran kulma + 90 astetta y-akselilla. Asetetaan aina uudelleen, kun kameran kääntämispyyntöä tehdään
     float timelerped; //Tätä tarvitaan kameran lineaarisessa interpoloinnissa, lerpissä on se ongelma että se hidastuu kun lähestytään tarvittua rotaatiota, tämä korjaa sen niin, että tätä käytetään lerpin t muuttujassa osoittajana.
-
+    private void Awake()
+    {
+        EventSystem.Current.RegisterListener(EventSystem.Event_Type.CAMERA_TURN, assignReferenceRotation);
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
     }
 
     // Update is called once per frame
@@ -35,7 +39,9 @@ public class CameraController : MonoBehaviour
         //Tämä ei tietenkään ole loppuversiossa ihan tämänkaltainen, kun kameran kääntäminen pitäisi varmaan sitoa siihen, kun jonkun tapahtuman valinta on valittu peliruuudulla...
         if (Input.GetKeyDown(KeyCode.R))
         {
-            assignReferenceRotation();
+            FloatChangeInfo floatValueChangeAction = new FloatChangeInfo();
+            floatValueChangeAction.changeofFloat = 90;
+            assignReferenceRotation(floatValueChangeAction);
         }
 
         RequestATurn();        //Tämä pyörii kokoajan updaten sisällä, mutta erottelin sen omaan classiinsä koodin selkeyttämisen ja jäsentelyn vuoksi.
@@ -58,11 +64,13 @@ public class CameraController : MonoBehaviour
             turnRequest = false;
         }
     }
-    void assignReferenceRotation()
+    void assignReferenceRotation(EventInfo info)
     {
+        FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         referenceRotation = transform.rotation.eulerAngles;
-        endRotation = Quaternion.Euler(referenceRotation.x, Mathf.Round(referenceRotation.y + 90), referenceRotation.z).eulerAngles;
+        endRotation = Quaternion.Euler(referenceRotation.x, Mathf.Round(referenceRotation.y + floatChangeInfo.changeofFloat), referenceRotation.z).eulerAngles;
         turnRequest = true;
         timelerped = 0;
     }
+
 }
