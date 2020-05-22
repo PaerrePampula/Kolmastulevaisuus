@@ -14,3 +14,8 @@ public class ColorChangeInfo : EventInfo
 {
     public Color32 newColor;
 }
+public class CameraAngleChangeInfo : EventInfo
+{
+    public int increments;
+    public float changeofFloat;
+}

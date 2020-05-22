@@ -27,7 +27,7 @@ public class Kukkaro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventSystem.Current.RegisterListener(EventSystem.Event_Type.FLOAT_CHANGE, setMoney);
+        EventSystem.Current.RegisterListener(Event_Type.FLOAT_CHANGE, setMoney);
     }
 
     // Update is called once per frame

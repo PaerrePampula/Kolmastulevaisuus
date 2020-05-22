@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     float timelerped; //Tätä tarvitaan kameran lineaarisessa interpoloinnissa, lerpissä on se ongelma että se hidastuu kun lähestytään tarvittua rotaatiota, tämä korjaa sen niin, että tätä käytetään lerpin t muuttujassa osoittajana.
     private void Awake()
     {
-        EventSystem.Current.RegisterListener(EventSystem.Event_Type.CAMERA_TURN, assignReferenceRotation);
+        EventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
     }
     // Start is called before the first frame update
     void Start()
@@ -39,9 +39,13 @@ public class CameraController : MonoBehaviour
         //Tämä ei tietenkään ole loppuversiossa ihan tämänkaltainen, kun kameran kääntäminen pitäisi varmaan sitoa siihen, kun jonkun tapahtuman valinta on valittu peliruuudulla...
         if (Input.GetKeyDown(KeyCode.R))
         {
-            FloatChangeInfo floatValueChangeAction = new FloatChangeInfo();
-            floatValueChangeAction.changeofFloat = 90;
-            assignReferenceRotation(floatValueChangeAction);
+            CameraAngleChangeInfo valueChangeAction = new CameraAngleChangeInfo();
+            valueChangeAction.changeofFloat = 90;
+            valueChangeAction.increments = 1;
+            EventSystem.Current.DoEvent(
+                Event_Type.CAMERA_TURN,
+                valueChangeAction
+                );
         }
 
         RequestATurn();        //Tämä pyörii kokoajan updaten sisällä, mutta erottelin sen omaan classiinsä koodin selkeyttämisen ja jäsentelyn vuoksi.
@@ -66,7 +70,7 @@ public class CameraController : MonoBehaviour
     }
     void assignReferenceRotation(EventInfo info)
     {
-        FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
+        CameraAngleChangeInfo floatChangeInfo = (CameraAngleChangeInfo)info;
         referenceRotation = transform.rotation.eulerAngles;
         endRotation = Quaternion.Euler(referenceRotation.x, Mathf.Round(referenceRotation.y + floatChangeInfo.changeofFloat), referenceRotation.z).eulerAngles;
         turnRequest = true;

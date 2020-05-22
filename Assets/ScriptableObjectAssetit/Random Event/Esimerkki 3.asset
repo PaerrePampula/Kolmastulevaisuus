@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: Esimerkki 3
   m_EditorClassIdentifier: 
+  fire_location: 0
   eventTexts:
   - eventDialog: "T\xE4m\xE4 on dialogivalinta 3, se valittin randomilla\t Testaa
       t\xE4t\xE4 avaamalla playmode uudelleen"
@@ -19,7 +20,7 @@ MonoBehaviour:
     - nextDialog: 1
       choiceDescriptor: Okei...
       clickActions:
-      - {fileID: 11400000, guid: b0cdf50b39a2f6b4a8a4d68e4674b73c, type: 2}
+      - {fileID: 11400000, guid: 1502000da570cf04b8738a43bf780634, type: 2}
   - eventDialog: Moi moi!
     eventDialogChoices:
     - nextDialog: -1

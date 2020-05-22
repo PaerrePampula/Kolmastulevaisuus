@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: Esimerkki 2
   m_EditorClassIdentifier: 
+  fire_location: 0
   eventTexts:
   - eventDialog: "T\xE4m\xE4 on dialogiboksi, t\xE4m\xE4 valittiin randomilla listasta
       \nTestaa t\xE4t\xE4 avaamalla playmode uudelleen"
     eventDialogChoices:
-    - nextDialog: 1
+    - nextDialog: -1
       choiceDescriptor: OK
       clickActions:
-      - {fileID: 11400000, guid: 8af85162bc0e3834187ce3b011bf5794, type: 2}
+      - {fileID: 11400000, guid: 1502000da570cf04b8738a43bf780634, type: 2}
   - eventDialog: "Heip\xE4hei!\t"
     eventDialogChoices:
     - nextDialog: -1

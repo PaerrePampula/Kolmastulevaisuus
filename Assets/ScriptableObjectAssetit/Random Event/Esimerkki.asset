@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: Esimerkki
   m_EditorClassIdentifier: 
+  fire_location: 0
   eventTexts:
   - eventDialog: "T\xE4m\xE4 on testi. T\xE4m\xE4 teksti vaihtuu dynaamisesti"
     eventDialogChoices:
@@ -23,7 +24,7 @@ MonoBehaviour:
       choiceDescriptor: "Jos t\xE4st\xE4 painaa, astronautin takki muuttuu punaiseksi"
       clickActions:
       - {fileID: 11400000, guid: cc422af2bc8b1d64bbec567197ec830a, type: 2}
-      - {fileID: 11400000, guid: 7bcf535dd99c46748b4438577f7ba867, type: 2}
+      - {fileID: 11400000, guid: 1502000da570cf04b8738a43bf780634, type: 2}
   - eventDialog: "T\xE4nne p\xE4\xE4see ensimm\xE4isest\xE4 n\xE4pp\xE4imest\xE4"
     eventDialogChoices:
     - nextDialog: 2
@@ -34,4 +35,5 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: "N\xE4kemiin!"
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: 1502000da570cf04b8738a43bf780634, type: 2}
