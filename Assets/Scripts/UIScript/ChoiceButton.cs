@@ -45,6 +45,7 @@ public class ChoiceButton : MonoBehaviour
             for (int i = 0; i < clickActions.Length; i++)
             {
                 clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
+                
             }
         }
 

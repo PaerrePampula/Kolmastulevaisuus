@@ -15,10 +15,7 @@ public class Kukkaro : MonoBehaviour
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         money += floatChangeInfo.changeofFloat;
-        if (OnIncrease != null) //Jos tapahtumalle OnIncrease on tilaajia, lähetä viesti
-        {
-            OnIncrease(money);
-        }
+        OnIncrease?.Invoke(money);
     }
     public void getMoney()
     {

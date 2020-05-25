@@ -4,6 +4,7 @@ using System.Collections;
 
 public enum Event_Type
 {
+    TRIGGER_EVENT,
     FLOAT_CHANGE,
     FLOAT_SET,
     JOB_APPLY,

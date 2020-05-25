@@ -5,10 +5,25 @@ using UnityEngine;
 public class LocationHandler : MonoBehaviour
 {
     public List<EventLocation> eventLocations;
-    public static EventLocation currentLocation;
+    static EventLocation currentLocation;
+
+    public delegate void LocationChange();
+    public static event LocationChange OnLocationChange;
+    static private LocationHandler _Current;
+    static public LocationHandler Current
+    {
+        get
+        {
+            if (_Current == null)
+            {
+                _Current = FindObjectOfType<LocationHandler>();
+            }
+            return _Current;
+        }
+    }
     // Start is called before the first frame update
     //Tämä on handleri sijainnintallennukseen, olennaista, kun pelaaja saa eventtejä.
-    void Start()
+    void Awake()
     {
         currentLocation = eventLocations[0];
 
@@ -29,11 +44,11 @@ public class LocationHandler : MonoBehaviour
             newIndex = (getCurrentIndex() + floatChangeInfo.increments) % 4; //& = Modulo. Jakojäännös. 4 % 4 = 0, 4 % 5 = 1, 2 % 4 = 2 jne...
         }
         setCurrentLocation(newIndex);
-  
+        OnLocationChange?.Invoke();
+
     }
     public static EventLocation getCurrentLocation() //Static, sillä ei pelaaja voi olla kahdessa paikkaa, sekä olisi kiva, että tämän tiedon saisi haettua melkein mistä vaan koodissa
     {
-        
         return currentLocation;
     }
     int getCurrentIndex() //Käyttöä sijainninvaihdossa.
@@ -44,6 +59,7 @@ public class LocationHandler : MonoBehaviour
     {
         currentLocation = eventLocations[index];
         Debug.Log(currentLocation.LOCATION);
+
     }
     // Update is called once per frame
     void Update()

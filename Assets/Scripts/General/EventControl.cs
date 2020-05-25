@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 
 
 //Mikä tämä on? Prototyyppi random eventtien tuomisesta ruudulle.
@@ -11,26 +11,66 @@ public class EventControl : MonoBehaviour
     public Transform Canvas;
     public List<RandomEventScriptable> RandomEvents;
     List<GameEvent> events = new List<GameEvent>();
+    List<GameEvent> filteredList = new List<GameEvent>();
     // Start is called before the first frame update
+    private void Awake()
+    {
+        EventSystem.Current.RegisterListener(Event_Type.TRIGGER_EVENT, CreateEventBox);
+    }
     void Start()
     {
         randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer"); //Haetaan random eventtien spawnausta varten valmiiksi luotu mallipohja.
         AggregateScriptablesIntoaNewGameEventList(); //Aggregoidaan eli kootaan kaikki ylläolevassa RandomEvents listassa mainitut objektit uuteen GameEvent listaukseen osina näitä uusia gameeventtejä.
-        DEBUGCreateEventBox(); //DEBUGIA.
+        Debug_InvokeAnInitialEvent();
 
     }
-    
-    void DEBUGCreateEventBox() //Tämä on silkkaa debugia, spawnaa random eventin randomisti valittuna. Näkyy heti playmoden avatessa
+    void Debug_InvokeAnInitialEvent()
     {
+        EventRaise randomEvent = new EventRaise();
+        randomEvent.SpecificEventRaise = false;
+        EventSystem.Current.DoEvent(
+            Event_Type.TRIGGER_EVENT,
+            randomEvent
+            );
+        
+    }
+    void CreateEventBox(EventInfo eventInfo) //Tämä on silkkaa debugia, spawnaa random eventin randomisti valittuna. Näkyy heti playmoden avatessa
+    {
+        AggregateAppliableEventsForThisLocation();
+        
+        EventRaise EventRaise = (EventRaise)eventInfo;
+
         GameObject randomeventUI = Instantiate(randomEventUIBox);
         randomeventUI.transform.SetParent(Canvas);
-        randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(events[randomizedRandomEventIndexChoice(events)]);
         randomeventUI.transform.localPosition = Vector3.zero;
+
+        if (EventRaise.SpecificEventRaise == false)
+        {
+            if (filteredList.Count > 0)
+            {
+                randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredList[randomizedRandomEventIndexChoice()]);
+                PointAndClickMovement.setMovementStatus(false);
+
+            }
+            else
+            {
+                Debug.Log("No events!");
+            }
+        }
+        else
+        {
+            randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredList.Find(x => x.getData() == EventRaise.InCaseSpecificEvent));
+        }
+
+
+
     }
-    int randomizedRandomEventIndexChoice(List<GameEvent> chosenlist) //Tämä valitsee random eventin halutusta listasta.
+    int randomizedRandomEventIndexChoice() //Tämä valitsee random eventin halutusta listasta.
     {
-        int index = Random.Range(0, chosenlist.Count -1);
-        return index;
+        
+            int index = Random.Range(0, filteredList.Count - 1);
+            return index;
+
     }
     // Update is called once per frame
     void Update()
@@ -44,6 +84,23 @@ public class EventControl : MonoBehaviour
             GameEvent gameEvent = new GameEvent(RandomEvents[i]);
             events.Add(gameEvent);
         }
+    }
+    void AggregateAppliableEventsForThisLocation()
+    {
+        filteredList.Clear();
+        filteredList = FindEventsOfLocation();
+    }
+    //https://www.tutorialsteacher.com/linq/linq-tutorials Esalle tiedoksi, jos LINQ ei ole kovin tuttu
+    List<GameEvent> FindEventsOfLocation()
+    {
+        //LINQ QUERY
+        var listofEventsForThisLocationOrAnyLocation = from gameEvent in events //where komennon käyttö löytyy yllämainitusta linkistä standard query operaattoreiden alta
+                                                       where (gameEvent.getFireLocation() == LocationHandler.getCurrentLocation().LOCATION) || gameEvent.getFireLocation() == FIRE_LOCATION.ANY
+                                                       select gameEvent;
+        //Eli siis LINQ query, jossa haetaan gameeventtejä (from gameEvent in events = given a gameEvent in the events list...)
+        //where gameEvent vastaa tämänhetkistä lokaatiotägiä, tai jos tägi on missä tahansa
+        //otetaan valittu event ja lisätään se uuteen listaan.
+        return listofEventsForThisLocationOrAnyLocation.ToList(); //Palautetaan tämä listana, ei linq queryn outputtina (linq queryn palauttama arvo ei ole sama kuin lista tai joku vastaava collection, todellisen listatyypin näkee sitä pyytämällä koodissa.
     }
 
 }

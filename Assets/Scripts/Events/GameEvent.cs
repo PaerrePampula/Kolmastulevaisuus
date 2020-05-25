@@ -17,4 +17,8 @@ public class GameEvent
     {
         return scriptable;
     }
+    public FIRE_LOCATION getFireLocation()
+    {
+        return fire_location;
+    }
 }

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a2c09a1e49eb84d8d82789bab4a1ff, type: 3}
-  m_Name: ValueChangeDown
+  m_Script: {fileID: 11500000, guid: 91dc06d7534c9794fb493cf1bd8743c0, type: 3}
+  m_Name: RandomEventRise
   m_EditorClassIdentifier: 
-  Event_Type: 1
-  Description: Rahan menetys 500e
-  amount: -500
+  Event_Type: 0
+  Description: 
+  actionToRise: {fileID: 0}
+  isNotRandomlyChosen: 0

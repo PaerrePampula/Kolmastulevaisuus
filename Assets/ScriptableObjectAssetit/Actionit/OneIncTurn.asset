@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: OneIncrementTurn
+  m_Script: {fileID: 11500000, guid: 845d5cd94763b7f43bd5d068cde96aca, type: 3}
+  m_Name: OneIncTurn
   m_EditorClassIdentifier: Assembly-CSharp::CameraMoveAction
-  Event_Type: 5
-  Description: "K\xE4\xE4nt\xE4\xE4 kameran yhden inkrementin (1 inkrementti = 90
-    astetta)"
+  Event_Type: 6
+  Description: "K\xE4\xE4nt\xE4\xE4 kameran yhden turnin"
   Turns: 1
