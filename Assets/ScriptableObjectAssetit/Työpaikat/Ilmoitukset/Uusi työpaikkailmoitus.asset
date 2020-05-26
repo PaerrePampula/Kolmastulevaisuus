@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053c4d5de5e79c44d969b0957fd44a83, type: 3}
+  m_Name: "Uusi ty\xF6paikkailmoitus"
+  m_EditorClassIdentifier: 
+  jobTitle: "Myyj\xE4"
+  jobDescriptionOnNotice: "Myyj\xE4n hommia :)"
+  workHoursPerDay: 5
+  payByHour: 10.5

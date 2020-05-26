@@ -5,11 +5,4 @@ using UnityEngine;
 public class JobSiteScriptable : ScriptableObject //Toistaiseksi tämä on käyttämätön, ignore
 {
     public GameObject jobSite;
-    public JobTitle[] jobTitles;
-}
-[System.Serializable]
-public class JobTitle
-{
-    public string jobTitle;
-    public float pay;
 }
