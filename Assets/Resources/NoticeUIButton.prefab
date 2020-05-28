@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3042284100429425676}
   - component: {fileID: 5544855466992886526}
   - component: {fileID: 3478132209932045977}
-  - component: {fileID: 3178272420258982710}
+  - component: {fileID: 4142095359108784238}
   m_Layer: 5
   m_Name: NoticeUIButton
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3178272420258982710}
+      - m_Target: {fileID: 4142095359108784238}
         m_MethodName: displayJob
         m_Mode: 1
         m_Arguments:
@@ -131,7 +131,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3178272420258982710
+--- !u!114 &4142095359108784238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2947718294249272149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df608e41bba5c1948abf045055805799, type: 3}
+  m_Script: {fileID: 11500000, guid: bfec234da4ef6bd4588beeab5ce0d500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 3139024888130770520}

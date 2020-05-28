@@ -24,3 +24,7 @@ public class EventRaise : EventInfo //Event raiseri, käyttöesimerkkinä joku t
     public bool SpecificEventRaise; //Nostaako tämä raise jonkun tietyn eventin?
     public ScriptableAction InCaseSpecificEvent; //Jos nostaa, täytä tämä siihen.
 }
+public class JobInfo : EventInfo //Käytettty mm työn haussa 
+{
+    public JobNoticeScriptable jobNotice;
+}
