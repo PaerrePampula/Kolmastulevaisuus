@@ -35,33 +35,48 @@ public class EventControl : MonoBehaviour
             );
         
     }
-    void CreateEventBox(EventInfo eventInfo) //Tämä on silkkaa debugia, spawnaa random eventin randomisti valittuna. Näkyy heti playmoden avatessa
+    bool CheckForRaiseChanceIfEligibleEventsCanBeFired()
     {
-        AggregateAppliableEventsForThisLocation();
-        
-        EventRaise EventRaise = (EventRaise)eventInfo;
-
-        GameObject randomeventUI = Instantiate(randomEventUIBox);
-        randomeventUI.transform.SetParent(Canvas);
-        randomeventUI.transform.localPosition = Vector3.zero;
-
-        if (EventRaise.SpecificEventRaise == false)
+        if(filteredList.Count > 0)
         {
-            if (filteredList.Count > 0)
-            {
-                randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredList[randomizedRandomEventIndexChoice()]);
-                PointAndClickMovement.setMovementStatus(false);
-
-            }
-            else
-            {
-                Debug.Log("No events!");
-            }
+            return true;
         }
         else
         {
-            randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredList.Find(x => x.getData() == EventRaise.InCaseSpecificEvent));
+            return false;
         }
+    }
+    void CreateEventBox(EventInfo eventInfo) //Tämä on silkkaa debugia, spawnaa random eventin randomisti valittuna. Näkyy heti playmoden avatessa
+    {
+
+        AggregateAppliableEventsForThisLocation();
+        if (CheckForRaiseChanceIfEligibleEventsCanBeFired())
+        {
+            EventRaise EventRaise = (EventRaise)eventInfo;
+
+            GameObject randomeventUI = Instantiate(randomEventUIBox);
+            randomeventUI.transform.SetParent(Canvas);
+            randomeventUI.transform.localPosition = Vector3.zero;
+
+            if (EventRaise.SpecificEventRaise == false)
+            {
+                if (filteredList.Count > 0)
+                {
+                    randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredList[randomizedRandomEventIndexChoice()]);
+                    PointAndClickMovement.setMovementStatus(false);
+
+                }
+                else
+                {
+                    Debug.Log("No events!");
+                }
+            }
+            else
+            {
+                randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredList.Find(x => x.getData() == EventRaise.InCaseSpecificEvent));
+            }
+        }
+
 
 
 

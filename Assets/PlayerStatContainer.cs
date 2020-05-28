@@ -6,7 +6,7 @@ public class PlayerStatContainer : MonoBehaviour
 {
     public List<PrereqPair> currentStats = new List<PrereqPair>();
     // Start is called before the first frame update
-    static private PlayerStatContainer _Current; //Tietenkin tämänhetkinen eventsystem. On static, koska silloin sitä voi käsitellä mistä tahansa koodissa.
+    static private PlayerStatContainer _Current;
     static public PlayerStatContainer Current
     {
         get

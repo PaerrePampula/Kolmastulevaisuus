@@ -8,13 +8,12 @@ public struct PrereqPair
     public PreRequisite preRequisite;
     public string stringValue;
     public bool uniqueType;
-    bool isTrue;
     public PreReqTypes typeofPreReq;
 }
 public enum PreRequisite
 {
     hasJob,
     hasSocialSecurity,
-    hasSport,
+    hasHobby,
     hasMoney
 }
