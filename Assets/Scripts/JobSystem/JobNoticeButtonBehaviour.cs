@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class JobNoticeButtonBehaviour : MonoBehaviour
 {
     public Text buttonText;
-    JobNoticeScriptable _jobNotice;
+    JobNotice _jobNotice;
     GameObject noticeInfoGraphic;
     // Start is called before the first frame update
     void Start()
     {
         noticeInfoGraphic = Resources.Load<GameObject>("JobNoticeInfoUI");
     }
-    public void setJobNotice(JobNoticeScriptable jobNotice)
+    public void setJobNotice(JobNotice jobNotice)
     {
         _jobNotice = jobNotice;
     }

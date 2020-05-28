@@ -7,7 +7,7 @@ public class PlayerColorChanger : MonoBehaviour //Tämä oli vain debugia varten
     // Start is called before the first frame update
     void Start()
     {
-        EventSystem.Current.RegisterListener(Event_Type.DEBUG_COLOR_CHANGE, changeColor);
+        GameEventSystem.Current.RegisterListener(Event_Type.DEBUG_COLOR_CHANGE, changeColor);
     }
 
     // Update is called once per frame

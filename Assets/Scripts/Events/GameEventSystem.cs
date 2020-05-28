@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventSystem : MonoBehaviour
+public class GameEventSystem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    static private EventSystem _Current; //Tietenkin tämänhetkinen eventsystem. On static, koska silloin sitä voi käsitellä mistä tahansa koodissa.
-    static public EventSystem Current
+    static private GameEventSystem _Current; //Tietenkin tämänhetkinen eventsystem. On static, koska silloin sitä voi käsitellä mistä tahansa koodissa.
+    static public GameEventSystem Current
     {
         get
         {
             if(_Current == null)
             {
-                _Current = FindObjectOfType<EventSystem>();
+                _Current = FindObjectOfType<GameEventSystem>();
             }
             return _Current;
         }

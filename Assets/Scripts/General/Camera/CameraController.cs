@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     float timelerped; //Tätä tarvitaan kameran lineaarisessa interpoloinnissa, lerpissä on se ongelma että se hidastuu kun lähestytään tarvittua rotaatiota, tämä korjaa sen niin, että tätä käytetään lerpin t muuttujassa osoittajana.
     private void Awake()
     {
-        EventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
+        GameEventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
     }
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
             CameraAngleChangeInfo valueChangeAction = new CameraAngleChangeInfo();
             valueChangeAction.changeofFloat = 90;
             valueChangeAction.increments = 1;
-            EventSystem.Current.DoEvent(
+            GameEventSystem.Current.DoEvent(
                 Event_Type.CAMERA_TURN,
                 valueChangeAction
                 );

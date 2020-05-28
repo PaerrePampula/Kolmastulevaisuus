@@ -14,7 +14,14 @@ public class PointAndClickMovement : MonoBehaviour
         playerNavMeshAgent = GetComponent<NavMeshAgent>();
         movementAllowed = true;
     }
-
+    private void OnEnable()
+    {
+        UiGeneric.OnUIOpened += setMovementStatus;
+    }
+    private void OnDisable()
+    {
+        UiGeneric.OnUIOpened -= setMovementStatus;
+    }
     // Update is called once per frame
     void Update()
     {

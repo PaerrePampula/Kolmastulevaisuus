@@ -17,13 +17,15 @@ public class JobHandler : MonoBehaviour
             return _Current;
         }
     }
+    public delegate void JobApply(JobNotice jobNotice);
+    public static event JobApply OnJobApply;
     private void Start()
     {
-        EventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, applyJob);
+        GameEventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, applyJob);
     }
     void applyJob(EventInfo info)
     {
         JobInfo job = (JobInfo)info;
-        Debug.Log(job.jobNotice.jobTitle);
+        OnJobApply?.Invoke(job.jobNotice);
     }
 }

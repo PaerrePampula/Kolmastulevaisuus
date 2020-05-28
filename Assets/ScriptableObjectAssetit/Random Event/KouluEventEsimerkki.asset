@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: KouluEventEsimerkki
   m_EditorClassIdentifier: 
+  Prerequisites: []
   fire_location: 0
   eventTexts:
   - eventDialog: "T\xE4m\xE4 on testi. T\xE4m\xE4 teksti vaihtuu dynaamisesti"

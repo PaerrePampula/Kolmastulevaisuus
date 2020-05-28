@@ -27,7 +27,7 @@ public class LocationHandler : MonoBehaviour
     {
         currentLocation = eventLocations[0];
 
-        EventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
+        GameEventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
 
 
     }

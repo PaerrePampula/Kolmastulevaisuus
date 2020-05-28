@@ -15,7 +15,8 @@ public class EventControl : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        EventSystem.Current.RegisterListener(Event_Type.TRIGGER_EVENT, CreateEventBox);
+
+        GameEventSystem.Current.RegisterListener(Event_Type.TRIGGER_EVENT, CreateEventBox);
     }
     void Start()
     {
@@ -28,7 +29,7 @@ public class EventControl : MonoBehaviour
     {
         EventRaise randomEvent = new EventRaise();
         randomEvent.SpecificEventRaise = false;
-        EventSystem.Current.DoEvent(
+        GameEventSystem.Current.DoEvent(
             Event_Type.TRIGGER_EVENT,
             randomEvent
             );
@@ -95,11 +96,12 @@ public class EventControl : MonoBehaviour
     {
         //LINQ QUERY
         var listofEventsForThisLocationOrAnyLocation = from gameEvent in events //where komennon käyttö löytyy yllämainitusta linkistä standard query operaattoreiden alta
-                                                       where (gameEvent.getFireLocation() == LocationHandler.getCurrentLocation().LOCATION) || gameEvent.getFireLocation() == FIRE_LOCATION.ANY
+                                                       where (gameEvent.getFireLocation() == LocationHandler.getCurrentLocation().LOCATION) && (gameEvent.CheckPreRequisites() == true) || (gameEvent.getFireLocation() == FIRE_LOCATION.ANY) && (gameEvent.CheckPreRequisites() == true)
                                                        select gameEvent;
         //Eli siis LINQ query, jossa haetaan gameeventtejä (from gameEvent in events = given a gameEvent in the events list...)
         //where gameEvent vastaa tämänhetkistä lokaatiotägiä, tai jos tägi on missä tahansa
         //otetaan valittu event ja lisätään se uuteen listaan.
+        
         return listofEventsForThisLocationOrAnyLocation.ToList(); //Palautetaan tämä listana, ei linq queryn outputtina (linq queryn palauttama arvo ei ole sama kuin lista tai joku vastaava collection, todellisen listatyypin näkee sitä pyytämällä koodissa.
     }
 

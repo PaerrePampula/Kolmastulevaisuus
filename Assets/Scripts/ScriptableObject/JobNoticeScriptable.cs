@@ -10,6 +10,6 @@ public class JobNoticeScriptable : ScriptableObject
     //Boolit eri vaatimuksille? Esim jotain kortteja, hygienipassi? ajokortti? jotain muuta?
     public int workHoursPerDay;
     public float payByHour;
-    JobSiteScriptable jobSite;
+    public JobSiteScriptable jobSite;
     //Pitäisi varmaan tehdä joku osa-aika, kokoaika, provikkapalkka, muu tyyyppinen palkka simulaatio vielä...
 }

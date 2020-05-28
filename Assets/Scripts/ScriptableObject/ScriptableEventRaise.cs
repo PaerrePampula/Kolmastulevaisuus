@@ -11,7 +11,7 @@ public class ScriptableEventRaise : ScriptableAction //Tämä on scriptableactio
         EventRaise eventRaise = new EventRaise();
         eventRaise.InCaseSpecificEvent = actionToRise;
         eventRaise.SpecificEventRaise = isNotRandomlyChosen;
-        EventSystem.Current.DoEvent(
+        GameEventSystem.Current.DoEvent(
             Event_Type,
             eventRaise
             );

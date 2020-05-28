@@ -4,15 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JobNoticeInfoBehaviour : MonoBehaviour
+public class JobNoticeInfoBehaviour : UiGeneric
 {
     public TextMeshProUGUI noticeText;
-    JobNoticeScriptable _jobNotice;
+    JobNotice _jobNotice;
     void insertInformation()
     {
-        noticeText.text = _jobNotice.jobDescriptionOnNotice;
+        noticeText.text = _jobNotice.scriptable.jobDescriptionOnNotice;
     }
-    public void setJob(JobNoticeScriptable jobNotice)
+    public JobNoticeScriptable getScriptable()
+    {
+        return _jobNotice.scriptable;
+    }
+    public void setJob(JobNotice jobNotice)
     {
         _jobNotice = jobNotice;
         insertInformation();
@@ -21,7 +25,7 @@ public class JobNoticeInfoBehaviour : MonoBehaviour
     {
         JobInfo jobInfo = new JobInfo();
         jobInfo.jobNotice = _jobNotice;
-        EventSystem.Current.DoEvent(
+        GameEventSystem.Current.DoEvent(
             Event_Type.JOB_APPLY,
             jobInfo
             );

@@ -26,5 +26,10 @@ public class EventRaise : EventInfo //Event raiseri, käyttöesimerkkinä joku t
 }
 public class JobInfo : EventInfo //Käytettty mm työn haussa 
 {
-    public JobNoticeScriptable jobNotice;
+    public JobNotice jobNotice;
+    public int indexOnJobSearch;
 }
+public class PreRequisiteChange : EventInfo
+{
+    public PrereqPair[] prereqs;
+} 
