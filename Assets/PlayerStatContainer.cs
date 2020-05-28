@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerStatContainer : MonoBehaviour
 {
-    public List<PrereqPair> currentStats = new List<PrereqPair>();
+    public List<PlayerStat> currentStats = new List<PlayerStat>();
     // Start is called before the first frame update
     static private PlayerStatContainer _Current;
     static public PlayerStatContainer Current
@@ -20,7 +21,7 @@ public class PlayerStatContainer : MonoBehaviour
     }
     void Start()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.PREREQ_UPDATE, UpdateTable);
+        GameEventSystem.Current.RegisterListener(Event_Type.STATS_CALL, UpdateTable);
     }
 
     // Update is called once per frame
@@ -30,39 +31,37 @@ public class PlayerStatContainer : MonoBehaviour
     }
     void UpdateTable(EventInfo eventInfo)
     {
-        PreRequisiteChange change = (PreRequisiteChange)eventInfo;
-        checkForDuplicates(change);
+        StatChangeInfo change = (StatChangeInfo)eventInfo;
+        checkForDuplicatesAndInsertValue(change);
 
     }
-    void checkForDuplicates(PreRequisiteChange preRequisiteChange)
+    void checkForDuplicatesAndInsertValue(StatChangeInfo statChange)
     {
-        for (int i = 0; i < currentStats.Count; i++)
-        {
-            for (int x = 0; x < preRequisiteChange.prereqs.Length; x++)
-            {
-                if ((currentStats[i].uniqueType == false) && currentStats[i].preRequisite == preRequisiteChange.prereqs[x].preRequisite)
-                {
-                    currentStats.RemoveAt(i);
-                    currentStats.Add(preRequisiteChange.prereqs[x]);
-                }
-                else
-                {
-                    currentStats.Add(preRequisiteChange.prereqs[x]);
-                }
-            }
 
+        if (statChange.playerStat.uniqueStat)
+        {
+            var searchForUniqueValue = currentStats.Single(stat => stat.statName == statChange.playerStat.statName);
+            
+            searchForUniqueValue.statValueString = statChange.playerStat.statValueString;
+            Debug.Log(searchForUniqueValue.statValueString);
         }
+        else
+        {
+            currentStats.Add(statChange.playerStat);
+        }
+        
+
     }
-    public PrereqPair getPairByPreReq(PrereqPair pair)
+    public PlayerStat getPlayerStatByPrereq(PrereqPair pair)
     {
         for (int i = 0; i < currentStats.Count; i++)
         {
-            if (currentStats[i].preRequisite == pair.preRequisite)
+            if (currentStats[i].statName == pair.playerStat)
             {
                 return currentStats[i];
             }
 
         }
-        return currentStats[0];
+        return null;
     }
 }

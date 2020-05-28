@@ -29,7 +29,7 @@ public class JobInfo : EventInfo //Käytettty mm työn haussa
     public JobNotice jobNotice;
     public int indexOnJobSearch;
 }
-public class PreRequisiteChange : EventInfo
+public class StatChangeInfo : EventInfo
 {
-    public PrereqPair[] prereqs;
+    public PlayerStat playerStat = new PlayerStat();
 } 

@@ -3,12 +3,12 @@ using System.Collections;
 [CreateAssetMenu(menuName = "Actions/PreReqChange")]
 public class DemoPreReqChange : ScriptableAction
 {
-    public PrereqPair[] preRequisites;
+    public PlayerStat stats;
 
     public override void PerformAction()
     {
-        PreRequisiteChange valueChangeAction = new PreRequisiteChange();
-        valueChangeAction.prereqs = preRequisites;
+        StatChangeInfo valueChangeAction = new StatChangeInfo();
+        valueChangeAction.playerStat = stats;
         GameEventSystem.Current.DoEvent(
             Event_Type,
             valueChangeAction

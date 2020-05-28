@@ -11,6 +11,5 @@ public enum Event_Type
     JOB_FIRED,
     DEBUG_COLOR_CHANGE,
     CAMERA_TURN,
-    PREREQ_UPDATE
-
+    STATS_CALL
 }

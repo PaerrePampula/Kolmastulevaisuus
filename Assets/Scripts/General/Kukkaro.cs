@@ -15,6 +15,7 @@ public class Kukkaro : MonoBehaviour
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         money += floatChangeInfo.changeofFloat;
+        PaerToolBox.callOnStatChange(StatType.PlayerMoney, money.ToString(), true);
         OnIncrease?.Invoke(money);
     }
     public void getMoney()

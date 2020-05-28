@@ -5,15 +5,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public struct PrereqPair
 {
-    public PreRequisite preRequisite;
-    public string stringValue;
-    public bool uniqueType;
-    public PreReqTypes typeofPreReq;
-}
-public enum PreRequisite
-{
-    hasJob,
-    hasSocialSecurity,
-    hasHobby,
-    hasMoney
+    public StatType playerStat;
+    public string StringComparatorValue;
+    public bool uniqueStatComparison;
+    public ComparisonOperators TypeOfComparison;
 }

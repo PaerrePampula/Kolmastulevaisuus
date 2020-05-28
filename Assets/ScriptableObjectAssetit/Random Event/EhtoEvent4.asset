@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: EhtoEvent2
+  m_Name: EhtoEvent4
   m_EditorClassIdentifier: 
   Prerequisites:
-  - playerStat: 0
-    StringComparatorValue: 1000
-    uniqueStatComparison: 1
-    TypeOfComparison: 4
-  fire_location: 0
+  - playerStat: 1
+    StringComparatorValue: false
+    uniqueStatComparison: 0
+    TypeOfComparison: 5
+  fire_location: 3
   eventTexts:
-  - eventDialog: "T\xE4m\xE4 trigger\xF6ityi randomilla, kun pelaajalla oli v\xE4hint\xE4\xE4n
-      1000 euroa, ja pelaaja siirtyi koulusijaintiin."
+  - eventDialog: "T\xE4m\xE4 event trigger\xF6ityy kotona, jos pelaajalla ei ole
+      t\xF6it\xE4, mene t\xF6ihin senkin vanha luuska! Valitse koulun l\xE4pp\xE4rill\xE4
+      niin monta ty\xF6t\xE4, kun sielu siet\xE4\xE4, ja tarkasta, kun t\xE4m\xE4
+      ei ilmesty kotona en\xE4\xE4!"
     eventDialogChoices:
     - nextDialog: -1
-      choiceDescriptor: Oookoo
+      choiceDescriptor: No en!
       clickActions: []

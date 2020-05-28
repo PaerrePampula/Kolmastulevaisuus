@@ -83,8 +83,7 @@ public class EventControl : MonoBehaviour
     }
     int randomizedRandomEventIndexChoice() //Tämä valitsee random eventin halutusta listasta.
     {
-        
-            int index = Random.Range(0, filteredList.Count - 1);
+            int index = Random.Range(0, filteredList.Count);
             return index;
 
     }

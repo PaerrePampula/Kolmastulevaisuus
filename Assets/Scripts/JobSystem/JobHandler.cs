@@ -27,5 +27,6 @@ public class JobHandler : MonoBehaviour
     {
         JobInfo job = (JobInfo)info;
         OnJobApply?.Invoke(job.jobNotice);
+        PaerToolBox.callOnStatChange(StatType.PlayerJob, job.jobNotice.scriptable.jobTitle, false);
     }
 }

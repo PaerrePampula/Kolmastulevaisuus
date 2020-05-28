@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: RandomEvent
+  m_Name: EhtoEvent
   m_EditorClassIdentifier: 
   Prerequisites:
-  - preRequisite: 3
-    stringValue: 200
-    stackableInStats: 0
-    typeofPreReq: 1
+  - playerStat: 0
+    StringComparatorValue: 100
+    uniqueStatComparison: 1
+    TypeOfComparison: 0
   fire_location: 0
   eventTexts:
-  - eventDialog: Toimiii!
+  - eventDialog: "T\xE4m\xE4 trigger\xF6ityi randomilla, kun pelaajalla oli yli 100euroa,
+      ja pelaaja siirtyi koulusijaintiin."
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: Ok
