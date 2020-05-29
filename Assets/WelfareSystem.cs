@@ -6,12 +6,11 @@ public class WelfareSystem : MonoBehaviour
 {
     private void Start()
     {
-        System.DateTime newDate = new System.DateTime(2020, 10, 1);
-        System.DateTime newDate2 = new System.DateTime(2021, 10, 1);
-        OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), newDate, true);
-        OpintoRaha raha2 = new OpintoRaha(DateTimeSystem.getCurrentDate(), newDate2, true);
-        currentPlayerSupports.Add(raha);
-        currentPlayerSupports.Add(raha2);
+        /*System.DateTime newDate = new System.DateTime(2020, 10, 1);
+
+        OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), newDate, true, typeOfSupport.OpintoTuki);
+
+        currentPlayerSupports.Add(raha);*/
         //NÄMÄ ON DEBUG TUKIA, POISTA MYÖHEMMIN
     }
     List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
@@ -29,14 +28,7 @@ public class WelfareSystem : MonoBehaviour
         {
             if (support.checkValidityOfSupport() == true)
             {
-                //Tämä korvataan myöhemmin paremmalla rakenteella
-                FloatChangeInfo valueChangeAction = new FloatChangeInfo();
-                valueChangeAction.changeofFloat = support.CalculatedSupport();
-                Debug.Log("Pelaaja sai rahaa!, määrä on " + valueChangeAction.changeofFloat);
-                GameEventSystem.Current.DoEvent(
-                    Event_Type.FLOAT_CHANGE,
-                    valueChangeAction
-                    );
+                PaerToolBox.giveMoneyToPlayer(support.CalculatedSupport());
             }
             else
             {

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AsumisTuki : BaseTuki
 {
-    public AsumisTuki(System.DateTime start, System.DateTime end, bool Monthly) : base(start, end, Monthly) { }
+    public AsumisTuki(System.DateTime start, System.DateTime end, bool Monthly, typeOfSupport TypeOfSupport) : base(start, end, Monthly, TypeOfSupport) { }
     public override float CalculatedSupport()
     {
 
@@ -14,10 +14,7 @@ public class AsumisTuki : BaseTuki
     {
         float value;
         float calculatedTotalIncome = 0;
-        for (int i = 0; i < Kukkaro.currentKukkaro.GetIncomeSources().Length; i++)
-        {
-            calculatedTotalIncome += Kukkaro.currentKukkaro.GetIncomeSources()[i].getIncome();
-        }
+        calculatedTotalIncome += PlayerEconomy.CurrentPlayerEconomy.getAllIncomeSourceGrossTotals(1);
         value = 0.42f*(calculatedTotalIncome - (603 + 100)); //Pelkistetty laskukaava, mutta simulaatiossa oletetaan se, että opiskelijalla ei ole lapsia, tai muita ruokakuntalaisia. (asuu yksin)
         return value;
     }

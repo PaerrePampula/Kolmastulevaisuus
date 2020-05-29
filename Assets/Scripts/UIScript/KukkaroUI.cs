@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class KukkaroUI : MonoBehaviour
 {
-    Kukkaro kukkaro; //Tämä on myös prototyyppi, ja tullaan korvaamaan jollakin järkevämmällä todennäköisesti, mutta tänhetkisesti sen pointti on demota rahanmuutosta suoraan play-ikkunaan
+    PlayerEconomy kukkaro; //Tämä on myös prototyyppi, ja tullaan korvaamaan jollakin järkevämmällä todennäköisesti, mutta tänhetkisesti sen pointti on demota rahanmuutosta suoraan play-ikkunaan
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +13,11 @@ public class KukkaroUI : MonoBehaviour
     }
     private void OnEnable() //Kun tämä skripti aktivoituu, se automaattisesti tilaa Kukkaroskriptin OnIncrease tapahtuman
     {
-        Kukkaro.OnIncrease += UpdateUI;
+        PlayerEconomy.OnIncrease += UpdateUI;
     }
     private void OnDisable()
     {
-        Kukkaro.OnIncrease -= UpdateUI; //Jos tämä skripti poistuu, se ottaa sen tilauksen ensin pois. Miksi? Koska muuten tulisi null reference exceptioneita, jos tilaus on olemassa, mutta ei vastaanottajaa...
+        PlayerEconomy.OnIncrease -= UpdateUI; //Jos tämä skripti poistuu, se ottaa sen tilauksen ensin pois. Miksi? Koska muuten tulisi null reference exceptioneita, jos tilaus on olemassa, mutta ei vastaanottajaa...
     }
     // Update is called once per frame
     void Update()
