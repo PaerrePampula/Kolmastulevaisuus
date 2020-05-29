@@ -23,6 +23,7 @@ public class MainCanvas : MonoBehaviour
     void Start()
     {
         canvasTransform = this.transform;
+        GameEventSystem.Current.RegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
     }
 
     // Update is called once per frame
@@ -34,5 +35,11 @@ public class MainCanvas : MonoBehaviour
     {
         return canvasTransform;
     }
-
+    void callNewUI(EventInfo info)
+    {
+        UiElementCall uiElementCall = (UiElementCall)info;
+        GameObject calledObject = Instantiate(uiElementCall.elementToCall);
+        calledObject.transform.SetParent(uiElementCall.elementParent);
+        calledObject.transform.localPosition = Vector3.zero;
+    }
 }
