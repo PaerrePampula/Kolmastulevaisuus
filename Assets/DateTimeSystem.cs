@@ -32,7 +32,7 @@ public class DateTimeSystem : MonoBehaviour
     }
     public void SetDate()
     {
-        _thisdaytext.text = string.Format("{0} \n  {1}.{2}.{3}", currentDate.DayOfWeek.ToString(), currentDate.Day, currentDate.Month, currentDate.Year);
+        _thisdaytext.text = string.Format("{1}.{2}.{3}", currentDate.DayOfWeek.ToString(), currentDate.Day, currentDate.Month, currentDate.Year);
     }
 
     public void ChangeWeek()
