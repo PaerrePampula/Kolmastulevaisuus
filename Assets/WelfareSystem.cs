@@ -41,6 +41,8 @@ public class WelfareSystem : MonoBehaviour
             else
             {
                 currentPlayerSupports.Remove(support);
+                Debug.Log("Pelaajalta loppui tuki:" + support.CalculatedSupport() + " euroa. Ajalta" + support.getStartAndEndDate().Item1 + "-" + support.getStartAndEndDate().Item2);
+                //Miksi tämän tuplen itemien returnaus returnaa molemmille itemeille itse sen päivän ja sitten tyhjän päiväarvon???? WTF
             }
         }
     }

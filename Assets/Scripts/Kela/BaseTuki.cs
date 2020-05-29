@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public abstract class BaseTuki : IWelfareableSupport
 {
@@ -25,5 +26,11 @@ public abstract class BaseTuki : IWelfareableSupport
         {
             return false;
         }
+    }
+
+    public (DateTime, DateTime) getStartAndEndDate()
+    {
+        (DateTime, DateTime) dates = (dateOfWelfareBegins, dateofWelfareEnds);
+        return dates;
     }
 }
