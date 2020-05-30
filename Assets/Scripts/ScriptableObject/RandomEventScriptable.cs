@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Uusi satunnainen event", menuName = "Satunnainen event tekstiboksi")]
 public class RandomEventScriptable : ScriptableObject //Tämä on melko yksiselitteinen, lista stringejä ja dialogivalintoja, sekä scriptableactioneita

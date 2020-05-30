@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ChoiceButton : MonoBehaviour
 {
@@ -21,7 +18,7 @@ public class ChoiceButton : MonoBehaviour
     }
     public void setButtonGrandParentScript(RandomEventUI choice)
     {
-        transformGrandParentScript  = choice;
+        transformGrandParentScript = choice;
     }
     public void setButtonEventChoice(eventChoice choice)
     {
@@ -40,7 +37,7 @@ public class ChoiceButton : MonoBehaviour
             for (int i = 0; i < clickActions.Length; i++)
             {
                 clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
-                
+
             }
         }
 

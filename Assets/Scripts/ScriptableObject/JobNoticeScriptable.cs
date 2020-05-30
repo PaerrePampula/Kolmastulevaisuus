@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 [CreateAssetMenu(fileName = "Uusi työpaikkailmoitus", menuName = "Työpaikkailmoitus")]
 public class JobNoticeScriptable : ScriptableObject
 {

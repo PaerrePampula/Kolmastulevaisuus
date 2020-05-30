@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class IncomeSource
+﻿public class IncomeSource
 {
     #region Fields
     float incomeAmountTotalOneMonth;

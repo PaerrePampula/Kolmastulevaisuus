@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class Rent
+﻿public class Rent
 {
     #region Fields
     float rent;

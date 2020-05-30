@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Linq;
+using UnityEngine;
 
 public class TaxationSystem : MonoBehaviour
 {
@@ -62,7 +60,7 @@ public class TaxationSystem : MonoBehaviour
             float taxAmount = gross - foundBracket.getLower();
             taxAmount *= foundBracket.getPercentileTax();
             taxAmount += foundBracket.getBottomLineTax();
-            
+
             return gross - taxAmount;
         }
 

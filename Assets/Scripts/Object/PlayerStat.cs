@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-[System.Serializable]
+﻿[System.Serializable]
 public class PlayerStat
 {
     public StatType statName;

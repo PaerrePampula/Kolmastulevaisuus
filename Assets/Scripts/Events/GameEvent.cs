@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
-
-public class GameEvent
+﻿public class GameEvent
 {
     #region Fields
     RandomEventScriptable scriptable;
@@ -61,10 +57,10 @@ public class GameEvent
 
                 switch (prerequisite.TypeOfComparison)
                 {
-                    
+
                     case ComparisonOperators.IfPlayerHasHigher:
-                            isApplicableEvent = (requirementTargetFloat < playerStatFloat) ? true : false;
-                            break;
+                        isApplicableEvent = (requirementTargetFloat < playerStatFloat) ? true : false;
+                        break;
                     case ComparisonOperators.IfPlayerHasLower:
                         isApplicableEvent = (requirementTargetFloat > playerStatFloat) ? true : false;
                         break;
@@ -78,7 +74,7 @@ public class GameEvent
                         isApplicableEvent = (prerequisite.StringComparatorValue == foundPair.statValueString) ? true : false;
                         break;
                     case ComparisonOperators.IfPlayerHasStat:
-                        isApplicableEvent = ((foundPair == null && prerequisite.StringComparatorValue == "false") || foundPair != null && prerequisite.StringComparatorValue == "true" ) ? true : false;
+                        isApplicableEvent = ((foundPair == null && prerequisite.StringComparatorValue == "false") || foundPair != null && prerequisite.StringComparatorValue == "true") ? true : false;
                         break;
                 }
 

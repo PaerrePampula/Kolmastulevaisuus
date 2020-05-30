@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -41,7 +40,7 @@ public class PlayerStatContainer : MonoBehaviour
         if (statChange.playerStat.uniqueStat)
         {
             var searchForUniqueValue = currentStats.Single(stat => stat.statName == statChange.playerStat.statName);
-            
+
             searchForUniqueValue.statValueString = statChange.playerStat.statValueString;
             Debug.Log(searchForUniqueValue.statValueString);
         }
@@ -49,7 +48,7 @@ public class PlayerStatContainer : MonoBehaviour
         {
             currentStats.Add(statChange.playerStat);
         }
-        
+
 
     }
     public PlayerStat getPlayerStatByPrereq(PrereqPair pair)

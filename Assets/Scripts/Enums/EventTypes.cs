@@ -1,7 +1,4 @@
-﻿
-using UnityEngine;
-using System.Collections;
-#region enums
+﻿#region enums
 public enum Event_Type
 {
     TRIGGER_EVENT,

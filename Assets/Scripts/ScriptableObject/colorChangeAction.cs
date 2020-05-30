@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 [CreateAssetMenu(menuName = "Actions/ColorChange")]
 public class colorChangeAction : ScriptableAction
 {

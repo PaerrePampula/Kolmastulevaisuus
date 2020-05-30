@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class ScriptableAction : ScriptableObject
 { //Tämä on siis pohjaclassi kaikille actioneille, jotka tapahtuvat dialogin edetessä.

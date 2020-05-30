@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class AsumisTuki : BaseTuki
+﻿public class AsumisTuki : BaseTuki
 {
     #region Fields
     float maximumGrossIncomeWhereOmaVastuuDoesNotDecreaseSupportAmount = 726;
@@ -16,7 +13,7 @@ public class AsumisTuki : BaseTuki
         return support;
     }
     float CalculatedPerusOmaVastuu() //Omavastuu ei vaikuta, jos tulot ovat liian pieniä... 
-        //Oletus on siinä että pelaaja asuu yksin.
+                                     //Oletus on siinä että pelaaja asuu yksin.
     {
         float value = 0;
         float calculatedTotalIncome = 0;

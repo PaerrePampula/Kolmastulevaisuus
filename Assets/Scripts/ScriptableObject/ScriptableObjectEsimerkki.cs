@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 [CreateAssetMenu(fileName = "Esimerkki scriptableobject", menuName = "Esimerkki scriptableobjectista")]
 public class ScriptableObjectEsimerkki : ScriptableObject //Scriptableobject ei ole osa monobehaviouria (ei voi muun muuassa kutsua suoraltaan esim GameObjecteja, mutta sen toimintaperiaatteeltaan ihan hyvä asia.
 {
@@ -25,7 +23,7 @@ public class ScriptableObjectEsimerkki : ScriptableObject //Scriptableobject ei 
     public advancedDialog[] advancedDialogs; //...Mutta tällä voidaan tehdä paljon enemmänkin! Todetaan array advancedDialogeja, ja määritellään se alla!
 }
 [System.Serializable] //Tarvitaan tämä, tai joudutaan tyytymään erikseen luotuihin dialogeihin = ei pystyisi suoraan samasta inspectorista luomaan.
-public class advancedDialog 
+public class advancedDialog
 {
     public string dialogText; //Taas tekstejä...
     public Sprite reactionImage; //...ja erikseen jokaiselle tekstille hahmon reaktio!

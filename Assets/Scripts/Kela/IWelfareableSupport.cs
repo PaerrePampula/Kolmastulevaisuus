@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public interface IWelfareableSupport
+﻿public interface IWelfareableSupport
 {
     float CalculatedSupport();
     bool checkValidityOfSupport();

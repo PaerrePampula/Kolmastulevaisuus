@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class OpintoRaha : BaseTuki
+﻿public class OpintoRaha : BaseTuki
 {
     #region Fields
     float baseSupportAmountInStudentSupportForIndenpendentlyLivingAdultStudents = 252.76f;

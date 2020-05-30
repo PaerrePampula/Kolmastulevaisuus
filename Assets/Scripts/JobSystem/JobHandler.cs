@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class JobHandler : MonoBehaviour
 {
@@ -30,7 +28,7 @@ public class JobHandler : MonoBehaviour
     Job createJob(JobInfo info)
     {
         JobNoticeScriptable notice = info.jobNotice.scriptable;
-        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite , notice.workHoursPerDay);
+        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite, notice.workHoursPerDay);
         return newJob;
     }
     void registerJob(EventInfo info)

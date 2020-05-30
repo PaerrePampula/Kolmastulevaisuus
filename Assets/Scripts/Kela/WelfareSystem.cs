@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -36,7 +35,7 @@ public class WelfareSystem : MonoBehaviour
         switch (typeOfSupport)
         {
             case typeOfSupport.OpintoTuki:
-                check =  DoesPlayerHaveSupportOfType(typeOfSupport.OpintoTuki) == true ? false : true; //Oletetaan että pelaaja opiskelee pelissä päätoimisesti, ja edistyy opinnoissa. Tätä voi toki myöhemmin muuttaa. Tsekataan vaan että onko jo tukea
+                check = DoesPlayerHaveSupportOfType(typeOfSupport.OpintoTuki) == true ? false : true; //Oletetaan että pelaaja opiskelee pelissä päätoimisesti, ja edistyy opinnoissa. Tätä voi toki myöhemmin muuttaa. Tsekataan vaan että onko jo tukea
                 break;
 
             case typeOfSupport.YleinenAsumistuki:

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public abstract class EventInfo
 {
@@ -29,14 +28,14 @@ public class JobInfo : EventInfo //Käytettty mm työn haussa
     public JobNotice jobNotice;
     public int indexOnJobSearch;
 }
-public class JobRegisterInfo: EventInfo
+public class JobRegisterInfo : EventInfo
 {
     public Job job;
 }
 public class StatChangeInfo : EventInfo
 {
     public PlayerStat playerStat = new PlayerStat();
-} 
+}
 public class UiElementCall : EventInfo
 {
     public GameObject elementToCall;

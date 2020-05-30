@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class TaxBrackets //Kuumeisesti yritän miettiä tähän paljon järkevämpää ratkaisua mutta kuten vanha viisaus sanoo, Nothing more permanent than a temporary fix
- //Nämä tiedot haettu https://www.veronmaksajat.fi/Palkka-ja-elake/Jarin-palkka/#75d32b1a 29.5.2020 tuloveroasteikosta.
+                         //Nämä tiedot haettu https://www.veronmaksajat.fi/Palkka-ja-elake/Jarin-palkka/#75d32b1a 29.5.2020 tuloveroasteikosta.
 
 {
     #region Fields

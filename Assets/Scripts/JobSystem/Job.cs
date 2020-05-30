@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Job
 {
@@ -16,7 +15,7 @@ public class Job
         _payByHour = payByHour;
         _workHoursPerDay = workhoursPerDay;
         jobSite = (jobSiteScriptable.jobSite != null) ? jobSiteScriptable.jobSite : null;
-        
+
     }
     #endregion
     public float getMonthlyPaymentAmount()

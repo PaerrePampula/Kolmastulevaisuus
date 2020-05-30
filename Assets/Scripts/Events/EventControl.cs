@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 
 //Mikä tämä on? Prototyyppi random eventtien tuomisesta ruudulle.
@@ -33,7 +32,7 @@ public class EventControl : MonoBehaviour
     #region Tool methods
     bool CheckForRaiseChanceIfEligibleEventsCanBeFired()
     {
-        if(filteredList.Count > 0)
+        if (filteredList.Count > 0)
         {
             return true;
         }
@@ -79,8 +78,8 @@ public class EventControl : MonoBehaviour
     }
     int randomizedRandomEventIndexChoice() //Tämä valitsee random eventin halutusta listasta.
     {
-            int index = Random.Range(0, filteredList.Count);
-            return index;
+        int index = Random.Range(0, filteredList.Count);
+        return index;
 
     }
     #endregion
@@ -109,7 +108,7 @@ public class EventControl : MonoBehaviour
         //Eli siis LINQ query, jossa haetaan gameeventtejä (from gameEvent in events = given a gameEvent in the events list...)
         //where gameEvent vastaa tämänhetkistä lokaatiotägiä, tai jos tägi on missä tahansa
         //otetaan valittu event ja lisätään se uuteen listaan.
-        
+
         return listofEventsForThisLocationOrAnyLocation.ToList(); //Palautetaan tämä listana, ei linq queryn outputtina (linq queryn palauttama arvo ei ole sama kuin lista tai joku vastaava collection, todellisen listatyypin näkee sitä pyytämällä koodissa.
     }
     #endregion

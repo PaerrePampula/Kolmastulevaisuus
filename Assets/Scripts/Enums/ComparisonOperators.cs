@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-#region enums
+﻿#region enums
 public enum ComparisonOperators
 {
     IfPlayerHasHigher,

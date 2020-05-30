@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameEventSystem : MonoBehaviour
@@ -11,7 +9,7 @@ public class GameEventSystem : MonoBehaviour
     {
         get
         {
-            if(_Current == null)
+            if (_Current == null)
             {
                 _Current = FindObjectOfType<GameEventSystem>();
             }

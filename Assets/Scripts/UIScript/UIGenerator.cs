@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIGenerator : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class UIGenerator : MonoBehaviour
     #endregion
     public void instantiateUIObject()
     {
-        GameObject go = Instantiate(Resources.Load <GameObject> (resourceToLoad));
+        GameObject go = Instantiate(Resources.Load<GameObject>(resourceToLoad));
         go.transform.SetParent(MainCanvas.mainCanvas.transform);
         go.transform.localPosition = Vector3.zero;
     }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class PointAndClickMovement : MonoBehaviour
@@ -42,7 +40,7 @@ public class PointAndClickMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            
+
             Plane plane = new Plane(Vector3.up, 0);
 
             float distance;
