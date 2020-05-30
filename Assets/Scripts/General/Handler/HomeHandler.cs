@@ -28,6 +28,7 @@ public class HomeHandler : MonoBehaviour
     #region MonobehaviourDefaults
     private void Start()
     {
+        //DEBUG
         rent = new Rent(550,0,0);
         
     }
