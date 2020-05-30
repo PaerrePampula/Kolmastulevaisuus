@@ -11,7 +11,8 @@ public class AsumisTuki : BaseTuki
         float support = 0.8f * (HomeHandler.currentHomeHandler.getRent().getTotal() - CalculatedPerusOmaVastuu());
         return support;
     }
-    float CalculatedPerusOmaVastuu() //Omavastuu ei vaikuta, jos tulot ovat liian pieniä...
+    float CalculatedPerusOmaVastuu() //Omavastuu ei vaikuta, jos tulot ovat liian pieniä... 
+        //Oletus on siinä että pelaaja asuu yksin.
     {
         float value = 0;
         float calculatedTotalIncome = 0;

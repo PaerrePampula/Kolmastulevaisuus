@@ -29,7 +29,10 @@ public abstract class BaseTuki : IWelfareableSupport
             return false;
         }
     }
-
+    public typeOfSupport GetTypeOfSupport()
+    {
+        return typeOfWelfare;
+    }
     public (DateTime, DateTime) getStartAndEndDate()
     {
         (DateTime, DateTime) dates = (dateOfWelfareBegins, dateofWelfareEnds);
