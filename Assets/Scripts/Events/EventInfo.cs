@@ -33,3 +33,8 @@ public class StatChangeInfo : EventInfo
 {
     public PlayerStat playerStat = new PlayerStat();
 } 
+public class UiElementCall : EventInfo
+{
+    public GameObject elementToCall;
+    public Transform elementParent;
+}

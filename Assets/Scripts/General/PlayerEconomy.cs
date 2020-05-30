@@ -60,11 +60,17 @@ public class PlayerEconomy : MonoBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
 
         GameEventSystem.Current.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
         GameEventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, RegisterAnIncomeSource);
 
 
+=======
+        GameEventSystem.Current.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
+        IncomeSource incomeSource = new IncomeSource(2666);
+        incomeSources.Add(incomeSource);
+>>>>>>> experimental-KELA
         TaxationSystem.taxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
         Debug.Log(TaxationSystem.taxationSystem.getIncomeAfterTaxes(getAllIncomeSourceGrossTotals(12)));
     }
@@ -76,12 +82,15 @@ public class PlayerEconomy : MonoBehaviour
     {
         DateTimeSystem.OnMonthChange -= PayFromIncomeSources;
     }
+<<<<<<< HEAD
     void RegisterAnIncomeSource(EventInfo info)
     {
         JobInfo job = (JobInfo)info;
         IncomeSource incomeSource = new IncomeSource();
         incomeSources.Add(incomeSource);
     }
+=======
+>>>>>>> experimental-KELA
     void PayFromIncomeSources()
     {
         for (int i = 0; i < incomeSources.Count; i++)
