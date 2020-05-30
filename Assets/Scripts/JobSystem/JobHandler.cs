@@ -29,4 +29,7 @@ public class JobHandler : MonoBehaviour
         OnJobApply?.Invoke(job.jobNotice);
         PaerToolBox.callOnStatChange(StatType.PlayerJob, job.jobNotice.scriptable.jobTitle, false);
     }
+    void registerJob()
+    {
+    }
 }
