@@ -32,9 +32,21 @@ public class JobHandler : MonoBehaviour
     void registerJob(EventInfo info)
     {
         JobInfo job = (JobInfo)info;
-        OnJobApply?.Invoke(job.jobNotice);
-        PaerToolBox.callOnStatChange(StatType.PlayerJob, job.jobNotice.scriptable.jobTitle, false);
         _currentJob = createJob(job);
 
+        OnJobApply?.Invoke(job.jobNotice);
+        PaerToolBox.callOnStatChange(StatType.PlayerJob, job.jobNotice.scriptable.jobTitle, false);
+
+        createOnJobRegisterCall(_currentJob);
+
+    }
+    void createOnJobRegisterCall(Job job)
+    {
+        JobRegisterInfo jobInfo = new JobRegisterInfo();
+        jobInfo.job = job;
+        GameEventSystem.Current.DoEvent(
+            Event_Type.JOB_REGISTERED_TO_PLAYER,
+            jobInfo
+            );
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class TaxationSystem : MonoBehaviour
 {
     float genericAverageMunincipalTax = 0.21f; //Ei varsinaisesti perustu mihinkään tietyn kunnan verotukseen, mutta on melko lähellä sitä, mitä useimmissa veronmäärä on.
-    static float PlayerCalculatedTaxRate;
+    float PlayerCalculatedTaxRate = 0f;
     static private TaxationSystem _taxationSystem;
     static public TaxationSystem taxationSystem
     {
@@ -19,13 +19,15 @@ public class TaxationSystem : MonoBehaviour
             return _taxationSystem;
         }
     }
-    public static float getPlayerTaxRateForIncome()
+    public float getPlayerTaxRateForIncome()
     {
         return PlayerCalculatedTaxRate;
     }
-    public static float getPlayerTaxRateInverse()
+    public float getPlayerTaxRateInverse()
     {
-        return 1 - PlayerCalculatedTaxRate;
+        float inverse = 1f;
+        inverse -= PlayerCalculatedTaxRate;
+        return inverse;
     }
     public float getIncomeAfterTaxes(float allIncomesTotalGross)
     {
@@ -41,6 +43,7 @@ public class TaxationSystem : MonoBehaviour
         float IncomeAfterNationalTaxes = getIncomeAfterNationalTax(allIncomesTotalGross);
         float InComeAfterMunincipalTaxes = IncomeAfterNationalTaxes *= (1f - genericAverageMunincipalTax);
         PlayerCalculatedTaxRate = 1 - (InComeAfterMunincipalTaxes / allIncomesTotalGross);
+        Debug.Log(PlayerCalculatedTaxRate);
     }
     float getIncomeAfterNationalTax(float gross)
     {

@@ -12,7 +12,12 @@ public class Job
         _jobTitle = title;
         _payByHour = payByHour;
         _workHoursPerDay = workhoursPerDay;
-        jobSite = jobSiteScriptable.jobSite;
+        jobSite = (jobSiteScriptable.jobSite != null) ? jobSiteScriptable.jobSite : null;
         
+    }
+    public float getMonthlyPaymentAmount()
+    {
+        int hoursPerMonth = _workHoursPerDay * 20;
+        return hoursPerMonth * _payByHour;
     }
 }
