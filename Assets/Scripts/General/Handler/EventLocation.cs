@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EventLocation : MonoBehaviour
 {
+    #region Fields
     public FIRE_LOCATION LOCATION;
     Transform playerSpawnLocation;
+    #endregion
+
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +22,10 @@ public class EventLocation : MonoBehaviour
             }
         }
     }
+    #endregion
+
     public Transform getSpawnLocation()
     {
         return playerSpawnLocation;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

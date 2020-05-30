@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class WelfareSystem : MonoBehaviour
 {
+    #region Fields
     float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = 1608f;
+    #endregion
+
+    #region MonobehaviourDefaults
     private void Start()
     {
+        GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
         /*System.DateTime newDate = new System.DateTime(2020, 10, 1);
 
         OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), newDate, true, typeOfSupport.OpintoTuki);
@@ -15,7 +20,17 @@ public class WelfareSystem : MonoBehaviour
         currentPlayerSupports.Add(raha);*/
         //NÄMÄ ON DEBUG TUKIA, POISTA MYÖHEMMIN
     }
-    bool checkEligibilityForTypeOfSupport(typeOfSupport typeOfSupport)
+    private void OnEnable()
+    {
+        DateTimeSystem.OnMonthChange += givePlayerMonthlySupport;
+    }
+    private void OnDisable()
+    {
+        DateTimeSystem.OnMonthChange -= givePlayerMonthlySupport;
+    }
+    #endregion
+
+    bool checkEligibilityForTypeOfSupport(typeOfSupport typeOfSupport) //TODO: Kuntoutusraha checkit, varmista jos opintotuki vaatii enemmän checkkejä, samoin opintolaina.
     {
         bool check = false;
         switch (typeOfSupport)
@@ -42,19 +57,13 @@ public class WelfareSystem : MonoBehaviour
         return check;
     }
     List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
+
     bool DoesPlayerHaveSupportOfType(typeOfSupport QueryedTypeOfSupport)
     {
         var support = currentPlayerSupports.SingleOrDefault(support => support.GetTypeOfSupport() == QueryedTypeOfSupport);
         return (support != null) ? true : false;
     }
-    private void OnEnable()
-    {
-        DateTimeSystem.OnMonthChange += givePlayerMonthlySupport;
-    }
-    private void OnDisable()
-    {
-        DateTimeSystem.OnMonthChange -= givePlayerMonthlySupport;
-    }
+
     void givePlayerMonthlySupport()
     {
         foreach (IWelfareableSupport support in currentPlayerSupports)
@@ -70,5 +79,10 @@ public class WelfareSystem : MonoBehaviour
                 //Miksi tämän tuplen itemien returnaus returnaa molemmille itemeille itse sen päivän ja sitten tyhjän päiväarvon???? WTF
             }
         }
+    }
+    void OnAWelfareApply(EventInfo eventInfo)
+    {
+        WelfareApplyFormInfo welfareApplyFormInfo = (WelfareApplyFormInfo)eventInfo;
+
     }
 }

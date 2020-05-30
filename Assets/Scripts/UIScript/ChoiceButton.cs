@@ -6,23 +6,18 @@ using UnityEngine.UI;
 
 public class ChoiceButton : MonoBehaviour
 {
-   // private GameEvent onButtonSelected;
+    #region Fields
+    // private GameEvent onButtonSelected;
     public TextMeshProUGUI buttonText;
     eventChoice choiceofThisButton;
     public ScriptableAction[] clickActions;
     RandomEventUI transformGrandParentScript; //Skripti, jossa tätä näppäintä on hallinnoitu = näppäimen event boksin skripti.
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    #endregion
+
+
     public void setChoiceText(string text)
     {
         buttonText.text = text; //Pyydetty teksti korvataan valintatekstillä.
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void setButtonGrandParentScript(RandomEventUI choice)
     {

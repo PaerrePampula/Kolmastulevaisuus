@@ -4,6 +4,7 @@ using System;
 
 public class GameEvent
 {
+    #region Fields
     RandomEventScriptable scriptable;
     bool isUniqueEvent; //Tapahtuu vain kerran ikinä?
     bool hasFired; //Onko tämä event firenny ennenkin?
@@ -11,13 +12,18 @@ public class GameEvent
     PrereqPair[] prerequisites;
     float requirementTargetFloat;
     float playerStatFloat;
+    #endregion
 
+    #region constructor
     public GameEvent(RandomEventScriptable eventScriptable)
     {
         scriptable = eventScriptable;
         fire_location = eventScriptable.fire_location;
         prerequisites = eventScriptable.Prerequisites;
     }
+    #endregion
+
+    #region getters
     public RandomEventScriptable getData() //Hakee siis scriptablen eventistä tiedonhallintaa varten.
     {
         return scriptable;
@@ -26,6 +32,8 @@ public class GameEvent
     {
         return fire_location;
     }
+    #endregion
+
     public bool CheckPreRequisites()
     {
         if (prerequisites.Length == 0)

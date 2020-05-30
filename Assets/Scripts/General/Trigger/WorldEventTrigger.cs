@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class WorldEventTrigger : MonoBehaviour
 {
+    #region Fields
     Collider collider;
     public ScriptableAction[] TriggerActions;
+    #endregion
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +30,5 @@ public class WorldEventTrigger : MonoBehaviour
             }
         }
     }
-    void CheckForCollisionWithPlayer()
-    {
-
-    }
+    #endregion
 }

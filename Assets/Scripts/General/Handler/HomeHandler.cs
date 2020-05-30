@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HomeHandler : MonoBehaviour
 {
+    #region Fields
     Rent rent;
-
+    
     static private HomeHandler _currentHomeHandler;
     static public HomeHandler currentHomeHandler
     {
@@ -18,20 +19,12 @@ public class HomeHandler : MonoBehaviour
             return _currentHomeHandler;
         }
     }
+    #endregion
+
+    #region Getters
     public Rent getRent()
     {
         return rent;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }

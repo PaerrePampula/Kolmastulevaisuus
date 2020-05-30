@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 using System.Collections;
-
+#region enums
 public enum Event_Type
 {
     TRIGGER_EVENT,
@@ -15,5 +15,7 @@ public enum Event_Type
     UI_ELEMENT_CALL,
     WELFARE_HAS_ENDED,
     WELFARE_HAS_BEEN_APPLIED,
-    JOB_REGISTERED_TO_PLAYER
+    JOB_REGISTERED_TO_PLAYER,
+    PLAYER_WANTS_WELFARE
 }
+#endregion

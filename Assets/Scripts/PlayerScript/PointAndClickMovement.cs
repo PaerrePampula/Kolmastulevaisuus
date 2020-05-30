@@ -5,9 +5,13 @@ using UnityEngine.AI;
 
 public class PointAndClickMovement : MonoBehaviour
 {
+    #region Fields
     NavMeshAgent playerNavMeshAgent;
     Vector3 playerNavMeshTarget;
     static bool movementAllowed;
+    #endregion
+
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,8 @@ public class PointAndClickMovement : MonoBehaviour
         }
 
     }
+    #endregion
+
     void Movement()
     {
 

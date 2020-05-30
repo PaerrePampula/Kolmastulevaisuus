@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JobHandler : MonoBehaviour
 {
+    #region Fields
     Job _currentJob;
     static private JobHandler _Current; //Tietenkin tämänhetkinen eventsystem. On static, koska silloin sitä voi käsitellä mistä tahansa koodissa.
     static public JobHandler Current
@@ -19,10 +20,13 @@ public class JobHandler : MonoBehaviour
     }
     public delegate void JobApply(JobNotice jobNotice);
     public static event JobApply OnJobApply;
+    #endregion
+    #region MonobehaviourDefaults
     private void Start()
     {
         GameEventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, registerJob);
     }
+    #endregion
     Job createJob(JobInfo info)
     {
         JobNoticeScriptable notice = info.jobNotice.scriptable;

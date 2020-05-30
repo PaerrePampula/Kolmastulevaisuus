@@ -5,9 +5,13 @@ using UnityEngine.AI;
 
 public class PlayerAnimationController : MonoBehaviour
 {
+    #region Fields
     Animator animator;
     NavMeshAgent navMeshAgent;
     float playerSpeed;
+    #endregion
+
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +25,5 @@ public class PlayerAnimationController : MonoBehaviour
         playerSpeed = navMeshAgent.velocity.magnitude;
         animator.SetFloat("PlayerSpeed", playerSpeed);
     }
+    #endregion
 }

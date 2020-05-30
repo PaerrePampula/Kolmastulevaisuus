@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+#region enums
 public enum typeOfSupport
 {
     OpintoTuki,
@@ -8,3 +8,4 @@ public enum typeOfSupport
     Opintolaina,
     Kuntoutusraha,
 }
+#endregion

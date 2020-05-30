@@ -10,11 +10,6 @@ public class PlayerColorChanger : MonoBehaviour //Tämä oli vain debugia varten
         GameEventSystem.Current.RegisterListener(Event_Type.DEBUG_COLOR_CHANGE, changeColor);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void changeColor(EventInfo info)
     {
         ColorChangeInfo colorChangeInfo = (ColorChangeInfo)info;

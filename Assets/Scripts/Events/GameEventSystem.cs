@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class GameEventSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region Fields
     static private GameEventSystem _Current; //Tietenkin tämänhetkinen eventsystem. On static, koska silloin sitä voi käsitellä mistä tahansa koodissa.
     static public GameEventSystem Current
     {
@@ -25,8 +21,9 @@ public class GameEventSystem : MonoBehaviour
     public delegate void EventListener(EventInfo e);
 
     Dictionary<Event_Type, List<EventListener>> eventListeners; //Tarvitaan dictionary listenereistä, jolle annetaan tietty Event_type enum value, jota kuunnella.
+    #endregion
 
-
+    #region Register and unregisters
     public void RegisterListener(Event_Type event_Type, EventListener listener)
     {
         if (eventListeners == null) //Jos ei ole listaa olemassa, luo se.
@@ -47,6 +44,7 @@ public class GameEventSystem : MonoBehaviour
     {
         //TODO: Tämä toiminto. Tarkoitus on poistaa listener käytöstä sen takia että ei ole kuuntelijoita objekteille tai toiminnoille, jotka ovat poistettu pelin aikana.
     }
+    #endregion
 
     public void DoEvent(Event_Type event_Type, EventInfo info) //Tätä kutsutaan, kun event firee.
     {

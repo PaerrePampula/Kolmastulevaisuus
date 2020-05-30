@@ -6,7 +6,7 @@ public class TaxBrackets //Kuumeisesti yritän miettiä tähän paljon järkevä
  //Nämä tiedot haettu https://www.veronmaksajat.fi/Palkka-ja-elake/Jarin-palkka/#75d32b1a 29.5.2020 tuloveroasteikosta.
 
 {
-
+    #region Fields
     static float TaxBracketALower = 17600f;
     static float TaxBracketAUpper = 26400f;
     static float TaxBracketABase = 0.08f;
@@ -26,7 +26,7 @@ public class TaxBrackets //Kuumeisesti yritän miettiä tähän paljon järkevä
     static float TaxBracketDUpper = Mathf.Infinity;
     static float TaxBracketDBase = 10413.25f;
     static float TaxBracketDPercent = 0.3125f;
-
+    #endregion
     public static List<NationalIncomeTaxBracket> NationalIncomeTaxBrackets = new List<NationalIncomeTaxBracket>
     {
         new NationalIncomeTaxBracket(TaxBracketALower, TaxBracketAUpper, TaxBracketABase, TaxBracketAPercent),

@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class DateTimeSystem : MonoBehaviour
 {
+    #region Fields
     static System.DateTime currentDate;
     static System.DateTime lastDate;
     public TextMeshProUGUI _thisdaytext;
     public delegate void MonthChange();
     public static event MonthChange OnMonthChange;
-
+    #endregion
+    #region MonobehaviourDefaults
     void Start()
     {
 
@@ -26,6 +28,7 @@ public class DateTimeSystem : MonoBehaviour
             ChangeWeek();
         }
     }
+    #endregion
     public static System.DateTime getCurrentDate()
     {
         return currentDate;

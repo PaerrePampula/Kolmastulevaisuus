@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerEconomy : MonoBehaviour
 {
-    #region Fieldit
+    #region Fields
     //Tämä on prototyyppi lopullisesta pelaajan taloudenlaskemisen simuloinnista, toistaiseksi melko yksinkertainen
     private float playerMoney; //Yksiselitteisesti pelaajan rahatilanne.
     private List<IncomeSource> incomeSources = new List<IncomeSource>();
@@ -28,7 +28,7 @@ public class PlayerEconomy : MonoBehaviour
     }
     #endregion
 
-    #region Raha setterit ja getterit
+    #region Getters and setters
     public void SetMoney(EventInfo info)
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
@@ -57,7 +57,7 @@ public class PlayerEconomy : MonoBehaviour
     }
     #endregion
 
-
+    #region MonobehaviourDefaults
     void Start()
     {
 
@@ -76,6 +76,8 @@ public class PlayerEconomy : MonoBehaviour
     {
         DateTimeSystem.OnMonthChange -= PayFromIncomeSources;
     }
+    #endregion
+
 
     void RegisterAnIncomeSourceFromJob(EventInfo info)
     {

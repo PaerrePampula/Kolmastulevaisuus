@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class MainCanvas : MonoBehaviour
 {
+    #region Fields
     public bool isUIOverride { get; private set; }
     static Transform canvasTransform;
     static private MainCanvas _currentMainCanvas;
@@ -19,6 +20,16 @@ public class MainCanvas : MonoBehaviour
             return _currentMainCanvas;
         }
     }
+    #endregion
+
+    #region Getters
+    public static Transform getMainCanvasTransform()
+    {
+        return canvasTransform;
+    }
+    #endregion
+
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +42,10 @@ public class MainCanvas : MonoBehaviour
     {
         isUIOverride = EventSystem.current.IsPointerOverGameObject();
     }
-    public static Transform getMainCanvasTransform()
-    {
-        return canvasTransform;
-    }
+    #endregion
+
+
+
     void callNewUI(EventInfo info)
     {
         UiElementCall uiElementCall = (UiElementCall)info;

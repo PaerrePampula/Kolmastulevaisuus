@@ -5,18 +5,10 @@ using UnityEngine.Events;
 
 public class WorldInteractive : MonoBehaviour
 {
+    #region Fields
     public UnityEvent[] clickEvents;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
+    #region MonobehaviourDefaults
     private void OnMouseDown()
     {
         if (!MainCanvas.mainCanvas.isUIOverride)
@@ -28,4 +20,5 @@ public class WorldInteractive : MonoBehaviour
         }
 
     }
+    #endregion
 }

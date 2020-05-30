@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerStatContainer : MonoBehaviour
 {
+    #region Fields
     public List<PlayerStat> currentStats = new List<PlayerStat>();
     // Start is called before the first frame update
     static private PlayerStatContainer _Current;
@@ -19,16 +20,15 @@ public class PlayerStatContainer : MonoBehaviour
             return _Current;
         }
     }
+    #endregion
+
+    #region MonobehaviourDefaults
     void Start()
     {
         GameEventSystem.Current.RegisterListener(Event_Type.STATS_CALL, UpdateTable);
     }
+    #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void UpdateTable(EventInfo eventInfo)
     {
         StatChangeInfo change = (StatChangeInfo)eventInfo;

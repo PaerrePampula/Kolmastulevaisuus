@@ -5,12 +5,23 @@ using UnityEngine;
 
 public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift, niin kommentoitu melko huonosti, kun etsin itekkin tälle järkevämpää pohjaa... :)
 {
+    #region Fields
     GameEvent gameEvent;
     public TextMeshProUGUI eventText; //Boksin eventin teksti.
     public Transform choiceContainer;
     GameObject choiceButton; //valmis resurssi jota käytetään valintojen näppäimenä
     eventText currentEventText;
+    #endregion
+    #region MonobehaviourDefaults
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentEventText = gameEvent.getData().eventTexts[0]; //Haetaan ensimmäinen event teksti ja asetetaan sen tämänhetkiseksi tekstivalinnaksi.
+        setTextToEvent();
+        populateChoiceContainer();
 
+    }
+    #endregion
     public void setRandomEvent(GameEvent gameEvent)
     {
         this.gameEvent = gameEvent; //Asettaa boksille oikean eventtidatan (tekstit, valinnat).
@@ -53,22 +64,10 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
             populateChoiceContainer();
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentEventText = gameEvent.getData().eventTexts[0]; //Haetaan ensimmäinen event teksti ja asetetaan sen tämänhetkiseksi tekstivalinnaksi.
-        setTextToEvent();
-        populateChoiceContainer();
 
-    }
     void setTextToEvent()
     {
         eventText.text = currentEventText.eventDialog; //Asetetaan tämän eventin teksti placeholder tekstin tilalle.
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

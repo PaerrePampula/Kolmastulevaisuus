@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
       alkuperäisessä inspispelissä
      */
 
-
+    #region Fields
     /// <summary>
     /// Kamerassa käytettyjä fieldejä
     /// </summary>
@@ -20,6 +20,9 @@ public class CameraController : MonoBehaviour
     Vector3 referenceRotation; //Tämä on pelaajan kameran kulma ennen kameran kääntämistä, asetetaan aina uudelleen kun kameran kääntämispyyntöä tehdään
     Vector3 endRotation; //Tämä on taas kameran kulma + 90 astetta y-akselilla. Asetetaan aina uudelleen, kun kameran kääntämispyyntöä tehdään
     float timelerped; //Tätä tarvitaan kameran lineaarisessa interpoloinnissa, lerpissä on se ongelma että se hidastuu kun lähestytään tarvittua rotaatiota, tämä korjaa sen niin, että tätä käytetään lerpin t muuttujassa osoittajana.
+    #endregion
+
+    #region MonoBehaviourDefaults
     private void Awake()
     {
         GameEventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
@@ -50,6 +53,8 @@ public class CameraController : MonoBehaviour
 
         RequestATurn();        //Tämä pyörii kokoajan updaten sisällä, mutta erottelin sen omaan classiinsä koodin selkeyttämisen ja jäsentelyn vuoksi.
     }
+    #endregion
+
     void RequestATurn() //Periaatteessa osa monobehaviourin Updatea edelleen, vaikka onkin eri classissa.
     {
         //Tämä bool asetetaan trueksi kun pelaaja painaa R-näppäintä.

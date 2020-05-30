@@ -3,10 +3,13 @@ using System.Collections;
 
 public class NationalIncomeTaxBracket
 {
+    #region Fields
     float bracketLowerLimit;
     float bracketHighLimit;
     float bottomLineBaseTax;
     float taxedPercentileAmountForIncomeAboveTheLowerLimit;
+    #endregion
+    #region Constructors
     public NationalIncomeTaxBracket(float lower, float higher, float bottom, float percentile)
     {
         bracketLowerLimit = lower;
@@ -14,6 +17,8 @@ public class NationalIncomeTaxBracket
         bottomLineBaseTax = bottom;
         taxedPercentileAmountForIncomeAboveTheLowerLimit = percentile;
     }
+    #endregion
+    #region Getters
     public float getLower()
     {
         return bracketLowerLimit;
@@ -30,4 +35,5 @@ public class NationalIncomeTaxBracket
     {
         return taxedPercentileAmountForIncomeAboveTheLowerLimit;
     }
+    #endregion
 }

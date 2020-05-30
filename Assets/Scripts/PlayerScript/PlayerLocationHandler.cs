@@ -5,13 +5,12 @@ using UnityEngine.AI;
 
 public class PlayerLocationHandler : MonoBehaviour
 {
+    #region Fields
     public NavMeshAgent playerAgent;
     Transform locationTransform;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #endregion
+
+    #region MonobehaviourDefaults
     private void OnEnable()
     {
         LocationHandler.OnLocationChange += SpawnPlayerCharacterToNewLocation;
@@ -20,11 +19,7 @@ public class PlayerLocationHandler : MonoBehaviour
     {
         LocationHandler.OnLocationChange -= SpawnPlayerCharacterToNewLocation;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
     void SpawnPlayerCharacterToNewLocation()
     {
         playerAgent.Warp(LocationHandler.getCurrentLocation().getSpawnLocation().position);

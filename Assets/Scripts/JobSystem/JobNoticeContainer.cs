@@ -5,11 +5,15 @@ using System.Linq;
 
 public class JobNoticeContainer : MonoBehaviour
 {
+    #region Fields
     public List<JobNoticeScriptable> notices = new List<JobNoticeScriptable>();
     List<JobNotice> jobNotices = new List<JobNotice>();
 
     public delegate void JobsInitialized(List<JobNotice> jobNotices);
     public static event JobsInitialized OnJobsInitialized;
+    #endregion
+
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -25,6 +29,8 @@ public class JobNoticeContainer : MonoBehaviour
     {
         InitializeAllJobNotices();
     }
+    #endregion
+
     void InitializeAllJobNotices()
     {
         for (int i = 0; i < notices.Count; i++)
@@ -44,10 +50,5 @@ public class JobNoticeContainer : MonoBehaviour
     void transferNoticeData()
     {
         OnJobsInitialized?.Invoke(jobNotices);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -6,14 +6,18 @@ using UnityEngine.UI;
 
 public class JobNoticeButtonBehaviour : MonoBehaviour
 {
+    #region Fields
     public Text buttonText;
     JobNotice _jobNotice;
     GameObject noticeInfoGraphic;
+    #endregion
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     void Start()
     {
         noticeInfoGraphic = Resources.Load<GameObject>("JobNoticeInfoUI");
     }
+    #endregion
     public void setJobNotice(JobNotice jobNotice)
     {
         _jobNotice = jobNotice;
@@ -29,10 +33,5 @@ public class JobNoticeButtonBehaviour : MonoBehaviour
         go.transform.position = Vector3.zero;
         go.transform.localPosition = Vector3.zero;
         go.GetComponent<JobNoticeInfoBehaviour>().setJob(_jobNotice);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

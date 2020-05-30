@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LocationHandler : MonoBehaviour
 {
+    #region Fields
     public List<EventLocation> eventLocations;
     static EventLocation currentLocation;
 
@@ -21,6 +22,26 @@ public class LocationHandler : MonoBehaviour
             return _Current;
         }
     }
+    #endregion
+
+    #region Getters and setters
+    public static EventLocation getCurrentLocation() //Static, sillä ei pelaaja voi olla kahdessa paikkaa, sekä olisi kiva, että tämän tiedon saisi haettua melkein mistä vaan koodissa
+    {
+        return currentLocation;
+    }
+    int getCurrentIndex() //Käyttöä sijainninvaihdossa.
+    {
+        return eventLocations.IndexOf(currentLocation);
+    }
+    void setCurrentLocation(int index)
+    {
+        currentLocation = eventLocations[index];
+        Debug.Log(currentLocation.LOCATION);
+
+    }
+    #endregion
+
+    #region MonobehaviourDefaults
     // Start is called before the first frame update
     //Tämä on handleri sijainnintallennukseen, olennaista, kun pelaaja saa eventtejä.
     void Awake()
@@ -31,6 +52,8 @@ public class LocationHandler : MonoBehaviour
 
 
     }
+    #endregion
+
     public void ChangeLocationForward(EventInfo eventInfo)
     {
         CameraAngleChangeInfo floatChangeInfo = (CameraAngleChangeInfo)eventInfo;
@@ -47,23 +70,5 @@ public class LocationHandler : MonoBehaviour
         OnLocationChange?.Invoke();
 
     }
-    public static EventLocation getCurrentLocation() //Static, sillä ei pelaaja voi olla kahdessa paikkaa, sekä olisi kiva, että tämän tiedon saisi haettua melkein mistä vaan koodissa
-    {
-        return currentLocation;
-    }
-    int getCurrentIndex() //Käyttöä sijainninvaihdossa.
-    {
-        return eventLocations.IndexOf(currentLocation);
-    }
-    void setCurrentLocation(int index)
-    {
-        currentLocation = eventLocations[index];
-        Debug.Log(currentLocation.LOCATION);
 
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -3,9 +3,11 @@ using System.Collections;
 
 public class IncomeSource
 {
+    #region Fields
     float incomeAmountTotalOneMonth;
-
     Job incomeSourceJob;
+    #endregion
+    #region constructors
     public IncomeSource(float NewIncomeAmount, Job sourceOfIncomeJob = null)
     {
         incomeAmountTotalOneMonth = NewIncomeAmount;
@@ -16,6 +18,8 @@ public class IncomeSource
     {
         incomeAmountTotalOneMonth = NewIncomeAmount;
     }
+    #endregion
+    #region Getters and setters
     public float getGrossIncomeAmountInAMonth()
     {
         return incomeAmountTotalOneMonth;
@@ -33,5 +37,5 @@ public class IncomeSource
     {
         incomeAmountTotalOneMonth = value;
     }
-
+    #endregion
 }

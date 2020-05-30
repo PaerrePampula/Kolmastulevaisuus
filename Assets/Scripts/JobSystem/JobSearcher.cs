@@ -5,13 +5,16 @@ using System.Linq;
 
 public class JobSearcher : MonoBehaviour
 {
+    #region Fields
     public Transform NoticePanel;
     GameObject noticeButton;
     List<Transform> InstantiatedNoticeUIButtons = new List<Transform>();
 
     public delegate void MenuInitialize();
     public static event MenuInitialize OnMenuInitialized;
+    #endregion
 
+    #region MonobehaviourDefaults
     private void OnEnable()
     {
         JobNoticeContainer.OnJobsInitialized += aggregateAndDisplayNotices;
@@ -25,7 +28,7 @@ public class JobSearcher : MonoBehaviour
         noticeButton = Resources.Load<GameObject>("NoticeUIButton");
         OnMenuInitialized?.Invoke();
     }
-
+    #endregion
     void aggregateAndDisplayNotices(List<JobNotice> notices)
     {
         InstantiatedNoticeUIButtons.Clear();

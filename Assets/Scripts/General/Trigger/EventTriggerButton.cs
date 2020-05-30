@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EventTriggerButton : MonoBehaviour
 {
+    #region Fields
     public ScriptableAction[] eventTriggers;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #endregion
     public void TriggerEvents()
     {
         if (eventTriggers.Length <= 0)
@@ -23,10 +20,5 @@ public class EventTriggerButton : MonoBehaviour
                 eventTriggers[i].PerformAction();
             }
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

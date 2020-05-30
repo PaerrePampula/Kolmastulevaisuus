@@ -7,12 +7,15 @@ using System.Linq;
 //Mikä tämä on? Prototyyppi random eventtien tuomisesta ruudulle.
 public class EventControl : MonoBehaviour
 {
+    #region Fields
     GameObject randomEventUIBox;
     public Transform Canvas;
     public List<RandomEventScriptable> RandomEvents;
     List<GameEvent> events = new List<GameEvent>();
     List<GameEvent> filteredList = new List<GameEvent>();
-    // Start is called before the first frame update
+    #endregion
+
+    #region MonoBehaviourDefaults
     private void Awake()
     {
 
@@ -25,16 +28,9 @@ public class EventControl : MonoBehaviour
         Debug_InvokeAnInitialEvent();
 
     }
-    void Debug_InvokeAnInitialEvent()
-    {
-        EventRaise randomEvent = new EventRaise();
-        randomEvent.SpecificEventRaise = false;
-        GameEventSystem.Current.DoEvent(
-            Event_Type.TRIGGER_EVENT,
-            randomEvent
-            );
-        
-    }
+    #endregion
+
+    #region Tool methods
     bool CheckForRaiseChanceIfEligibleEventsCanBeFired()
     {
         if(filteredList.Count > 0)
@@ -87,11 +83,9 @@ public class EventControl : MonoBehaviour
             return index;
 
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
+
+    #region Event Aggregation and collection
     void AggregateScriptablesIntoaNewGameEventList()
     {
         for (int i = 0; i < RandomEvents.Count; i++)
@@ -118,5 +112,17 @@ public class EventControl : MonoBehaviour
         
         return listofEventsForThisLocationOrAnyLocation.ToList(); //Palautetaan tämä listana, ei linq queryn outputtina (linq queryn palauttama arvo ei ole sama kuin lista tai joku vastaava collection, todellisen listatyypin näkee sitä pyytämällä koodissa.
     }
+    #endregion
 
+
+    void Debug_InvokeAnInitialEvent()
+    {
+        EventRaise randomEvent = new EventRaise();
+        randomEvent.SpecificEventRaise = false;
+        GameEventSystem.Current.DoEvent(
+            Event_Type.TRIGGER_EVENT,
+            randomEvent
+            );
+
+    }
 }

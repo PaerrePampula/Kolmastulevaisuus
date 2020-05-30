@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class TaxationSystem : MonoBehaviour
 {
+    #region Fields
     float genericAverageMunincipalTax = 0.21f; //Ei varsinaisesti perustu mihinkään tietyn kunnan verotukseen, mutta on melko lähellä sitä, mitä useimmissa veronmäärä on.
     float PlayerCalculatedTaxRate = 0f;
     static private TaxationSystem _taxationSystem;
@@ -19,6 +20,8 @@ public class TaxationSystem : MonoBehaviour
             return _taxationSystem;
         }
     }
+    #endregion
+    #region Getters
     public float getPlayerTaxRateForIncome()
     {
         return PlayerCalculatedTaxRate;
@@ -64,13 +67,5 @@ public class TaxationSystem : MonoBehaviour
         }
 
     }
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    #endregion
 }

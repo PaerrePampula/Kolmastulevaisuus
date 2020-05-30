@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class UiGeneric : MonoBehaviour
 {
+    #region Fields
     public delegate void UIOpen(bool moveStatus);
     public static event UIOpen OnUIOpened;
     public string OnClickResourceToCall; //Esim shortcuttien painamisesta nousevat elementit canvakselle.
     public Transform OnClickResourceParent;
+    #endregion
+    #region MonobehaviourDefaults
+    private void Start()
+    {
+        OnUIOpened?.Invoke(false);
+    }
+    #endregion
     public void CloseThisUIObject()
     {
         Destroy(gameObject);
         OnUIOpened?.Invoke(true);
     }
-    private void Start()
-    {
-        OnUIOpened?.Invoke(false);
-    }
+
+
     public void CallElement()
     {
         UiElementCall uiCall = new UiElementCall();

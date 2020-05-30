@@ -3,8 +3,12 @@ using System.Collections;
 
 public class AsumisTuki : BaseTuki
 {
+    #region Fields
     float maximumGrossIncomeWhereOmaVastuuDoesNotDecreaseSupportAmount = 726;
+    #endregion
+    #region constructors
     public AsumisTuki(System.DateTime start, System.DateTime end, bool Monthly, typeOfSupport TypeOfSupport) : base(start, end, Monthly, TypeOfSupport) { }
+    #endregion
     public override float CalculatedSupport()
     {
 

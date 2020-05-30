@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class JobNoticeInfoBehaviour : UiGeneric
 {
+    #region Fields
     public TextMeshProUGUI noticeText;
     JobNotice _jobNotice;
+    #endregion
+
     void insertInformation()
     {
         noticeText.text = _jobNotice.scriptable.jobDescriptionOnNotice;
