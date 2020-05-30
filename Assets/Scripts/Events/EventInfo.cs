@@ -44,4 +44,5 @@ public class UiElementCall : EventInfo
 public class WelfareApplyFormInfo : EventInfo
 {
     public typeOfSupport typeofWelfare;
+    public (System.DateTime, System.DateTime) timeWelfareAppliedFor = (DateTimeSystem.getCurrentDate(), new System.DateTime(DateTimeSystem.getCurrentDate().Year, 12, 31));
 }

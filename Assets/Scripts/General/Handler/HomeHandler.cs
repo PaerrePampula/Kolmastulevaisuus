@@ -25,4 +25,11 @@ public class HomeHandler : MonoBehaviour
         return rent;
     }
     #endregion
+    #region MonobehaviourDefaults
+    private void Start()
+    {
+        rent = new Rent(550,0,0);
+        
+    }
+    #endregion
 }

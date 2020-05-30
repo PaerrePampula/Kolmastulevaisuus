@@ -12,12 +12,7 @@ public class WelfareSystem : MonoBehaviour
     private void Start()
     {
         GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
-        /*System.DateTime newDate = new System.DateTime(2020, 10, 1);
 
-        OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), newDate, true, typeOfSupport.OpintoTuki);
-
-        currentPlayerSupports.Add(raha);*/
-        //NÄMÄ ON DEBUG TUKIA, POISTA MYÖHEMMIN
     }
     private void OnEnable()
     {
@@ -59,7 +54,7 @@ public class WelfareSystem : MonoBehaviour
 
     bool DoesPlayerHaveSupportOfType(typeOfSupport QueryedTypeOfSupport)
     {
-        var support = currentPlayerSupports.SingleOrDefault(support => support.GetTypeOfSupport() == QueryedTypeOfSupport);
+        var support = currentPlayerSupports.SingleOrDefault(x => x.GetTypeOfSupport() == QueryedTypeOfSupport);
         return (support != null) ? true : false;
     }
 
@@ -82,6 +77,35 @@ public class WelfareSystem : MonoBehaviour
     void OnAWelfareApply(EventInfo eventInfo)
     {
         WelfareApplyFormInfo welfareApplyFormInfo = (WelfareApplyFormInfo)eventInfo;
+        bool canApplyThisSupport = (checkEligibilityForTypeOfSupport(welfareApplyFormInfo.typeofWelfare) == true) ? true : false; //Jos logiikka vain sallii sen, pelaaja saa hakea tätä tukea juuri nyt.
+        if (canApplyThisSupport)
+        {
+            switch (welfareApplyFormInfo.typeofWelfare)
+            {
+                case typeOfSupport.OpintoTuki:
+                    OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.OpintoTuki);
+                    currentPlayerSupports.Add(raha);
+                    break;
+                case typeOfSupport.YleinenAsumistuki:
+                    AsumisTuki asumisTuki = new AsumisTuki(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.YleinenAsumistuki);
+                    currentPlayerSupports.Add(asumisTuki);
+                    foreach (var item in currentPlayerSupports)
+                    {
+                        Debug.Log(item.CalculatedSupport());
+                    }
+
+                    break;
+                case typeOfSupport.Opintolaina:
+                    OpintoLaina opintoLaina = new OpintoLaina(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.Opintolaina);
+                    currentPlayerSupports.Add(opintoLaina);
+                    break;
+                case typeOfSupport.Kuntoutusraha:
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
+
 }
