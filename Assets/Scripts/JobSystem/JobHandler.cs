@@ -21,15 +21,20 @@ public class JobHandler : MonoBehaviour
     public static event JobApply OnJobApply;
     private void Start()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, applyJob);
+        GameEventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, registerJob);
     }
-    void applyJob(EventInfo info)
+    Job createJob(JobInfo info)
+    {
+        JobNoticeScriptable notice = info.jobNotice.scriptable;
+        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite , notice.workHoursPerDay);
+        return newJob;
+    }
+    void registerJob(EventInfo info)
     {
         JobInfo job = (JobInfo)info;
         OnJobApply?.Invoke(job.jobNotice);
         PaerToolBox.callOnStatChange(StatType.PlayerJob, job.jobNotice.scriptable.jobTitle, false);
-    }
-    void registerJob()
-    {
+        _currentJob = createJob(job);
+
     }
 }
