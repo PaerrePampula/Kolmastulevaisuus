@@ -36,7 +36,7 @@ public class GameEvent
         else
         {
             bool isApplicableEvent = false;
-            foreach (PrereqPair prerequisite in prerequisites)
+            foreach (PrereqPair prerequisite in prerequisites) //Jotenkin vois tämän kamalan roinan korvata? Turhia parse erroreita sun muita outoja pakotteita täällä arvojen muodoille, iso switch case helvetti jne.
             {
                 PlayerStat foundPair = PlayerStatContainer.Current.getPlayerStatByPrereq(prerequisite);
                 if (prerequisite.TypeOfComparison != ComparisonOperators.IfStringValueEqualsStatString)

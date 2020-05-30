@@ -15,7 +15,7 @@ MonoBehaviour:
   Prerequisites:
   - playerStat: 1
     StringComparatorValue: false
-    uniqueStatComparison: 0
+    uniqueStatComparison: 1
     TypeOfComparison: 5
   fire_location: 3
   eventTexts:

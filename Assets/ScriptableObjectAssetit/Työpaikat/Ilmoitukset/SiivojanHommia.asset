@@ -16,4 +16,4 @@ MonoBehaviour:
   jobDescriptionOnNotice: "Siivoojan hommia :)\t\t"
   workHoursPerDay: 6
   payByHour: 10
-  jobSite: {fileID: 0}
+  jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}
