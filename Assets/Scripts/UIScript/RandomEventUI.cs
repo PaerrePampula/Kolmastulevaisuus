@@ -4,11 +4,17 @@ using UnityEngine;
 public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift, niin kommentoitu melko huonosti, kun etsin itekkin tälle järkevämpää pohjaa... :)
 {
     #region Fields
-    GameEvent gameEvent;
-    public TextMeshProUGUI eventText; //Boksin eventin teksti.
-    public Transform choiceContainer;
-    GameObject choiceButton; //valmis resurssi jota käytetään valintojen näppäimenä
-    eventText currentEventText;
+
+    GameEvent gameEvent; //Ui eventin gameevent,josta haetaan tiedot
+
+    [SerializeField]
+    TextMeshProUGUI eventText; //Event-boksin tekstikomponentti tekstintäyttöä varten
+
+    [SerializeField]
+    Transform choiceContainer; //Event-boksin valintalaatikon transform
+
+    eventText currentEventText; //String sisältö eventin kuvaukselle
+
     #endregion
     #region MonobehaviourDefaults
     // Start is called before the first frame update

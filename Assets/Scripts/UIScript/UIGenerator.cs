@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-public class UIGenerator : MonoBehaviour
+public class UIGenerator : MonoBehaviour //Luo esim näppäimen painamisesta ui elementtejä.
 {
     #region Fields
-    public string resourceToLoad;
+    [SerializeField] 
+    string resourceToLoad;
     #endregion
     public void instantiateUIObject()
     {

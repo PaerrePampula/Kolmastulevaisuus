@@ -53,6 +53,7 @@ public class LocationHandler : MonoBehaviour
         CameraAngleChangeInfo floatChangeInfo = (CameraAngleChangeInfo)eventInfo;
         int newIndex = 0;
         int previousIndex = CurrentIndex;
+
         if (CurrentIndex + floatChangeInfo.increments <= 3)
         {
             newIndex = CurrentIndex + floatChangeInfo.increments;
@@ -62,6 +63,7 @@ public class LocationHandler : MonoBehaviour
             newIndex = (CurrentIndex + floatChangeInfo.increments) % 4; // % operaattori tarkoitaa jakojäännöstä. Korjaa pari väärän sijainnin antamis bugia.
             turnEndFlag = true;
         }
+
         setCurrentLocation(newIndex);
 
         OnLocationChange?.Invoke();

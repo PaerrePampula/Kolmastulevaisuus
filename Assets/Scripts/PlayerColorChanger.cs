@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerColorChanger : MonoBehaviour //Tämä oli vain debugia varten, poistan myöhemmin.
+public class PlayerColorChanger : MonoBehaviour //Tämä oli vain debugia ja event järjestelmän demonstroimista varten, poistan myöhemmin.
 {
     // Start is called before the first frame update
     void Start()
