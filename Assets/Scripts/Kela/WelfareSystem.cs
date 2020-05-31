@@ -64,6 +64,7 @@ public class WelfareSystem : MonoBehaviour
         {
             if (support.checkValidityOfSupport() == true)
             {
+                if (support.isAMonthlySupport == false) return; //pelaaja ei saa tätä tukea kuukausittain jos se ei ole, noh kuukausittainen.
                 PaerToolBox.giveMoneyToPlayer(support.CalculatedSupport());
             }
             else
@@ -71,6 +72,7 @@ public class WelfareSystem : MonoBehaviour
                 currentPlayerSupports.Remove(support);
                 Debug.Log("Pelaajalta loppui tuki:" + support.CalculatedSupport() + " euroa. Ajalta" + support.getStartAndEndDate().Item1 + "-" + support.getStartAndEndDate().Item2);
                 //Miksi tämän tuplen itemien returnaus returnaa molemmille itemeille itse sen päivän ja sitten tyhjän päiväarvon???? WTF
+                //Protip: tajusin että se 0.00.00 palautus onkin kellonaika, lol
             }
         }
     }
@@ -96,7 +98,7 @@ public class WelfareSystem : MonoBehaviour
 
                     break;
                 case typeOfSupport.Opintolaina:
-                    OpintoLaina opintoLaina = new OpintoLaina(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.Opintolaina);
+                    OpintoLaina opintoLaina = new OpintoLaina(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, false, typeOfSupport.Opintolaina);
                     currentPlayerSupports.Add(opintoLaina);
                     break;
                 case typeOfSupport.Kuntoutusraha:

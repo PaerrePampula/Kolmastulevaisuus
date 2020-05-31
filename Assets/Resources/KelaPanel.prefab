@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4860610089545305775}
   - component: {fileID: 612521624672572811}
   - component: {fileID: 9121928673684783815}
+  - component: {fileID: 5683133077466802463}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -118,7 +119,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 612521624672572811}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5683133077466802463}
+        m_MethodName: TriggerEvents
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5683133077466802463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776175144282611200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458b5c39ee4ff6549bea6b7973e94c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTriggers:
+  - {fileID: 11400000, guid: 335ca5c17c855de4cbb750e8cf41d241, type: 2}
 --- !u!1 &1308846792928495547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,6 +2205,7 @@ GameObject:
   - component: {fileID: 2500960908332188376}
   - component: {fileID: 2593712157443773290}
   - component: {fileID: 1812649626088899397}
+  - component: {fileID: 6660690087437441672}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2285,7 +2312,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2593712157443773290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6660690087437441672}
+        m_MethodName: TriggerEvents
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6660690087437441672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616816190730677762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458b5c39ee4ff6549bea6b7973e94c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTriggers:
+  - {fileID: 11400000, guid: 023399dc5422ad842a86ec8425567b58, type: 2}
 --- !u!1 &6175888735329389156
 GameObject:
   m_ObjectHideFlags: 0
