@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 [CreateAssetMenu(menuName = "Actions/ColorChange")]
-public class colorChangeAction : ScriptableAction
+public class ColorChangeAction : ScriptableAction
 {
 
     public Color32 color;
