@@ -65,7 +65,6 @@ public class PlayerEconomy : MonoBehaviour
 
         TaxationSystem.taxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
 
-        Debug.Log(TaxationSystem.taxationSystem.getIncomeAfterTaxes(getAllIncomeSourceGrossTotals(12)));
     }
     private void OnEnable()
     {

@@ -44,7 +44,7 @@ public class TaxationSystem : MonoBehaviour
         float IncomeAfterNationalTaxes = getIncomeAfterNationalTax(allIncomesTotalGross);
         float InComeAfterMunincipalTaxes = IncomeAfterNationalTaxes *= (1f - genericAverageMunincipalTax);
         PlayerCalculatedTaxRate = 1 - (InComeAfterMunincipalTaxes / allIncomesTotalGross);
-        Debug.Log(PlayerCalculatedTaxRate);
+
     }
     float getIncomeAfterNationalTax(float gross)
     {
