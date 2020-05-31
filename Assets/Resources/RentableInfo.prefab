@@ -1636,6 +1636,7 @@ MonoBehaviour:
   shortDescriptionText: {fileID: 461199526911541952}
   rentAmountText: {fileID: 461199526921954188}
   extrasInRentText: {fileID: 0}
+  startGameButton: {fileID: 7760710364736790101}
 --- !u!1 &461199528151633210
 GameObject:
   m_ObjectHideFlags: 0

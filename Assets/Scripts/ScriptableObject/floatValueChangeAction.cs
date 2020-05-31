@@ -7,7 +7,7 @@ public class FloatValueChangeAction : ScriptableAction //Tämä on scriptableact
     {
         FloatChangeInfo valueChangeAction = new FloatChangeInfo();
         valueChangeAction.changeofFloat = amount;
-        Debug.Log("Pelaaja sai rahaa!, määrä on " + valueChangeAction.changeofFloat);
+        Debug.Log("Pelaajalle tapahtui rahamuutos: määrä on " + valueChangeAction.changeofFloat);
         GameEventSystem.Current.DoEvent(
             Event_Type,
             valueChangeAction

@@ -8,7 +8,7 @@ public class StartGameButton : MonoBehaviour
     RentableHome rentableHome;
     public void BeginGame()
     {
-        //RegisterPlayerHome();
+        RegisterPlayerHome();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
@@ -20,5 +20,9 @@ public class StartGameButton : MonoBehaviour
             Event_Type.PLAYER_LEASES_HOME,
             form
             );
+    }
+    public void setRentable(RentableHome InforentableHome)
+    {
+        rentableHome = InforentableHome;
     }
 }

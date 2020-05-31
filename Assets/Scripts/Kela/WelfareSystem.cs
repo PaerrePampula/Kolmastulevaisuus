@@ -65,7 +65,7 @@ public class WelfareSystem : MonoBehaviour
             if (support.checkValidityOfSupport() == true)
             {
                 if (support.isAMonthlySupport == false) return; //pelaaja ei saa tätä tukea kuukausittain jos se ei ole, noh kuukausittainen.
-                PaerToolBox.giveMoneyToPlayer(support.CalculatedSupport());
+                PaerToolBox.changePlayerMoney(support.CalculatedSupport());
             }
             else
             {

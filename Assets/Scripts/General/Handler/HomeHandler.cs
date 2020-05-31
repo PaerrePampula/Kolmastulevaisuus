@@ -25,6 +25,19 @@ public class HomeHandler : MonoBehaviour
     {
         return playerRent;
     }
+    private void OnEnable()
+    {
+        DateTimeSystem.OnMonthChange += PayRent;
+    }
+
+    private void OnDisable()
+    {
+        DateTimeSystem.OnMonthChange -= PayRent;
+    }
+    void PayRent()
+    {
+        PaerToolBox.changePlayerMoney(-playerRent.getTotal());
+    }
     #endregion
     #region MonobehaviourDefaults
     private void Awake()
@@ -36,7 +49,8 @@ public class HomeHandler : MonoBehaviour
     {
         RentLeaseForm form = (RentLeaseForm)info;
         playerHome = form.rentable;
-        Rent rent = new Rent(playerHome.getRentTotalForAMonth());
+        Rent rent = new Rent(form.rentable.getRentTotalForAMonth());
         playerRent = rent;
+        Debug.Log(rent.getTotal());
     }
 }

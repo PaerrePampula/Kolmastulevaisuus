@@ -90,7 +90,7 @@ public class PlayerEconomy : MonoBehaviour
     {
         for (int i = 0; i < incomeSources.Count; i++)
         {
-            PaerToolBox.giveMoneyToPlayer(incomeSources[i].getNetIncomeInAMonth());
+            PaerToolBox.changePlayerMoney(incomeSources[i].getNetIncomeInAMonth());
         }
     }
 

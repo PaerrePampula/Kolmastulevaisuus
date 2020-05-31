@@ -17,11 +17,14 @@ public class RentableUI : MonoBehaviour
     TextMeshProUGUI rentAmountText;
     [SerializeField]
     TextMeshProUGUI extrasInRentText;
+    [SerializeField]
+    StartGameButton startGameButton;
 
     public void setRentable(RentableHome rentableHome)
     {
         rentable = rentableHome;
         setInfo();
+        startGameButton.setRentable(rentable);
     }
     void setInfo()
     {
