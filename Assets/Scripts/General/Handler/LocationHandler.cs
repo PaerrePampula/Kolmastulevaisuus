@@ -24,31 +24,21 @@ public class LocationHandler : MonoBehaviour
     #endregion
 
     #region Getters and setters
-    public static EventLocation getCurrentLocation() //Static, sillä ei pelaaja voi olla kahdessa paikkaa, sekä olisi kiva, että tämän tiedon saisi haettua melkein mistä vaan koodissa
-    {
-        return currentLocation;
-    }
-    int getCurrentIndex() //Käyttöä sijainninvaihdossa.
-    {
-        return eventLocations.IndexOf(currentLocation);
-    }
+    public static EventLocation CurrentLocation => currentLocation;
+    int CurrentIndex => eventLocations.IndexOf(currentLocation);
+
     void setCurrentLocation(int index)
     {
         currentLocation = eventLocations[index];
-        Debug.Log(currentLocation.LOCATION);
-
     }
     #endregion
 
     #region MonobehaviourDefaults
-    // Start is called before the first frame update
-    //Tämä on handleri sijainnintallennukseen, olennaista, kun pelaaja saa eventtejä.
     void Awake()
     {
-        currentLocation = eventLocations[0];
-
+        currentLocation = eventLocations[0]; //Aloitetaan ekasta lokaatiosta aina, kun peli alkaa
         GameEventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
-
+        //Kamera kääntyy? Sijainti muuttuu
 
     }
     #endregion
@@ -57,13 +47,13 @@ public class LocationHandler : MonoBehaviour
     {
         CameraAngleChangeInfo floatChangeInfo = (CameraAngleChangeInfo)eventInfo;
         int newIndex = 0;
-        if (getCurrentIndex() + floatChangeInfo.increments < 3)
+        if (CurrentIndex + floatChangeInfo.increments < 3)
         {
-            newIndex = getCurrentIndex() + floatChangeInfo.increments;
+            newIndex = CurrentIndex + floatChangeInfo.increments;
         }
         else
         {
-            newIndex = (getCurrentIndex() + floatChangeInfo.increments) % 4; //& = Modulo. Jakojäännös. 4 % 4 = 0, 4 % 5 = 1, 2 % 4 = 2 jne...
+            newIndex = (CurrentIndex + floatChangeInfo.increments) % 4; // % operaattori tarkoitaa jakojäännöstä. Korjaa pari väärän sijainnin antamis bugia.
         }
         setCurrentLocation(newIndex);
         OnLocationChange?.Invoke();

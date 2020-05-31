@@ -20,6 +20,6 @@ public class PlayerLocationHandler : MonoBehaviour
     #endregion
     void SpawnPlayerCharacterToNewLocation()
     {
-        playerAgent.Warp(LocationHandler.getCurrentLocation().getSpawnLocation().position);
+        playerAgent.Warp(LocationHandler.CurrentLocation.getSpawnLocation().position);
     }
 }

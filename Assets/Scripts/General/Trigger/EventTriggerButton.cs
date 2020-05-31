@@ -3,6 +3,7 @@
 public class EventTriggerButton : MonoBehaviour
 {
     #region Fields
+    [SerializeField]
     public ScriptableAction[] eventTriggers;
     #endregion
     public void TriggerEvents()

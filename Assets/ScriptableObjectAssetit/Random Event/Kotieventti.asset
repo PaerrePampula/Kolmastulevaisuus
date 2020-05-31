@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kotieventti
   m_EditorClassIdentifier: 
   Prerequisites: []
-  fire_locations: 00000000
+  fire_locations: 03000000
   eventTexts:
   - eventDialog: "T\xE4ss\xE4 olet kotona."
     eventDialogChoices:

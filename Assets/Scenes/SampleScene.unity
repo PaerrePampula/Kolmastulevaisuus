@@ -1317,7 +1317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1235b0fff1424d8090242e0792983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LOCATION: 0
+  _location: 0
+  playerSpawnLocation: {fileID: 648555315}
 --- !u!1 &429062975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,7 +3601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1235b0fff1424d8090242e0792983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LOCATION: 0
+  _location: 0
+  playerSpawnLocation: {fileID: 637112696}
 --- !u!1001 &881626565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4945,7 +4947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1235b0fff1424d8090242e0792983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LOCATION: 3
+  _location: 0
+  playerSpawnLocation: {fileID: 2131506890}
 --- !u!1 &1399609588
 GameObject:
   m_ObjectHideFlags: 0
@@ -6926,7 +6929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1235b0fff1424d8090242e0792983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LOCATION: 1
+  _location: 0
+  playerSpawnLocation: {fileID: 646070549}
 --- !u!1 &1835300894
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Ty\xF6Eventti"
   m_EditorClassIdentifier: 
   Prerequisites: []
-  fire_locations: 00000000
+  fire_locations: 01000000
   eventTexts:
   - eventDialog: "T\xE4ss\xE4 tapahtuu jotain t\xF6iss\xE4, ota rahaa!"
     eventDialogChoices:

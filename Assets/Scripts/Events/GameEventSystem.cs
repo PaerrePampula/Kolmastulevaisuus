@@ -5,13 +5,13 @@ public class GameEventSystem : MonoBehaviour
 {
     #region Fields
     static private GameEventSystem _Current; //Tietenkin tämänhetkinen eventsystem. On static, koska silloin sitä voi käsitellä mistä tahansa koodissa.
-    static public GameEventSystem Current
+    static public GameEventSystem Current //getataan event system.
     {
         get
         {
             if (_Current == null)
             {
-                _Current = FindObjectOfType<GameEventSystem>();
+                _Current = FindObjectOfType<GameEventSystem>(); //haetaan tästä gameobjektista komponentti gamevensystem, jos _Current on toistaiseksi null
             }
             return _Current;
         }
@@ -27,8 +27,6 @@ public class GameEventSystem : MonoBehaviour
         if (eventListeners == null) //Jos ei ole listaa olemassa, luo se.
         {
             eventListeners = new Dictionary<Event_Type, List<EventListener>>();
-
-
         }
 
         if (eventListeners.ContainsKey(event_Type) == false || eventListeners[event_Type] == null) //Jos listassa ei ole listenerlistaa tietylle event tyypille, luo se.
@@ -41,6 +39,7 @@ public class GameEventSystem : MonoBehaviour
     public void UnRegisterListener(Event_Type event_Type, EventListener listener)
     {
         //TODO: Tämä toiminto. Tarkoitus on poistaa listener käytöstä sen takia että ei ole kuuntelijoita objekteille tai toiminnoille, jotka ovat poistettu pelin aikana.
+        //En tiedä onko loppuen lopulta valtavan tarpeellinen, täytän, jos täytän myöhemmin.
     }
     #endregion
 
@@ -48,7 +47,7 @@ public class GameEventSystem : MonoBehaviour
     {
         if (eventListeners == null || eventListeners[event_Type] == null)
         {
-            //Kukaan ei kuuntele. Palaa.
+            //Kukaan ei kuuntele tämän tyyppisiä eventtejä. Palaa.
             return;
         }
         foreach (EventListener listener in eventListeners[event_Type])

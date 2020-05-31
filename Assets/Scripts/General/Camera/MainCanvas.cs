@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 public class MainCanvas : MonoBehaviour
 {
     #region Fields
-    public bool isUIOverride { get; private set; }
-    static Transform canvasTransform;
-    static private MainCanvas _currentMainCanvas;
-    static public MainCanvas mainCanvas
+    public bool isUIOverride { get; private set; } //Tätä käytetään, kun ei haluta että UIn läpi pystyy painamaan asioita.
+    static Transform canvasTransform; //Main canvaksen transform, hyödyllinen esim UI elementtien parentoimisessa.
+    static private MainCanvas _currentMainCanvas; //Tämänhetkinen pääcanvas.
+    static public MainCanvas mainCanvas //getataan maincanvas ja setataan se jos se on null
     {
         get
         {
@@ -21,7 +21,7 @@ public class MainCanvas : MonoBehaviour
     #endregion
 
     #region Getters
-    public static Transform getMainCanvasTransform()
+    public static Transform getMainCanvasTransform() //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
     {
         return canvasTransform;
     }
@@ -44,7 +44,7 @@ public class MainCanvas : MonoBehaviour
 
 
 
-    void callNewUI(EventInfo info)
+    void callNewUI(EventInfo info) //käytetään uusien UI elementtien tuomiseen ruudulle. UIGeneric skriptin alta löytyy käyttö.
     {
         UiElementCall uiElementCall = (UiElementCall)info;
         GameObject calledObject = Instantiate(uiElementCall.elementToCall);
