@@ -4,6 +4,7 @@ public class HomeHandler : MonoBehaviour
 {
     #region Fields
     Rent playerRent;
+    RentableHome playerHome;
 
     static private HomeHandler _currentHomeHandler;
     static public HomeHandler currentHomeHandler
@@ -26,16 +27,16 @@ public class HomeHandler : MonoBehaviour
     }
     #endregion
     #region MonobehaviourDefaults
-    private void Start()
+    private void Awake()
     {
-        //Tämä on vain default debug vuokra, ei jää tähän.
-        Rent rent = new Rent(550,0,0);
-        registerNewRent(rent);
-        
+        GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_LEASES_HOME, registerHome);
     }
     #endregion
-    void registerNewRent(Rent rent)
+    void registerHome(EventInfo info)
     {
+        RentLeaseForm form = (RentLeaseForm)info;
+        playerHome = form.rentable;
+        Rent rent = new Rent(playerHome.getRentTotalForAMonth());
         playerRent = rent;
     }
 }

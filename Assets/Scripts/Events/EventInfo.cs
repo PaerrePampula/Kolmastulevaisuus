@@ -46,3 +46,7 @@ public class WelfareApplyFormInfo : EventInfo
     public typeOfSupport typeofWelfare;
     public (System.DateTime, System.DateTime) timeWelfareAppliedFor = (DateTimeSystem.getCurrentDate(), new System.DateTime(DateTimeSystem.getCurrentDate().Year, 12, 31));
 }
+public class RentLeaseForm : EventInfo
+{
+    public RentableHome rentable;
+}
