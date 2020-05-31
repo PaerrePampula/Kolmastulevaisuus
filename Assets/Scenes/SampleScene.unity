@@ -1122,13 +1122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e543af4a121844fa18e93dffcba15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 646239432}
-  RandomEvents:
+  randomEvents:
+  - {fileID: 11400000, guid: b7db3ce31fd8a744198488f6c5ad5937, type: 2}
   - {fileID: 11400000, guid: 2a6424555f824434686160b45a703ddd, type: 2}
   - {fileID: 11400000, guid: 0f45eeb056729fb4bb595bc47f82c04f, type: 2}
   - {fileID: 11400000, guid: 8c5e9ac08f1fd4940ac8f71bbdce8bd4, type: 2}
   - {fileID: 11400000, guid: ea8ffd3cd145eac4a9f1130ef0416f9c, type: 2}
-  - {fileID: 11400000, guid: b7db3ce31fd8a744198488f6c5ad5937, type: 2}
 --- !u!114 &309917649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4947,7 +4946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1235b0fff1424d8090242e0792983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _location: 0
+  _location: 3
   playerSpawnLocation: {fileID: 2131506890}
 --- !u!1 &1399609588
 GameObject:
@@ -6929,7 +6928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea1235b0fff1424d8090242e0792983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _location: 0
+  _location: 1
   playerSpawnLocation: {fileID: 646070549}
 --- !u!1 &1835300894
 GameObject:
