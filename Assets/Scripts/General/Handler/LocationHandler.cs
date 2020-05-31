@@ -9,6 +9,11 @@ public class LocationHandler : MonoBehaviour
 
     public delegate void LocationChange();
     public static event LocationChange OnLocationChange;
+    public delegate void TurnEnd();
+    public static event TurnEnd OnTurnEnd;
+
+    bool turnEndFlag;
+
     static private LocationHandler _Current;
     static public LocationHandler Current
     {
@@ -47,17 +52,29 @@ public class LocationHandler : MonoBehaviour
     {
         CameraAngleChangeInfo floatChangeInfo = (CameraAngleChangeInfo)eventInfo;
         int newIndex = 0;
-        if (CurrentIndex + floatChangeInfo.increments < 3)
+        int previousIndex = CurrentIndex;
+        if (CurrentIndex + floatChangeInfo.increments <= 3)
         {
             newIndex = CurrentIndex + floatChangeInfo.increments;
         }
         else
         {
             newIndex = (CurrentIndex + floatChangeInfo.increments) % 4; // % operaattori tarkoitaa jakojäännöstä. Korjaa pari väärän sijainnin antamis bugia.
+            turnEndFlag = true;
         }
         setCurrentLocation(newIndex);
+
         OnLocationChange?.Invoke();
 
+        if (hasTurnCompleted())
+        {
+            OnTurnEnd?.Invoke();
+            turnEndFlag = false;
+        }
+    }
+    bool hasTurnCompleted()
+    {
+        return turnEndFlag ? true : false;
     }
 
 }

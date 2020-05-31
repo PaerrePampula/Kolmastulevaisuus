@@ -6,9 +6,12 @@ public class DateTimeSystem : MonoBehaviour
     #region Fields
     static System.DateTime currentDate;
     static System.DateTime lastDate;
-    public TextMeshProUGUI _thisdaytext;
+    [SerializeField]
+    TextMeshProUGUI _thisdaytext;
+
     public delegate void MonthChange();
     public static event MonthChange OnMonthChange;
+
     #endregion
     #region MonobehaviourDefaults
     void Start()
@@ -20,12 +23,22 @@ public class DateTimeSystem : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.A))
         {
             ChangeWeek();
         }
     }
+
+    private void OnEnable() //Kun tämä skripti aktivoituu, se automaattisesti tilaa Kukkaroskriptin OnIncrease tapahtuman
+    {
+        LocationHandler.OnTurnEnd += ChangeWeek;
+    }
+
+    private void OnDisable()
+    {
+        LocationHandler.OnTurnEnd -= ChangeWeek; //Jos tämä skripti poistuu, se ottaa sen tilauksen ensin pois. Miksi? Koska muuten tulisi null reference exceptioneita, jos tilaus on olemassa, mutta ei vastaanottajaa...
+    }
+
     #endregion
     public static System.DateTime getCurrentDate()
     {

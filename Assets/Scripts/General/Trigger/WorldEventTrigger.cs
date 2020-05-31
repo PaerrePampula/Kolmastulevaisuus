@@ -3,21 +3,8 @@
 public class WorldEventTrigger : MonoBehaviour
 {
     #region Fields
-    Collider collider;
     public ScriptableAction[] TriggerActions;
     #endregion
-    #region MonobehaviourDefaults
-    // Start is called before the first frame update
-    void Start()
-    {
-        collider = GetComponent<Collider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -28,5 +15,4 @@ public class WorldEventTrigger : MonoBehaviour
             }
         }
     }
-    #endregion
 }
