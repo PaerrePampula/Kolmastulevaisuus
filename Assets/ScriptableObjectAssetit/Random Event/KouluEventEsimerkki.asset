@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KouluEventEsimerkki
   m_EditorClassIdentifier: 
   Prerequisites: []
-  fire_location: 0
+  fire_locations: 00000000
   eventTexts:
   - eventDialog: "T\xE4m\xE4 on testi. T\xE4m\xE4 teksti vaihtuu dynaamisesti"
     eventDialogChoices:

@@ -1,10 +1,10 @@
 ﻿public class GameEvent
 {
     #region Fields
-    RandomEventScriptable scriptable;
+    RandomEventScriptable scriptable; //scriptable, josta haetaan infot.
     bool isUniqueEvent; //Tapahtuu vain kerran ikinä?
     bool hasFired; //Onko tämä event firenny ennenkin?
-    FIRE_LOCATION fire_location;
+    FIRE_LOCATION[] fire_locations; //missä sijainnissa?
     PrereqPair[] prerequisites;
     float requirementTargetFloat;
     float playerStatFloat;
@@ -14,7 +14,7 @@
     public GameEvent(RandomEventScriptable eventScriptable)
     {
         scriptable = eventScriptable;
-        fire_location = eventScriptable.fire_location;
+        fire_locations = eventScriptable.fire_locations;
         prerequisites = eventScriptable.Prerequisites;
     }
     #endregion
@@ -24,9 +24,9 @@
     {
         return scriptable;
     }
-    public FIRE_LOCATION getFireLocation()
+    public FIRE_LOCATION[] getFireLocations()
     {
-        return fire_location;
+        return fire_locations;
     }
     #endregion
 

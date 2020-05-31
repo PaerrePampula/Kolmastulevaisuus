@@ -4,7 +4,7 @@
 public class RandomEventScriptable : ScriptableObject //Tämä on melko yksiselitteinen, lista stringejä ja dialogivalintoja, sekä scriptableactioneita
 {
     public PrereqPair[] Prerequisites;
-    public FIRE_LOCATION fire_location;
+    public FIRE_LOCATION[] fire_locations;
     public eventText[] eventTexts; //Eventexts on säiliö eventin kuvaustekstille, sekä sen valintabokseille
 }
 [System.Serializable]

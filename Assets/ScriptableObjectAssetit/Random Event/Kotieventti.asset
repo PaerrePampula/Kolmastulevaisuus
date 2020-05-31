@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: Kotieventti
   m_EditorClassIdentifier: 
-  fire_location: 3
+  Prerequisites: []
+  fire_locations: 00000000
   eventTexts:
   - eventDialog: "T\xE4ss\xE4 olet kotona."
     eventDialogChoices:

@@ -17,7 +17,7 @@ MonoBehaviour:
     StringComparatorValue: false
     uniqueStatComparison: 1
     TypeOfComparison: 5
-  fire_location: 3
+  fire_locations: 00000000
   eventTexts:
   - eventDialog: "T\xE4m\xE4 event trigger\xF6ityy kotona, jos pelaajalla ei ole
       t\xF6it\xE4, mene t\xF6ihin senkin vanha luuska! Valitse koulun l\xE4pp\xE4rill\xE4

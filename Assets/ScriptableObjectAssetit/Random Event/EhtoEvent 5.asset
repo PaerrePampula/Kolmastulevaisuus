@@ -17,7 +17,7 @@ MonoBehaviour:
     StringComparatorValue: 0
     uniqueStatComparison: 0
     TypeOfComparison: 3
-  fire_location: 0
+  fire_locations: 00000000
   eventTexts:
   - eventDialog: "T\xE4m\xE4 event trigger\xF6ityy mm. jos peli alkaa, ja pelaajalla
       ei ole rahaa, ja pelaaja on koulussa. Saat trigger\xF6ity\xE4 erikoisehdoilla
