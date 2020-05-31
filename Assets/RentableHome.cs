@@ -9,28 +9,41 @@ public class RentableHome
     float electricityCost;
     float homeInsurance;
     bool homeInsuranceNeeded;
-    (string, float)[] extrasCost;
+    float size;
     string longFormDescription;
     string perks;
     string shortFormDescription;
     string extrasDescription;
+
+    ExtrasOnRentableHomes[] rentExtras;
     GameObject prefab;
-    public RentableHome(string rentAddress, float baseRent, string shortDescription, GameObject rentHomePrefab , float rentWater = 0,
-        float rentElectricity = 0, float rentInsurance = 0, bool doesNeedToHaveInsurance = false,
-        (string,float)[] extrasRentCost = null, string rentLongFormDescription = "", string Rentperks = "", 
-        string RentextrasDescription = "")
+    HuoneKoko huoneKoko;
+    VuokraTyyppi tyyppi;
+    
+    public RentableHome(RentableHomeScriptable scriptable)
     {
-        address = rentAddress;
-        baseRentAmount = baseRent;
-        shortFormDescription = shortDescription;
-        prefab = rentHomePrefab;
-        waterCost = rentWater;
-        electricityCost = rentElectricity;
-        homeInsurance = rentInsurance;
-        homeInsuranceNeeded = doesNeedToHaveInsurance;
-        extrasCost = extrasRentCost;
-        longFormDescription = rentLongFormDescription;
-        perks = Rentperks;
-        extrasDescription = RentextrasDescription;
+        address = scriptable.address;
+        baseRentAmount = scriptable.baseRentAmount;
+        shortFormDescription = scriptable.shortFormDescription;
+        prefab = scriptable.prefab;
+        waterCost = scriptable.waterCost;
+        electricityCost = scriptable.electricityCost;
+        homeInsurance = scriptable.homeInsurance;
+        homeInsuranceNeeded = scriptable.needToHaveHomeInsurance;
+        rentExtras = scriptable.extrasOnRentableHome;
+        longFormDescription = scriptable.longFormDescription;
+        perks = scriptable.perks;
+        extrasDescription = scriptable.extrasDescription;
+        huoneKoko = scriptable.huoneKoko;
+        tyyppi = scriptable.vuokraTyyppi;
+        size = scriptable.sizeInMetersSquared;
     }
+    public string Address => address;
+    public float BaseRent => baseRentAmount;
+    public float WaterCost => waterCost;
+    public float ElectricityCost => electricityCost;
+    public float HomeInsuranceCost => homeInsurance;
+    public float Size => size;
+    public HuoneKoko RentableHuoneKoko => huoneKoko;
+    public VuokraTyyppi RentableVuokraTyyppi => tyyppi;
 }

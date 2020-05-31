@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d96e458c1f8014196d6bd12ba988e3, type: 3}
+  m_Name: Vuokra2
+  m_EditorClassIdentifier: 
+  address: Koulukatu 5 B 10
+  baseRentAmount: 750
+  waterCost: 10
+  sizeInMetersSquared: 36
+  electricityCost: 10
+  homeInsurance: 0
+  needToHaveHomeInsurance: 1
+  extrasOnRentableHome:
+  - extraName: Sauna
+    extraCostPerMonth: 3.5
+  - extraName: "L\xE4mmitetty autoparkki"
+    extraCostPerMonth: 10
+  longFormDescription: "Rivitalo l\xE4hell\xE4 kouluja ja keskustaa. L\xE4hell\xE4
+    ruokakauppa"
+  perks: 'Oma sauna, takapiha, '
+  shortFormDescription: 2h + 1k + kh
+  extrasDescription: "vuokraan sis\xE4ltyy taloyhti\xF6n laajakaista"
+  prefab: {fileID: 0}
+  huoneKoko: 1
+  vuokraTyyppi: 1
