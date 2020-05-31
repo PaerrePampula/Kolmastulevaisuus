@@ -44,6 +44,8 @@ public class RentableHome
     public float ElectricityCost => electricityCost;
     public float HomeInsuranceCost => homeInsurance;
     public float Size => size;
+    public string LongDescription => longFormDescription;
+    public string ShortDescription => shortFormDescription;
     public HuoneKoko RentableHuoneKoko => huoneKoko;
     public VuokraTyyppi RentableVuokraTyyppi => tyyppi;
 }

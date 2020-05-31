@@ -12,17 +12,19 @@ public class HomeSearcher : MonoBehaviour
     string HomeUIELementPrefab;
     [SerializeField]
     Transform containerForHomeUIElementPrefabs;
+    Transform menuTransform;
     #endregion
     #region MonobehaviourDefaults
     private void Start()
     {
+        menuTransform = this.transform.parent;
         GameObject prefab = Resources.Load<GameObject>(HomeUIELementPrefab);
         foreach (RentableHomeScriptable rentable in allScriptableHomes)
         {
             GameObject newRentableButton = Instantiate(prefab);
             RentableHome rentableHome = new RentableHome(rentable);
             newRentableButton.transform.SetParent(containerForHomeUIElementPrefabs);
-            newRentableButton.GetComponent<RentableButton>().setRentable(rentableHome);
+            newRentableButton.GetComponent<RentableButton>().setRentable(rentableHome, menuTransform);
         }
     }
     #endregion

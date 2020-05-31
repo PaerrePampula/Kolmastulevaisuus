@@ -9,11 +9,13 @@ public class RentableButton : MonoBehaviour
     RentableHome rentableHome;
     [SerializeField]
     TextMeshProUGUI text;
+    Transform menuTransform;
     #endregion
 
-    public void setRentable(RentableHome rentable)
+    public void setRentable(RentableHome rentable, Transform menu)
     {
         rentableHome = rentable;
+        menuTransform = menu;
         setText();
     }
     void setText()
@@ -23,5 +25,12 @@ public class RentableButton : MonoBehaviour
         generatedText += "\n" + rentableHome.RentableVuokraTyyppi + " " + rentableHome.RentableHuoneKoko;
         generatedText += "\nVuokra: " + rentableHome.BaseRent + " e/kk";
         text.text = generatedText;
+    }
+    public void callInfoFill()
+    {
+        Transform instantiatedInfo = GetComponent<UIGenerator>().getInstantiated();
+        instantiatedInfo.GetComponent<RentableUI>().setRentable(rentableHome);
+        menuTransform.gameObject.SetActive(false);
+
     }
 }
