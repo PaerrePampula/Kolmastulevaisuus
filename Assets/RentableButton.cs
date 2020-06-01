@@ -29,7 +29,7 @@ public class RentableButton : MonoBehaviour
     public void callInfoFill()
     {
         Transform instantiatedInfo = GetComponent<UIGenerator>().getInstantiated();
-        instantiatedInfo.GetComponent<RentableUI>().setRentable(rentableHome);
+        instantiatedInfo.GetComponent<RentableUI>().setRentable(rentableHome, menuTransform);
         menuTransform.gameObject.SetActive(false);
 
     }

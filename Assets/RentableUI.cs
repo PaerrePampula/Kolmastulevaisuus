@@ -6,7 +6,7 @@ using UnityEngine;
 public class RentableUI : MonoBehaviour
 {
     RentableHome rentable;
-
+    Transform menuTransform;
     [SerializeField]
     TextMeshProUGUI addressHomeTypeRoomAmountSizeText;
     [SerializeField]
@@ -20,11 +20,17 @@ public class RentableUI : MonoBehaviour
     [SerializeField]
     StartGameButton startGameButton;
 
-    public void setRentable(RentableHome rentableHome)
+    public void setRentable(RentableHome rentableHome, Transform NewmenuTransform)
     {
         rentable = rentableHome;
         setInfo();
         startGameButton.setRentable(rentable);
+        menuTransform = NewmenuTransform;
+    }
+    public void goBackToMenu() //Voisi olla kaikki tälläset jossain geneerisemmässäkin, mutta en usko että kovin monta eri tämän tyylistä menua peliin tarvitaan.
+    {
+        menuTransform.transform.gameObject.SetActive(true);
+        Destroy(this.transform.gameObject);
     }
     void setInfo()
     {
