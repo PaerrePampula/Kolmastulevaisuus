@@ -48,6 +48,6 @@ public class RentableUI : MonoBehaviour
 
         string shortForm = "";
         shortForm += rentable.ShortDescription;
-
+        shortDescriptionText.text = shortForm;
     }
 }
