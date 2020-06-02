@@ -126,7 +126,16 @@ public class EventControl : MonoBehaviour
     }
     #endregion
 
-
+    public static void RaiseASpecificEvent(RandomEventScriptable specificRaise)
+    {
+        EventRaise randomEvent = new EventRaise();
+        randomEvent.SpecificEventRaise = true;
+        randomEvent.InCaseSpecificEvent = specificRaise;
+        GameEventSystem.Current.DoEvent(
+            Event_Type.TRIGGER_EVENT,
+            randomEvent
+            );
+    }
     void InvokeAnInitialEventIfPossible() //Nostaa EventRaisen, syöttää sen eteenpäin gaveeventsystemille, joka laittaa siitä viestiä eteenpäin
     {
         EventRaise randomEvent = new EventRaise();

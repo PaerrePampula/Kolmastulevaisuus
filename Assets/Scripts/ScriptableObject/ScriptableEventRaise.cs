@@ -2,7 +2,7 @@
 [CreateAssetMenu(menuName = "Actions/EventRise")]
 public class ScriptableEventRaise : ScriptableAction //Tämä on scriptableaction esimerkki, näitä käytetään dialogeissa, kun on tarve nostaa joku actioni valinnan perusteella.
 {
-    public ScriptableAction actionToRise;
+    public RandomEventScriptable eventToRise;
     public bool isNotRandomlyChosen;
     public override void PerformAction()
     {
