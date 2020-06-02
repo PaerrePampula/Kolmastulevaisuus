@@ -48,7 +48,7 @@ public class EventControl : MonoBehaviour
     void CreateEventBox(EventInfo eventInfo) //Luo eventin peliin ui elementtinä.
     {
 
-        AggregateAppliableEventsForThisLocation(); //aggrekoi eli tuo kokoon kaikki eventit jota sijainnisa x voi suorittaa
+        AggregateAppliableEventsForThisLocation(); //aggregoi eli tuo kokoon kaikki eventit jota sijainnisa x voi suorittaa
         if (CheckForRaiseChanceIfEligibleEventsCanBeFired()) //ym. metodi
         {
             EventRaise EventRaise = (EventRaise)eventInfo; //Polymorphismin avulla eventinfosta sopiva käytettävä info
@@ -76,7 +76,8 @@ public class EventControl : MonoBehaviour
             else
             {
                 //Tuodaan tietty eventti, jos raise vaati tiettyä eventtiä.
-                randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredListOfEvents.Find(x => x.getData() == EventRaise.InCaseSpecificEvent));
+                GameEvent specificEvent = new GameEvent(EventRaise.InCaseSpecificEvent);
+                randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(specificEvent);
             }
         }
 

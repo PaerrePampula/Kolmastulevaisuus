@@ -29,6 +29,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     public void setRandomEvent(GameEvent gameEvent)
     {
         this.gameEvent = gameEvent; //Asettaa boksille oikean eventtidatan (tekstit, valinnat).
+        currentEventText = gameEvent.getData().eventTexts[0]; //Haetaan ensimmäinen event teksti ja asetetaan sen tämänhetkiseksi tekstivalinnaksi.
     }
     public void populateChoiceContainer() //nimensä mukaan täyttää choicecontainerin button tyyppisillä valintanäppäimillä.
     {

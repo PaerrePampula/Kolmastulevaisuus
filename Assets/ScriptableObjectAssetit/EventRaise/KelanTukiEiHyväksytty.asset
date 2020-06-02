@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event_Type: 0
   Description: 
-  actionToRise: {fileID: 0}
+  eventToRise: {fileID: 11400000}
   isNotRandomlyChosen: 0

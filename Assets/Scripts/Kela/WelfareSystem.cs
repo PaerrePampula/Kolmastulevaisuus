@@ -7,6 +7,8 @@ public class WelfareSystem : MonoBehaviour
     #region Fields
     float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = 1608f;
     List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
+    [SerializeField]
+    RandomEventScriptable playerWelfareApplicationDeniedOnAsumisTuki;
     static private WelfareSystem _current;
     static public WelfareSystem Current
     {
@@ -19,6 +21,7 @@ public class WelfareSystem : MonoBehaviour
             return _current;
         }
     }
+
     #endregion
 
     #region MonobehaviourDefaults
@@ -118,6 +121,13 @@ public class WelfareSystem : MonoBehaviour
                     break;
                 default:
                     break;
+            }
+        }
+        else
+        {
+            if(welfareApplyFormInfo.typeofWelfare == typeOfSupport.YleinenAsumistuki)
+            {
+                EventControl.RaiseASpecificEvent(playerWelfareApplicationDeniedOnAsumisTuki);
             }
         }
 
