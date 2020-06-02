@@ -17,7 +17,7 @@ public class DateTimeSystem : MonoBehaviour
     void Start()
     {
 
-        currentDate = new System.DateTime(2020, 5, 1);
+        currentDate = new System.DateTime(2020, 1, 9);
         SetDate();
     }
 
@@ -58,6 +58,7 @@ public class DateTimeSystem : MonoBehaviour
         {
             OnMonthChange?.Invoke();
         }
+        
 
 
     }

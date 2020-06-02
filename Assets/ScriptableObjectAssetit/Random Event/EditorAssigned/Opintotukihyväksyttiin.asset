@@ -15,9 +15,9 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 
   eventTexts:
-  - eventDialog: "Opintotukihakemuksesi hyv\xE4ksyttiin! Merkkasit hakemukseen opiskeluajaksi
-      viel\xE4 nelj\xE4 vuotta eteenp\xE4n. Et saa tukea kes\xE4kuukausilta, paitsi
-      jos haet sit\xE4 erikseen, ja sille on sopiva syy, ja jokainen opiskelukuukausi
+  - eventDialog: "Opintotukihakemuksesi hyv\xE4ksyttiin! Korkeakouluopintojesi laajuden
+      vuoksi sait opintotukikuukausia yhteens\xE4 39. Et saa tukea kes\xE4kuukausilta,
+      paitsi jos haet sit\xE4 erikseen, ja sille on sopiva syy, ja jokainen opiskelukuukausi
       kuluttaa sinun korkeakouluopintojen tukikuukausia."
     eventDialogChoices:
     - nextDialog: -1
@@ -33,7 +33,4 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: "Ymm\xE4rretty"
-      clickActions: []
-    - nextDialog: 1
-      choiceDescriptor: "Miten saan tukea kes\xE4kuukausina?"
       clickActions: []

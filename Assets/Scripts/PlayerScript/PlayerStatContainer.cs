@@ -42,7 +42,8 @@ public class PlayerStatContainer : MonoBehaviour
             var searchForUniqueValue = currentStats.Single(stat => stat.statName == statChange.playerStat.statName);
 
             searchForUniqueValue.statValueString = statChange.playerStat.statValueString;
-            Debug.Log(searchForUniqueValue.statValueString);
+            searchForUniqueValue.statValueFloat = statChange.playerStat.statValueFloat;
+            searchForUniqueValue.booleanValue = statChange.playerStat.booleanValue;
         }
         else
         {

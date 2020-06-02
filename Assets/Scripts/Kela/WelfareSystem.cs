@@ -103,6 +103,7 @@ public class WelfareSystem : MonoBehaviour
                 case typeOfSupport.OpintoTuki:
                     OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.OpintoTuki);
                     currentPlayerSupports.Add(raha);
+                    PaerToolBox.callOnStatChange(StatType.PlayerStudyMonths, 39.ToString(), false);
                     break;
                 case typeOfSupport.YleinenAsumistuki:
                     AsumisTuki asumisTuki = new AsumisTuki(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.YleinenAsumistuki);
@@ -136,5 +137,8 @@ public class WelfareSystem : MonoBehaviour
     {
         return currentPlayerSupports;
     }
+    void decrementPlayerStudyMonths()
+    {
 
+    }
 }

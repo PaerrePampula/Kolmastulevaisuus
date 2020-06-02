@@ -10,7 +10,7 @@ public class RandomEventScriptable : ScriptableObject //Tämä on melko yksiseli
 [System.Serializable]
 public class eventText
 {
-    [TextArea]
+    [TextArea (5, 15)]
     public string eventDialog; //kuvausteksti tapahtumasta
 
     public eventChoice[] eventDialogChoices; //kaikki valinnat, jota tapahtuman aikana voi tehdä.

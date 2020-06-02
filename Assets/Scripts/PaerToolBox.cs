@@ -3,11 +3,12 @@
 public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
 {
 
-    public static void callOnStatChange(StatType typeOfStat, string statValue, bool uniqueness)
+    public static void callOnStatChange(StatType typeOfStat, bool uniqueness, string statValueString = "", float floatValue = 0)
     {
         StatChangeInfo statChange = new StatChangeInfo();
         statChange.playerStat.statName = typeOfStat;
-        statChange.playerStat.statValueString = statValue;
+        statChange.playerStat.statValueString = statValueString;
+        statChange.playerStat.
         statChange.playerStat.uniqueStat = uniqueness;
         GameEventSystem.Current.DoEvent(
             Event_Type.STATS_CALL,
