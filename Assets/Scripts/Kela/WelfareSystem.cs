@@ -6,6 +6,19 @@ public class WelfareSystem : MonoBehaviour
 {
     #region Fields
     float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = 1608f;
+    List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
+    static private WelfareSystem _current;
+    static public WelfareSystem Current
+    {
+        get
+        {
+            if (_current == null)
+            {
+                 _current = FindObjectOfType<WelfareSystem>();
+            }
+            return _current;
+        }
+    }
     #endregion
 
     #region MonobehaviourDefaults
@@ -50,7 +63,7 @@ public class WelfareSystem : MonoBehaviour
         }
         return check;
     }
-    List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
+
 
     bool DoesPlayerHaveSupportOfType(typeOfSupport QueryedTypeOfSupport)
     {
@@ -108,6 +121,10 @@ public class WelfareSystem : MonoBehaviour
             }
         }
 
+    }
+    public List<IWelfareableSupport> getWelfareListing()
+    {
+        return currentPlayerSupports;
     }
 
 }

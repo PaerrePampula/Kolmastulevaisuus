@@ -65,4 +65,8 @@ public class DateTimeSystem : MonoBehaviour
     {
         return (lastDate.Month != currentDate.Month) ? true : false;
     }
+    public static string returnDayYearMonth(System.DateTime time)
+    {
+        return string.Format("{0}.{1}.{2}", time.Day, time.Month, time.Year);
+    }
 }
