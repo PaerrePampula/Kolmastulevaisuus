@@ -19,7 +19,10 @@ public class MainCanvas : MonoBehaviour
         }
     }
     #endregion
-
+    private void OnDestroy()
+    {
+        GameEventSystem.Current.UnRegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
+    }
     #region Getters
     public static Transform getMainCanvasTransform() //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
     {

@@ -53,6 +53,7 @@ public class TaxationSystem : MonoBehaviour
 
         if (foundBracket == null) //Ansiot ovat alle minkään bracketin
         {
+            
             return gross;
         }
         else //Ansio kuuluu tiettyyn bracketiin.

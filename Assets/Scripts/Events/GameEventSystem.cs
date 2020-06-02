@@ -38,8 +38,7 @@ public class GameEventSystem : MonoBehaviour
 
     public void UnRegisterListener(Event_Type event_Type, EventListener listener)
     {
-        //TODO: Tämä toiminto. Tarkoitus on poistaa listener käytöstä sen takia että ei ole kuuntelijoita objekteille tai toiminnoille, jotka ovat poistettu pelin aikana.
-        //En tiedä onko loppuen lopulta valtavan tarpeellinen, täytän, jos täytän myöhemmin.
+        eventListeners[event_Type].Remove(listener);
     }
     #endregion
 

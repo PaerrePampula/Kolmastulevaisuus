@@ -34,13 +34,18 @@ public class JobSearcher : MonoBehaviour
         {
             Destroy(transform.gameObject);
         }
-        for (int i = 0; i < notices.Count; i++)
+        if (notices.Count > 0)
         {
-            GameObject go = Instantiate(noticeButton);
-            go.transform.SetParent(NoticePanel);
-            InstantiatedNoticeUIButtons.Add(go.transform);
-            go.GetComponent<JobNoticeButtonBehaviour>().setJobNotice(notices[i]);
-            go.GetComponent<JobNoticeButtonBehaviour>().setButtonText(notices[i].scriptable.jobTitle, notices[i].scriptable.payByHour, notices[i].scriptable.workHoursPerDay);
+            for (int i = 0; i < notices.Count; i++)
+            {
+                GameObject go = Instantiate(noticeButton);
+                go.transform.SetParent(NoticePanel);
+                InstantiatedNoticeUIButtons.Add(go.transform);
+                go.GetComponent<JobNoticeButtonBehaviour>().setJobNotice(notices[i]);
+                go.GetComponent<JobNoticeButtonBehaviour>().setButtonText(notices[i].scriptable.jobTitle, notices[i].scriptable.payByHour, notices[i].scriptable.workHoursPerDay);
+            }
         }
+              
+
     }
 }

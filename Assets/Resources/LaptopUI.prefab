@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b670ee4207489a40b3782dd686c0057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickResourceToCall: 
+  OnClickResourceToCall: {fileID: 0}
   OnClickResourceParent: {fileID: 0}
 --- !u!1 &4673788995101166138
 GameObject:
@@ -711,7 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b670ee4207489a40b3782dd686c0057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickResourceToCall: WorkPanel
+  OnClickResourceToCall: {fileID: 2714172322552910983, guid: f1c1308d663e7b2498719477e65b36b2,
+    type: 3}
   OnClickResourceParent: {fileID: 3010120455480696861}
 --- !u!1 &6467566776430349958
 GameObject:
@@ -1012,7 +1013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b670ee4207489a40b3782dd686c0057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickResourceToCall: KelaPanel
+  OnClickResourceToCall: {fileID: 2606764911441671164, guid: 6a33e73470748e248ab3265f9ac7d08c,
+    type: 3}
   OnClickResourceParent: {fileID: 3010120455480696861}
 --- !u!1 &6963183183972444457
 GameObject:

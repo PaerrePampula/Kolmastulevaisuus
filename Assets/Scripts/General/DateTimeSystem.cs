@@ -58,7 +58,7 @@ public class DateTimeSystem : MonoBehaviour
         {
             OnMonthChange?.Invoke();
         }
-        Debug.Log(currentDate.DayOfWeek.ToString());
+
 
     }
     public bool hasTheMonthChangedSinceLastTurn() //Käyttötarkoituksia mm. kelan kuukausittaisten tukien laskuun.
