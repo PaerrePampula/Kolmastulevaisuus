@@ -591,6 +591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352226a4ec14ae748bfe22055c597427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerWelfareApplicationDeniedOnAsumisTuki: {fileID: 11400000, guid: e3d58df37de2d9444b859262f1acd664,
+    type: 2}
 --- !u!1 &347349116
 GameObject:
   m_ObjectHideFlags: 0

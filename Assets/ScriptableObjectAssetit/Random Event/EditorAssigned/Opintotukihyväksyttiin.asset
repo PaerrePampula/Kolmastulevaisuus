@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: "Opintotukihyv\xE4ksyttiin"
+  m_EditorClassIdentifier: 
+  Prerequisites: []
+  fire_locations: 
+  eventTexts:
+  - eventDialog: "Opintotukihakemuksesi hyv\xE4ksyttiin! Merkkasit hakemukseen opiskeluajaksi
+      viel\xE4 nelj\xE4 vuotta eteenp\xE4n. Et saa tukea kes\xE4kuukausilta, paitsi
+      jos haet sit\xE4 erikseen, ja sille on sopiva syy, ja jokainen opiskelukuukausi
+      kuluttaa sinun korkeakouluopintojen tukikuukausia."
+    eventDialogChoices:
+    - nextDialog: -1
+      choiceDescriptor: "Pid\xE4n sen mieless\xE4..."
+      clickActions: []
+    - nextDialog: 1
+      choiceDescriptor: "Miten saan tukea kes\xE4kuukausina?"
+      clickActions: []
+  - eventDialog: "Saat tukea kes\xE4kuukausillekin, jos suoritat opintoja kes\xE4ll\xE4kin.
+      Jos olet ep\xE4varma mist\xE4 syist\xE4 tukea saa, kysy opoltasi! Olennaisin
+      tekij\xE4 tuen saamisessa on kuitenkin se, ett\xE4 saat riitt\xE4v\xE4n m\xE4\xE4r\xE4n
+      opintopisteit\xE4 kes\xE4ll\xE4"
+    eventDialogChoices:
+    - nextDialog: -1
+      choiceDescriptor: "Ymm\xE4rretty"
+      clickActions: []
+    - nextDialog: 1
+      choiceDescriptor: "Miten saan tukea kes\xE4kuukausina?"
+      clickActions: []

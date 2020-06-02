@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91dc06d7534c9794fb493cf1bd8743c0, type: 3}
-  m_Name: "KelanTukiEiHyv\xE4ksytty"
+  m_Name: "KelanTukiHyv\xE4ksyttiin"
   m_EditorClassIdentifier: 
   Event_Type: 0
   Description: 
-  eventToRise: {fileID: 11400000, guid: e3d58df37de2d9444b859262f1acd664, type: 2}
+  eventToRise: {fileID: 0}
