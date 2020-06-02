@@ -7,7 +7,7 @@ public class ScriptableEventRaise : ScriptableAction //Tämä on scriptableactio
     public override void PerformAction()
     {
         EventRaise eventRaise = new EventRaise();
-        eventRaise.InCaseSpecificEvent = actionToRise;
+        eventRaise.InCaseSpecificEvent = eventToRise;
         eventRaise.SpecificEventRaise = isNotRandomlyChosen;
         GameEventSystem.Current.DoEvent(
             Event_Type,
