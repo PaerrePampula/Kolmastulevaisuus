@@ -19,7 +19,7 @@ public class MainCanvas : MonoBehaviour
         }
     }
     #endregion
-    private void OnDestroy()
+    private void OnDestroy() //Periaatteessa mainmenulla on oma maincanvas, ja niin on scenellä, kaikki menee sekaisin jos sceneloadin jälkeen jää vielä mainmenun "kuolleen" canvaksen listeneri, kutsuu ui-elementtejä haudan takaa
     {
         GameEventSystem.Current.UnRegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
     }
