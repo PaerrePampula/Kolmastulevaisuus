@@ -5,7 +5,6 @@ public class PlayerEconomy : MonoBehaviour
 {
     #region Fields
     //Tämä on prototyyppi lopullisesta pelaajan taloudenlaskemisen simuloinnista, toistaiseksi melko yksinkertainen
-    private float playerMoney; //Yksiselitteisesti pelaajan rahatilanne.
     private List<IncomeSource> incomeSources = new List<IncomeSource>();
     public delegate void IncreaseAction(float amount);
     public static event IncreaseAction OnIncrease;
@@ -31,13 +30,13 @@ public class PlayerEconomy : MonoBehaviour
     public void SetMoney(EventInfo info)
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
-        playerMoney += floatChangeInfo.changeofFloat;
-        PaerToolBox.callOnStatChange(StatType.PlayerMoney, true, playerMoney.ToString(), playerMoney);
-        OnIncrease?.Invoke(playerMoney);
+        PlayerDataHolder.PlayerMoney += floatChangeInfo.changeofFloat;
+        PaerToolBox.callOnStatChange(StatType.PlayerMoney, true, PlayerDataHolder.PlayerMoney.ToString(), PlayerDataHolder.PlayerMoney);
+        OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney);
     }
     public void GetMoney()
     {
-        Debug.Log(playerMoney);
+        Debug.Log(PlayerDataHolder.PlayerMoney);
     }
 
 

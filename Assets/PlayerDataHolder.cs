@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 public static class PlayerDataHolder
 {
+    private static float playerMoney;
     private static Rent rent;
     private static RentableHome rentablehome;
     public static Rent PlayerRent
@@ -29,6 +30,17 @@ public static class PlayerDataHolder
         set
         {
             rentablehome = value;
+        }
+    }
+    public static float PlayerMoney
+    {
+        get
+        {
+            return playerMoney;
+        }
+        set
+        {
+            playerMoney = value;
         }
     }
 }
