@@ -3,10 +3,7 @@ using UnityEngine;
 
 public class KukkaroUI : MonoBehaviour
 {
-    #region Fields
-    PlayerEconomy kukkaro; //Tämä on myös prototyyppi, ja tullaan korvaamaan jollakin järkevämmällä todennäköisesti, mutta tänhetkisesti sen pointti on demota rahanmuutosta suoraan play-ikkunaan
-                           // Start is called before the first frame update
-    #endregion
+
 
     #region MonobehaviourDefaults
     private void OnEnable() //Kun tämä skripti aktivoituu, se automaattisesti tilaa Kukkaroskriptin OnIncrease tapahtuman

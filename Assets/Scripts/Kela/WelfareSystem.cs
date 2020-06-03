@@ -2,7 +2,8 @@
 using System.Linq;
 using UnityEngine;
 
-public class WelfareSystem : MonoBehaviour
+public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptableactionin niin pidän sen inherittaamassa monoa.
+    //Vois periaatteessa siirtääkin johonkin muuhun järjestelmään, mutta melko pienen prioriteetin homma
 {
     #region Fields
     float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = 1608f;
@@ -50,7 +51,7 @@ public class WelfareSystem : MonoBehaviour
                 break;
 
             case typeOfSupport.YleinenAsumistuki:
-                check = ((PlayerEconomy.CurrentPlayerEconomy.getAllIncomeSourceGrossTotals(1) <= maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone)
+                check = ((PlayerEconomy.getAllIncomeSourceGrossTotals(1) <= maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone)
                     && DoesPlayerHaveSupportOfType(typeOfSupport.YleinenAsumistuki) == false) ? true : false;
                 break;
             //Jos pelaajan tulot bruttona ovat isommat kuin annettu maksimimäärä, niin pelaaja ei voi saada asuntotukea

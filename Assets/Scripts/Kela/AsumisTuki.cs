@@ -18,7 +18,7 @@
         float value = 0;
         float calculatedTotalIncome = 0;
 
-        calculatedTotalIncome += PlayerEconomy.CurrentPlayerEconomy.getAllIncomeSourceGrossTotals(1);
+        calculatedTotalIncome += PlayerEconomy.getAllIncomeSourceGrossTotals(1);
         if (calculatedTotalIncome > maximumGrossIncomeWhereOmaVastuuDoesNotDecreaseSupportAmount)
         {
             value = 0.42f * (calculatedTotalIncome - (603 + 100)); //Pelkistetty laskukaava, mutta simulaatiossa oletetaan se, että opiskelijalla ei ole lapsia, tai muita ruokakuntalaisia. (asuu yksin)

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEconomy : MonoBehaviour
+public static class PlayerEconomy
 {
     #region Fields
     public delegate void IncreaseAction(float amount);
@@ -10,40 +10,38 @@ public class PlayerEconomy : MonoBehaviour
     //classeille viestin siitä, että rahatilanne on muuttunut, delegaten ja eventin avulla näitä tilaajia ei tarvitse
     //erikseen unityn editorissä määritellä, eli toisinsanoen pelaajan kukkaron ei tarvitse tietää, kenelle tätä viestiä lähetetään.
 
-    private static PlayerEconomy _playerEconomy;
-    static public PlayerEconomy CurrentPlayerEconomy
+    static PlayerEconomy()
     {
-        get
-        {
-            if (_playerEconomy == null)
-            {
-                _playerEconomy = FindObjectOfType<PlayerEconomy>();
-            }
-            return _playerEconomy;
-        }
+        GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
+        GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
+
+        TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
+
+        DateTimeSystem.OnMonthChange += PayFromIncomeSources;
+
     }
-    private List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
+    private static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
     {
         return PlayerDataHolder.IncomeSources;
     }
     #endregion
 
     #region Getters and setters
-    public void SetMoney(EventInfo info)
+    public static void SetMoney(EventInfo info)
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         PlayerDataHolder.PlayerMoney += floatChangeInfo.changeofFloat;
         PaerToolBox.callOnStatChange(StatType.PlayerMoney, true, PlayerDataHolder.PlayerMoney.ToString(), PlayerDataHolder.PlayerMoney);
         OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney);
     }
-    public void GetMoney() //Debug. poista joskus
+    static void GetMoney() //Debug. poista joskus
     {
         Debug.Log(PlayerDataHolder.PlayerMoney);
     }
 
 
 
-    public float getAllIncomeSourceGrossTotals(int monthAmount)
+    public static float getAllIncomeSourceGrossTotals(int monthAmount)
     {
         float total = 0;
         for (int i = 0; i < incomeSources().Count; i++)
@@ -54,28 +52,9 @@ public class PlayerEconomy : MonoBehaviour
     }
     #endregion
 
-    #region MonobehaviourDefaults
-    void Start()
-    {
-
-        GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
-        GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
-
-        TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
-
-    }
-    private void OnEnable()
-    {
-        DateTimeSystem.OnMonthChange += PayFromIncomeSources;
-    }
-    private void OnDisable()
-    {
-        DateTimeSystem.OnMonthChange -= PayFromIncomeSources;
-    }
-    #endregion
 
 
-    void RegisterAnIncomeSourceFromJob(EventInfo info)
+    static void RegisterAnIncomeSourceFromJob(EventInfo info)
     {
         JobRegisterInfo job = (JobRegisterInfo)info;
         IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount());
@@ -84,7 +63,7 @@ public class PlayerEconomy : MonoBehaviour
         TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
     }
 
-    void PayFromIncomeSources()
+    static void PayFromIncomeSources()
     {
         for (int i = 0; i < incomeSources().Count; i++)
         {
