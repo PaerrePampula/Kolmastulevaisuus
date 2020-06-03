@@ -7,7 +7,9 @@ using UnityEngine;
 
 public static class PlayerDataHolder
 {
-
+    #region TYÖT
+    private static Job playerJob;
+    #endregion
     #region RAHA, TALOUS
     private static float playerMoney;
     private static List<IncomeSource> incomeSources = new List<IncomeSource>();
@@ -69,6 +71,17 @@ public static class PlayerDataHolder
         set
         {
             incomeSources = value;
+        }
+    }
+    public static Job PlayerJob
+    {
+        get
+        {
+            return playerJob;
+        }
+        set
+        {
+            playerJob = value;
         }
     }
 }
