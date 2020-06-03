@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         GameEventSystem.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
+
     }
     // Start is called before the first frame update
     void Start()

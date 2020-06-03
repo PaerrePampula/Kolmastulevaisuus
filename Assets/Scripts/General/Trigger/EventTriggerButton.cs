@@ -5,6 +5,8 @@ public class EventTriggerButton : MonoBehaviour
     #region Fields
     [SerializeField]
     ScriptableAction[] eventTriggers;
+    [SerializeField]
+    Flag[] flags;
 
     #endregion
     public void TriggerEvents()
@@ -19,6 +21,14 @@ public class EventTriggerButton : MonoBehaviour
             {
                 eventTriggers[i].PerformAction();
             }
+            if (flags.Length > 0)
+            {
+                for (int i = 0; i < flags.Length; i++)
+                {
+                    Flag flag = new Flag(flags[i].FlagName, flags[i].TimeToHappen);
+                }
+            }
+
         }
     }
 }

@@ -4595,6 +4595,7 @@ GameObject:
   - component: {fileID: 1348062718}
   - component: {fileID: 1348062716}
   - component: {fileID: 1348062719}
+  - component: {fileID: 1348062717}
   m_Layer: 0
   m_Name: GameDataContainer
   m_TagString: Untagged
@@ -4648,6 +4649,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWelfareApplicationDeniedOnAsumisTuki: {fileID: 11400000, guid: e3d58df37de2d9444b859262f1acd664,
     type: 2}
+--- !u!114 &1348062717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348062713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1b390246ffa7749ae88635e7e30831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllGlobalFlags: []
 --- !u!114 &1348062718
 MonoBehaviour:
   m_ObjectHideFlags: 0

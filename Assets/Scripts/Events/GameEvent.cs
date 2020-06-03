@@ -48,7 +48,8 @@
                     case ComparisonValueType.Float:
                         float comparisonValue = stat.getValue<float>();
                         float eventValue = prerequisite.FloatComparatorValue;
-                        isApplicable = ((comparisonValue > eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IFStatValueIsHigherThan))
+                        isApplicable = ((comparisonValue > eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IFStatValueIsHigherThan
+                            ))
                             || ((comparisonValue < eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatValueIsLowerThan))
                             || ((comparisonValue == eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatEquals)) ? true : false;
                         break;

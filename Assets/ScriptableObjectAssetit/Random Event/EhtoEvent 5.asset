@@ -23,16 +23,28 @@ MonoBehaviour:
   eventTexts:
   - eventDialog: "T\xE4m\xE4 event trigger\xF6ityy mm. jos peli alkaa, ja pelaajalla
       ei ole rahaa, ja pelaaja on koulussa. Saat trigger\xF6ity\xE4 erikoisehdoilla
-      lis\xE4\xE4 eventtej\xE4, jos k\xE4velet vihreit\xE4 palikoita p\xE4in!"
+      lis\xE4\xE4 eventtej\xE4, jos k\xE4velet vihreit\xE4 palikoita p\xE4in! (Trigger\xF6it
+      t\xE4st\xE4 flagin FLAG_FIRSTCHOICE)"
     eventDialogChoices:
     - nextDialog: 1
       choiceDescriptor: Okei, jatka
       clickActions: []
+      firedFlags:
+      - FlagName: FLAG_FIRSTCHOICE
+        TimeToHappen: 0
     - nextDialog: -1
-      choiceDescriptor: Moimoi
-      clickActions: []
+      choiceDescriptor: "Paina t\xE4st\xE4 niin trigger\xF6it flagin FLAG_TEST ja
+        yhden k\xE4\xE4nn\xF6ksen"
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      firedFlags:
+      - FlagName: FLAG_TEST
+        TimeToHappen: 0
   - eventDialog: "T\xE4m\xE4 on jatkoteksti"
     eventDialogChoices:
     - nextDialog: -1
-      choiceDescriptor: Okei, moikka!
+      choiceDescriptor: "Okei, moikka! (Trigger\xF6it flagin FLAG_TEST_2"
       clickActions: []
+      firedFlags:
+      - FlagName: FLAG_TEST2
+        TimeToHappen: 0

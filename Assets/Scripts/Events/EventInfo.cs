@@ -50,3 +50,7 @@ public class RentLeaseForm : EventInfo
 {
     public RentableHome rentable;
 }
+public class FlagFireInfo : EventInfo
+{
+    public Flag flag;
+}

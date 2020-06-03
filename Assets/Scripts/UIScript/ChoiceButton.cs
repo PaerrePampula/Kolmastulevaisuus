@@ -9,6 +9,7 @@ public class ChoiceButton : MonoBehaviour
     eventChoice choiceofThisButton;
     public ScriptableAction[] clickActions;
     RandomEventUI transformGrandParentScript; //Skripti, jossa tätä näppäintä on hallinnoitu = näppäimen event boksin skripti.
+    public Flag[] flags;
     #endregion
 
 
@@ -24,22 +25,23 @@ public class ChoiceButton : MonoBehaviour
     {
         choiceofThisButton = choice; //annetaan nappulalle se tieto, että mitä valintaa se edustaa.
         clickActions = choice.clickActions; //nappulalle annetaan myös kaikki actionit, jota scriptableobjectin actioneissa on määritelty.
+        flags = choice.firedFlags;
     }
     public void AdvanceDialog()
     {
+        foreach (Flag item in flags)
+        {
+            item.FireFlag();
+        }
         transformGrandParentScript.AdvanceDialogTo(choiceofThisButton.nextDialog);
-        if (clickActions.Length < 1)
+   
+        for (int i = 0; i < clickActions.Length; i++)
         {
-            return;
-        }
-        else
-        {
-            for (int i = 0; i < clickActions.Length; i++)
-            {
-                clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
+            clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
 
-            }
         }
+
+
 
     }
 }
