@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d96e458c1f8014196d6bd12ba988e3, type: 3}
   m_Name: FallBack
   m_EditorClassIdentifier: 
-  address: 
-  baseRentAmount: 0
-  waterCost: 0
-  sizeInMetersSquared: 0
-  electricityCost: 0
+  address: Mainmenun Skippikatu 5 A 6
+  baseRentAmount: 435
+  waterCost: 5
+  sizeInMetersSquared: 21
+  electricityCost: 5
   homeInsurance: 0
   needToHaveHomeInsurance: 0
   extrasOnRentableHome: []
-  longFormDescription: "esim. uusi kolmio l\xE4hell\xE4keskustaa! V\xE4litt\xF6m\xE4ss\xE4
-    l\xE4heisyydess\xE4 paljon kauppoja,sek\xE4 paikalliset korkeakoulut!"
-  perks: esim oma sauna, lasitettu parveke
-  shortFormDescription: esim 1h + s + p
-  extrasDescription: "esim vuokraan sis\xE4ltyy 25M laajakaista"
+  longFormDescription: "Pelaaja saa t\xE4m\xE4n asunnon vain jos pelaaja ohittaa
+    mainmenun, tai jos jokin menee vikaan..."
+  perks: "K\xE4yt\xE4nn\xF6llisesti saat skipattua menusta asunnonvalinnan jos haluut
+    testata mainsceness\xE4 jotain ja et halua et jokin asia hajoaa"
+  shortFormDescription: "aivan tyhj\xE4"
+  extrasDescription: 
   prefab: {fileID: 0}
-  huoneKoko: 0
-  vuokraTyyppi: 0
+  huoneKoko: 3
+  vuokraTyyppi: 2
