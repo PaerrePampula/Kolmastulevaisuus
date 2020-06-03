@@ -4,8 +4,6 @@ using UnityEngine;
 public class PlayerEconomy : MonoBehaviour
 {
     #region Fields
-    //Tämä on prototyyppi lopullisesta pelaajan taloudenlaskemisen simuloinnista, toistaiseksi melko yksinkertainen
-    private List<IncomeSource> incomeSources = new List<IncomeSource>();
     public delegate void IncreaseAction(float amount);
     public static event IncreaseAction OnIncrease;
     //Delegatesta ja eventistä. Näillä kukkaro saa lähetettyä rahanmuutoksesta viestin kaikille onincreasen tilanneille 
@@ -24,6 +22,10 @@ public class PlayerEconomy : MonoBehaviour
             return _playerEconomy;
         }
     }
+    private List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
+    {
+        return PlayerDataHolder.IncomeSources;
+    }
     #endregion
 
     #region Getters and setters
@@ -34,22 +36,19 @@ public class PlayerEconomy : MonoBehaviour
         PaerToolBox.callOnStatChange(StatType.PlayerMoney, true, PlayerDataHolder.PlayerMoney.ToString(), PlayerDataHolder.PlayerMoney);
         OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney);
     }
-    public void GetMoney()
+    public void GetMoney() //Debug. poista joskus
     {
         Debug.Log(PlayerDataHolder.PlayerMoney);
     }
 
 
-    public List<IncomeSource> GetIncomeSources()
-    {
-        return incomeSources;
-    }
+
     public float getAllIncomeSourceGrossTotals(int monthAmount)
     {
         float total = 0;
-        for (int i = 0; i < incomeSources.Count; i++)
+        for (int i = 0; i < incomeSources().Count; i++)
         {
-            total += (incomeSources[i].getGrossIncomeAmountInAMonth() * monthAmount);
+            total += (incomeSources()[i].getGrossIncomeAmountInAMonth() * monthAmount);
         }
         return total;
     }
@@ -81,15 +80,15 @@ public class PlayerEconomy : MonoBehaviour
         JobRegisterInfo job = (JobRegisterInfo)info;
         IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount());
 
-        incomeSources.Add(incomeSource);
+        incomeSources().Add(incomeSource);
         TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
     }
 
     void PayFromIncomeSources()
     {
-        for (int i = 0; i < incomeSources.Count; i++)
+        for (int i = 0; i < incomeSources().Count; i++)
         {
-            PaerToolBox.changePlayerMoney(incomeSources[i].getNetIncomeInAMonth());
+            PaerToolBox.changePlayerMoney(incomeSources()[i].getNetIncomeInAMonth());
         }
     }
 
