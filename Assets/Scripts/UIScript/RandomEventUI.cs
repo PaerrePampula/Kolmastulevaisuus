@@ -58,7 +58,6 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
         ChoiceButton choiceButton = button.GetComponent<ChoiceButton>();
         choiceButton.setChoiceText(appliedTextToChoice);
 
-        button.GetComponent<ChoiceButton>().setButtonGrandParentScript(this);
         return button;
     }
     public void AdvanceDialogTo(int index)

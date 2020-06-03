@@ -7,7 +7,6 @@ public class ChoiceButton : BaseTrigger
     // private GameEvent onButtonSelected;
     public TextMeshProUGUI buttonText;
     eventChoice choiceofThisButton;
-    RandomEventUI transformGrandParentScript; //Skripti, jossa tätä näppäintä on hallinnoitu = näppäimen event boksin skripti.
     public delegate void DialogAdvance(int index);
     public static event DialogAdvance OnDialogAdvance;
     #endregion
@@ -15,10 +14,6 @@ public class ChoiceButton : BaseTrigger
     public void setChoiceText(string text)
     {
         buttonText.text = text; //Pyydetty teksti korvataan valintatekstillä.
-    }
-    public void setButtonGrandParentScript(RandomEventUI choice)
-    {
-        transformGrandParentScript = choice;
     }
     public void setButtonEventChoice(eventChoice choice)
     {
