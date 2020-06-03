@@ -1,40 +1,19 @@
 ﻿using UnityEngine;
 
-public class HomeHandler : MonoBehaviour
+public static class HomeHandler
 {
     #region Fields
-    Rent playerRent;
-    RentableHome playerHome;
-
-    static private HomeHandler _currentHomeHandler;
-    static public HomeHandler currentHomeHandler
-    {
-        get
-        {
-            if (_currentHomeHandler == null)
-            {
-                _currentHomeHandler = FindObjectOfType<HomeHandler>();
-            }
-            return _currentHomeHandler;
-        }
-    }
-    #endregion
-
-    #region Getters
-    private void OnEnable()
+    static Rent playerRent;
+    static RentableHome playerHome;
+    static HomeHandler()
     {
         DateTimeSystem.OnMonthChange += PayRent;
     }
+    #endregion
 
-    private void OnDisable()
-    {
-        DateTimeSystem.OnMonthChange -= PayRent;
-    }
-    void PayRent()
+    static void PayRent()
     {
         PaerToolBox.changePlayerMoney(-PlayerDataHolder.PlayerRent.getTotal());
     }
-    #endregion
-
 
 }
