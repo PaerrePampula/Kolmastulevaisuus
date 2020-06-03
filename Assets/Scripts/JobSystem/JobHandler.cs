@@ -7,7 +7,7 @@ public static class JobHandler
     public static event JobApply OnJobApply;
     #endregion
     #region MonobehaviourDefaults
-    static JobHandler()
+    static JobHandler() 
     {
         GameEventSystem.RegisterListener(Event_Type.JOB_APPLY, registerJob);
     }
