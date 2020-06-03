@@ -1,17 +1,16 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class ChoiceButton : MonoBehaviour
+public class ChoiceButton : BaseTrigger
 {
     #region Fields
     // private GameEvent onButtonSelected;
     public TextMeshProUGUI buttonText;
     eventChoice choiceofThisButton;
-    public ScriptableAction[] clickActions;
     RandomEventUI transformGrandParentScript; //Skripti, jossa tätä näppäintä on hallinnoitu = näppäimen event boksin skripti.
-    public Flag[] flags;
+    public delegate void DialogAdvance(int index);
+    public static event DialogAdvance OnDialogAdvance;
     #endregion
-
 
     public void setChoiceText(string text)
     {
@@ -24,24 +23,13 @@ public class ChoiceButton : MonoBehaviour
     public void setButtonEventChoice(eventChoice choice)
     {
         choiceofThisButton = choice; //annetaan nappulalle se tieto, että mitä valintaa se edustaa.
-        clickActions = choice.clickActions; //nappulalle annetaan myös kaikki actionit, jota scriptableobjectin actioneissa on määritelty.
+        eventTriggers = choice.clickActions; //nappulalle annetaan myös kaikki actionit, jota scriptableobjectin actioneissa on määritelty.
         flags = choice.firedFlags;
     }
     public void AdvanceDialog()
     {
-        foreach (Flag item in flags)
-        {
-            item.FireFlag();
-        }
-        transformGrandParentScript.AdvanceDialogTo(choiceofThisButton.nextDialog);
-   
-        for (int i = 0; i < clickActions.Length; i++)
-        {
-            clickActions[i].PerformAction(); //Tässä samannimisiä performactioneita kutsutaan jokaisesta scriptableactionista, jota dialogin valintanäppäimeen on sidottu.
+        FireTriggersAndFlags();
 
-        }
-
-
-
+        OnDialogAdvance?.Invoke(choiceofThisButton.nextDialog);
     }
 }

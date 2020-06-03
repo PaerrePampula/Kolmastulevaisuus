@@ -17,6 +17,14 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
 
     #endregion
     #region MonobehaviourDefaults
+    private void OnEnable() //Kun choicebutton invokee OnDialogAdvance, main ui skripti vaihtaa tämänhetkisen dialogin seuraavaan indeksin perusteella
+    {
+        ChoiceButton.OnDialogAdvance += AdvanceDialogTo;
+    }
+    private void OnDisable()
+    {
+        ChoiceButton.OnDialogAdvance -= AdvanceDialogTo;
+    }
     // Start is called before the first frame update
     void Start()
     {

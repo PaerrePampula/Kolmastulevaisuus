@@ -2705,6 +2705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
+      propertyPath: eventTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
       propertyPath: TriggerActions.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
@@ -2718,6 +2723,18 @@ PrefabInstance:
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
       propertyPath: TriggerActions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
         type: 2}
@@ -3644,6 +3661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
+      propertyPath: eventTriggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
       propertyPath: TriggerActions.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: dde1fdcb1f304294c914bea16202f6b3,
@@ -3659,6 +3681,12 @@ PrefabInstance:
       propertyPath: TriggerActions.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: dde1fdcb1f304294c914bea16202f6b3,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd86c14ea9023149a2ef72d5caa2372, type: 3}
@@ -5101,6 +5129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
+      propertyPath: eventTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
       propertyPath: TriggerActions.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
@@ -5114,6 +5147,18 @@ PrefabInstance:
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
       propertyPath: TriggerActions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
         type: 2}
@@ -6299,6 +6344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
+      propertyPath: eventTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
       propertyPath: TriggerActions.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
@@ -6312,6 +6362,18 @@ PrefabInstance:
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
       propertyPath: TriggerActions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
         type: 2}
@@ -7214,6 +7276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
+      propertyPath: eventTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
       propertyPath: TriggerActions.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
@@ -7227,6 +7294,18 @@ PrefabInstance:
     - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
         type: 3}
       propertyPath: TriggerActions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9,
+        type: 2}
+    - target: {fileID: 6508068760206074001, guid: 0bd86c14ea9023149a2ef72d5caa2372,
+        type: 3}
+      propertyPath: eventTriggers.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d,
         type: 2}

@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
+using System.Collections;
 
-public class EventTriggerButton : MonoBehaviour
+public class BaseTrigger : MonoBehaviour
 {
-    #region Fields
     [SerializeField]
-    ScriptableAction[] eventTriggers;
-    [SerializeField]
-    Flag[] flags;
+    public ScriptableAction[] eventTriggers;
 
-    #endregion
-    public void TriggerEvents()
+    [SerializeField]
+    public Flag[] flags;
+
+    public virtual void FireTriggersAndFlags()
     {
         if (eventTriggers.Length <= 0)
         {
