@@ -104,7 +104,6 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
                 case typeOfSupport.OpintoTuki:
                     OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.OpintoTuki);
                     currentPlayerSupports.Add(raha);
-                    PaerToolBox.callOnStatChange(StatType.PlayerStudyMonths, false, "", 39);
                     break;
                 case typeOfSupport.YleinenAsumistuki:
                     AsumisTuki asumisTuki = new AsumisTuki(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.YleinenAsumistuki);

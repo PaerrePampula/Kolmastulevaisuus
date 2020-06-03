@@ -1,11 +1,12 @@
 ﻿#region enums
 public enum ComparisonOperators
 {
-    IfPlayerHasHigher,
-    IfPlayerHasLower,
-    IfStringValueEqualsStatString,
-    IfPlayerStatEquals,
-    IfPlayerValueIsAtleast,
-    IfPlayerHasStat
+    IfStatEquals,
+    IfStatValueIsLowerThan,
+    IFStatValueIsHigherThan,
+    IsNotEqualTo,
+    IfStatDoesntExist,
+    IfStatIsAtleast,
+    IfStatIsAtMost
 }
 #endregion

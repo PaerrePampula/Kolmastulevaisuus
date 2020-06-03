@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prerequisites:
   - playerStat: 0
-    StringComparatorValue: 0
+    comparisonValueType: 0
+    StringComparatorValue: 
+    FloatComparatorValue: 1
     uniqueStatComparison: 0
-    TypeOfComparison: 3
+    TypeOfComparison: 1
   fire_locations: 00000000
   eventTexts:
   - eventDialog: "T\xE4m\xE4 event trigger\xF6ityy mm. jos peli alkaa, ja pelaajalla

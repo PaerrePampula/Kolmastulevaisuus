@@ -3,29 +3,11 @@
 public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
 {
 
-    public static void callOnStatChange(StatType typeOfStat, bool uniqueness, string statValueString = "", float floatValue = 0)
+    public static void callNonUniqueStatChange(IStattable stattable)
     {
-        StatChangeInfo statChange = new StatChangeInfo();
-        statChange.playerStat.statName = typeOfStat;
-        statChange.playerStat.statValueString = statValueString;
-        statChange.playerStat.uniqueStat = uniqueness;
-        statChange.playerStat.statValueFloat = floatValue;
-        GameEventSystem.DoEvent(
-            Event_Type.STATS_CALL,
-            statChange
-        );
+        StatsChecker.RegisterStat(stattable);
     }
-    public static void callOnStatChange(StatType typeOfStat, bool booleanOperator, bool uniqueness)
-    {
-        StatChangeInfo statChange = new StatChangeInfo();
-        statChange.playerStat.statName = typeOfStat;
-        statChange.playerStat.booleanValue = booleanOperator;
-        statChange.playerStat.uniqueStat = uniqueness;
-        GameEventSystem.DoEvent(
-            Event_Type.STATS_CALL,
-            statChange
-        );
-    }
+
     public static void changePlayerMoney(float amount)
     {
         FloatChangeInfo valueChangeAction = new FloatChangeInfo();

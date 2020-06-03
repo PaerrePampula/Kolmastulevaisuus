@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prerequisites:
   - playerStat: 0
-    StringComparatorValue: 1000
+    comparisonValueType: 0
+    StringComparatorValue: 0
+    FloatComparatorValue: 999
     uniqueStatComparison: 1
-    TypeOfComparison: 4
+    TypeOfComparison: 2
   fire_locations: 00000000
   eventTexts:
   - eventDialog: "T\xE4m\xE4 trigger\xF6ityi randomilla, kun pelaajalla oli v\xE4hint\xE4\xE4n

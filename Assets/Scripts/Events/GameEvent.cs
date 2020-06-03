@@ -32,54 +32,39 @@
 
     public bool CheckPreRequisites()
     {
-        if (prerequisites.Length == 0)
+        if (prerequisites.Length < 1)
         {
             return true;
-
         }
         else
         {
-            bool isApplicableEvent = false;
-            foreach (PrereqPair prerequisite in prerequisites) //Jotenkin vois tämän kamalan roinan korvata? Turhia parse erroreita sun muita outoja pakotteita täällä arvojen muodoille, iso switch case helvetti jne.
+            bool isApplicable = false;
+            foreach (var prerequisite in prerequisites)
             {
-                PlayerStat foundPair = PlayerStatContainer.Current.getPlayerStatByPrereq(prerequisite);
-                if (prerequisite.TypeOfComparison != ComparisonOperators.IfStringValueEqualsStatString)
+                IStattable stat = StatsChecker.getPlayerStatByPrereq(prerequisite);
+                isApplicable = ((stat == null) && prerequisite.TypeOfComparison == ComparisonOperators.IfStatDoesntExist) ? true : false;
+                switch (prerequisite.comparisonValueType)
                 {
-                    if (foundPair != null)
-                    {
-                        requirementTargetFloat = float.Parse(prerequisite.StringComparatorValue);
-                        playerStatFloat = foundPair.statValueFloat;
-                    }
-
-                }
-
-
-
-                switch (prerequisite.TypeOfComparison)
-                {
-
-                    case ComparisonOperators.IfPlayerHasHigher:
-                        isApplicableEvent = (requirementTargetFloat < playerStatFloat) ? true : false;
+                    case ComparisonValueType.Float:
+                        float comparisonValue = stat.getValue<float>();
+                        float eventValue = prerequisite.FloatComparatorValue;
+                        isApplicable = ((comparisonValue > eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IFStatValueIsHigherThan))
+                            || ((comparisonValue < eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatValueIsLowerThan))
+                            || ((comparisonValue == eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatEquals)) ? true : false;
                         break;
-                    case ComparisonOperators.IfPlayerHasLower:
-                        isApplicableEvent = (requirementTargetFloat > playerStatFloat) ? true : false;
+
+                    case ComparisonValueType.String:
+                        string comparisonString = stat.getValue<string>();
+                        string eventString = prerequisite.StringComparatorValue;
+                        isApplicable = ((comparisonString == eventString) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatEquals)) ||
+                            ((comparisonString != eventString) && (prerequisite.TypeOfComparison == ComparisonOperators.IsNotEqualTo)) ? true : false;
                         break;
-                    case ComparisonOperators.IfPlayerStatEquals:
-                        isApplicableEvent = (requirementTargetFloat == playerStatFloat) ? true : false;
-                        break;
-                    case ComparisonOperators.IfPlayerValueIsAtleast:
-                        isApplicableEvent = (requirementTargetFloat <= playerStatFloat) ? true : false;
-                        break;
-                    case ComparisonOperators.IfStringValueEqualsStatString:
-                        isApplicableEvent = (prerequisite.StringComparatorValue == foundPair.statValueString) ? true : false;
-                        break;
-                    case ComparisonOperators.IfPlayerHasStat:
-                        isApplicableEvent = ((foundPair == null && prerequisite.StringComparatorValue == "false") || foundPair != null && prerequisite.StringComparatorValue == "true") ? true : false;
+                    default:
                         break;
                 }
-
+                if (isApplicable == false) return false;
             }
-            return isApplicableEvent;
+            return isApplicable;
         }
 
     }

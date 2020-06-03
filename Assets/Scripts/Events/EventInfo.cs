@@ -34,7 +34,7 @@ public class JobRegisterInfo : EventInfo
 }
 public class StatChangeInfo : EventInfo
 {
-    public PlayerStat playerStat = new PlayerStat();
+    public IStattable stattable;
 }
 public class UiElementCall : EventInfo
 {

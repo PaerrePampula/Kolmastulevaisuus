@@ -10,8 +10,9 @@ public static class PlayerDataHolder
     #region TYÖT
     private static Job playerJob;
     #endregion
+
     #region RAHA, TALOUS
-    private static float playerMoney;
+    private static PlayerMoney playerMoney = new PlayerMoney();
     private static List<IncomeSource> incomeSources = new List<IncomeSource>();
     #endregion
 
@@ -19,7 +20,10 @@ public static class PlayerDataHolder
     private static Rent rent;
     private static RentableHome rentablehome;
     #endregion
+    static PlayerDataHolder()
+    {
 
+    }
     public static Rent PlayerRent
     {
         get
@@ -51,10 +55,11 @@ public static class PlayerDataHolder
             rentablehome = value;
         }
     }
-    public static float PlayerMoney
+    public static PlayerMoney PlayerMoney
     {
         get
         {
+            
             return playerMoney;
         }
         set

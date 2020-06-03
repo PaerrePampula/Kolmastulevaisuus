@@ -25,7 +25,7 @@ public static class JobHandler
         PlayerDataHolder.PlayerJob = createJob(job);
 
         OnJobApply?.Invoke(job.jobNotice);
-        PaerToolBox.callOnStatChange(StatType.PlayerJob, false, job.jobNotice.scriptable.jobTitle);
+        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
 
         createOnJobRegisterCall(PlayerDataHolder.PlayerJob);
 

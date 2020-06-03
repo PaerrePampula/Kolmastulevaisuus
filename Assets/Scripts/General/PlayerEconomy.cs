@@ -30,9 +30,8 @@ public static class PlayerEconomy
     public static void SetMoney(EventInfo info)
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
-        PlayerDataHolder.PlayerMoney += floatChangeInfo.changeofFloat;
-        PaerToolBox.callOnStatChange(StatType.PlayerMoney, true, PlayerDataHolder.PlayerMoney.ToString(), PlayerDataHolder.PlayerMoney);
-        OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney);
+        PlayerDataHolder.PlayerMoney.MoneyChange(floatChangeInfo.changeofFloat);
+        OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney.getValue<float>());
     }
     static void GetMoney() //Debug. poista joskus
     {
