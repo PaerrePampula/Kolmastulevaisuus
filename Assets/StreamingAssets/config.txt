@@ -1,2 +1,8 @@
-#Merkitsee maksimi bruttoa yksinelävälle asuntotuen hakijalle. Asuu vyöhykkeellä 3, poimittu samasta vyöhykkeestä kuin hämeenlinna.
+#KAIKKI KOMMENTIT ALKAVAT # MERKILLÄ
+#TIEDOSTONLUKIJA EI OTA HUOMIOON # RIVILLÄ MERKITTYJÄ RIVEJÄ
+#ÄLÄ JÄTÄ ON MERKKIEN VÄLILLE VÄLIÄ, KUN MUOKKAAT ARVOJA
+#ELI ESIM arvo = 5 ON VÄÄRIN
+#arvo=5 ON OIKEIN
+#KELAN TUET
 maxGrossForHouseHoldAsumistuki=1608
+#Merkitsee maksimi bruttoa yksinelävälle asuntotuen hakijalle. Asuu vyöhykkeellä 3, poimittu samasta vyöhykkeestä kuin hämeenlinna.
