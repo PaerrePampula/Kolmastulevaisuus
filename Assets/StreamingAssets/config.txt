@@ -1,0 +1,2 @@
+#Merkitsee maksimi bruttoa yksinelävälle asuntotuen hakijalle. Asuu vyöhykkeellä 3, poimittu samasta vyöhykkeestä kuin hämeenlinna.
+maxGrossForHouseHoldAsumistuki=1608

@@ -7,7 +7,7 @@ using UnityEngine;
 public class EventControl : MonoBehaviour
 {
     #region Fields
-    GameObject randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer"); 
+    GameObject randomEventUIBox;
     //Boksi joka tuodaan peliin, joka kerta kun eventtiä kutsutaan
 
     [SerializeField]
@@ -24,6 +24,7 @@ public class EventControl : MonoBehaviour
     {
         GameEventSystem.RegisterListener(Event_Type.TRIGGER_EVENT,
                                                  CreateEventBox); //Event subscribe : Triggeröityy aina trigger_event kutsusta
+        randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer");
     }
     void Start()
     {
@@ -82,9 +83,6 @@ public class EventControl : MonoBehaviour
                              .Init(specificEvent);
             }
         }
-
-
-
 
     }
     int randomizedRandomEventIndexChoice() //Tämä valitsee random eventin halutusta listasta.

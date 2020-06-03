@@ -595,11 +595,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 776175144282611200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458b5c39ee4ff6549bea6b7973e94c8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dd48ae69460917448b8aaad068aacfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventTriggers:
   - {fileID: 11400000, guid: 335ca5c17c855de4cbb750e8cf41d241, type: 2}
+  flags: []
 --- !u!1 &1191044958980241703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,11 +3307,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5616816190730677762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458b5c39ee4ff6549bea6b7973e94c8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dd48ae69460917448b8aaad068aacfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventTriggers:
   - {fileID: 11400000, guid: 023399dc5422ad842a86ec8425567b58, type: 2}
+  flags: []
 --- !u!1 &6175888735329389156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,7 +3879,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4527245090028382770}
-        m_MethodName: TriggerEvents
+        m_MethodName: FireTriggersAndFlags
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3896,11 +3898,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7047021556432671620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458b5c39ee4ff6549bea6b7973e94c8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dd48ae69460917448b8aaad068aacfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventTriggers:
   - {fileID: 11400000, guid: 0ea94104862c00f47b610cb79ce425de, type: 2}
+  flags: []
 --- !u!1 &7077743285913016373
 GameObject:
   m_ObjectHideFlags: 0

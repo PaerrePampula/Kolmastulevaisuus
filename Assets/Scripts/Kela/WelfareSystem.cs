@@ -2,11 +2,13 @@
 using System.Linq;
 using UnityEngine;
 
+
 public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptableactionin niin pidän sen inherittaamassa monoa.
     //Vois periaatteessa siirtääkin johonkin muuhun järjestelmään, mutta melko pienen prioriteetin homma
 {
     #region Fields
-    float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = 1608f;
+
+    float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone;
     List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
     [SerializeField]
     RandomEventScriptable playerWelfareApplicationDeniedOnAsumisTuki;
@@ -28,6 +30,7 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
     #region MonobehaviourDefaults
     private void Start()
     {
+        maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = ConfigFileReader.getValue("maxGrossForHouseHoldAsumistuki");
         GameEventSystem.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
 
     }
@@ -128,7 +131,7 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
         {
             if(welfareApplyFormInfo.typeofWelfare == typeOfSupport.YleinenAsumistuki)
             {
-                EventControl.RaiseASpecificEvent(playerWelfareApplicationDeniedOnAsumisTuki);
+                EventControl.RaiseAnEvent(playerWelfareApplicationDeniedOnAsumisTuki);
             }
         }
 
