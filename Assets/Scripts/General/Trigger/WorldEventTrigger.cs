@@ -2,11 +2,11 @@
 
 public class WorldEventTrigger : BaseTrigger
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //Pelaajan törmäystä varten
     {
         if (other.CompareTag("Player"))
         {
-            FireTriggersAndFlags();
+            FireTriggersAndFlags(); //Basetrigger Method
         }
     }
 }

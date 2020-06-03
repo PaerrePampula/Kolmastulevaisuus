@@ -7,13 +7,16 @@ using UnityEngine;
 public class EventControl : MonoBehaviour
 {
     #region Fields
-    GameObject randomEventUIBox; //Boksi joka tuodaan peliin, joka kerta kun eventtiä kutsutaan
+    GameObject randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer"); 
+    //Boksi joka tuodaan peliin, joka kerta kun eventtiä kutsutaan
 
     [SerializeField]
-    List<RandomEventScriptable> randomEvents; //Kaikki mahdolliset randomeventit scriptableobjekteissa
+    List<RandomEventScriptable> RandomEvents; //Kaikki mahdolliset randomeventit scriptableobjekteissa
 
     List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
     List<GameEvent> filteredListOfEvents = new List<GameEvent>(); //Ylläolevasta listauksesta käännetty filteröity lista kaikille tietyssä sijainnissa mahdollisille eventeille
+
+
     #endregion
 
     #region MonoBehaviourDefaults
@@ -24,13 +27,10 @@ public class EventControl : MonoBehaviour
     }
     void Start()
     {
-        randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer");
-        //Haetaan random eventtien spawnausta varten valmiiksi luotu mallipohja.
-
-        AggregateScriptablesIntoaNewGameEventList(); 
+        AggregateScriptablesIntoaNewGameEventList();
         //Aggregoidaan eli kootaan kaikki ylläolevassa RandomEvents listassa mainitut objektit uuteen GameEvent listaukseen osina näitä uusia gameeventtejä.
 
-        InvokeAnInitialEventIfPossible(); 
+        RaiseAnEvent();
         //Peli aloitetaan random eventillä, jos mahdollista firettää jonkin eventin.
 
     }
@@ -38,10 +38,7 @@ public class EventControl : MonoBehaviour
 
     #region Tool methods
     bool CheckForRaiseChanceIfEligibleEventsCanBeFired() 
-        //Tsekkaa jos event raisen aikana pelaajan sijainnissa on yhtäkään eventtiä, jota voi suorittaa
-        //event raise = on tietynlainen peli eventti joka nostaa jonkun toisen eventin 
-        //(esim triggerin kosketus voisi nostaa eventin, joka kutsuu eventcontrolleria kutsumaan pelaajalle random valittua eventtiä) 
-        //ei siis mikään tietty unity-konsepti, vaan osa tätä mun kokkaamaa game-event soppaa, ja yksi monista tavoista ratkaista event-hallinta ongelma unityssä.
+        //Tarkistaa, että onko nyk. sijainnissa mahdollisia eventtejä
     {
         return (filteredListOfEvents.Count > 0) ? true : false;
     }
@@ -53,15 +50,19 @@ public class EventControl : MonoBehaviour
         {
             EventRaise EventRaise = (EventRaise)eventInfo; //Polymorphismin avulla eventinfosta sopiva käytettävä info
 
-            GameObject randomeventUI = Instantiate(randomEventUIBox); //...jota käytetään tähän tulevaan objektiin
-            randomeventUI.transform.SetParent(MainCanvas.mainCanvas.transform) ; //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
+            var go = Instantiate(randomEventUIBox);
+            var randomeventUI = go; //...jota käytetään tähän tulevaan objektiin
+
+            randomeventUI.transform.SetParent(MainCanvas.mainCanvas.transform); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
             randomeventUI.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
 
             if (EventRaise.SpecificEventRaise == false) //Jos eventti ei ole mikään tietty eventti joka nostettiin, vain täysin random.
             {
                 if (filteredListOfEvents.Count > 0) //Jos lista ei ole tyhjä, anna eventille tietoja
                 { 
-                    randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(filteredListOfEvents[randomizedRandomEventIndexChoice()]);
+                    randomeventUI.GetComponent<RandomEventUI>()
+                        .Init(filteredListOfEvents[randomizedRandomEventIndexChoice()]);
+
                     PointAndClickMovement.setMovementStatus(false);
 
                 }
@@ -76,8 +77,9 @@ public class EventControl : MonoBehaviour
             else
             {
                 //Tuodaan tietty eventti, jos raise vaati tiettyä eventtiä.
-                GameEvent specificEvent = new GameEvent(EventRaise.InCaseSpecificEvent);
-                randomeventUI.GetComponent<RandomEventUI>().setRandomEvent(specificEvent);
+                var specificEvent = new GameEvent(EventRaise.InCaseSpecificEvent);
+                randomeventUI.GetComponent<RandomEventUI>()
+                             .Init(specificEvent);
             }
         }
 
@@ -97,9 +99,9 @@ public class EventControl : MonoBehaviour
     void AggregateScriptablesIntoaNewGameEventList() //scriptablet poimitaan listasta GameEvent constructoria varten rakentamaan game-eventtien sisällöt, jonka jälkeen ne listataan täällä events listassa
         //Ei haluta käyttä scriptableobjkteja itse jonakin yhtä fyysisenä asiana koodissa kuin mikä tahansa muu class, mutta data-säiliönä jonka tiedot poimitaan käyttöön.
     {
-        for (int i = 0; i < randomEvents.Count; i++)
+        for (int i = 0; i < RandomEvents.Count; i++)
         {
-            GameEvent gameEvent = new GameEvent(randomEvents[i]);
+            var gameEvent = new GameEvent(RandomEvents[i]);
             eventsFromScriptables.Add(gameEvent);
         }
     }
@@ -127,24 +129,17 @@ public class EventControl : MonoBehaviour
     }
     #endregion
 
-    public static void RaiseASpecificEvent(RandomEventScriptable specificRaise)
+    public static void RaiseAnEvent(RandomEventScriptable raise = null, bool specificCheck = false)
     {
-        EventRaise randomEvent = new EventRaise();
-        randomEvent.SpecificEventRaise = true;
-        randomEvent.InCaseSpecificEvent = specificRaise;
+        EventRaise randomEvent = new EventRaise
+        {
+            SpecificEventRaise = specificCheck,
+            InCaseSpecificEvent = raise
+        };
         GameEventSystem.DoEvent(
             Event_Type.TRIGGER_EVENT,
             randomEvent
             );
     }
-    void InvokeAnInitialEventIfPossible() //Nostaa EventRaisen, syöttää sen eteenpäin gaveeventsystemille, joka laittaa siitä viestiä eteenpäin
-    {
-        EventRaise randomEvent = new EventRaise();
-        randomEvent.SpecificEventRaise = false; //tarvitaan täysin randomi paikallinen event, ei ole spesifinen
-        GameEventSystem.DoEvent(
-            Event_Type.TRIGGER_EVENT,
-            randomEvent
-            );
 
-    }
 }

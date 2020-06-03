@@ -15,6 +15,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
 
     eventText currentEventText; //String sisältö eventin kuvaukselle
 
+    GameObject InstantiatedChoiceButton() => Instantiate(Resources.Load<GameObject>("ChoicePrototype"));
     #endregion
     #region MonobehaviourDefaults
     private void OnEnable() //Kun choicebutton invokee OnDialogAdvance, main ui skripti vaihtaa tämänhetkisen dialogin seuraavaan indeksin perusteella
@@ -25,19 +26,20 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     {
         ChoiceButton.OnDialogAdvance -= AdvanceDialogTo;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentEventText = gameEvent.getData().eventTexts[0]; //Haetaan ensimmäinen event teksti ja asetetaan sen tämänhetkiseksi tekstivalinnaksi.
-        setTextToEvent();
-        populateChoiceContainer();
 
-    }
     #endregion
-    public void setRandomEvent(GameEvent gameEvent)
-    {
-        this.gameEvent = gameEvent; //Asettaa boksille oikean eventtidatan (tekstit, valinnat).
 
+    void dialogueData(int index = 0)
+    {
+        currentEventText = gameEvent.getData().eventTexts[index]; //Haetaan ensimmäinen event teksti käsiin.
+        setTextToEvent(); //Sijoittaa ym. Tekstin UIseen
+        populateChoiceContainer(); //Täyttää valintacontainerin valinnoilla
+    }
+
+    public void Init(GameEvent gameEvent, int index = 0)
+    {
+        this.gameEvent = gameEvent; //Asettaa boksille oikean eventtidatan.
+        dialogueData(index);
     }
     public void populateChoiceContainer() //nimensä mukaan täyttää choicecontainerin button tyyppisillä valintanäppäimillä.
     {
@@ -47,19 +49,14 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
         }
         for (int i = 0; i < currentEventText.eventDialogChoices.Length; i++)
         {
-            GameObject choice = instantiatedChoiceButton(currentEventText.eventDialogChoices[i].choiceDescriptor);
-            choice.GetComponent<ChoiceButton>().setButtonEventChoice(currentEventText.eventDialogChoices[i]);//Haetaan toisesta metodista näppäin, jolle passataan se teksti, mitä halutaan valintanäppäimeen.
-            choice.transform.SetParent(choiceContainer);
+            GameObject choice = InstantiatedChoiceButton();
+            choice.GetComponent<ChoiceButton>().Init(currentEventText.eventDialogChoices[i],
+                                                     choiceContainer,
+                                                     currentEventText.eventDialogChoices[i].choiceDescriptor);//Haetaan toisesta metodista näppäin, jolle passataan se teksti, mitä halutaan valintanäppäimeen.
+
         }
     }
-    GameObject instantiatedChoiceButton(string appliedTextToChoice) //Luo jokaiselle näppäimen pyynnölle sen varsinaisen näppäimen. argumentti 1 on scriptableobjectissa määritelty valinnan string.
-    {
-        GameObject button = Instantiate(Resources.Load<GameObject>("ChoicePrototype"));
-        ChoiceButton choiceButton = button.GetComponent<ChoiceButton>();
-        choiceButton.setChoiceText(appliedTextToChoice);
 
-        return button;
-    }
     public void AdvanceDialogTo(int index)
     {
         if (index < 0) //Jos seuraavan index on -1 tai alle, niin dialogista poistutaan.
@@ -71,9 +68,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
         }
         else
         {
-            currentEventText = gameEvent.getData().eventTexts[index];
-            setTextToEvent();
-            populateChoiceContainer();
+            dialogueData(index); //Indeksin n dialogidata haetaan
         }
     }
 

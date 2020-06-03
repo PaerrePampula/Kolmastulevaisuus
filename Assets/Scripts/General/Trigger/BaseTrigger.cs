@@ -9,7 +9,7 @@ public class BaseTrigger : MonoBehaviour
     [SerializeField]
     public Flag[] flags;
 
-    public virtual void FireTriggersAndFlags()
+    public virtual void FireTriggersAndFlags() //Kutsutaan kaikki ScriptableActionit sekä Global flag callit
     {
         if (eventTriggers.Length <= 0)
         {

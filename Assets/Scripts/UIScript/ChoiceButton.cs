@@ -7,24 +7,27 @@ public class ChoiceButton : BaseTrigger
     // private GameEvent onButtonSelected;
     public TextMeshProUGUI buttonText;
     eventChoice choiceofThisButton;
+
     public delegate void DialogAdvance(int index);
     public static event DialogAdvance OnDialogAdvance;
     #endregion
-
+    public void Init(eventChoice choice, Transform newTransformParent, string buttonText)
+    {
+        gameObject.transform.SetParent(newTransformParent); //Parentiksi event UI
+        choiceofThisButton = choice; //Näppäimen edustama event valinta
+        eventTriggers = choice.clickActions; //Näppäimen valinnan edustamat ScriptableActionit
+        flags = choice.firedFlags; //Näppäimen valinnan global flagit.
+        setChoiceText(buttonText);
+    }
     public void setChoiceText(string text)
     {
         buttonText.text = text; //Pyydetty teksti korvataan valintatekstillä.
     }
-    public void setButtonEventChoice(eventChoice choice)
-    {
-        choiceofThisButton = choice; //annetaan nappulalle se tieto, että mitä valintaa se edustaa.
-        eventTriggers = choice.clickActions; //nappulalle annetaan myös kaikki actionit, jota scriptableobjectin actioneissa on määritelty.
-        flags = choice.firedFlags;
-    }
+
     public void AdvanceDialog()
     {
-        FireTriggersAndFlags();
+        FireTriggersAndFlags(); //Basetrigger Method
 
-        OnDialogAdvance?.Invoke(choiceofThisButton.nextDialog);
+        OnDialogAdvance?.Invoke(choiceofThisButton.nextDialog); //Kutsuu seuraavaa dialogia
     }
 }
