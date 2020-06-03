@@ -32,7 +32,7 @@ public class PlayerEconomy : MonoBehaviour
     {
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         playerMoney += floatChangeInfo.changeofFloat;
-        PaerToolBox.callOnStatChange(StatType.PlayerMoney, playerMoney.ToString(), true);
+        PaerToolBox.callOnStatChange(StatType.PlayerMoney, true, playerMoney.ToString(), playerMoney);
         OnIncrease?.Invoke(playerMoney);
     }
     public void GetMoney()

@@ -8,8 +8,8 @@ public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
         StatChangeInfo statChange = new StatChangeInfo();
         statChange.playerStat.statName = typeOfStat;
         statChange.playerStat.statValueString = statValueString;
-        statChange.playerStat.
         statChange.playerStat.uniqueStat = uniqueness;
+        statChange.playerStat.statValueFloat = floatValue;
         GameEventSystem.Current.DoEvent(
             Event_Type.STATS_CALL,
             statChange

@@ -42,15 +42,15 @@ public class HomeHandler : MonoBehaviour
     #region MonobehaviourDefaults
     private void Awake()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_LEASES_HOME, registerHome);
+        //GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_LEASES_HOME, registerHome);
     }
     #endregion
-    void registerHome(EventInfo info)
-    {
-        RentLeaseForm form = (RentLeaseForm)info;
-        playerHome = form.rentable;
-        Rent rent = new Rent(form.rentable.getRentTotalForAMonth());
-        playerRent = rent;
-        Debug.Log(rent.getTotal());
-    }
+    //void registerHome(EventInfo info)
+    //{
+    //    RentLeaseForm form = (RentLeaseForm)info;
+    //    playerHome = form.rentable;
+    //    Rent rent = new Rent(form.rentable.getRentTotalForAMonth());
+    //    playerRent = rent;
+    //    Debug.Log(rent.getTotal());
+    //}
 }

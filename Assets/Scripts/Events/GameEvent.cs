@@ -48,7 +48,7 @@
                     if (foundPair != null)
                     {
                         requirementTargetFloat = float.Parse(prerequisite.StringComparatorValue);
-                        playerStatFloat = foundPair.statValueToFloat();
+                        playerStatFloat = foundPair.statValueFloat;
                     }
 
                 }

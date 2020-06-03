@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MainCanvas : MonoBehaviour
+public class MainCanvas : SceneCanvas
 {
     #region Fields
     public bool isUIOverride { get; private set; } //Tätä käytetään, kun ei haluta että UIn läpi pystyy painamaan asioita.
@@ -19,16 +19,7 @@ public class MainCanvas : MonoBehaviour
         }
     }
     #endregion
-    private void OnDestroy() //Periaatteessa mainmenulla on oma maincanvas, ja niin on scenellä, kaikki menee sekaisin jos sceneloadin jälkeen jää vielä mainmenun "kuolleen" canvaksen listeneri, kutsuu ui-elementtejä haudan takaa
-    {
-        GameEventSystem.Current.UnRegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
-    }
-    #region Getters
-    public static Transform getMainCanvasTransform() //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
-    {
-        return canvasTransform;
-    }
-    #endregion
+
 
     #region MonobehaviourDefaults
     // Start is called before the first frame update

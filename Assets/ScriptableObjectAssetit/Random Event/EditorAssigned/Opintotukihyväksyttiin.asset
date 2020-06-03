@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: "Opintotukihyv\xE4ksyttiin"
   m_EditorClassIdentifier: 
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 04000000
   eventTexts:
   - eventDialog: "Opintotukihakemuksesi hyv\xE4ksyttiin! Korkeakouluopintojesi laajuden
       vuoksi sait opintotukikuukausia yhteens\xE4 39. Et saa tukea kes\xE4kuukausilta,
       paitsi jos haet sit\xE4 erikseen, ja sille on sopiva syy, ja jokainen opiskelukuukausi
-      kuluttaa sinun korkeakouluopintojen tukikuukausia."
+      kuluttaa sinun korkeakouluopintojen tukikuukausia. Tuki alkaa nyt, loppuu 31.5
+      ja alkaa jatkossa  1.9."
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: "Pid\xE4n sen mieless\xE4..."

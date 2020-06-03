@@ -37,7 +37,7 @@ public class JobHandler : MonoBehaviour
         _currentJob = createJob(job);
 
         OnJobApply?.Invoke(job.jobNotice);
-        PaerToolBox.callOnStatChange(StatType.PlayerJob, job.jobNotice.scriptable.jobTitle, false);
+        PaerToolBox.callOnStatChange(StatType.PlayerJob, false, job.jobNotice.scriptable.jobTitle);
 
         createOnJobRegisterCall(_currentJob);
 

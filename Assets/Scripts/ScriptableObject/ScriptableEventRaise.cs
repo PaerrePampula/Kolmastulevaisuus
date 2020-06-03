@@ -7,7 +7,7 @@ public class ScriptableEventRaise : ScriptableAction //Tämä on scriptableactio
     {
         EventRaise eventRaise = new EventRaise();
         eventRaise.InCaseSpecificEvent = eventToRise;
-        eventRaise.SpecificEventRaise = (eventToRise == null) ? true : false;
+        if (eventToRise == null) eventRaise.SpecificEventRaise = false;
         GameEventSystem.Current.DoEvent(
             Event_Type,
             eventRaise

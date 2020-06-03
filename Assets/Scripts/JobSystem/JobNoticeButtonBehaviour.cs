@@ -26,7 +26,7 @@ public class JobNoticeButtonBehaviour : MonoBehaviour
     public void displayJob()
     {
         GameObject go = Instantiate(noticeInfoGraphic);
-        go.transform.SetParent(MainCanvas.getMainCanvasTransform());
+        go.transform.SetParent(SceneCanvas.getMainCanvasTransform());
         go.transform.position = Vector3.zero;
         go.transform.localPosition = Vector3.zero;
         go.GetComponent<JobNoticeInfoBehaviour>().setJob(_jobNotice);
