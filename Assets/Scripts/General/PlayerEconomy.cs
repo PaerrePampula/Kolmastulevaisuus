@@ -63,7 +63,7 @@ public class PlayerEconomy : MonoBehaviour
         GameEventSystem.Current.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
         GameEventSystem.Current.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
 
-        TaxationSystem.taxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
+        TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
 
     }
     private void OnEnable()
@@ -83,7 +83,7 @@ public class PlayerEconomy : MonoBehaviour
         IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount());
 
         incomeSources.Add(incomeSource);
-        TaxationSystem.taxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
+        TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
     }
 
     void PayFromIncomeSources()

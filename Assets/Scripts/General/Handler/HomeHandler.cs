@@ -21,10 +21,6 @@ public class HomeHandler : MonoBehaviour
     #endregion
 
     #region Getters
-    public Rent getRent()
-    {
-        return playerRent;
-    }
     private void OnEnable()
     {
         DateTimeSystem.OnMonthChange += PayRent;
@@ -36,21 +32,9 @@ public class HomeHandler : MonoBehaviour
     }
     void PayRent()
     {
-        PaerToolBox.changePlayerMoney(-playerRent.getTotal());
+        PaerToolBox.changePlayerMoney(-PlayerDataHolder.PlayerRent.getTotal());
     }
     #endregion
-    #region MonobehaviourDefaults
-    private void Awake()
-    {
-        //GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_LEASES_HOME, registerHome);
-    }
-    #endregion
-    //void registerHome(EventInfo info)
-    //{
-    //    RentLeaseForm form = (RentLeaseForm)info;
-    //    playerHome = form.rentable;
-    //    Rent rent = new Rent(form.rentable.getRentTotalForAMonth());
-    //    playerRent = rent;
-    //    Debug.Log(rent.getTotal());
-    //}
+
+
 }
