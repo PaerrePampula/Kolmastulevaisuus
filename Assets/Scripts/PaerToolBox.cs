@@ -10,7 +10,7 @@ public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
         statChange.playerStat.statValueString = statValueString;
         statChange.playerStat.uniqueStat = uniqueness;
         statChange.playerStat.statValueFloat = floatValue;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.STATS_CALL,
             statChange
         );
@@ -21,7 +21,7 @@ public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
         statChange.playerStat.statName = typeOfStat;
         statChange.playerStat.booleanValue = booleanOperator;
         statChange.playerStat.uniqueStat = uniqueness;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.STATS_CALL,
             statChange
         );
@@ -31,7 +31,7 @@ public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
         FloatChangeInfo valueChangeAction = new FloatChangeInfo();
         valueChangeAction.changeofFloat = amount;
         Debug.Log("Pelaajalle tapahtui rahamuutos: määrä on " + valueChangeAction.changeofFloat);
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.FLOAT_CHANGE,
             valueChangeAction
             );

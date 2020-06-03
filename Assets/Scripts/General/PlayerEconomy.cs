@@ -60,8 +60,8 @@ public class PlayerEconomy : MonoBehaviour
     void Start()
     {
 
-        GameEventSystem.Current.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
-        GameEventSystem.Current.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
+        GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
+        GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
 
         TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
 

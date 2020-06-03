@@ -22,7 +22,7 @@ public class JobHandler : MonoBehaviour
     #region MonobehaviourDefaults
     private void Start()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.JOB_APPLY, registerJob);
+        GameEventSystem.RegisterListener(Event_Type.JOB_APPLY, registerJob);
     }
     #endregion
     Job createJob(JobInfo info)
@@ -46,7 +46,7 @@ public class JobHandler : MonoBehaviour
     {
         JobRegisterInfo jobInfo = new JobRegisterInfo();
         jobInfo.job = job;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.JOB_REGISTERED_TO_PLAYER,
             jobInfo
             );

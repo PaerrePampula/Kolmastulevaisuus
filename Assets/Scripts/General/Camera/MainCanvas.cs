@@ -26,7 +26,7 @@ public class MainCanvas : SceneCanvas
     void Start()
     {
         canvasTransform = this.transform;
-        GameEventSystem.Current.RegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
+        GameEventSystem.RegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
     }
 
     // Update is called once per frame

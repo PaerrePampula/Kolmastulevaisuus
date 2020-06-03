@@ -27,7 +27,7 @@ public class WelfareSystem : MonoBehaviour
     #region MonobehaviourDefaults
     private void Start()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
+        GameEventSystem.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
 
     }
     private void OnEnable()

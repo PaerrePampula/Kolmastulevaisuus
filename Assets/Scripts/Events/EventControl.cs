@@ -19,7 +19,7 @@ public class EventControl : MonoBehaviour
     #region MonoBehaviourDefaults
     private void Awake()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.TRIGGER_EVENT,
+        GameEventSystem.RegisterListener(Event_Type.TRIGGER_EVENT,
                                                  CreateEventBox); //Event subscribe : Triggeröityy aina trigger_event kutsusta
     }
     void Start()
@@ -132,7 +132,7 @@ public class EventControl : MonoBehaviour
         EventRaise randomEvent = new EventRaise();
         randomEvent.SpecificEventRaise = true;
         randomEvent.InCaseSpecificEvent = specificRaise;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.TRIGGER_EVENT,
             randomEvent
             );
@@ -141,7 +141,7 @@ public class EventControl : MonoBehaviour
     {
         EventRaise randomEvent = new EventRaise();
         randomEvent.SpecificEventRaise = false; //tarvitaan täysin randomi paikallinen event, ei ole spesifinen
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.TRIGGER_EVENT,
             randomEvent
             );

@@ -28,7 +28,7 @@ public class UiGeneric : MonoBehaviour //Jokaisen UI palikkaan sopivia ominaisuu
         UiElementCall uiCall = new UiElementCall();
         uiCall.elementToCall = OnClickResourceToCall;
         uiCall.elementParent = OnClickResourceParent;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.UI_ELEMENT_CALL,
             uiCall
             );

@@ -24,7 +24,7 @@ public class JobNoticeInfoBehaviour : UiGeneric
     {
         JobInfo jobInfo = new JobInfo();
         jobInfo.jobNotice = _jobNotice;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type.JOB_APPLY,
             jobInfo
             );

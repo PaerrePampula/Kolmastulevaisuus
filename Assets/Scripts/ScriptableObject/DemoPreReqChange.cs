@@ -8,7 +8,7 @@ public class DemoPreReqChange : ScriptableAction
     {
         StatChangeInfo valueChangeAction = new StatChangeInfo();
         valueChangeAction.playerStat = stats;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type,
             valueChangeAction
             );

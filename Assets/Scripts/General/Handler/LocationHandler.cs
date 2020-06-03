@@ -42,7 +42,7 @@ public class LocationHandler : MonoBehaviour
     void Awake()
     {
         currentLocation = eventLocations[0]; //Aloitetaan ekasta lokaatiosta aina, kun peli alkaa
-        GameEventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
+        GameEventSystem.RegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
         //Kamera kääntyy? Sijainti muuttuu
 
     }

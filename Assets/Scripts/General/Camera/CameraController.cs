@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     #region MonoBehaviourDefaults
     private void Awake()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
+        GameEventSystem.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
     }
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour
             CameraAngleChangeInfo valueChangeAction = new CameraAngleChangeInfo();
             valueChangeAction.changeofFloat = 90;
             valueChangeAction.increments = 1;
-            GameEventSystem.Current.DoEvent(
+            GameEventSystem.DoEvent(
                 Event_Type.CAMERA_TURN,
                 valueChangeAction
                 );

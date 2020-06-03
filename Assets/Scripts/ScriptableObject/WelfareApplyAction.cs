@@ -8,7 +8,7 @@ public class WelfareApplyAction : ScriptableAction
     {
         WelfareApplyFormInfo form = new WelfareApplyFormInfo();
         form.typeofWelfare = typeofWelfare;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type,
             form
             );

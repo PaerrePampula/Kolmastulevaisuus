@@ -24,7 +24,7 @@ public class PlayerStatContainer : MonoBehaviour
     #region MonobehaviourDefaults
     void Start()
     {
-        GameEventSystem.Current.RegisterListener(Event_Type.STATS_CALL, UpdateTable);
+        GameEventSystem.RegisterListener(Event_Type.STATS_CALL, UpdateTable);
     }
     #endregion
 

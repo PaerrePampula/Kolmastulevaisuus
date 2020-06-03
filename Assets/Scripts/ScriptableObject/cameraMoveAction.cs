@@ -15,7 +15,7 @@ public class CameraMoveAction : ScriptableAction
         CameraAngleChangeInfo valueChangeAction = new CameraAngleChangeInfo();
         valueChangeAction.changeofFloat = angle();
         valueChangeAction.increments = Turns;
-        GameEventSystem.Current.DoEvent(
+        GameEventSystem.DoEvent(
             Event_Type,
             valueChangeAction
             );
