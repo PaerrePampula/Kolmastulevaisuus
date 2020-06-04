@@ -20,25 +20,18 @@ public class HoverText : MonoBehaviour
         }
 
         prefabClone = Instantiate(hoverObjectPrefab);
-        TextMeshPro textComp = prefabClone.GetComponent<TextMeshPro>();
+        TextMeshProUGUI textComp = prefabClone.GetComponent<TextMeshProUGUI>();
         textComp.text = text;
-        prefabClone.transform.position = objectTransform.position + Vector3.up*0.5f;
+
+        prefabClone.transform.position = camera.WorldToScreenPoint(objectTransform.position);
         prefabClone.transform.rotation = Quaternion.identity;
-
-    }
-
-    private void LateUpdate()
-    {
-        if (isHoveringOverHoverable)
-        {
-            prefabClone.transform.LookAt(prefabClone.transform.position + camera.transform.rotation * Vector3.forward, camera.transform.rotation * Vector3.up);
-        }
+        prefabClone.transform.SetParent(transform);
 
     }
     private void Start()
     {
         
-        camera = Camera.main;
+        camera = Camera.main; //Camera.main on melko kallis operaatio, haetaan se heti niin ei tarvii tehdä tätä aina uudestaan.
     }
     private void OnEnable()
     {

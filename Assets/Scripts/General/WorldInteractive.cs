@@ -23,16 +23,25 @@ public class WorldInteractive : MonoBehaviour, IHoverable
             {
                 clickEvents[i].Invoke();
             }
+            OnHover.Invoke(false);
         }
 
     }
     private void OnMouseEnter()
     {
-        OnHover.Invoke(true, propName, this.transform);
+        if (!MainCanvas.mainCanvas.isUIOverride)
+        {
+            OnHover.Invoke(true, propName, this.transform);
+        }
+
     }
     private void OnMouseExit()
     {
-        OnHover.Invoke(false);
+        if (!MainCanvas.mainCanvas.isUIOverride)
+        {
+            OnHover.Invoke(false);
+        }
+
     }
     #endregion
 }
