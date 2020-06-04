@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -15,25 +16,47 @@ public class EventControl : MonoBehaviour
 
     List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
     List<GameEvent> filteredListOfEvents = new List<GameEvent>(); //Ylläolevasta listauksesta käännetty filteröity lista kaikille tietyssä sijainnissa mahdollisille eventeille
+    List<GameEvent> toTriggerEvents = new List<GameEvent>();
+    Queue<GameEvent> eventQueue = new Queue<GameEvent>();
 
 
+    GameObject eventOnDisplay = null;
+    public bool testBool = false;
     #endregion
 
     #region MonoBehaviourDefaults
     private void Awake()
     {
-        GameEventSystem.RegisterListener(Event_Type.TRIGGER_EVENT,
-                                                 CreateEventBox); //Event subscribe : Triggeröityy aina trigger_event kutsusta
+        GameEventSystem.RegisterListener
+            (Event_Type.TRIGGER_EVENT,
+             CallEventWithEventInfo); //Event subscribe : Triggeröityy aina trigger_event kutsusta
+        GameEventSystem.RegisterListener(
+            Event_Type.EVENT_REGISTER,
+            RegisterEventToBeQueued);
+
         randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer");
     }
     void Start()
     {
         AggregateScriptablesIntoaNewGameEventList();
         //Aggregoidaan eli kootaan kaikki ylläolevassa RandomEvents listassa mainitut objektit uuteen GameEvent listaukseen osina näitä uusia gameeventtejä.
+        AggregateAppliableEventsForThisLocation();
 
         RaiseAnEvent();
         //Peli aloitetaan random eventillä, jos mahdollista firettää jonkin eventin.
 
+    }
+    private void OnEnable()
+    {
+        CameraController.OnSceneChange += AggregateAppliableEventsForThisLocation;
+        GameEvent.OnEventSelfTriggered += startTriggeringTimedEvent;
+        GameEvent.AfterTimedEventTriggered += UnRegisterEventFromQueue; 
+    }
+    private void OnDisable()
+    {
+        CameraController.OnSceneChange -= AggregateAppliableEventsForThisLocation;
+        GameEvent.OnEventSelfTriggered -= startTriggeringTimedEvent;
+        GameEvent.AfterTimedEventTriggered -= UnRegisterEventFromQueue;
     }
     #endregion
 
@@ -41,48 +64,35 @@ public class EventControl : MonoBehaviour
     bool CheckForRaiseChanceIfEligibleEventsCanBeFired() 
         //Tarkistaa, että onko nyk. sijainnissa mahdollisia eventtejä
     {
+        AggregateAppliableEventsForThisLocation();
         return (filteredListOfEvents.Count > 0) ? true : false;
     }
-    void CreateEventBox(EventInfo eventInfo) //Luo eventin peliin ui elementtinä.
+    void startTriggeringTimedEvent(GameEvent newEvent)
+    {
+        TriggerEvent(newEvent);
+    }
+
+    void TriggerEvent(GameEvent newEvent) //Luo eventin peliin ui elementtinä.
     {
 
-        AggregateAppliableEventsForThisLocation(); //aggregoi eli tuo kokoon kaikki eventit jota sijainnisa x voi suorittaa
-        if (CheckForRaiseChanceIfEligibleEventsCanBeFired()) //ym. metodi
-        {
-            EventRaise EventRaise = (EventRaise)eventInfo; //Polymorphismin avulla eventinfosta sopiva käytettävä info
+            GameObject go = Instantiate(randomEventUIBox);
+            RandomEventUI randomeventUI = go.GetComponent<RandomEventUI>();
+            eventOnDisplay = go;
 
-            var go = Instantiate(randomEventUIBox);
-            var randomeventUI = go; //...jota käytetään tähän tulevaan objektiin
 
-            randomeventUI.transform.SetParent(MainCanvas.mainCanvas.transform); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
-            randomeventUI.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
+            go.transform.SetParent(MainCanvas.mainCanvas.transform); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
+            go.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
+            randomeventUI.Init(newEvent);
 
-            if (EventRaise.SpecificEventRaise == false) //Jos eventti ei ole mikään tietty eventti joka nostettiin, vain täysin random.
-            {
-                if (filteredListOfEvents.Count > 0) //Jos lista ei ole tyhjä, anna eventille tietoja
-                { 
-                    randomeventUI.GetComponent<RandomEventUI>()
-                        .Init(filteredListOfEvents[randomizedRandomEventIndexChoice()]);
+            PointAndClickMovement.setMovementStatus(false);
 
-                    PointAndClickMovement.setMovementStatus(false);
 
-                }
-                else
-                {
 
-                    //Tämä on aika iso brainfart mun puolesta, tää metodi pitäis laittaa vähän uusiksi mutta leikitään että se on toistaiseksi ihan fine ku tuhotaa tää objekti näin jälkeenpäin :)
-                    Destroy(randomeventUI.transform.gameObject);
-                    Debug.Log("No events!");
-                }
-            }
-            else
-            {
-                //Tuodaan tietty eventti, jos raise vaati tiettyä eventtiä.
-                var specificEvent = new GameEvent(EventRaise.InCaseSpecificEvent);
-                randomeventUI.GetComponent<RandomEventUI>()
-                             .Init(specificEvent);
-            }
-        }
+    }
+    GameEvent getRandomizedEvent()
+    {
+
+        return filteredListOfEvents[randomizedRandomEventIndexChoice()] != null ? filteredListOfEvents[randomizedRandomEventIndexChoice()] : null;
 
     }
     int randomizedRandomEventIndexChoice() //Tämä valitsee random eventin halutusta listasta.
@@ -134,10 +144,41 @@ public class EventControl : MonoBehaviour
             SpecificEventRaise = specificCheck,
             InCaseSpecificEvent = raise
         };
-        GameEventSystem.DoEvent(
+
+            GameEventSystem.DoEvent(
             Event_Type.TRIGGER_EVENT,
             randomEvent
             );
     }
+    void RegisterEventToBeQueued(EventInfo @event)
+    {
+        EventRegisterInfo toRegisterEventInfo = (EventRegisterInfo)@event;
+        GameEvent toRegisterEvent = toRegisterEventInfo.Event;
+        toTriggerEvents.Add(toRegisterEvent);
+    }
+    void UnRegisterEventFromQueue(GameEvent @event)
+    {
+        toTriggerEvents.Remove(@event);
+    }
+    void CallEventWithEventInfo(EventInfo eventInfo)
+    {
+        EventRaise raise = (EventRaise)eventInfo;
+        GameEvent gameEvent = null;
+        if(raise.SpecificEventRaise)
+        {
+            gameEvent = new GameEvent(raise.InCaseSpecificEvent);
+        }
+        if (!raise.SpecificEventRaise && CheckForRaiseChanceIfEligibleEventsCanBeFired())
+        {
 
+            gameEvent = getRandomizedEvent();
+
+
+        }
+        if (gameEvent != null)
+        {
+            TriggerEvent(gameEvent);
+        }
+
+    }
 }

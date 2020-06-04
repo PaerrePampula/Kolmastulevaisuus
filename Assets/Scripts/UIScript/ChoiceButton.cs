@@ -7,16 +7,17 @@ public class ChoiceButton : BaseTrigger
     // private GameEvent onButtonSelected;
     public TextMeshProUGUI buttonText;
     eventChoice choiceofThisButton;
-
+    RandomEventUI thisRandomEventUI;
     public delegate void DialogAdvance(int index);
     public static event DialogAdvance OnDialogAdvance;
     #endregion
-    public void Init(eventChoice choice, Transform newTransformParent, string buttonText)
+    public void Init(eventChoice choice, Transform newTransformParent, string buttonText, RandomEventUI ui)
     {
         gameObject.transform.SetParent(newTransformParent); //Parentiksi event UI
         choiceofThisButton = choice; //Näppäimen edustama event valinta
         eventTriggers = choice.clickActions; //Näppäimen valinnan edustamat ScriptableActionit
         flags = choice.firedFlags; //Näppäimen valinnan global flagit.
+        thisRandomEventUI = ui;
         setChoiceText(buttonText);
     }
     public void setChoiceText(string text)
@@ -27,7 +28,7 @@ public class ChoiceButton : BaseTrigger
     public void AdvanceDialog()
     {
         FireTriggersAndFlags(); //Basetrigger Method
+        thisRandomEventUI.AdvanceDialogTo(choiceofThisButton.nextDialog);
 
-        OnDialogAdvance?.Invoke(choiceofThisButton.nextDialog); //Kutsuu seuraavaa dialogia
     }
 }

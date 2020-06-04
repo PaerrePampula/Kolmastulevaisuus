@@ -34,4 +34,4 @@ TaxBracketCPercent=0,2125
 TaxBracketDLower=76100
 #MaxBracketDUpper= Ei käytetty, ei kattoa
 TaxBracketDBase=10413,25
-TaxBracketDPercent=0,3125
+TaxBracketDPercent=03125

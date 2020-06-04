@@ -32,6 +32,7 @@ MonoBehaviour:
       firedFlags:
       - FlagName: FLAG_FIRSTCHOICE
         TimeToHappen: 0
+        uniqueFlag: 1
     - nextDialog: -1
       choiceDescriptor: "Paina t\xE4st\xE4 niin trigger\xF6it flagin FLAG_TEST ja
         yhden k\xE4\xE4nn\xF6ksen"
@@ -40,6 +41,7 @@ MonoBehaviour:
       firedFlags:
       - FlagName: FLAG_TEST
         TimeToHappen: 0
+        uniqueFlag: 0
   - eventDialog: "T\xE4m\xE4 on jatkoteksti"
     eventDialogChoices:
     - nextDialog: -1
@@ -48,3 +50,4 @@ MonoBehaviour:
       firedFlags:
       - FlagName: FLAG_TEST2
         TimeToHappen: 0
+        uniqueFlag: 0

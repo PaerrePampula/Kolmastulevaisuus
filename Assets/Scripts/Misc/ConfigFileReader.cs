@@ -29,7 +29,6 @@ public static class ConfigFileReader
                 filteredLines.Add(line);
             }
         }
-
         var pairs = filteredLines.Select(l => new { Line = l, Pos = l.IndexOf("=") });
         readLines = pairs.ToDictionary(p => p.Line.Substring(0, p.Pos), p => p.Line.Substring(p.Pos + 1).Trim());
 

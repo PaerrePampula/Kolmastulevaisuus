@@ -18,14 +18,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     GameObject InstantiatedChoiceButton() => Instantiate(Resources.Load<GameObject>("ChoicePrototype"));
     #endregion
     #region MonobehaviourDefaults
-    private void OnEnable() //Kun choicebutton invokee OnDialogAdvance, main ui skripti vaihtaa tämänhetkisen dialogin seuraavaan indeksin perusteella
-    {
-        ChoiceButton.OnDialogAdvance += AdvanceDialogTo;
-    }
-    private void OnDisable()
-    {
-        ChoiceButton.OnDialogAdvance -= AdvanceDialogTo;
-    }
+
 
     #endregion
 
@@ -52,7 +45,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
             GameObject choice = InstantiatedChoiceButton();
             choice.GetComponent<ChoiceButton>().Init(currentEventText.eventDialogChoices[i],
                                                      choiceContainer,
-                                                     currentEventText.eventDialogChoices[i].choiceDescriptor);//Haetaan toisesta metodista näppäin, jolle passataan se teksti, mitä halutaan valintanäppäimeen.
+                                                     currentEventText.eventDialogChoices[i].choiceDescriptor, this);//Haetaan toisesta metodista näppäin, jolle passataan se teksti, mitä halutaan valintanäppäimeen.
 
         }
     }

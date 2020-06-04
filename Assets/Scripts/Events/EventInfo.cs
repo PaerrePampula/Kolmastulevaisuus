@@ -54,3 +54,7 @@ public class FlagFireInfo : EventInfo
 {
     public Flag flag;
 }
+public class EventRegisterInfo : EventInfo
+{
+    public GameEvent Event;
+}

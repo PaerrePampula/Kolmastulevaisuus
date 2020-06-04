@@ -1,23 +1,39 @@
-﻿public class GameEvent
+﻿using System.Linq;
+
+public class GameEvent
 {
     #region Fields
     RandomEventScriptable scriptable; //scriptable, josta haetaan infot.
-    bool isUniqueEvent; //Tapahtuu vain kerran ikinä?
-    bool hasFired; //Onko tämä event firenny ennenkin?
+    bool isTimed;
     FIRE_LOCATION[] fire_locations; //missä sijainnissa?
     PrereqPair[] prerequisites;
-    float requirementTargetFloat;
-    float playerStatFloat;
+
+    int fireTime;
+    public delegate void EventSelfTrigger(GameEvent thisEvent);
+    public static event EventSelfTrigger OnEventSelfTriggered;
+    public delegate void EventAfterTrigger(GameEvent thisEvent);
+    public static event EventAfterTrigger AfterTimedEventTriggered;
     #endregion
 
     #region constructor
-    public GameEvent(RandomEventScriptable eventScriptable)
+    public GameEvent(RandomEventScriptable eventScriptable, bool isThisTimed = false, int timer = 0)
     {
         scriptable = eventScriptable;
         fire_locations = eventScriptable.fire_locations;
         prerequisites = eventScriptable.Prerequisites;
+
+        //Timed event
+        isTimed = isThisTimed;
+        fireTime = timer;
+        if(isTimed)
+        {
+            LocationHandler.OnTurnEnd += CheckForFiring;
+        }
+        //Timed event
     }
     #endregion
+
+    
 
     #region getters
     public RandomEventScriptable getData() //Hakee siis scriptablen eventistä tiedonhallintaa varten.
@@ -27,6 +43,16 @@
     public FIRE_LOCATION[] getFireLocations()
     {
         return fire_locations;
+    }
+    public void CheckForFiring()
+    {
+        fireTime--;
+
+        if ((fireTime <= 0) && (fire_locations.Contains(LocationHandler.CurrentLocation.getLocation()) || fire_locations.Contains(FIRE_LOCATION.ANY)))
+        {
+            OnEventSelfTriggered.Invoke(this);
+            LocationHandler.OnTurnEnd -= CheckForFiring;
+        }
     }
     #endregion
 

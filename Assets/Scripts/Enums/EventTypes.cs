@@ -15,6 +15,7 @@ public enum Event_Type
     JOB_REGISTERED_TO_PLAYER,
     PLAYER_WANTS_WELFARE,
     PLAYER_LEASES_HOME,
-    FLAG_FIRE
+    FLAG_FIRE,
+    EVENT_REGISTER
 }
 #endregion

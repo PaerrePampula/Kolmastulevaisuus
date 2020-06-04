@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class CameraController : MonoBehaviour
     Vector3 referenceRotation; //Tämä on pelaajan kameran kulma ennen kameran kääntämistä, asetetaan aina uudelleen kun kameran kääntämispyyntöä tehdään
     Vector3 endRotation; //Tämä on taas kameran kulma + 90 astetta y-akselilla. Asetetaan aina uudelleen, kun kameran kääntämispyyntöä tehdään
     float timelerped; //Tätä tarvitaan kameran lineaarisessa interpoloinnissa, lerpissä on se ongelma että se hidastuu kun lähestytään tarvittua rotaatiota, tämä korjaa sen niin, että tätä käytetään lerpin t muuttujassa osoittajana.
+    public delegate void CameraTurn();
+    public static event  CameraTurn OnSceneChange;
     #endregion
 
     #region MonoBehaviourDefaults
@@ -71,6 +74,7 @@ public class CameraController : MonoBehaviour
         {
             turnRequest = false;
         }
+        OnSceneChange.Invoke();
     }
     void assignReferenceRotation(EventInfo info)
     {

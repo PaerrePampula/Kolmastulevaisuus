@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: TimedEvent
+  m_EditorClassIdentifier: 
+  Prerequisites: []
+  fire_locations: 04000000
+  eventTexts:
+  - eventDialog: "T\xE4m\xE4 event trigger\xF6ityi 1 viikko eteenp\xE4in siit\xE4,
+      kun se trigger\xF6itiin toisesta eventist\xE4\t"
+    eventDialogChoices:
+    - nextDialog: -1
+      choiceDescriptor: "Nice, flagat\xE4\xE4np\xE4 nyt TEST_TIMED_EVENT_FIRED, muututaanpa
+        huvikseen punaiseksi"
+      clickActions:
+      - {fileID: 11400000, guid: cc422af2bc8b1d64bbec567197ec830a, type: 2}
+      firedFlags:
+      - FlagName: TEST_TIMED_EVENT_FIRED
+        TimeToHappen: 0
+        uniqueFlag: 1
