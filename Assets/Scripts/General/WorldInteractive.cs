@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class WorldInteractive : MonoBehaviour
+public class WorldInteractive : MonoBehaviour, IHoverable
 {
     #region Fields
     public UnityEvent[] clickEvents;
+    [SerializeField]
+    string propName;
+    public delegate void InteractHover(bool hoverstate, string text = "", Transform transform = null);
+    public static event InteractHover OnHover;
+    public string getHoverName()
+    {
+        return propName;
+    }
     #endregion
     #region MonobehaviourDefaults
     private void OnMouseDown()
@@ -17,6 +25,14 @@ public class WorldInteractive : MonoBehaviour
             }
         }
 
+    }
+    private void OnMouseEnter()
+    {
+        OnHover.Invoke(true, propName, this.transform);
+    }
+    private void OnMouseExit()
+    {
+        OnHover.Invoke(false);
     }
     #endregion
 }
