@@ -14,15 +14,15 @@ public class BaseTrigger : MonoBehaviour
 
             for (int i = 0; i < eventTriggers.Length; i++)
             {
+
                 eventTriggers[i].PerformAction();
+
             }
-            if (flags.Length > 0)
+            for (int i = 0; i < flags.Length; i++)
             {
-                for (int i = 0; i < flags.Length; i++)
-                {
+            
                 flags[i].FireFlag();
                     
-                }
             }
 
 

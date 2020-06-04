@@ -11,7 +11,7 @@ public class GlobalGameFlags : MonoBehaviour
         AllGlobalFlags = new List<Flag>();
         GameEventSystem.RegisterListener(Event_Type.FLAG_FIRE, addFlag);
     }
-    Flag GetFlag(string flagName)
+    public Flag GetFlag(string flagName)
     {
         var flag = AllGlobalFlags.SingleOrDefault(x => x.FlagName == flagName);
         if (flag != null)
@@ -23,6 +23,18 @@ public class GlobalGameFlags : MonoBehaviour
     void addFlag(EventInfo info) 
     {
         FlagFireInfo flagFireInfo = (FlagFireInfo)info;
-        AllGlobalFlags.Add(flagFireInfo.flag);
+
+        if (uniqueFlagIsApplicable(flagFireInfo.flag))
+        {
+            AllGlobalFlags.Add(flagFireInfo.flag);
+        }
+
+    }
+    bool uniqueFlagIsApplicable(Flag flag)
+    {
+        if (!flag.uniqueFlag) return true; //Jos flag ei ole unique, ei ole väliä vaikka stackaisi
+
+        var flagsearch = AllGlobalFlags.SingleOrDefault(singleflag => singleflag.FlagName == flag.FlagName); //Etsitään kopio, jos edes on, unique check tarpeeton
+        return (flagsearch == null) ? true : false; //Jos ei löydy, cond on true, jos löytyy cond on false.
     }
 }

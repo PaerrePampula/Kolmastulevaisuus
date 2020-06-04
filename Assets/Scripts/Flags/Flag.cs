@@ -4,11 +4,12 @@ public class Flag
 {
     public string FlagName;
     public int TimeToHappen;
-    public Flag(string Flag, int flagTimer = 0)
+    public bool uniqueFlag;
+    public Flag(string Flag, int flagTimer = 0, bool unique = false)
     {
         FlagName = Flag;
         TimeToHappen = flagTimer;
-
+        uniqueFlag = unique;
 
     }
     public void FireFlag()

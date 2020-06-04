@@ -8,7 +8,12 @@ public static class ConfigFileReader
 {
 
     static Dictionary<string, string> readLines;
-    [RuntimeInitializeOnLoadMethod]
+
+    [RuntimeInitializeOnLoadMethod (loadType: RuntimeInitializeLoadType.BeforeSceneLoad)] //Ei runaa ilman tätä koska ei monobehaviouria.
+    static void OnRuntimeMethodLoad()
+    {
+        Init();
+    }
     static void Init()
     {
         string[] lines = File.ReadAllLines(System.IO.Path.Combine(Application.streamingAssetsPath, "config.txt"));
@@ -28,10 +33,11 @@ public static class ConfigFileReader
         var pairs = filteredLines.Select(l => new { Line = l, Pos = l.IndexOf("=") });
         readLines = pairs.ToDictionary(p => p.Line.Substring(0, p.Pos), p => p.Line.Substring(p.Pos + 1).Trim());
 
-
     }
     public static float getValue(string keyString)
     {
+
+
         var returnedKey = readLines[keyString];
         return float.Parse(returnedKey);
     }

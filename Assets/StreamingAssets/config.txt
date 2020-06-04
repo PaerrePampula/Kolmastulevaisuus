@@ -5,4 +5,33 @@
 #arvo=5 ON OIKEIN
 #KELAN TUET
 maxGrossForHouseHoldAsumistuki=1608
-#Merkitsee maksimi bruttoa yksinelävälle asuntotuen hakijalle. Asuu vyöhykkeellä 3, poimittu samasta vyöhykkeestä kuin hämeenlinna.
+#Merkitsee maksimi bruttoa yksinelävälle asuntotuen hakijalle. 
+#Asuu vyöhykkeellä 3, poimittu samasta vyöhykkeestä kuin hämeenlinna.
+#VEROASTEIKOT - VALTIONVERO
+#Lower - Minimi bruttotulot, Upper, maksimi bruttotulot
+#Base, veron määrä minimin kohdalla
+#Percent, veroprosentti alarajan ylittävällä tulolla
+#
+#ASTEIKKO 1
+TaxBracketALower=17600
+TaxBracketAUpper=26400
+TaxBracketABase=0,08
+TaxBracketAPercent=6
+#
+#ASTEIKKO 2
+TaxBracketBLower=26400
+TaxBracketBUpper=43500
+TaxBracketBBase=536
+TaxBracketBPercent=0,1725
+#
+#ASTEIKKO 3
+TaxBracketCLower=43500
+TaxBracketCUpper=76100
+TaxBracketCBase=3485,75
+TaxBracketCPercent=0,2125
+#
+#ASTEIKKO 4
+TaxBracketDLower=76100
+#MaxBracketDUpper= Ei käytetty, ei kattoa
+TaxBracketDBase=10413,25
+TaxBracketDPercent=0,3125
