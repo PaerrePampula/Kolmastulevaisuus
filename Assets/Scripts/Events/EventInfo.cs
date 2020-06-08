@@ -1,8 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Reflection;
+using UnityEngine;
 
-public abstract class EventInfo
+public interface IInfoable
+{
+    //void setvalue<T>(string name, T value);
+    //object getValue<T>(string name);
+}
+public abstract class EventInfo : IInfoable
 {
     string eventDebugInformation;
+
+    //public object getValue<T>(string name)
+    //{
+    //    Type type = typeof(T);
+    //    var fieldInfo = type.GetField(name).GetValue(type);
+    //    return fieldInfo;
+    //}
+    //public void setvalue<T>(string name, T value)
+    //{
+    //    Type type = typeof(T);
+    //    var fieldInfo = type.GetField(name).GetValue(type);
+    //    fieldInfo = (T)(object)Convert.ChangeType(name, typeof(T));
+    //}
     //Debug.login käyttöön.
 }
 public class FloatChangeInfo : EventInfo

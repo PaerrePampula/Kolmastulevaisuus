@@ -27,8 +27,12 @@ public class JobNoticeInfoBehaviour : UiGeneric
             Flag flag = new Flag("TUTORIAL_FIRSTJOB", 0, true);
             flag.FireFlag();
         }
+
+        TimedActionRaise timedActionRaise = new TimedActionRaise(Event_Type.JOB_APPLY);
+
         JobInfo jobInfo = new JobInfo();
         jobInfo.jobNotice = _jobNotice;
+        timedActionRaise.infoable = jobInfo;
         GameEventSystem.DoEvent(
             Event_Type.JOB_APPLY,
             jobInfo
