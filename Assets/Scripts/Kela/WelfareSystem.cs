@@ -10,8 +10,6 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
 
     float maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone;
     List<IWelfareableSupport> currentPlayerSupports = new List<IWelfareableSupport>();
-    [SerializeField]
-    RandomEventScriptable playerWelfareApplicationDeniedOnAsumisTuki;
     static private WelfareSystem _current;
     static public WelfareSystem Current
     {
@@ -98,7 +96,7 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
     void checkEligiblityOnNewIncomeArrival()
     {
         var asuntoTuki = currentPlayerSupports.SingleOrDefault(support => support.GetTypeOfSupport() == typeOfSupport.YleinenAsumistuki);
-        if (asuntoTuki != null)
+        if (asuntoTuki != null && PlayerEconomy.getAllIncomeSourceGrossTotals(1) > maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone)
         {
             Flag flag = new Flag("PLAYER_HAS_TOO_MUCH_INCOME", 0, true);
             flag.FireFlag();
@@ -124,9 +122,13 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
                 case typeOfSupport.OpintoTuki:
                     OpintoRaha raha = new OpintoRaha(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.OpintoTuki);
                     currentPlayerSupports.Add(raha);
+                    Flag flag = new Flag("OPINTOTUKI_ACCEPTED", 0, true);
+                    flag.FireFlag();
                     break;
                 case typeOfSupport.YleinenAsumistuki:
                     AsumisTuki asumisTuki = new AsumisTuki(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, true, typeOfSupport.YleinenAsumistuki);
+                    Flag flag2 = new Flag("ASUMISTUKI_ACCEPTED", 0, true);
+                    flag2.FireFlag();
                     currentPlayerSupports.Add(asumisTuki);
                     foreach (var item in currentPlayerSupports)
                     {
@@ -136,6 +138,8 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
                     break;
                 case typeOfSupport.Opintolaina:
                     OpintoLaina opintoLaina = new OpintoLaina(DateTimeSystem.getCurrentDate(), welfareApplyFormInfo.timeWelfareAppliedFor.Item2, false, typeOfSupport.Opintolaina);
+                    Flag flag3 = new Flag("OPINTOLAINA_ACCEPTED", 0, true);
+                    flag3.FireFlag();
                     currentPlayerSupports.Add(opintoLaina);
                     break;
                 case typeOfSupport.Kuntoutusraha:
@@ -146,10 +150,8 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
         }
         else
         {
-            if(welfareApplyFormInfo.typeofWelfare == typeOfSupport.YleinenAsumistuki)
-            {
-                EventControl.RaiseAnEvent(playerWelfareApplicationDeniedOnAsumisTuki);
-            }
+            Flag flag = new Flag("PLAYER_CANT_APPLY", 0, true);
+            flag.FireFlag();
         }
 
     }

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: "PelaajanHakemusHyv\xE4ksyttiin"
   m_EditorClassIdentifier: 
+  neededFlags:
+  - FlagName: ASUNTOTUKI_ACCEPTED
+    TimeToHappen: 0
+    uniqueFlag: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:

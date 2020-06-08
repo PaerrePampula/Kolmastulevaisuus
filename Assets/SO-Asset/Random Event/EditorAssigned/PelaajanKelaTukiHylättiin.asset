@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: AsumisTukiTooMuchIncome
+  m_Name: "PelaajanKelaTukiHyl\xE4ttiin"
   m_EditorClassIdentifier: 
   neededFlags:
-  - FlagName: PLAYER_HAS_TOO_MUCH_INCOME
+  - FlagName: PLAYER_CANT_APPLY
     TimeToHappen: 0
     uniqueFlag: 1
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Menetit yleisen asumistukesi, sill\xE4 teet t\xE4ll\xE4 hetkell\xE4
-      liikaa ansiota tukea saadaksesi!"
+  - eventDialog: "Tukihakemuksesi hyl\xE4ttiin! Sinulla joko on jo t\xE4t\xE4 tukea,
+      tai tulosi ovat liian suuria!"
     eventDialogChoices:
     - nextDialog: -1
-      choiceDescriptor: Harmi!
+      choiceDescriptor: Harmi...
       clickActions: []
       firedFlags: []

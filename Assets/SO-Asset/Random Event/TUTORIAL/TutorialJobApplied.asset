@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: TutorialJobApplied
   m_EditorClassIdentifier: 
+  neededFlags:
+  - FlagName: TUTORIAL_FIRSTJOB
+    TimeToHappen: 0
+    uniqueFlag: 1
   Prerequisites: []
   fire_locations: 
   eventTexts:
@@ -20,6 +24,5 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: "Selv\xE4"
-      clickActions:
-      - {fileID: 0}
+      clickActions: []
       firedFlags: []

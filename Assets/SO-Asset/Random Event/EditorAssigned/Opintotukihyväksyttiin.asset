@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: "Opintotukihyv\xE4ksyttiin"
   m_EditorClassIdentifier: 
+  neededFlags:
+  - FlagName: OPINTOTUKI_ACCEPTED
+    TimeToHappen: 0
+    uniqueFlag: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
@@ -24,9 +28,11 @@ MonoBehaviour:
     - nextDialog: -1
       choiceDescriptor: "Pid\xE4n sen mieless\xE4..."
       clickActions: []
+      firedFlags: []
     - nextDialog: 1
       choiceDescriptor: "Miten saan tukea kes\xE4kuukausina?"
       clickActions: []
+      firedFlags: []
   - eventDialog: "Saat tukea kes\xE4kuukausillekin, jos suoritat opintoja kes\xE4ll\xE4kin.
       Jos olet ep\xE4varma mist\xE4 syist\xE4 tukea saa, kysy opoltasi! Olennaisin
       tekij\xE4 tuen saamisessa on kuitenkin se, ett\xE4 saat riitt\xE4v\xE4n m\xE4\xE4r\xE4n
@@ -35,3 +41,4 @@ MonoBehaviour:
     - nextDialog: -1
       choiceDescriptor: "Ymm\xE4rretty"
       clickActions: []
+      firedFlags: []

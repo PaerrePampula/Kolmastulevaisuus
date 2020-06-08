@@ -55,7 +55,6 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
         if (index < 0) //Jos seuraavan index on -1 tai alle, niin dialogista poistutaan.
         {
             Destroy(transform.gameObject);
-            PointAndClickMovement.setMovementStatus(true);
             //Periaatteessa tänne voisi lisätä broadcastin tapahtumasta CAMERA_TURN, mutta
             //Voitaisiin toistaiseksi mahdollistaa perättäiset eventit sijainneissa, jos se onkin tarpeellista.
         }

@@ -1080,7 +1080,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 337951335}
-  - component: {fileID: 337951334}
   m_Layer: 0
   m_Name: ----PELILOGIIKKA----
   m_TagString: Untagged
@@ -1088,18 +1087,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &337951334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337951333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c009b9c82d77aa74fbb83211d6476553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &337951335
 Transform:
   m_ObjectHideFlags: 0
@@ -5172,8 +5159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352226a4ec14ae748bfe22055c597427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWelfareApplicationDeniedOnAsumisTuki: {fileID: 11400000, guid: e3d58df37de2d9444b859262f1acd664,
-    type: 2}
 --- !u!114 &1348062717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5186,7 +5171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1b390246ffa7749ae88635e7e30831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllGlobalFlags: []
 --- !u!114 &1348062718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5273,6 +5257,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialStart: {fileID: 11400000, guid: 0608b84af9ecf8649b89ec97c4b0572e, type: 2}
+  flagEvents:
+  - {fileID: 11400000, guid: 77340f8882c5cd64aab12dea0695efb0, type: 2}
+  - {fileID: 11400000, guid: 987b9ff407db3f447a354b46f8d31260, type: 2}
+  - {fileID: 11400000, guid: aab4400046cd97b4ca34805703f02ac9, type: 2}
+  - {fileID: 11400000, guid: 9ddf59f1ea8fde74ab4e5f24e170578b, type: 2}
+  - {fileID: 11400000, guid: e3d58df37de2d9444b859262f1acd664, type: 2}
 --- !u!1 &1351591645
 GameObject:
   m_ObjectHideFlags: 0

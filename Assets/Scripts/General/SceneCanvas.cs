@@ -8,7 +8,7 @@ using UnityEngine;
 public class SceneCanvas : MonoBehaviour
 {
     private static SceneCanvas _main;
-    private static SceneCanvas mainTransform
+    public static SceneCanvas mainTransform
     {
         get
         {
@@ -19,7 +19,7 @@ public class SceneCanvas : MonoBehaviour
             return _main;
         }
     }
-    public static Transform getMainCanvasTransform() //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
+    public virtual Transform getMainCanvasTransform() //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
     {
         return mainTransform.transform;
     }

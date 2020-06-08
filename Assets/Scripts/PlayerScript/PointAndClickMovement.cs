@@ -25,11 +25,12 @@ public class PointAndClickMovement : MonoBehaviour
     }
     private void OnEnable()
     {
-        UiGeneric.OnUIOpened += setMovementStatus;
+        MainCanvas.OnFreeze += setMovementStatus;
+        
     }
     private void OnDisable()
     {
-        UiGeneric.OnUIOpened -= setMovementStatus;
+        MainCanvas.OnFreeze -= setMovementStatus;
     }
 
     // Update is called once per frame
@@ -86,6 +87,6 @@ public class PointAndClickMovement : MonoBehaviour
     }
     public static void setMovementStatus(bool status)
     {
-        movementAllowed = status;
+            movementAllowed = status;
     }
 }
