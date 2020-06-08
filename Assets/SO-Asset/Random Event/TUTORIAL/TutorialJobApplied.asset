@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: TutorialJobApplied
+  m_EditorClassIdentifier: 
+  Prerequisites: []
+  fire_locations: 
+  eventTexts:
+  - eventDialog: "Hyv\xE4, hait t\xF6it\xE4! Ty\xF6nantaja piti sinun kanssa lyhyen
+      puhelinhaastattelun. Ty\xF6antaja onneksesi palkkasi sinut v\xE4litt\xF6m\xE4sti!"
+    eventDialogChoices:
+    - nextDialog: -1
+      choiceDescriptor: "Selv\xE4"
+      clickActions:
+      - {fileID: 0}
+      firedFlags: []

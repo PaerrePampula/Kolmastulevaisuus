@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "Uusi satunnainen event", menuName = "Satunnainen event tekstiboksi")]
 public class RandomEventScriptable : ScriptableObject //Tämä on melko yksiselitteinen, lista stringejä ja dialogivalintoja, sekä scriptableactioneita
 {
+    public List<Flag> neededFlags;
     public PrereqPair[] Prerequisites;
     public FIRE_LOCATION[] fire_locations;
     public eventText[] eventTexts; //Eventexts on säiliö eventin kuvaustekstille, sekä sen valintabokseille

@@ -4,10 +4,11 @@ public class GameEvent
 {
     #region Fields
     RandomEventScriptable scriptable; //scriptable, josta haetaan infot.
+    bool firedOnce;
     bool isTimed;
     FIRE_LOCATION[] fire_locations; //missä sijainnissa?
     PrereqPair[] prerequisites;
-
+    Flag[] neededFlags;
     int fireTime;
     public delegate void EventSelfTrigger(GameEvent thisEvent);
     public static event EventSelfTrigger OnEventSelfTriggered;
@@ -16,7 +17,7 @@ public class GameEvent
     #endregion
 
     #region constructor
-    public GameEvent(RandomEventScriptable eventScriptable, bool isThisTimed = false, int timer = 0)
+    public GameEvent(RandomEventScriptable eventScriptable, bool isThisTimed = false, int timer = 0, bool fireOnce = false)
     {
         scriptable = eventScriptable;
         fire_locations = eventScriptable.fire_locations;
@@ -25,6 +26,7 @@ public class GameEvent
         //Timed event
         isTimed = isThisTimed;
         fireTime = timer;
+        firedOnce = fireOnce;
         if(isTimed)
         {
             LocationHandler.OnTurnEnd += CheckForFiring;
@@ -54,6 +56,10 @@ public class GameEvent
             LocationHandler.OnTurnEnd -= CheckForFiring;
         }
     }
+    //public bool hasAllFlags(Flag[] flagsToCheck)
+    //{
+
+    //}
     #endregion
 
     public bool CheckPreRequisites()

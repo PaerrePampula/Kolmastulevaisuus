@@ -5,13 +5,13 @@ using UnityEngine;
 public class GlobalGameFlags : MonoBehaviour
 {
     [SerializeField]
-    List<Flag> AllGlobalFlags; //Näitä flageja ois ihan kiva katella inspectorissa joten monobehaviour 
+    public static List<Flag> AllGlobalFlags; //Näitä flageja ois ihan kiva katella inspectorissa joten monobehaviour 
     private void Awake()
     {
         AllGlobalFlags = new List<Flag>();
         GameEventSystem.RegisterListener(Event_Type.FLAG_FIRE, addFlag);
     }
-    public Flag GetFlag(string flagName)
+    public static Flag GetFlag(string flagName)
     {
         var flag = AllGlobalFlags.SingleOrDefault(x => x.FlagName == flagName);
         if (flag != null)
@@ -20,7 +20,7 @@ public class GlobalGameFlags : MonoBehaviour
         }
         return null;
     }
-    void addFlag(EventInfo info) 
+    public static void addFlag(EventInfo info) 
     {
         FlagFireInfo flagFireInfo = (FlagFireInfo)info;
 
@@ -30,7 +30,7 @@ public class GlobalGameFlags : MonoBehaviour
         }
 
     }
-    bool uniqueFlagIsApplicable(Flag flag)
+    static bool uniqueFlagIsApplicable(Flag flag)
     {
         if (!flag.uniqueFlag) return true; //Jos flag ei ole unique, ei ole väliä vaikka stackaisi
 

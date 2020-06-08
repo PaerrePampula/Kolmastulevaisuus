@@ -5,6 +5,8 @@ public class Flag
     public string FlagName;
     public int TimeToHappen;
     public bool uniqueFlag;
+    public delegate void FlagFire(Flag flag);
+    public static event FlagFire OnFlagFire;
     public Flag(string Flag, int flagTimer = 0, bool unique = false)
     {
         FlagName = Flag;
@@ -21,6 +23,7 @@ public class Flag
             Event_Type.FLAG_FIRE,
             flagInfo
             );
+        OnFlagFire.Invoke(this);
     }
 }
 

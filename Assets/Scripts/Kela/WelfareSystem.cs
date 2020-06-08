@@ -37,10 +37,12 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
     private void OnEnable()
     {
         DateTimeSystem.OnMonthChange += givePlayerMonthlySupport;
+        IncomeSource.OnNewIncomeRegister += checkEligiblityOnNewIncomeArrival;
     }
     private void OnDisable()
     {
         DateTimeSystem.OnMonthChange -= givePlayerMonthlySupport;
+        IncomeSource.OnNewIncomeRegister -= checkEligiblityOnNewIncomeArrival;
     }
     #endregion
 
@@ -89,12 +91,27 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
             }
             else
             {
-                currentPlayerSupports.Remove(support);
-                Debug.Log("Pelaajalta loppui tuki:" + support.CalculatedSupport() + " euroa. Ajalta" + support.getStartAndEndDate().Item1 + "-" + support.getStartAndEndDate().Item2);
-                //Miksi tämän tuplen itemien returnaus returnaa molemmille itemeille itse sen päivän ja sitten tyhjän päiväarvon???? WTF
-                //Protip: tajusin että se 0.00.00 palautus onkin kellonaika, lol
+                removePlayerSupport(support);
             }
         }
+    }
+    void checkEligiblityOnNewIncomeArrival()
+    {
+        var asuntoTuki = currentPlayerSupports.SingleOrDefault(support => support.GetTypeOfSupport() == typeOfSupport.YleinenAsumistuki);
+        if (asuntoTuki != null)
+        {
+            Flag flag = new Flag("PLAYER_HAS_TOO_MUCH_INCOME", 0, true);
+            flag.FireFlag();
+            removePlayerSupport(asuntoTuki);
+        }
+
+    }
+    void removePlayerSupport(IWelfareableSupport support)
+    {
+        currentPlayerSupports.Remove(support);
+        Debug.Log("Pelaajalta loppui tuki:" + support.CalculatedSupport() + " euroa. Ajalta" + support.getStartAndEndDate().Item1 + "-" + support.getStartAndEndDate().Item2);
+        //Miksi tämän tuplen itemien returnaus returnaa molemmille itemeille itse sen päivän ja sitten tyhjän päiväarvon???? WTF
+        //Protip: tajusin että se 0.00.00 palautus onkin kellonaika, lol
     }
     void OnAWelfareApply(EventInfo eventInfo)
     {
@@ -140,8 +157,5 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
     {
         return currentPlayerSupports;
     }
-    void decrementPlayerStudyMonths()
-    {
 
-    }
 }

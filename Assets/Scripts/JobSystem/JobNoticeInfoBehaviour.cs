@@ -22,6 +22,11 @@ public class JobNoticeInfoBehaviour : UiGeneric
     }
     public void applyForJob()
     {
+        if (GlobalGameFlags.GetFlag("TUTORIAL_FIRSTJOB") == null)
+        {
+            Flag flag = new Flag("TUTORIAL_FIRSTJOB", 0, true);
+            flag.FireFlag();
+        }
         JobInfo jobInfo = new JobInfo();
         jobInfo.jobNotice = _jobNotice;
         GameEventSystem.DoEvent(
@@ -29,4 +34,5 @@ public class JobNoticeInfoBehaviour : UiGeneric
             jobInfo
             );
     }
+
 }

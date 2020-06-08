@@ -21,7 +21,7 @@ public class PointAndClickMovement : MonoBehaviour
     void Start()
     {
         playerNavMeshAgent = GetComponent<NavMeshAgent>();
-        movementAllowed = true;
+
     }
     private void OnEnable()
     {
@@ -31,10 +31,11 @@ public class PointAndClickMovement : MonoBehaviour
     {
         UiGeneric.OnUIOpened -= setMovementStatus;
     }
+
     // Update is called once per frame
     void Update()
     {
-        if (movementAllowed)
+        if (movementAllowed == true)
         {
             Movement();
         }
@@ -78,10 +79,7 @@ public class PointAndClickMovement : MonoBehaviour
 
         }
     }
-    //IEnumerator checkProximityTo()
-    //{
-    //    if (Vector3.Distance()
-    //}
+
     public static bool getMovementStatus()
     {
         return movementAllowed;

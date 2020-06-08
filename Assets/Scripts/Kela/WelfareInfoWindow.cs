@@ -25,7 +25,7 @@ public class WelfareInfoWindow : MonoBehaviour
         {
             applyWelfareInfoOnString(opintoText, opintoWelfare);
         }
-        if (lainaText != null)
+        if (lainaWelfare != null)
         {
             applyWelfareInfoOnString(lainaText, lainaWelfare);
         }

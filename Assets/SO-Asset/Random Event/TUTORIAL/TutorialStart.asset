@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: TutorialStart
+  m_EditorClassIdentifier: 
+  Prerequisites: []
+  fire_locations: 04000000
+  eventTexts:
+  - eventDialog: "P\xE4\xE4sit pitk\xE4n loman j\xE4lkeen taas koulun penkille. Koulussasi
+      pidettiin pikainen esittelytuokio, ja tutustuit sinun uusiin koulukavereihin.\n\nTajuat,
+      ett\xE4 olet melko j\xE4lkijunassa raha-asioiden hallinnassa, ehk\xE4 sinun
+      kannattaisi menn\xE4 hakemaan tukia, tai t\xF6it\xE4?\t"
+    eventDialogChoices:
+    - nextDialog: 1
+      choiceDescriptor: "Miten min\xE4 sen teen?"
+      clickActions: []
+      firedFlags: []
+  - eventDialog: "Tukia ja t\xF6it\xE4 saat molempia haettua l\xE4pp\xE4rilt\xE4,
+      kokeile vaikka! Paina hiirell\xE4 l\xE4pp\xE4ri\xE4!"
+    eventDialogChoices:
+    - nextDialog: -1
+      choiceDescriptor: "Selv\xE4!"
+      clickActions:
+      - {fileID: 11400000, guid: 47c71dc6f1bb43f4794cb56691d042ed, type: 2}
+      firedFlags: []

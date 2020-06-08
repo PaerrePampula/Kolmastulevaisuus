@@ -40,8 +40,6 @@ public class EventControl : MonoBehaviour
         //Aggregoidaan eli kootaan kaikki ylläolevassa RandomEvents listassa mainitut objektit uuteen GameEvent listaukseen osina näitä uusia gameeventtejä.
         AggregateAppliableEventsForThisLocation();
 
-        RaiseAnEvent();
-        //Peli aloitetaan random eventillä, jos mahdollista firettää jonkin eventin.
 
     }
     private void OnEnable()
@@ -72,20 +70,12 @@ public class EventControl : MonoBehaviour
 
     void TriggerEvent(GameEvent newEvent) //Luo eventin peliin ui elementtinä.
     {
-
-            GameObject go = Instantiate(randomEventUIBox);
-            RandomEventUI randomeventUI = go.GetComponent<RandomEventUI>();
-
-
-
-            go.transform.SetParent(MainCanvas.mainCanvas.transform); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
-            go.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
-            randomeventUI.Init(newEvent);
-
-            PointAndClickMovement.setMovementStatus(false);
-
-
-
+        PointAndClickMovement.setMovementStatus(false);
+        GameObject go = Instantiate(randomEventUIBox);
+        RandomEventUI randomeventUI = go.GetComponent<RandomEventUI>();
+        go.transform.SetParent(MainCanvas.mainCanvas.transform); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
+        go.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
+        randomeventUI.Init(newEvent);
     }
     GameEvent getRandomizedEvent()
     {
@@ -135,14 +125,17 @@ public class EventControl : MonoBehaviour
     }
     #endregion
 
-    public static void RaiseAnEvent(RandomEventScriptable raise = null, bool specificCheck = false)
+    public static void RaiseAnEvent(RandomEventScriptable raise = null)
     {
         EventRaise randomEvent = new EventRaise
         {
-            SpecificEventRaise = specificCheck,
+
             InCaseSpecificEvent = raise
         };
-
+        if (raise != null)
+        {
+            randomEvent.SpecificEventRaise = true;
+        }
             GameEventSystem.DoEvent(
             Event_Type.TRIGGER_EVENT,
             randomEvent
