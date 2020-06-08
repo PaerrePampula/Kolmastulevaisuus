@@ -1,12 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class PointAndClickMovement : MonoBehaviour
 {
     #region Fields
     NavMeshAgent playerNavMeshAgent;
-    Vector3 playerNavMeshTarget;
+    static Vector3 playerNavMeshTarget;
     static bool movementAllowed;
+    bool hasAMoveCommand;
+    WorldInteractive interactedObject;
+    public delegate void MovePlayer(Vector3 position);
+    public static event MovePlayer OnMoveStart;
+    public delegate void MovedPlayer();
+    public static event MovedPlayer OnMoveStopped;
     #endregion
 
     #region MonobehaviourDefaults
@@ -40,19 +47,41 @@ public class PointAndClickMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-
-            Plane plane = new Plane(Vector3.up, 0);
-
-            float distance;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (plane.Raycast(ray, out distance))
+            RaycastHit hit;
+            Vector3 mousePos = Input.mousePosition;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hit))
             {
-                Debug.Log("Hello");
-                playerNavMeshTarget = ray.GetPoint(distance);
+                hasAMoveCommand = true;
+                playerNavMeshTarget = hit.point;
                 playerNavMeshAgent.SetDestination(playerNavMeshTarget);
+                OnMoveStart?.Invoke(playerNavMeshAgent.destination);
+                if(hit.transform.gameObject.GetComponent<WorldInteractive>() != null)
+                {
+                    interactedObject = hit.transform.gameObject.GetComponent<WorldInteractive>();
+                }
             }
+
+
+        }
+        if ((hasAMoveCommand == true) && (playerNavMeshAgent.velocity == Vector3.zero) && (!playerNavMeshAgent.pathPending))
+        {
+            if (playerNavMeshAgent.remainingDistance < 1)
+            {
+                hasAMoveCommand = false;
+                OnMoveStopped?.Invoke();
+                if (interactedObject != null)
+                {
+                    interactedObject.OnInteract();
+                    interactedObject = null;
+                }
+            }
+
         }
     }
+    //IEnumerator checkProximityTo()
+    //{
+    //    if (Vector3.Distance()
+    //}
     public static bool getMovementStatus()
     {
         return movementAllowed;

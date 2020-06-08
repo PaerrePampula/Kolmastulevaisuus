@@ -9,16 +9,19 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     string propName;
     public delegate void InteractHover(bool hoverstate, string text = "", Transform transform = null);
     public static event InteractHover OnHover;
+    public delegate void InteractRequest(Transform objectToInteract);
+    public static event InteractRequest OnInteractRequest;
     public string getHoverName()
     {
         return propName;
     }
     #endregion
     #region MonobehaviourDefaults
-    private void OnMouseDown()
+    public void OnInteract()
     {
         if (!MainCanvas.mainCanvas.isUIOverride)
         {
+
             for (int i = 0; i < clickEvents.Length; i++)
             {
                 clickEvents[i].Invoke();

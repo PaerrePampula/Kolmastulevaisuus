@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: HoverOnTop
+    uniqueID: 3121278681
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

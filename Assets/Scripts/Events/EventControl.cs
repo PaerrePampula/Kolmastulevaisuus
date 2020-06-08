@@ -17,11 +17,9 @@ public class EventControl : MonoBehaviour
     List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
     List<GameEvent> filteredListOfEvents = new List<GameEvent>(); //Ylläolevasta listauksesta käännetty filteröity lista kaikille tietyssä sijainnissa mahdollisille eventeille
     List<GameEvent> toTriggerEvents = new List<GameEvent>();
-    Queue<GameEvent> eventQueue = new Queue<GameEvent>();
 
 
-    GameObject eventOnDisplay = null;
-    public bool testBool = false;
+
     #endregion
 
     #region MonoBehaviourDefaults
@@ -77,7 +75,7 @@ public class EventControl : MonoBehaviour
 
             GameObject go = Instantiate(randomEventUIBox);
             RandomEventUI randomeventUI = go.GetComponent<RandomEventUI>();
-            eventOnDisplay = go;
+
 
 
             go.transform.SetParent(MainCanvas.mainCanvas.transform); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
