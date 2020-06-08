@@ -10,7 +10,7 @@ public class ColorChangeAction : ScriptableAction
         ColorChangeInfo valueChangeAction = new ColorChangeInfo();
         valueChangeAction.newColor = color;
         GameEventSystem.DoEvent(
-            Event_Type,
+            thisEvent_Type,
             valueChangeAction
             );
     }
