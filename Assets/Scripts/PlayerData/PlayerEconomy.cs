@@ -68,6 +68,13 @@ public static class PlayerEconomy
         {
             PaerToolBox.changePlayerMoney(incomeSources()[i].getNetIncomeInAMonth());
         }
+        Flag flag = GlobalGameFlags.GetFlag("FIRST_INCOME_RECEIVED");
+        if (flag == null)
+        {
+            flag = new Flag("FIRST_INCOME_RECEIVED");
+            GlobalGameFlags.addFlag(flag);
+            flag.FireFlag();
+        }
     }
 
 }

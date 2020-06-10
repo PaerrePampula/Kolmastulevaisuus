@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053c4d5de5e79c44d969b0957fd44a83, type: 3}
   m_Name: SiivojanHommia
   m_EditorClassIdentifier: 
-  jobTitle: Laitoshuoltaja
-  jobDescriptionOnNotice: "Siivoojan hommia :)\t\t"
+  jobTitle: Siivooja
+  jobDescriptionOnNotice: "Haetaan ahkeraa henkil\xF6\xE4 siivoust\xF6ihin! Vaatimuksia
+    ei ole, mutta hakijan reippautta ja tunnollisuutta arvostetaan!"
   successMultiplier: 75
+  chanceOfBeingHired: 60
   workHoursPerDay: 6
   payByHour: 10
   jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}

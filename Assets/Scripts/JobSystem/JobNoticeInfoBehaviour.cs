@@ -4,12 +4,14 @@ public class JobNoticeInfoBehaviour : UiGeneric
 {
     #region Fields
     public TextMeshProUGUI noticeText;
+    public TextMeshProUGUI percentageIndicator;
     JobNotice _jobNotice;
     #endregion
 
     void insertInformation()
     {
         noticeText.text = _jobNotice.scriptable.jobDescriptionOnNotice;
+        percentageIndicator.text = (_jobNotice.scriptable.chanceOfBeingHired.ToString() + "%");
     }
     public JobNoticeScriptable getScriptable()
     {

@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: JobHuntFail
+  m_Name: FirstWelfare
   m_EditorClassIdentifier: 
   neededFlags:
-  - FlagName: PLAYER_DID_NOT_GET_JOB
+  - FlagName: FIRST_WELFARE_RECEIVED
     TimeToHappen: 0
     uniqueFlag: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Katsoit s\xE4hk\xF6postistasi, ett\xE4 mik\xE4\xE4n hakemastasi
-      ty\xF6paikasta ei halunnut palkata sinua t\xE4ll\xE4 kertaa..."
+  - eventDialog: "Sait ensimm\xE4isen kelan tukesi! Pid\xE4 aina mieless\xE4, ett\xE4
+      mit\xE4 tukia saat, ja kuinka kauan. Opintotuen kohdalla aina pid\xE4 mieless\xE4
+      ett\xE4 saat tarpeeksi opintopisteit\xE4 joka kuukaudelta, muuten kela voi
+      ev\xE4t\xE4 tukesi..."
     eventDialogChoices:
     - nextDialog: -1
-      choiceDescriptor: "Pit\xE4\xE4 kokeilla uudelleen..."
+      choiceDescriptor: "Pist\xE4n mieleen..."
       clickActions: []
       firedFlags: []
