@@ -57,11 +57,8 @@ public static class PlayerEconomy
     static void RegisterAnIncomeSourceFromJob(EventInfo info)
     {
         JobRegisterInfo job = (JobRegisterInfo)info;
-        var hadJob = incomeSources().SingleOrDefault(income => income.GetJob() != null);
-        if (hadJob != null)
-        {
-            incomeSources().Remove(hadJob);
-        }
+        deleteCurrentJobIncomeIfCan(); //Poistetaan mahdollinen entinen työpaikka
+
         IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount(), job.job);
 
         incomeSources().Add(incomeSource);
@@ -82,5 +79,12 @@ public static class PlayerEconomy
             flag.FireFlag();
         }
     }
-
+    static void deleteCurrentJobIncomeIfCan()
+    {
+        var hadJob = incomeSources().SingleOrDefault(income => income.GetJob() != null);
+        if (hadJob != null)
+        {
+            incomeSources().Remove(hadJob);
+        }
+    }
 }

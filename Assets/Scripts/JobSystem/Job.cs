@@ -40,4 +40,5 @@ public class Job : IStattable
     {
         jobEvents = gameEvents;
     }
+
 }
