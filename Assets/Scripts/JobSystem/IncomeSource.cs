@@ -45,5 +45,9 @@
     {
         return (T)(object)getGrossIncomeAmountInAMonth();
     }
+    public Job GetJob()
+    {
+        return incomeSourceJob;
+    }
     #endregion
 }

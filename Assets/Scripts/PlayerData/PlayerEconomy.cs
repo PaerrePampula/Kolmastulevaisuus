@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class PlayerEconomy
@@ -56,7 +57,12 @@ public static class PlayerEconomy
     static void RegisterAnIncomeSourceFromJob(EventInfo info)
     {
         JobRegisterInfo job = (JobRegisterInfo)info;
-        IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount());
+        var hadJob = incomeSources().SingleOrDefault(income => income.GetJob() != null);
+        if (hadJob != null)
+        {
+            incomeSources().Remove(hadJob);
+        }
+        IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount(), job.job);
 
         incomeSources().Add(incomeSource);
         TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
