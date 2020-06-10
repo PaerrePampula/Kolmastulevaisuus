@@ -92,13 +92,17 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
                 removePlayerSupport(support);
             }
         }
-        Flag flag = GlobalGameFlags.GetFlag("FIRST_WELFARE_RECEIVED");
-        if (flag == null)
+        if( currentPlayerSupports.Count > 0)
         {
-            flag = new Flag("FIRST_WELFARE_RECEIVED",0,true);
-            GlobalGameFlags.addFlag(flag);
-            flag.FireFlag();
+            Flag flag = GlobalGameFlags.GetFlag("FIRST_WELFARE_RECEIVED");
+            if (flag == null)
+            {
+                flag = new Flag("FIRST_WELFARE_RECEIVED", 0, true);
+                GlobalGameFlags.addFlag(flag);
+                flag.FireFlag();
+            }
         }
+
     }
     void checkEligiblityOnNewIncomeArrival()
     {
