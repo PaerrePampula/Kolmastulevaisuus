@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobTitle: "Varastoty\xF6ntekij\xE4"
   jobDescriptionOnNotice: Varastoduunia
+  successMultiplier: 20
   workHoursPerDay: 7
   payByHour: 11
   jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}

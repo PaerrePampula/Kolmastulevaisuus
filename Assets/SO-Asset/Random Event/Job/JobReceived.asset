@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: TutorialJobApplied
+  m_Name: JobReceived
   m_EditorClassIdentifier: 
   neededFlags:
-  - FlagName: TUTORIAL_FIRSTJOB
+  - FlagName: JOB_RECEIVED
     TimeToHappen: 0
-    uniqueFlag: 1
+    uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Hyv\xE4, hait t\xF6it\xE4! Saat odotella ty\xF6nantajalta viel\xE4
-      vastausta."
+  - eventDialog: "Sait uuden ty\xF6paikan, onneksi olkoon!\nTy\xF6nantaja sanoi sinulle,
+      ett\xE4 voit aloittaa heti t\xE4n\xE4\xE4n koulujen j\xE4lkeen."
     eventDialogChoices:
     - nextDialog: -1
-      choiceDescriptor: "Selv\xE4"
+      choiceDescriptor: Sinne sitten siis
       clickActions: []
       firedFlags: []

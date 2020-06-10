@@ -24,28 +24,51 @@ public static class JobHandler
         Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite, notice.workHoursPerDay);
         return newJob;
     }
-    static void registerJob(EventInfo info)
+    static void createOnJobRegisterCall(Job job)
     {
-        JobInfo job = (JobInfo)info;
-        PlayerDataHolder.PlayerJob = createJob(job);
+        JobRegisterInfo jobInfo = new JobRegisterInfo();
+        jobInfo.job = job;
+        GameEventSystem.DoEvent(
+            Event_Type.JOB_REGISTERED_TO_PLAYER,
+            jobInfo
+            );
+    }
 
-        OnJobApply?.Invoke(job.jobNotice);
-        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
+    //Työnhaku vaihe 1. Cachea työpaikka haku varastoon, jos niin vain voi...
+    static void cacheJob(EventInfo eventInfo) //Cachetaan uudet työpaikkahaut jonnekin varastoon myöhempää työn haun tulosta varten.
+    {
+        JobInfo job = (JobInfo)eventInfo;
 
-        createOnJobRegisterCall(PlayerDataHolder.PlayerJob);
+        if ((cachedJobNotices.SingleOrDefault(cachedJob => cachedJob.jobNotice == job.jobNotice) != null))
+        {
+            Flag flag = new Flag("JOB_ALREADY_APPLIED", 0, false);
+            flag.FireFlag();
+            return; //Pelaaja on jo hakenut tätä työpaikkaa, älä cachea sitä kahdesti.
+        }
+
+
+        //Jos meiltä ei löydy vielä jobhunt flagia. addaa se
+        Flag jobHuntFlag = GlobalGameFlags.GetFlag("PLAYER_JOBHUNT");
+        if (jobHuntFlag == null)
+        {
+            jobHuntFlag = new Flag("PLAYER_JOBHUNT", 0, false);
+            GlobalGameFlags.addFlag(jobHuntFlag);
+        }
+
+        int randomInt = Random.Range(0, 100);
+        if (randomInt <= job.jobNotice.scriptable.chanceOfBeingHired) //Jos pelaajalla on tsänssin mukaan mahdollisuus saada työpaikka, cachea tämä tulos
+        {
+            cachedJobNotices.Add(job);
+        }
+
 
     }
-    static void dieRollTheJob()
-    {
-        float randomBetweenZeroAndOne = Random.Range(0, 1);
-        var selected = cachedJobProbabilities.SingleOrDefault(x => (randomBetweenZeroAndOne >= x.Item2) && (randomBetweenZeroAndOne < x.Item3));
-        registerJob(selected.Item1);
-        cachedJobNotices.Clear();
-    }
+
+    //Aikaa on kulunut, nyt koita generoida valituille työpaikoille tsänssit saada tämä työpaikka
     static void checkJobApply()
     {
-        cachedJobProbabilities.Clear();
-        if (cachedJobNotices.Count > 0)
+        cachedJobProbabilities.Clear(); //Tyhjätään tän hetkinen lopputulos tälle metodille.
+        if (cachedJobNotices.Count > 0) //Jos cachesta löytyy ilmoituksia, suoritetaan.
         {
             float sum = 0;
             List<(JobInfo, float)> allJobs = new List<(JobInfo, float)>();
@@ -75,22 +98,48 @@ public static class JobHandler
                 Debug.Log(item.Item2 * 100);
             }
             cachedJobProbabilities = ranges;
+
+            dieRollTheJob();
         }
-        dieRollTheJob();
-    }
-    static void cacheJob(EventInfo eventInfo)
-    {
-        JobInfo job = (JobInfo)eventInfo;
-        cachedJobNotices.Add(job);
+        else
+        {
+            Flag jobHuntFlag = GlobalGameFlags.GetFlag("PLAYER_JOBHUNT");
+            if (jobHuntFlag != null)
+            {
+                Flag flag = new Flag("PLAYER_DID_NOT_GET_JOB",0,false);
+                flag.FireFlag();
+                GlobalGameFlags.DisposeFlag(jobHuntFlag);
+            }
+        }
 
     }
-    static void createOnJobRegisterCall(Job job)
+
+    //Käytä generoituja tsänssejä, ja valitse työpaikka.
+    static void dieRollTheJob()
     {
-        JobRegisterInfo jobInfo = new JobRegisterInfo();
-        jobInfo.job = job;
-        GameEventSystem.DoEvent(
-            Event_Type.JOB_REGISTERED_TO_PLAYER,
-            jobInfo
-            );
+        float randomBetweenZeroAndOne = Random.Range(0, 1);
+        var selected = cachedJobProbabilities.SingleOrDefault(x => (randomBetweenZeroAndOne >= x.Item2) && (randomBetweenZeroAndOne < x.Item3));
+        registerJob(selected.Item1);
+
+        Flag flag = new Flag("JOB_RECEIVED", 0, false);
+        flag.FireFlag();
+
+        GlobalGameFlags.DisposeFlag(GlobalGameFlags.GetFlag("PLAYER_JOBHUNT"));
+
+        cachedJobNotices.Clear();
     }
+
+    //Rekisteröi valittu työpaikka.
+    static void registerJob(EventInfo info)
+    {
+        JobInfo job = (JobInfo)info;
+        PlayerDataHolder.PlayerJob = createJob(job);
+
+        OnJobApply?.Invoke(job.jobNotice);
+        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
+
+        createOnJobRegisterCall(PlayerDataHolder.PlayerJob);
+
+    }
+
 }

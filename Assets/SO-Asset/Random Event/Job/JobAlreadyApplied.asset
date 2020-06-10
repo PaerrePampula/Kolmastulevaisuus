@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: TutorialJobApplied
+  m_Name: JobAlreadyApplied
   m_EditorClassIdentifier: 
   neededFlags:
-  - FlagName: TUTORIAL_FIRSTJOB
+  - FlagName: JOB_ALREADY_APPLIED
     TimeToHappen: 0
-    uniqueFlag: 1
+    uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Hyv\xE4, hait t\xF6it\xE4! Saat odotella ty\xF6nantajalta viel\xE4
-      vastausta."
+  - eventDialog: "Olet jo hakenut t\xE4t\xE4 ty\xF6paikkaa, et voi (tai ei ainakaan
+      kannata) hakea sit\xE4 kahdesti!"
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: "Selv\xE4"

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8435d02dac60a3f49928bba79a2d19ef, type: 3}
   m_Name: TutorialWeekPassed
   m_EditorClassIdentifier: 
-  Event_Type: 15
-  Description: 
+  event_Type: 15
+  description: 
   eventToRise: {fileID: 11400000, guid: 15e4d57889611fc4e99fc8d68eba4965, type: 2}
   eventFireTime: 1

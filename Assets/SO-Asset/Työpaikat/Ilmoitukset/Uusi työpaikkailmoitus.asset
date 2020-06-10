@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobTitle: "Myyj\xE4"
   jobDescriptionOnNotice: "Myyj\xE4n hommia :)"
+  successMultiplier: 50
   workHoursPerDay: 5
   payByHour: 10.5
   jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda0f7ad2612ef647aec2095807b791a, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  Event_Type: 5
-  Description: Jokin asia muuttuu punaiseksi
+  event_Type: 5
+  description: 
   color:
     serializedVersion: 2
     rgba: 255

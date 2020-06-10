@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b2ff9f5121c534db3e88eebe50c014, type: 3}
   m_Name: Opintotuki
   m_EditorClassIdentifier: 
-  Event_Type: 12
-  Description: 
+  event_Type: 12
+  description: 
   typeofWelfare: 0

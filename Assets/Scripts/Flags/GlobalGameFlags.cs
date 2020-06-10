@@ -30,6 +30,21 @@ public class GlobalGameFlags : MonoBehaviour
         }
 
     }
+    public static void addFlag(Flag flag)
+    {
+        if (uniqueFlagIsApplicable(flag))
+        {
+            AllGlobalFlags.Add(flag);
+        }
+    }
+    public static void DisposeFlag(Flag flag)
+    {
+        if (AllGlobalFlags.Contains(flag))
+        {
+            AllGlobalFlags.Remove(flag);
+        }
+
+    }
     static bool uniqueFlagIsApplicable(Flag flag)
     {
         if (!flag.uniqueFlag) return true; //Jos flag ei ole unique, ei ole väliä vaikka stackaisi

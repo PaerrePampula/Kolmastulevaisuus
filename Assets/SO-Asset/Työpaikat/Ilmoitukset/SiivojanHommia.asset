@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jobTitle: Laitoshuoltaja
   jobDescriptionOnNotice: "Siivoojan hommia :)\t\t"
+  successMultiplier: 75
   workHoursPerDay: 6
   payByHour: 10
   jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}
