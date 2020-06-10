@@ -14,7 +14,7 @@ public class EventControl : MonoBehaviour
     [SerializeField]
     List<RandomEventScriptable> RandomEvents; //Kaikki mahdolliset randomeventit scriptableobjekteissa
 
-    List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
+    static List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
     List<GameEvent> filteredListOfEvents = new List<GameEvent>(); //Ylläolevasta listauksesta käännetty filteröity lista kaikille tietyssä sijainnissa mahdollisille eventeille
     List<GameEvent> toTriggerEvents = new List<GameEvent>();
 
@@ -36,7 +36,8 @@ public class EventControl : MonoBehaviour
     }
     void Start()
     {
-        AggregateScriptablesIntoaNewGameEventList();
+        
+        AggregateNewGameEvents(createEvents(RandomEvents));
         //Aggregoidaan eli kootaan kaikki ylläolevassa RandomEvents listassa mainitut objektit uuteen GameEvent listaukseen osina näitä uusia gameeventtejä.
         AggregateAppliableEventsForThisLocation();
 
@@ -91,13 +92,12 @@ public class EventControl : MonoBehaviour
     #endregion
 
     #region Event Aggregation and collection
-    void AggregateScriptablesIntoaNewGameEventList() //scriptablet poimitaan listasta GameEvent constructoria varten rakentamaan game-eventtien sisällöt, jonka jälkeen ne listataan täällä events listassa
+    public static void AggregateNewGameEvents(List<GameEvent> list) //scriptablet poimitaan listasta GameEvent constructoria varten rakentamaan game-eventtien sisällöt, jonka jälkeen ne listataan täällä events listassa
         //Ei haluta käyttä scriptableobjkteja itse jonakin yhtä fyysisenä asiana koodissa kuin mikä tahansa muu class, mutta data-säiliönä jonka tiedot poimitaan käyttöön.
     {
-        for (int i = 0; i < RandomEvents.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            var gameEvent = new GameEvent(RandomEvents[i]);
-            eventsFromScriptables.Add(gameEvent);
+            eventsFromScriptables.Add(list[i]);
         }
     }
     void AggregateAppliableEventsForThisLocation() //Poimitaan events listasta kaikki ne eventit, jota nyk. sijainnissa voi firettää sekä tsekataan, että onko kaikki ehdot täyttynyt eventin triggeröitymiseen.
@@ -170,5 +170,23 @@ public class EventControl : MonoBehaviour
             TriggerEvent(gameEvent);
         }
 
+    }
+    public static List<GameEvent> createEvents(List<RandomEventScriptable> listOfScriptable)
+    {
+        List<GameEvent> newlist = new List<GameEvent>();
+        foreach (var item in listOfScriptable)
+        {
+            var gameEvent = new GameEvent(item);
+            newlist.Add(gameEvent);
+        }
+        return newlist;
+
+    }
+    public static void removeEvents(List<GameEvent> gameEvents)
+    {
+        for (int i = 0; i < gameEvents.Count; i++)
+        {
+            eventsFromScriptables.Remove(gameEvents[i]);
+        }
     }
 }

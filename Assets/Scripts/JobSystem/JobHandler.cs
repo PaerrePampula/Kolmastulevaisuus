@@ -133,13 +133,19 @@ public static class JobHandler
     static void registerJob(EventInfo info)
     {
         JobInfo job = (JobInfo)info;
-        PlayerDataHolder.PlayerJob = createJob(job);
+        Job newJob = createJob(job);
 
+        PlayerDataHolder.PlayerJob = newJob;
         OnJobApply?.Invoke(job.jobNotice);
         PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
 
         createOnJobRegisterCall(PlayerDataHolder.PlayerJob);
 
+        List<GameEvent> gameEvents = EventControl.createEvents(job.jobNotice.scriptable.jobEvents);
+
+        newJob.setJobEvents(gameEvents);
+
+        EventControl.AggregateNewGameEvents(gameEvents);
     }
 
 }

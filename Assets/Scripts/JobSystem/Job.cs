@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Job : IStattable
 {
@@ -9,6 +10,7 @@ public class Job : IStattable
     GameObject jobSite;
     public bool UniqueStat { get { return false; } }
     public StatType ThisStatType { get { return StatType.PlayerJob; } }
+    List<GameEvent> jobEvents = new List<GameEvent>();
 
     #endregion
     #region constructors
@@ -29,5 +31,13 @@ public class Job : IStattable
     public T getValue<T>()
     {
         return (T)(object)this;
+    }
+    public List<GameEvent> getJobEvents()
+    {
+        return jobEvents;
+    }
+    public void setJobEvents(List<GameEvent> gameEvents)
+    {
+        jobEvents = gameEvents;
     }
 }

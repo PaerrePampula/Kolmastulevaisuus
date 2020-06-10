@@ -71,7 +71,7 @@ public static class PlayerEconomy
         Flag flag = GlobalGameFlags.GetFlag("FIRST_INCOME_RECEIVED");
         if (flag == null)
         {
-            flag = new Flag("FIRST_INCOME_RECEIVED");
+            flag = new Flag("FIRST_INCOME_RECEIVED",0, true);
             GlobalGameFlags.addFlag(flag);
             flag.FireFlag();
         }

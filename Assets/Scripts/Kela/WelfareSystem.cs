@@ -95,7 +95,7 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
         Flag flag = GlobalGameFlags.GetFlag("FIRST_WELFARE_RECEIVED");
         if (flag == null)
         {
-            flag = new Flag("FIRST_WELFARE_RECEIVED");
+            flag = new Flag("FIRST_WELFARE_RECEIVED",0,true);
             GlobalGameFlags.addFlag(flag);
             flag.FireFlag();
         }
