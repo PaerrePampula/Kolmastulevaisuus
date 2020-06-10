@@ -13,6 +13,7 @@ public static class PlayerEconomy
 
     static PlayerEconomy()
     {
+        JobHandler.OnJobEnd += deleteCurrentJobIncomeIfCan;
         GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
         GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
 
@@ -21,7 +22,7 @@ public static class PlayerEconomy
         DateTimeSystem.OnMonthChange += PayFromIncomeSources;
 
     }
-    private static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
+    public static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
     {
         return PlayerDataHolder.IncomeSources;
     }
@@ -34,11 +35,6 @@ public static class PlayerEconomy
         PlayerDataHolder.PlayerMoney.MoneyChange(floatChangeInfo.changeofFloat);
         OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney.getValue<float>());
     }
-    static void GetMoney() //Debug. poista joskus
-    {
-        Debug.Log(PlayerDataHolder.PlayerMoney);
-    }
-
 
 
     public static float getAllIncomeSourceGrossTotals(int monthAmount)

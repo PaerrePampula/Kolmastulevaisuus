@@ -7,21 +7,25 @@ public static class JobHandler
     #region Fields
     public delegate void JobApply(JobNotice jobNotice);
     public static event JobApply OnJobApply;
+    public delegate void JobEnd();
+    public static event JobEnd OnJobEnd;
     static List<JobInfo> cachedJobNotices = new List<JobInfo>();
     static List<(JobInfo, float, float)> cachedJobProbabilities = new List<(JobInfo, float,float)>();
     #endregion
     #region MonobehaviourDefaults
     static JobHandler() 
     {
+        DateTimeSystem.OnMonthChange += checkPlayerJobDuration;
         GameEventSystem.RegisterListener(Event_Type.JOB_APPLY, cacheJob);
         LocationHandler.OnTurnEnd += checkJobApply;
+
     }
 
     #endregion
     static Job createJob(JobInfo info)
     {
         JobNoticeScriptable notice = info.jobNotice.scriptable;
-        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite, notice.workHoursPerDay);
+        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite, notice.jobLengthInMonths , notice.workHoursPerDay);
         return newJob;
     }
     static void createOnJobRegisterCall(Job job)
@@ -147,5 +151,24 @@ public static class JobHandler
 
         EventControl.AggregateNewGameEvents(gameEvents);
     }
+    static void checkPlayerJobDuration()
+    {
+        if (PlayerDataHolder.PlayerJob != null)
+        {
+            if (PlayerDataHolder.PlayerJob.hasExpired())
+            {
+                endPlayerJob();
+            }
+        }
 
+    }
+    static void endPlayerJob()
+    {
+        OnJobEnd.Invoke();
+        EventControl.removeEvents(PlayerDataHolder.PlayerJob.getJobEvents());
+        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
+        PlayerDataHolder.PlayerJob = null;
+
+
+    }
 }

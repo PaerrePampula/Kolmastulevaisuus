@@ -12,6 +12,7 @@ public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
     {
         FloatChangeInfo valueChangeAction = new FloatChangeInfo();
         valueChangeAction.changeofFloat = amount;
+
         Debug.Log("Pelaajalle tapahtui rahamuutos: määrä on " + valueChangeAction.changeofFloat);
         GameEventSystem.DoEvent(
             Event_Type.FLOAT_CHANGE,

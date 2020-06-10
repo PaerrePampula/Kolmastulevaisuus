@@ -11,6 +11,8 @@ public class JobNoticeScriptable : ScriptableObject
     [Header("Palkka ja tunnit")]
     public int workHoursPerDay;
     public float payByHour;
+    [Header("Aika")]
+    public int jobLengthInMonths;
     [Header("Mahdollisuuskertoimet")]
     [Tooltip("Kun pelaaja hakee monta työpaikkaa samaan aikaan, tämä kuvaa kerrointa siitä,\n"
         + "Että kuinka todennäköistä on että juuri tämä työpaikka valitaan. Isompi kerroin on isompi mahdollisuus" +

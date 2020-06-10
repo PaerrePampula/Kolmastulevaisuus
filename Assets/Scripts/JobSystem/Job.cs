@@ -11,15 +11,22 @@ public class Job : IStattable
     public bool UniqueStat { get { return false; } }
     public StatType ThisStatType { get { return StatType.PlayerJob; } }
     List<GameEvent> jobEvents = new List<GameEvent>();
-
+    System.DateTime jobStartDate;
+    System.DateTime jobEndDate;
     #endregion
     #region constructors
-    public Job(string title, float payByHour, JobSiteScriptable jobSiteScriptable, int workhoursPerDay = 0)
+    public Job(string title, float payByHour, JobSiteScriptable jobSiteScriptable, int jobDuration, int workhoursPerDay = 0)
     {
         _jobTitle = title;
         _payByHour = payByHour;
         _workHoursPerDay = workhoursPerDay;
         jobSite = (jobSiteScriptable.jobSite != null) ? jobSiteScriptable.jobSite : null;
+        jobStartDate = DateTimeSystem.getCurrentDate();
+
+        var newDate = DateTimeSystem.getCurrentDate().AddMonths(jobDuration);
+        var finalDayint = System.DateTime.DaysInMonth(newDate.Year,newDate.Month);
+        var finalDayDate = new System.DateTime(newDate.Year, newDate.Month, finalDayint);
+        jobEndDate = finalDayDate;
 
     }
     #endregion
@@ -39,6 +46,10 @@ public class Job : IStattable
     public void setJobEvents(List<GameEvent> gameEvents)
     {
         jobEvents = gameEvents;
+    }
+    public bool hasExpired()
+    {
+        return (DateTimeSystem.getCurrentDate() > jobEndDate) ? true : false;
     }
 
 }

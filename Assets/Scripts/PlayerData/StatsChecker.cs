@@ -22,10 +22,7 @@ public static class StatsChecker
             if (searchForUniqueValue != null) return;
         }
         currentStats.Add(StatChange);
-        foreach (var stat in currentStats)
-        {
-            Debug.Log(stat);
-        }
+
     }
     public static IStattable getPlayerStatByPrereq(PrereqPair pair)
     {

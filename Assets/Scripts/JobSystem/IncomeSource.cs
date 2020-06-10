@@ -12,7 +12,7 @@
     public IncomeSource(float NewIncomeAmount, Job sourceOfIncomeJob = null)
     {
         incomeAmountTotalOneMonth = NewIncomeAmount;
-        incomeSourceJob = (sourceOfIncomeJob != null) ? sourceOfIncomeJob : null;
+        incomeSourceJob = sourceOfIncomeJob;
         StatsChecker.RegisterStat(this);
         OnNewIncomeRegister?.Invoke();
     }
