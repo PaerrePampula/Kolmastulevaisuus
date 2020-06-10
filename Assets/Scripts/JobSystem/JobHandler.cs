@@ -168,7 +168,8 @@ public static class JobHandler
         EventControl.removeEvents(PlayerDataHolder.PlayerJob.getJobEvents());
         PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
         PlayerDataHolder.PlayerJob = null;
-
+        Flag flag = new Flag("PLAYER_JOB_CONTRACT_END", 0, false);
+        flag.FireFlag();
 
     }
 }

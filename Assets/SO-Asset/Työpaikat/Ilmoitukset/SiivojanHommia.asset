@@ -15,8 +15,10 @@ MonoBehaviour:
   jobTitle: Siivooja
   jobDescriptionOnNotice: "Haetaan ahkeraa henkil\xF6\xE4 siivoust\xF6ihin! Vaatimuksia
     ei ole, mutta hakijan reippautta ja tunnollisuutta arvostetaan!"
-  successMultiplier: 75
-  chanceOfBeingHired: 60
   workHoursPerDay: 6
   payByHour: 10
+  jobLengthInMonths: 5
+  successMultiplier: 75
+  chanceOfBeingHired: 60
   jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}
+  jobEvents: []

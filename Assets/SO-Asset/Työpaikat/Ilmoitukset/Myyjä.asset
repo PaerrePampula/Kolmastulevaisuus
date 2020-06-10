@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 053c4d5de5e79c44d969b0957fd44a83, type: 3}
-  m_Name: "Uusi ty\xF6paikkailmoitus"
+  m_Name: "Myyj\xE4"
   m_EditorClassIdentifier: 
   jobTitle: "Myyj\xE4"
   jobDescriptionOnNotice: "Haetaan reippaita ty\xF6ntekij\xF6it\xE4 myym\xE4l\xE4\xE4n!
     Myyj\xE4n teht\xE4viin kuuluu mm. kassalla ty\xF6skentely\xE4, hyllytt\xE4mist\xE4
     ja asiakaspalvelua. "
-  successMultiplier: 50
-  chanceOfBeingHired: 90
   workHoursPerDay: 5
   payByHour: 10.5
+  jobLengthInMonths: 5
+  successMultiplier: 50
+  chanceOfBeingHired: 90
   jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}
+  jobEvents:
+  - {fileID: 11400000, guid: ff7936f3f855cb743a9f934a4bd0737d, type: 2}
+  - {fileID: 11400000, guid: ff7936f3f855cb743a9f934a4bd0737d, type: 2}
