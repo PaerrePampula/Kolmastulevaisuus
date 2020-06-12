@@ -7,6 +7,8 @@ public static class PlayerEconomy
     #region Fields
     public delegate void IncreaseAction(float amount);
     public static event IncreaseAction OnIncrease;
+    public delegate void NewIncomeApply();
+    public static event NewIncomeApply OnNewIncome;
     //Delegatesta ja eventistä. Näillä kukkaro saa lähetettyä rahanmuutoksesta viestin kaikille onincreasen tilanneille 
     //classeille viestin siitä, että rahatilanne on muuttunut, delegaten ja eventin avulla näitä tilaajia ei tarvitse
     //erikseen unityn editorissä määritellä, eli toisinsanoen pelaajan kukkaron ei tarvitse tietää, kenelle tätä viestiä lähetetään.
@@ -59,6 +61,8 @@ public static class PlayerEconomy
 
         incomeSources().Add(incomeSource);
         TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
+
+        OnNewIncome.Invoke();
     }
 
     static void PayFromIncomeSources()
@@ -82,5 +86,14 @@ public static class PlayerEconomy
         {
             incomeSources().Remove(hadJob);
         }
+    }
+    public static float totalNetIncomeInAMonth()
+    {
+        float net = 0;
+        for (int i = 0; i < incomeSources().Count; i++)
+        {
+            net += incomeSources()[i].getNetIncomeInAMonth();
+        }
+        return net;
     }
 }

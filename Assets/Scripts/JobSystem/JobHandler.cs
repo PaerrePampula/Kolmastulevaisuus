@@ -9,6 +9,7 @@ public static class JobHandler
     public static event JobApply OnJobApply;
     public delegate void JobEnd();
     public static event JobEnd OnJobEnd;
+    public delegate void JobInfoChange();
     static List<JobInfo> cachedJobNotices = new List<JobInfo>();
     static List<(JobInfo, float, float)> cachedJobProbabilities = new List<(JobInfo, float,float)>();
     #endregion
