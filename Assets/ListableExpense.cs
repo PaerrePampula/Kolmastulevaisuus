@@ -12,4 +12,12 @@ public class ListableExpense
         expenseAmount = expenseAndValuePair.Item2;
         toGoList.Add(this);
     }
+    public override string ToString()
+    {
+        return expenseName + ": " + expenseAmount;
+    }
+    public float getTotal()
+    {
+        return expenseAmount;
+    }
 }

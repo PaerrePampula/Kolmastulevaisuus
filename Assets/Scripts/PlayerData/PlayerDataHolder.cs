@@ -35,11 +35,11 @@ public static class PlayerDataHolder
             if (rentablehome == null)
             {
                 RentableHome rentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
-                rent = new Rent(rentableHome.getRentTotalForAMonth());
+                rent = new Rent(rentableHome.BaseRent, rentableHome.WaterCost, rentableHome.ElectricityCost);
                 return rent;
                 //Ei tarvii käydä mainmenun kautta jos haluu testata jotain tämän avulla
             }
-            rent = new Rent(rentablehome.getRentTotalForAMonth());
+            rent = new Rent(playerHome.BaseRent, playerHome.WaterCost, playerHome.ElectricityCost);
             return rent;
         }
         set

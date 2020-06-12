@@ -29,6 +29,6 @@ MonoBehaviour:
   perks: 'Oma sauna, takapiha, '
   shortFormDescription: 2h + 1k + kh
   extrasDescription: "vuokraan sis\xE4ltyy taloyhti\xF6n laajakaista"
-  prefab: {fileID: 0}
+  rentableScene: TwoRoomAptNo1
   huoneKoko: 1
   vuokraTyyppi: 1

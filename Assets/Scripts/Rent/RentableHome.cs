@@ -14,9 +14,9 @@ public class RentableHome
     string perks;
     string shortFormDescription;
     string extrasDescription;
-
+    string rentableScene = "StudioHomeNo1";
     ExtrasOnRentableHomes[] rentExtras;
-    GameObject prefab;
+
     HuoneKoko huoneKoko;
     VuokraTyyppi tyyppi;
 
@@ -32,12 +32,22 @@ public class RentableHome
     public HuoneKoko RentableHuoneKoko => huoneKoko;
     public VuokraTyyppi RentableVuokraTyyppi => tyyppi;
 
+    public string GetRentableScene()
+    {
+        return rentableScene;
+    }
+
+    public void SetRentableScene(string value)
+    {
+        rentableScene = value;
+    }
+
     public RentableHome(RentableHomeScriptable scriptable)
     {
         address = scriptable.address;
         baseRentAmount = scriptable.baseRentAmount;
         shortFormDescription = scriptable.shortFormDescription;
-        prefab = scriptable.prefab;
+        SetRentableScene(scriptable.rentableScene);
         waterCost = scriptable.waterCost;
         electricityCost = scriptable.electricityCost;
         homeInsurance = scriptable.homeInsurance;

@@ -22,7 +22,7 @@ public class RentableHomeScriptable : ScriptableObject
     public string perks = "esim oma sauna, lasitettu parveke";
     public string shortFormDescription = "esim 1h + s + p";
     public string extrasDescription = "esim vuokraan sisältyy 25M laajakaista";
-    public GameObject prefab; //Vuokrakämpän malli.
+    public string rentableScene; //Vuokrakämpän scene
     public HuoneKoko huoneKoko;
     public VuokraTyyppi vuokraTyyppi;
     //voisi myöhemmin lisätä jonkin kuvankaappausgallerian kämpistä ehkä?

@@ -26,6 +26,6 @@ MonoBehaviour:
   perks: oma sauna, pesutupa
   shortFormDescription: 1h + kh + kk
   extrasDescription: "vuokraan sis\xE4ltyy 25M laajakaista"
-  prefab: {fileID: 0}
+  rentableScene: StudioHomeNo1
   huoneKoko: 0
   vuokraTyyppi: 0

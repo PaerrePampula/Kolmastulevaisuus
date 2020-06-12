@@ -15,7 +15,15 @@ public class Rent : IStattable
         rent = rentamount;
         waterCost = watercost;
         electricityCost = eleccost;
-        ListableExpense listableExpense = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses,)
+        ListableExpense listableExpense = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses, ("Vuokra", rent));
+        if (watercost != 0)
+        {
+            ListableExpense listableWater = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses, ("Vesimaksu", waterCost));
+        }
+        if (eleccost != 0)
+        {
+            ListableExpense listableElectricity = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses, ("Sähkölasku", electricityCost));
+        }
     }
 
     #endregion

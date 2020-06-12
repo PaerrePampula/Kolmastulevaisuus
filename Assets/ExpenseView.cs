@@ -8,6 +8,8 @@ public class ExpenseView : UiGeneric
     [SerializeField]
     TextMeshProUGUI monthlyExpenses;
     [SerializeField]
+    TextMeshProUGUI monthlyTotal;
+    [SerializeField]
     TextMeshProUGUI otherExpenses;
 
     // Start is called before the first frame update
@@ -24,8 +26,13 @@ public class ExpenseView : UiGeneric
     void populateMonthly()
     {
         string monthly = "";
-        Rent rent = PlayerDataHolder.PlayerRent;
-        string rentBase = rent.GetField<float>("rent").ToString();
-        monthly += rentBase;
+        float total = 0;
+        foreach (var item in PlayerDataHolder.MonthlyListableExpenses)
+        {
+            monthly += item.ToString() + "\n";
+            total += item.getTotal();
+        }
+        monthlyExpenses.text = monthly;
+        monthlyTotal.text = "Yhteensä: " + total.ToString() + "euroa";
     }
 }

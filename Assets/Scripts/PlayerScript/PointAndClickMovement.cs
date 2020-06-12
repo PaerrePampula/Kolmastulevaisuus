@@ -14,6 +14,7 @@ public class PointAndClickMovement : MonoBehaviour
     public static event MovePlayer OnMoveStart;
     public delegate void MovedPlayer();
     public static event MovedPlayer OnMoveStopped;
+    public LayerMask IgnoreMe;
     #endregion
 
     #region MonobehaviourDefaults
@@ -40,7 +41,13 @@ public class PointAndClickMovement : MonoBehaviour
         {
             Movement();
         }
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, Camera.main.transform.position - transform.position, Color.green);
+        if (Physics.Raycast(transform.position, Camera.main.transform.position - transform.position, out hit))
+        {
 
+            Debug.Log("ads");
+        }
     }
     #endregion
 
@@ -51,7 +58,7 @@ public class PointAndClickMovement : MonoBehaviour
         {
             RaycastHit hit;
             Vector3 mousePos = Input.mousePosition;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hit))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hit, Mathf.Infinity, ~IgnoreMe))
             {
                 hasAMoveCommand = true;
                 playerNavMeshTarget = hit.point;

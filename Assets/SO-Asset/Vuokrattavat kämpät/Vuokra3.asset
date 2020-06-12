@@ -27,7 +27,7 @@ MonoBehaviour:
     S\xE4hk\xF6sopimus sis\xE4llytetty hintaan"
   perks: "taloyhti\xF6n sauna, lasitettu parveke"
   shortFormDescription: 1h + 1kh + 1k
-  extrasDescription: 
-  prefab: {fileID: 0}
+  extrasDescription: StudioHomeNo1
+  rentableScene: 
   huoneKoko: 0
   vuokraTyyppi: 0
