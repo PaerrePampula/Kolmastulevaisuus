@@ -3,7 +3,7 @@ using System.Collections;
 
 public static class Satisfaction
 {
-    public delegate void SatisfactionChange(float value);
+    public delegate void SatisfactionChange(float value, float changeInValue);
     public static event SatisfactionChange OnSatisfactionChange;
     static float _satisfaction = 0;
     public static float SatisfactionFloat
@@ -11,7 +11,7 @@ public static class Satisfaction
         get => _satisfaction; set
         {
             _satisfaction = Mathf.Clamp(value, 0, 100);
-            OnSatisfactionChange.Invoke(_satisfaction);
+
         }
     }
     static Satisfaction()
@@ -29,5 +29,6 @@ public static class Satisfaction
     public static void ChangeStat(float amount)
     {
         SatisfactionFloat += amount;
+        OnSatisfactionChange.Invoke(_satisfaction, amount);
     }
 }
