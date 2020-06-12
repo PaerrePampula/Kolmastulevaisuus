@@ -24,5 +24,6 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: "Pit\xE4\xE4 kokeilla uudelleen..."
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: 51370f0a91f913f4ba0416d817a04584, type: 2}
       firedFlags: []

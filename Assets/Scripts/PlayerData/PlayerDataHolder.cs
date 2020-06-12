@@ -23,10 +23,9 @@ public static class PlayerDataHolder
     private static Rent rent;
     private static RentableHome rentablehome;
     #endregion
-    static PlayerDataHolder()
-    {
+    #region Statsit
 
-    }
+    #endregion
     public static Rent PlayerRent
     {
         get

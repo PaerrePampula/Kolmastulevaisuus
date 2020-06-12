@@ -78,3 +78,8 @@ public class EventRegisterInfo : EventInfo
 {
     public GameEvent Event;
 }
+public class SimStatInfo : EventInfo
+{
+    public float StatChange;
+    public string SimStatName;
+}

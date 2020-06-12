@@ -24,5 +24,6 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: Sinne sitten siis
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: e9d21254a7ec3994aacebf99dde4b446, type: 2}
       firedFlags: []

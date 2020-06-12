@@ -16,6 +16,7 @@ public enum Event_Type
     PLAYER_WANTS_WELFARE,
     PLAYER_LEASES_HOME,
     FLAG_FIRE,
-    EVENT_REGISTER
+    EVENT_REGISTER,
+    SIMSTAT_CHANGE
 }
 #endregion

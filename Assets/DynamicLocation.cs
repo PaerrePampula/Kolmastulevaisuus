@@ -31,7 +31,7 @@ public class DynamicLocation : EventLocation
     }
     void onNewJob(JobNotice jobNotice)
     {
-        SceneManager.UnloadScene(level);
+        SceneManager.UnloadSceneAsync(level);
         level = jobNotice.scriptable.jobSiteScene;
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
     }

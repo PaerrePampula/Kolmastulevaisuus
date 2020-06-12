@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: TutorialStart
   m_EditorClassIdentifier: 
+  neededFlags: []
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
@@ -31,4 +32,5 @@ MonoBehaviour:
       choiceDescriptor: "Selv\xE4!"
       clickActions:
       - {fileID: 11400000, guid: 47c71dc6f1bb43f4794cb56691d042ed, type: 2}
+      - {fileID: 11400000, guid: d5c4370da9e8e1443bd5c87b1cbffbf0, type: 2}
       firedFlags: []

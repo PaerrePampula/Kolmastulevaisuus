@@ -21,5 +21,6 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: Okei
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: 50c7626e8d32e9e4ca78ded92cec2767, type: 2}
       firedFlags: []

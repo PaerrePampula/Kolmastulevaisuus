@@ -25,11 +25,13 @@ MonoBehaviour:
     eventDialogChoices:
     - nextDialog: -1
       choiceDescriptor: Okei...
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: d9711981f96d5684f9b235500fbccedb, type: 2}
       firedFlags: []
     - nextDialog: 1
       choiceDescriptor: Mihin palkkani siis menee?
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: d9711981f96d5684f9b235500fbccedb, type: 2}
       firedFlags: []
   - eventDialog: "Jos veroprosenttisi on yli 0%, sinun palkastasi menee osa valtionveroon.
       Vaikka sinulla olisi 0% verokortissa, osa t\xE4st\xE4 palkasta silti menisi
