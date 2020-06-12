@@ -26,7 +26,7 @@ public static class JobHandler
     static Job createJob(JobInfo info)
     {
         JobNoticeScriptable notice = info.jobNotice.scriptable;
-        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSite, notice.jobLengthInMonths , notice.workHoursPerDay);
+        Job newJob = new Job(notice.jobTitle, notice.payByHour, notice.jobSiteScene, notice.jobLengthInMonths , notice.workHoursPerDay);
         return newJob;
     }
     static void createOnJobRegisterCall(Job job)

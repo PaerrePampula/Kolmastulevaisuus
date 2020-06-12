@@ -7,7 +7,7 @@ public class Job : IStattable
     string _jobTitle;
     int _workHoursPerDay;
     float _payByHour;
-    GameObject jobSite;
+    string jobsite;
     public bool UniqueStat { get { return false; } }
     public StatType ThisStatType { get { return StatType.PlayerJob; } }
     List<GameEvent> jobEvents = new List<GameEvent>();
@@ -15,12 +15,12 @@ public class Job : IStattable
     System.DateTime jobEndDate;
     #endregion
     #region constructors
-    public Job(string title, float payByHour, JobSiteScriptable jobSiteScriptable, int jobDuration, int workhoursPerDay = 0)
+    public Job(string title, float payByHour, string newjobsite, int jobDuration,  int workhoursPerDay = 0)
     {
         _jobTitle = title;
         _payByHour = payByHour;
         _workHoursPerDay = workhoursPerDay;
-        jobSite = (jobSiteScriptable.jobSite != null) ? jobSiteScriptable.jobSite : null;
+        jobsite = newjobsite;
         jobStartDate = DateTimeSystem.getCurrentDate();
 
         var newDate = DateTimeSystem.getCurrentDate().AddMonths(jobDuration);

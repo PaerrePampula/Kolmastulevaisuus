@@ -170,5 +170,13 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
     {
         return currentPlayerSupports;
     }
-
+    public float getAllWelfareIncome()
+    {
+        float value = 0;
+        for (int i = 0; i < currentPlayerSupports.Count; i++)
+        {
+            value += currentPlayerSupports[i].CalculatedSupport();
+        }
+        return value;
+    }
 }

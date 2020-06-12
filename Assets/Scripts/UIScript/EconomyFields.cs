@@ -39,8 +39,8 @@ public class EconomyFields : MonoBehaviour
     }
     void UpdateUI()
     {
-        incomeEconomyText.text = PlayerEconomy.totalNetIncomeInAMonth() + " euroa";
-        expenseEconomyText.text = PlayerDataHolder.PlayerRent.getValue<float>() + " euroa";
+        incomeEconomyText.text = (PlayerEconomy.totalNetIncomeInAMonth() + " euroa/kk");
+        expenseEconomyText.text = PlayerDataHolder.PlayerRent.getValue<float>() + " euroa/kk";
     }
     public IEnumerator startIncrementing(TextMeshProUGUI text)
     {

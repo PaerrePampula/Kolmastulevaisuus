@@ -12,8 +12,11 @@ public static class PlayerDataHolder
     #endregion
 
     #region RAHA, TALOUS
+
     private static PlayerMoney playerMoney = new PlayerMoney();
     private static List<IncomeSource> incomeSources = new List<IncomeSource>();
+    public static List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
+    public static List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
     #endregion
 
     #region ASUNTO, VUOKRA

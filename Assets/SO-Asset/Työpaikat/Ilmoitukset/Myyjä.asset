@@ -21,7 +21,7 @@ MonoBehaviour:
   jobLengthInMonths: 5
   successMultiplier: 50
   chanceOfBeingHired: 90
-  jobSite: {fileID: 11400000, guid: 703c1920985c48f4ebe59fd4fbee8153, type: 2}
+  jobSiteScene: store
   jobEvents:
   - {fileID: 11400000, guid: ff7936f3f855cb743a9f934a4bd0737d, type: 2}
   - {fileID: 11400000, guid: ff7936f3f855cb743a9f934a4bd0737d, type: 2}

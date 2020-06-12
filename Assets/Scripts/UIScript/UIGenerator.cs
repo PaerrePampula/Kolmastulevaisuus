@@ -12,6 +12,7 @@ public class UIGenerator : MonoBehaviour //Luo esim näppäimen painamisesta ui 
         GameObject go = Instantiate(Resources.Load<GameObject>(resourceToLoad));
         go.transform.SetParent(SceneCanvas.mainTransform.getMainCanvasTransform());
         go.transform.localPosition = Vector3.zero;
+
         instantiated = go.transform;
     }
     

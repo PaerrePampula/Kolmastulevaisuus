@@ -15,6 +15,7 @@ public class Rent : IStattable
         rent = rentamount;
         waterCost = watercost;
         electricityCost = eleccost;
+        ListableExpense listableExpense = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses,)
     }
 
     #endregion
@@ -28,5 +29,6 @@ public class Rent : IStattable
     {
         return (T)(object)getTotal();
     }
+
     #endregion
 }

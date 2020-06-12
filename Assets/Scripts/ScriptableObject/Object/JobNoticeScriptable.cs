@@ -24,7 +24,7 @@ public class JobNoticeScriptable : ScriptableObject
     //Boolit eri vaatimuksille? Esim jotain kortteja, hygienipassi? ajokortti? jotain muuta?
 
     [Header("Scriptablet")]
-    public JobSiteScriptable jobSite;
+    public string jobSiteScene;
     //Pitäisi varmaan tehdä joku osa-aika, kokoaika, provikkapalkka, muu tyyyppinen palkka simulaatio vielä...
     [Tooltip("Työpaikan mahdolliset eventit")]
     public List<RandomEventScriptable> jobEvents;
