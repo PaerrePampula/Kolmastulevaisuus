@@ -27,13 +27,17 @@ public class PointAndClickMovement : MonoBehaviour
     private void OnEnable()
     {
         MainCanvas.OnFreeze += setMovementStatus;
+
         
     }
     private void OnDisable()
     {
         MainCanvas.OnFreeze -= setMovementStatus;
     }
+    void storePlayer()
+    {
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -74,7 +78,7 @@ public class PointAndClickMovement : MonoBehaviour
         }
         if ((hasAMoveCommand == true) && (playerNavMeshAgent.velocity == Vector3.zero) && (!playerNavMeshAgent.pathPending))
         {
-            if (playerNavMeshAgent.remainingDistance < 1)
+            if (playerNavMeshAgent.remainingDistance < 1.5)
             {
                 hasAMoveCommand = false;
                 OnMoveStopped?.Invoke();

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 305d6c8123673734b96b8e834d536297, type: 3}
-  m_Name: "S\xE4nky"
+  m_Name: "Py\xF6riv\xE4tuoli"
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6734517856631416237, guid: 0c7253711f08d394ca757ecacbd29da2, type: 3}
-  objectName: "S\xE4nky"
-  objectValue: 500
+  prefab: {fileID: 648004822944020809, guid: 8f2426ed381542e43adfced120cd080f, type: 3}
+  objectName: "Py\xF6riv\xE4 tuoli"
+  objectValue: 45

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 305d6c8123673734b96b8e834d536297, type: 3}
-  m_Name: "S\xE4nky"
+  m_Name: Kaappi
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6734517856631416237, guid: 0c7253711f08d394ca757ecacbd29da2, type: 3}
-  objectName: "S\xE4nky"
-  objectValue: 500
+  prefab: {fileID: 3890224519449009048, guid: b38df130bcf8eff42bc94da5555722c5, type: 3}
+  objectName: Korkea kaappi
+  objectValue: 50

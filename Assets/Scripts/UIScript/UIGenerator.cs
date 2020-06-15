@@ -9,11 +9,15 @@ public class UIGenerator : MonoBehaviour //Luo esim näppäimen painamisesta ui 
     #endregion
     public void instantiateUIObject()
     {
-        GameObject go = Instantiate(Resources.Load<GameObject>(resourceToLoad));
-        go.transform.SetParent(SceneCanvas.mainTransform.getMainCanvasTransform());
-        go.transform.localPosition = Vector3.zero;
+        if (instantiated == null)
+        {
+            GameObject go = Instantiate(Resources.Load<GameObject>(resourceToLoad));
+            go.transform.SetParent(SceneCanvas.mainTransform.getMainCanvasTransform());
+            go.transform.localPosition = Vector3.zero;
 
-        instantiated = go.transform;
+            instantiated = go.transform;
+        }
+
     }
     
     public Transform getInstantiated()

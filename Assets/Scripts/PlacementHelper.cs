@@ -4,11 +4,19 @@ using System.Collections;
 public class PlacementHelper : MonoBehaviour
 {
     static bool placing = false;
+    static bool moving = false;
+    int moveClickCount;
     GameObject placingObject;
+    Bounds meshBounds;
     BuyObject currentBuyObject;
     public LayerMask placementLayer;
+    public LayerMask furnitureLayer;
+
+
     public delegate void PurchaseCall(BuyObject gameObject);
     public static event PurchaseCall OnObjectPurchase;
+    public delegate void BeginPlacementCall(bool isBegin);
+    public static event BeginPlacementCall OnPlacementInteract;
 
     public static bool GetPlacing()
     {
@@ -19,14 +27,25 @@ public class PlacementHelper : MonoBehaviour
     {
         placing = value;
     }
+    public static bool GetMoving()
+    {
+        return moving;
+    }
+
+    public static void SetMoving(bool value)
+    {
+        moving = value;
+    }
 
     private void OnEnable()
     {
         BuyObjectButton.OnObjectClicked += startPlacement;
+        MoveObjectButton.OnMoveClicked += startMovement;
     }
     private void OnDisable()
     {
         BuyObjectButton.OnObjectClicked -= startPlacement;
+        MoveObjectButton.OnMoveClicked -= startMovement;
     }
     void startPlacement(BuyObject buyObject)
     {
@@ -38,6 +57,10 @@ public class PlacementHelper : MonoBehaviour
         placingObject.transform.rotation = Quaternion.Euler(0, 130, 0);
         SetPlacing(true);
         currentBuyObject = buyObject;
+        OnPlacementInteract?.Invoke(true);
+        meshBounds = placingObject.GetComponent<Collider>().bounds;
+        PointAndClickMovement.setMovementStatus(false);
+        MainCanvas.mainCanvas.freezeOverride = true;
 
     }
     void movePlacement()
@@ -45,7 +68,13 @@ public class PlacementHelper : MonoBehaviour
 
         RaycastHit hit;
         Vector3 mousePos = Input.mousePosition;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hit, Mathf.Infinity, placementLayer))
+       
+        if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), meshBounds.extents.sqrMagnitude*0.1f, out hit, Mathf.Infinity, furnitureLayer))
+        {
+            return;
+
+        }
+        if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), meshBounds.extents.magnitude*0.1f, out hit, Mathf.Infinity, placementLayer))
         {
             placingObject.transform.position = hit.point;
         }
@@ -64,19 +93,33 @@ public class PlacementHelper : MonoBehaviour
             }
         }
     }
-    void placePlacement()
+    void placePlacement(bool buying)
     {
-        if (Input.GetMouseButtonDown(0))
+        RaycastHit hit;
+        Vector3 mousePos = Input.mousePosition;
+        if (Input.GetMouseButtonDown(1))
         {
-            SetPlacing(false);
-            placingObject = null;
-            callForPurchase();
+            if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), 1, out hit, Mathf.Infinity, placementLayer))
+            {
+                OnPlacementInteract?.Invoke(false);
+                placingObject.layer = 12;
+                if (buying)
+                {
+                    callForPurchase();
+                }
+                Debug.Log("HÄr");
+                placingObject = null;
+                SetPlacing(false);
+                SetMoving(false);
+                PointAndClickMovement.setMovementStatus(true);
+                MainCanvas.mainCanvas.freezeOverride = false;
+            }
 
         }
     }
     void cancelPlacement()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(3))
         {
             SetPlacing(false);
             if (placingObject != null)
@@ -84,14 +127,39 @@ public class PlacementHelper : MonoBehaviour
                 Destroy(placingObject);
                 currentBuyObject = null;
             }
+            OnPlacementInteract?.Invoke(false);
         }
+    }
+    void clickOnPlacement()
+    {
+        if (Input.GetMouseButtonDown(0) && placingObject == null)
+        {
+            RaycastHit hit;
+            Vector3 mousePos = Input.mousePosition;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(mousePos), out hit, Mathf.Infinity, furnitureLayer))
+            {
+                placingObject = hit.transform.gameObject;
+                meshBounds = placingObject.GetComponent<Collider>().bounds;
+                placingObject.layer = 0;
+
+            }
+
+
+        }
+    }
+    void startMovement()
+    {
+        SetMoving(true);
+        placingObject = null;
+        OnPlacementInteract?.Invoke(true);
+        PointAndClickMovement.setMovementStatus(false);
+        MainCanvas.mainCanvas.freezeOverride = true;
     }
     void callForPurchase()
     {
-        OnObjectPurchase?.Invoke(currentBuyObject);
+
         PlayerEconomy.createPurchase(currentBuyObject.BuyName, -currentBuyObject.BuyValue);
         currentBuyObject = null;
-
 
     }
     // Use this for initialization
@@ -108,7 +176,18 @@ public class PlacementHelper : MonoBehaviour
             cancelPlacement();
             movePlacement();
             rotatePlacement();
-            placePlacement();
+            placePlacement(true);
+        }
+        if (GetMoving())
+        {
+            clickOnPlacement();
+            if (placingObject != null)
+            {
+                movePlacement();
+                rotatePlacement();
+                placePlacement(false);
+            }
+
         }
     }
 }

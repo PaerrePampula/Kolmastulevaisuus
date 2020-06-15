@@ -9,6 +9,7 @@ public class MainCanvas : SceneCanvas
     public Transform parentOfNewTransforms;
     public delegate void Freezer(bool status);
     public static event Freezer OnFreeze;
+    public bool freezeOverride;
     static private MainCanvas _currentMainCanvas; //Tämänhetkinen pääcanvas.
     static public MainCanvas mainCanvas //getataan maincanvas ja setataan se jos se on null
     {
@@ -56,7 +57,7 @@ public class MainCanvas : SceneCanvas
         {
             OnFreeze?.Invoke(false);
         }
-        if (parentOfNewTransforms.childCount == 0)
+        if (parentOfNewTransforms.childCount == 0 && freezeOverride == false)
         {
             OnFreeze?.Invoke(true);
         }

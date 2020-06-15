@@ -18,6 +18,6 @@ public class ListableExpense
     }
     public float getTotal()
     {
-        return expenseAmount;
+        return Mathf.Abs(expenseAmount);
     }
 }

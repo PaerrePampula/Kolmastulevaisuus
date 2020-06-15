@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,6 +11,11 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     RawImage rendImage;
     [SerializeField]
     BuyObjectScriptable buyObjectScriptable;
+    [SerializeField]
+    TextMeshProUGUI buttonText;
+
+    public BuyObjectScriptable BuyObjectScriptable { get => buyObjectScriptable; set => buyObjectScriptable = value; }
+
     public delegate void Hover(BuyObjectScriptable gameObject);
     public static event Hover OnHover;
     public delegate void ClickedBuyObject(BuyObject gameObject);
@@ -18,7 +24,7 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     // Start is called before the first frame update
     void Start()
     {
-        
+        buttonText.text = BuyObjectScriptable.objectName + " - Hinta: " + BuyObjectScriptable.objectValue + "e";
     }
 
     // Update is called once per frame
@@ -28,7 +34,7 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     }
     public void BuyObject()
     {
-        BuyObject buyObject = new BuyObject(buyObjectScriptable);
+        BuyObject buyObject = new BuyObject(BuyObjectScriptable);
         OnObjectClicked.Invoke(buyObject);
 
     }
@@ -36,7 +42,7 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         rendImage.gameObject.SetActive(true);
-        OnHover.Invoke(buyObjectScriptable);
+        OnHover.Invoke(BuyObjectScriptable);
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)

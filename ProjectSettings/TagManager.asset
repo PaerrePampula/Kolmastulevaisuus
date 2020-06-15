@@ -20,7 +20,7 @@ TagManager:
   - OccludeFromPassingTraffic
   - IgnorePointAndClick
   - PlacementLayer
-  - 
+  - FurnitureLayer
   - 
   - 
   - 
