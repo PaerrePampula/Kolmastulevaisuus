@@ -33,11 +33,21 @@ public static class PlayerEconomy
     #region Getters and setters
     public static void SetMoney(EventInfo info)
     {
+        float floatChange = 0;
+
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
-        PlayerDataHolder.PlayerMoney.MoneyChange(floatChangeInfo.changeofFloat);
+        floatChange = floatChangeInfo.changeofFloat;
+
+        PlayerDataHolder.PlayerMoney.MoneyChange(floatChange);
         OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney.getValue<float>());
     }
-
+    static void setMoney(float amount)
+    {
+        float floatChange = 0;
+        floatChange = amount;
+        PlayerDataHolder.PlayerMoney.MoneyChange(floatChange);
+        OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney.getValue<float>());
+    }
 
     public static float getAllIncomeSourceGrossTotals(int monthAmount)
     {
@@ -95,5 +105,10 @@ public static class PlayerEconomy
             net += incomeSources()[i].getNetIncomeInAMonth();
         }
         return net;
+    }
+    public static void createPurchase(string name, float amount)
+    {
+        setMoney(amount);
+        ListableExpense expense = new ListableExpense(PlayerDataHolder.OtherListableExpenses, (name, amount));
     }
 }

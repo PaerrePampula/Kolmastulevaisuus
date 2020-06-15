@@ -4,4 +4,6 @@ using System.Collections;
 public class BuyObjectScriptable : ScriptableObject
 {
     public GameObject prefab;
+    public string objectName;
+    public float objectValue;
 }

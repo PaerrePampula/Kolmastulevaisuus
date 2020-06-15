@@ -11,11 +11,14 @@ public class ExpenseView : UiGeneric
     TextMeshProUGUI monthlyTotal;
     [SerializeField]
     TextMeshProUGUI otherExpenses;
+    [SerializeField]
+    TextMeshProUGUI otherTotal;
 
     // Start is called before the first frame update
     void Start()
     {
-        populateMonthly();
+        populateExpense(PlayerDataHolder.MonthlyListableExpenses, monthlyExpenses, monthlyTotal);
+        populateExpense(PlayerDataHolder.OtherListableExpenses, otherExpenses, otherTotal);
     }
 
     // Update is called once per frame
@@ -23,16 +26,16 @@ public class ExpenseView : UiGeneric
     {
         
     }
-    void populateMonthly()
+    void populateExpense(List<ListableExpense> expenseList, TextMeshProUGUI expenseListing, TextMeshProUGUI expenseTotaling)
     {
-        string monthly = "";
+        string listingText = "";
         float total = 0;
-        foreach (var item in PlayerDataHolder.MonthlyListableExpenses)
+        foreach (var item in expenseList)
         {
-            monthly += item.ToString() + "\n";
+            listingText += item.ToString() + "\n";
             total += item.getTotal();
         }
-        monthlyExpenses.text = monthly;
-        monthlyTotal.text = "Yhteensä: " + total.ToString() + "euroa";
+        expenseListing.text = listingText;
+        expenseTotaling.text = "Yhteensä: " + total.ToString() + "euroa";
     }
 }

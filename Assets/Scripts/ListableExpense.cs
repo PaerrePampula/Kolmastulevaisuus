@@ -14,7 +14,7 @@ public class ListableExpense
     }
     public override string ToString()
     {
-        return expenseName + ": " + expenseAmount;
+        return expenseName + ": " + Mathf.Abs(expenseAmount);
     }
     public float getTotal()
     {
