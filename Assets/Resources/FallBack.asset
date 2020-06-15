@@ -26,6 +26,6 @@ MonoBehaviour:
     testata mainsceness\xE4 jotain ja et halua et jokin asia hajoaa"
   shortFormDescription: "aivan tyhj\xE4"
   extrasDescription: 
-  prefab: {fileID: 0}
+  rentableScene: StudioHomeNo1
   huoneKoko: 3
   vuokraTyyppi: 2
