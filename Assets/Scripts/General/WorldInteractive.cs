@@ -40,10 +40,9 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     }
     private void OnMouseExit()
     {
-        if (!MainCanvas.mainCanvas.isUIOverride)
-        {
+
             OnHover.Invoke(false);
-        }
+
 
     }
     #endregion
