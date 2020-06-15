@@ -37,7 +37,7 @@ public class PointAndClickMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movementAllowed == true)
+        if (movementAllowed == true && PlacementHelper.GetPlacing() == false)
         {
             Movement();
         }

@@ -9,9 +9,11 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField]
     RawImage rendImage;
     [SerializeField]
-    GameObject buyObjectPrefab;
-    public delegate void Hover(GameObject gameObject);
+    BuyObjectScriptable buyObjectScriptable;
+    public delegate void Hover(BuyObjectScriptable gameObject);
     public static event Hover OnHover;
+    public delegate void ClickedBuyObject(BuyObject gameObject);
+    public static event ClickedBuyObject OnObjectClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +26,17 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         
     }
+    public void BuyObject()
+    {
+        BuyObject buyObject = new BuyObject(buyObjectScriptable);
+        OnObjectClicked.Invoke(buyObject);
 
+    }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         rendImage.gameObject.SetActive(true);
-        OnHover.Invoke(buyObjectPrefab);
+        OnHover.Invoke(buyObjectScriptable);
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)

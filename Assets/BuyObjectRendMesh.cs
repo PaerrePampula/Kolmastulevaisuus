@@ -13,13 +13,13 @@ public class BuyObjectRendMesh : MonoBehaviour
     {
         BuyObjectButton.OnHover -= instantiateNewHoverObject;
     }
-    void instantiateNewHoverObject(GameObject newHover)
+    void instantiateNewHoverObject(BuyObjectScriptable newHover)
     {
         if (displayObject != null)
         {
             Destroy(displayObject);
         }
-        displayObject = Instantiate(newHover, transform);
+        displayObject = Instantiate(newHover.prefab, transform);
         displayObject.transform.localPosition = Vector3.zero;
         displayObject.transform.rotation = Quaternion.identity;
 
