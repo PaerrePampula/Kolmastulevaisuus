@@ -33,12 +33,16 @@ public static class PlayerDataHolder
 
             if (rentablehome == null)
             {
-                RentableHome rentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
-                rent = new Rent(rentableHome.BaseRent, rentableHome.WaterCost, rentableHome.ElectricityCost);
+                RentableHome newrentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
+                rentablehome = newrentableHome;
+                rent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
                 return rent;
                 //Ei tarvii käydä mainmenun kautta jos haluu testata jotain tämän avulla
             }
-            rent = new Rent(playerHome.BaseRent, playerHome.WaterCost, playerHome.ElectricityCost);
+            if (rent == null)
+            {
+                rent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
+            }
             return rent;
         }
         set
@@ -90,5 +94,14 @@ public static class PlayerDataHolder
         {
             playerJob = value;
         }
+    }
+    [RuntimeInitializeOnLoadMethod(loadType: RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void Init()
+    {
+        DateTimeSystem.OnMonthChange += clearMonthBudget;
+    }
+    static void clearMonthBudget()
+    {
+        OtherListableExpenses.Clear();
     }
 }
