@@ -151,7 +151,7 @@ public class PlacementHelper : MonoBehaviour
     {
         SetMoving(true);
         placingObject = null;
-        OnPlacementInteract?.Invoke(true);
+
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;
     }

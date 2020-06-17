@@ -10,6 +10,7 @@ public class DynamicLocation : EventLocation
     private void OnEnable()
     {
         JobHandler.OnJobApply += onNewJob;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class DynamicLocation : EventLocation
         if (PlayerDataHolder.PlayerJob == null)
         {
             dynamicLocationObject = null;
+            setLocation(FIRE_LOCATION.CITY);
             return;
         }
 
@@ -29,10 +31,12 @@ public class DynamicLocation : EventLocation
     {
         
     }
+
     void onNewJob(JobNotice jobNotice)
     {
         SceneManager.UnloadSceneAsync(level);
         level = jobNotice.scriptable.jobSiteScene;
+        setLocation(FIRE_LOCATION.WORK);
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
     }
 }

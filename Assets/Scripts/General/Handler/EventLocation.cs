@@ -7,9 +7,19 @@ public class EventLocation : MonoBehaviour //Eventlocation behaviour löytyy jok
     #region Fields
     [SerializeField]
     FIRE_LOCATION _location; //Määritelty locationtyyppi
-
+    string locationFadeOutText;
     [SerializeField]
     Transform playerSpawnLocation;
+
+    public string GetLocationFadeOutText()
+    {
+        return locationFadeOutText;
+    }
+
+    public void SetLocationFadeOutText(string value)
+    {
+        locationFadeOutText = value;
+    }
     #endregion
 
     #region MonobehaviourDefaults
@@ -29,6 +39,10 @@ public class EventLocation : MonoBehaviour //Eventlocation behaviour löytyy jok
     public FIRE_LOCATION getLocation()
     {
         return _location;
+    }
+    public void setLocation(FIRE_LOCATION fire_location)
+    {
+        _location = fire_location;
     }
     public Transform getSpawnLocation()
     {
