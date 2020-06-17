@@ -67,13 +67,14 @@ public class EventControl : MonoBehaviour
     void startTriggeringTimedEvent(GameEvent newEvent)
     {
         TriggerEvent(newEvent);
+
     }
 
     void TriggerEvent(GameEvent newEvent) //Luo eventin peliin ui elementtinä.
     {
         GameObject go = Instantiate(randomEventUIBox);
         RandomEventUI randomeventUI = go.GetComponent<RandomEventUI>();
-        go.transform.SetParent(MainCanvas.mainCanvas.parentOfNewTransforms); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
+        go.transform.SetParent(MainCanvas.mainCanvas.getMainCanvasTransform(true)); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
         go.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
         randomeventUI.Init(newEvent);
     }

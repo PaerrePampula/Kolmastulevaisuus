@@ -19,7 +19,7 @@ public class SceneCanvas : MonoBehaviour
             return _main;
         }
     }
-    public virtual Transform getMainCanvasTransform() //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
+    public virtual Transform getMainCanvasTransform(bool isEvent = false) //Muitten classien käyttöön getteri pääcanvaksesta. Maincanvas static, joten niitä on scenessä vain yksi.
     {
         return mainTransform.transform;
     }

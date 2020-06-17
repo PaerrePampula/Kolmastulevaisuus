@@ -16,6 +16,10 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     eventText currentEventText; //String sisältö eventin kuvaukselle
 
     GameObject InstantiatedChoiceButton() => Instantiate(Resources.Load<GameObject>("ChoicePrototype"));
+
+    public delegate void NewEventTrigger(int index);
+    public static event NewEventTrigger newEventTriggered;
+
     #endregion
     #region MonobehaviourDefaults
 
@@ -33,6 +37,8 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     {
         this.gameEvent = gameEvent; //Asettaa boksille oikean eventtidatan.
         dialogueData(index);
+        gameObject.SetActive(false);
+        newEventTriggered?.Invoke(0);
     }
     public void populateChoiceContainer() //nimensä mukaan täyttää choicecontainerin button tyyppisillä valintanäppäimillä.
     {
@@ -80,6 +86,10 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
     void setTextToEvent()
     {
         eventText.text = currentEventText.eventDialog; //Asetetaan tämän eventin teksti placeholder tekstin tilalle.
+    }
+    private void OnDestroy()
+    {
+        newEventTriggered?.Invoke(1);
     }
 
 }

@@ -7,6 +7,7 @@ public class MainCanvas : SceneCanvas
     public bool isUIOverride { get; private set; } //Tätä käytetään, kun ei haluta että UIn läpi pystyy painamaan asioita.
     static Transform canvasTransform; //Main canvaksen transform, hyödyllinen esim UI elementtien parentoimisessa.
     public Transform parentOfNewTransforms;
+    public Transform parentofGameEvents;
     public delegate void Freezer(bool status);
     public static event Freezer OnFreeze;
     public bool freezeOverride;
@@ -32,6 +33,7 @@ public class MainCanvas : SceneCanvas
 
         canvasTransform = parentOfNewTransforms;
         GameEventSystem.RegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
+        RandomEventUI.newEventTriggered += checkEventUIEnable;
     }
 
     // Update is called once per frame
@@ -53,19 +55,36 @@ public class MainCanvas : SceneCanvas
     }
     void shouldPlayerBeFrozen()
     {
-        if (parentOfNewTransforms.childCount > 0)
+        if (parentOfNewTransforms.childCount > 1 && parentofGameEvents.childCount > 0)
         {
             OnFreeze?.Invoke(false);
         }
-        if (parentOfNewTransforms.childCount == 0 && freezeOverride == false)
+        if ((parentOfNewTransforms.childCount <= 1) && (parentofGameEvents.childCount == 0) && (freezeOverride == false))
         {
             OnFreeze?.Invoke(true);
         }
 
     }
 
-    public override Transform getMainCanvasTransform()
+    public override Transform getMainCanvasTransform(bool isEvent = false)
     {
-        return parentOfNewTransforms;
+        if (isEvent) return parentofGameEvents;
+        else return parentOfNewTransforms;
+
+    }
+    void checkEventUIEnable(int index)
+    {
+        try
+        {
+            if (parentofGameEvents.GetChild(index).gameObject.activeSelf != true)
+            {
+                parentofGameEvents.GetChild(index).gameObject.SetActive(true);
+            }
+        }
+        catch (UnityException)
+        {
+            return;
+        }
+
     }
 }

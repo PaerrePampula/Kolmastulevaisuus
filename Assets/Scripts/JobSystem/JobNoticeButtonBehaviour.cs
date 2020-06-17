@@ -21,7 +21,7 @@ public class JobNoticeButtonBehaviour : MonoBehaviour
     }
     public void setButtonText(string jobTitle, float pay, int hours)
     {
-        buttonText.text = string.Format("{0}.\n{1} euroa per tunti.\nSopimuksessa {2} tuntia viikossa", jobTitle, pay.ToString(), (hours * 5).ToString());
+        buttonText.text = string.Format("{0}.\n{1} euroa per tunti.\nSopimuksessa {2} tuntia viikossa", jobTitle, pay.ToString(), (hours * 3).ToString());
     }
     public void displayJob()
     {

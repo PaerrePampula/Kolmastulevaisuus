@@ -32,7 +32,7 @@ public class Job : IStattable
     #endregion
     public float getMonthlyPaymentAmount()
     {
-        int hoursPerMonth = _workHoursPerDay * 20;
+        int hoursPerMonth = _workHoursPerDay * 12;
         return hoursPerMonth * _payByHour;
     }
     public T getValue<T>()
