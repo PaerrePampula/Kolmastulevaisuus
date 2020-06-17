@@ -15,7 +15,7 @@ public static class HomeHandler
     static void PayRent()
     {
         PaerToolBox.changePlayerMoney(-PlayerDataHolder.PlayerRent.getTotal());
-        Debug.Log("pay rent");
+
     }
 
 }

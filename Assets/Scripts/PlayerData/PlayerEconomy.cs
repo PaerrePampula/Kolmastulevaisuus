@@ -9,6 +9,8 @@ public static class PlayerEconomy
     public static event IncreaseAction OnIncrease;
     public delegate void NewIncomeApply();
     public static event NewIncomeApply OnNewIncome;
+    public delegate void MoneyAlert(int strikeCost);
+    public static event MoneyAlert OnBust;
     //Delegatesta ja eventistä. Näillä kukkaro saa lähetettyä rahanmuutoksesta viestin kaikille onincreasen tilanneille 
     //classeille viestin siitä, että rahatilanne on muuttunut, delegaten ja eventin avulla näitä tilaajia ei tarvitse
     //erikseen unityn editorissä määritellä, eli toisinsanoen pelaajan kukkaron ei tarvitse tietää, kenelle tätä viestiä lähetetään.
@@ -22,6 +24,7 @@ public static class PlayerEconomy
         TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
 
         DateTimeSystem.OnMonthChange += PayFromIncomeSources;
+        DateTimeSystem.OnMonthChange += checkBelowZeroMoney;
 
     }
     public static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
@@ -89,16 +92,18 @@ public static class PlayerEconomy
             else
             {
                 PaerToolBox.changePlayerMoney(incomeSources()[i].getNetIncomeInAMonth());
+                Flag flag = GlobalGameFlags.GetFlag("FIRST_INCOME_RECEIVED");
+                if (flag == null)
+                {
+                    flag = new Flag("FIRST_INCOME_RECEIVED", 0, true);
+                    GlobalGameFlags.addFlag(flag);
+                    flag.FireFlag();
+                }
             }
 
         }
-        Flag flag = GlobalGameFlags.GetFlag("FIRST_INCOME_RECEIVED");
-        if (flag == null)
-        {
-            flag = new Flag("FIRST_INCOME_RECEIVED",0, true);
-            GlobalGameFlags.addFlag(flag);
-            flag.FireFlag();
-        }
+
+
     }
     static void deleteCurrentJobIncomeIfCan()
     {
@@ -121,5 +126,15 @@ public static class PlayerEconomy
     {
         setMoney(amount);
         ListableExpense expense = new ListableExpense(PlayerDataHolder.OtherListableExpenses, (name, amount));
+    }
+    static void checkBelowZeroMoney()
+    {
+        float checkedAmount = PlayerDataHolder.PlayerMoney.getValue<float>();
+        if (checkedAmount < 0)
+        {
+            int strikesGenerated = (checkedAmount > 850f) ? 2 : 1;
+            //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 850
+            OnBust?.Invoke(strikesGenerated);
+        }
     }
 }
