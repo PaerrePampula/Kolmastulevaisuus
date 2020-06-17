@@ -20,7 +20,7 @@ public class DynamicLocation : EventLocation
         if (PlayerDataHolder.PlayerJob == null)
         {
             dynamicLocationObject = null;
-            setLocation(FIRE_LOCATION.CITY);
+            setLocation(FIRE_LOCATION.URBANAREA);
             return;
         }
 

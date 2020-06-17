@@ -43,10 +43,14 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
         for (int i = 0; i < currentEventText.eventDialogChoices.Length; i++)
         {
             bool check = true;
-            foreach (var item in currentEventText.eventDialogChoices[i].Prerequisites)
+            if (currentEventText.eventDialogChoices[i].Prerequisites != null)
             {
-                check = (item.CheckPreRequisites() == true) ? true : false;
+                foreach (var item in currentEventText.eventDialogChoices[i].Prerequisites)
+                {
+                    check = (item.CheckPreRequisites() == true) ? true : false;
+                }
             }
+
             if (check == true)
             {
                 GameObject choice = InstantiatedChoiceButton();

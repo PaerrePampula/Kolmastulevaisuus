@@ -26,6 +26,7 @@ public class eventChoice
     public int nextDialog; //-1 on poistuminen.
     public string choiceDescriptor;
     public ScriptableAction[] clickActions; //scriptableaction on tämänhetkinen implementointi tapahtumista, jotka tapahtuvat kun näppäintä painetaan.
+
     public Flag[] firedFlags;
     //Lisää tästä scriptableactionin alla.
     //Tälle on aivan varmasti parempikin ja selkeämpi tapa toteuttaa, mutta en toistaiseksi ole löytänyt /osannut tehdä sellaista.

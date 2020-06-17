@@ -6,6 +6,7 @@ public enum FIRE_LOCATION //Tänne on määritelty gameEventeille ja niiden scri
     WORK,
     CITY,
     HOME,
-    ANY
+    ANY,
+    URBANAREA
 }
 #endregion

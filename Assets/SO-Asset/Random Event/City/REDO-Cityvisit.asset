@@ -30,7 +30,8 @@ MonoBehaviour:
       choiceDescriptor: "K\xE4y sy\xF6m\xE4ss\xE4"
       clickActions: []
       firedFlags: []
-  - eventDialog: "K\xE4vit kaveriden luona, ja teill\xE4 oli yhdess\xE4 todella hauskaa"
+  - eventDialog: "K\xE4vit kavereiden luona, ja teill\xE4 oli yhdess\xE4 todella
+      hauskaa"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
@@ -39,6 +40,7 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: 50c7626e8d32e9e4ca78ded92cec2767, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       firedFlags: []
   - eventDialog: "Haluat sy\xF6d\xE4, mutta mit\xE4?\nT\xE4ytettyj\xE4 voileipi\xE4
       l\xF6ytyy halvalla, mutta niin my\xF6s pitsaakin\nYksi vaihtoehto olisi my\xF6s
@@ -49,29 +51,32 @@ MonoBehaviour:
       Prerequisites:
       - playerStat: 0
         comparisonValueType: 0
-        StringComparatorValue: 5
-        FloatComparatorValue: 0
-        uniqueStatComparison: 0
-        TypeOfComparison: 0
+        StringComparatorValue: 0
+        FloatComparatorValue: 5
+        uniqueStatComparison: 1
+        TypeOfComparison: 5
       nextDialog: -1
       choiceDescriptor: "Sy\xF6 voileipi\xE4 (Hinta 5 euroa)"
       clickActions:
       - {fileID: 11400000, guid: 47d95330319d9024fb6ea13fc9cb580b, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: 6b9782bb61751d54fb5d8d2e55cacc74, type: 2}
       firedFlags: []
     - neededFlags: []
       Prerequisites:
       - playerStat: 0
         comparisonValueType: 0
-        StringComparatorValue: 8.75
-        FloatComparatorValue: 0
-        uniqueStatComparison: 0
-        TypeOfComparison: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 8.75
+        uniqueStatComparison: 1
+        TypeOfComparison: 5
       nextDialog: -1
-      choiceDescriptor: "Sy\xF6 pitsaa (Hinta 8.75 euroa)"
+      choiceDescriptor: "Sy\xF6 pitsaa (Hinta 8,75 euroa)"
       clickActions:
       - {fileID: 11400000, guid: 50c7626e8d32e9e4ca78ded92cec2767, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: 97ff62e945a765741b740a2925eb0953, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       firedFlags: []
     - neededFlags: []
       Prerequisites:
@@ -80,12 +85,14 @@ MonoBehaviour:
         StringComparatorValue: 
         FloatComparatorValue: 17.5
         uniqueStatComparison: 0
-        TypeOfComparison: 0
+        TypeOfComparison: 5
       nextDialog: -1
-      choiceDescriptor: "K\xE4y ravintolassa sy\xF6m\xE4ss\xE4! (Hinta 17, euroa)"
+      choiceDescriptor: "K\xE4y ravintolassa sy\xF6m\xE4ss\xE4! (Hinta 17,5 euroa)"
       clickActions:
       - {fileID: 11400000, guid: d9711981f96d5684f9b235500fbccedb, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: a6ad08b4326e91149b13dc497d9867f4, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       firedFlags: []
     - neededFlags: []
       Prerequisites:
@@ -93,24 +100,26 @@ MonoBehaviour:
         comparisonValueType: 0
         StringComparatorValue: 
         FloatComparatorValue: 5
-        uniqueStatComparison: 0
-        TypeOfComparison: 0
+        uniqueStatComparison: 1
+        TypeOfComparison: 1
       nextDialog: -1
       choiceDescriptor: "Ei ole varaa mihink\xE4\xE4n..."
       clickActions:
-      - {fileID: 11400000, guid: c3f4066b1498a7a40a286b0bf84de9d7, type: 2}
+      - {fileID: 11400000, guid: fe6cb7e4c67b4e74993cd7615d9a2aba, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       firedFlags: []
     - neededFlags: []
       Prerequisites:
       - playerStat: 0
         comparisonValueType: 0
         StringComparatorValue: 
-        FloatComparatorValue: 17.5
-        uniqueStatComparison: 0
-        TypeOfComparison: 0
+        FloatComparatorValue: 5
+        uniqueStatComparison: 1
+        TypeOfComparison: 5
       nextDialog: -1
       choiceDescriptor: Itseasiassa unohda
       clickActions:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       firedFlags: []
