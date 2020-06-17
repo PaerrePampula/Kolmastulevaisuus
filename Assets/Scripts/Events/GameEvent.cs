@@ -55,4 +55,21 @@ public class GameEvent
             LocationHandler.OnTurnEnd -= CheckForFiring;
         }
     }
+    public bool checkPreRequisites()
+    {
+        bool check = false;
+        if (prerequisites.Length < 1)
+        {
+            return true;
+        }
+        else
+        {
+            for (int i = 0; i < prerequisites.Length; i++)
+            {
+                check = (prerequisites[i].CheckPreRequisites() == true) ? true : false;
+            }
+        }
+        return check;
+
+    }
 }

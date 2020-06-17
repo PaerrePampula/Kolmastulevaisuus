@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -10,44 +11,105 @@ public class PrereqPair
     public string StringComparatorValue;
     public float FloatComparatorValue;
     public bool uniqueStatComparison;
-    public ComparisonOperators TypeOfComparison;
 
-    public static bool CheckPreRequisites(PrereqPair[] prerequisites)
+    public ComparisonOperators TypeOfComparison;
+    static T getValue<T>(PrereqPair prereq)
+
     {
-        if (prerequisites.Length < 1)
+        Type typeParameterType = typeof(T);
+        if (typeParameterType == System.Type.GetType("string"))
         {
-            return true;
+            return (T)Convert.ChangeType(prereq.StringComparatorValue, typeof(T));
         }
+
         else
         {
+            return (T)Convert.ChangeType(prereq.FloatComparatorValue, typeof(T));
+        }
+    }
+    public bool CheckPreRequisites() //Spagettijeesus hyökkää :/
+    {
+
+        {
+
             bool isApplicable = false;
-            foreach (var prerequisite in prerequisites)
-            {
-                IStattable stat = StatsChecker.getPlayerStatByPrereq(prerequisite);
-                isApplicable = ((stat == null) && prerequisite.TypeOfComparison == ComparisonOperators.IfStatDoesntExist) ? true : false;
-                switch (prerequisite.comparisonValueType)
+
+                switch (TypeOfComparison)
                 {
-                    case ComparisonValueType.Float:
-                        float comparisonValue = stat.getValue<float>();
-                        float eventValue = prerequisite.FloatComparatorValue;
-                        isApplicable = ((comparisonValue > eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IFStatValueIsHigherThan
-                            ))
-                            || ((comparisonValue < eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatValueIsLowerThan))
-                            || ((comparisonValue == eventValue) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatEquals)) ? true : false;
+
+                    case ComparisonOperators.IfStatEquals:
+                        if (comparisonValueType == ComparisonValueType.Float)
+                        {
+                            isApplicable = (isEquals<float>(this) == true) ? true : false;
+                        }
+                        else
+                        {
+                            isApplicable = (isEquals<string>(this) == true) ? true : false;
+                        }
                         break;
 
-                    case ComparisonValueType.String:
-                        string comparisonString = stat.getValue<string>();
-                        string eventString = prerequisite.StringComparatorValue;
-                        isApplicable = ((comparisonString == eventString) && (prerequisite.TypeOfComparison == ComparisonOperators.IfStatEquals)) ||
-                            ((comparisonString != eventString) && (prerequisite.TypeOfComparison == ComparisonOperators.IsNotEqualTo)) ? true : false;
+                    case ComparisonOperators.IfStatValueIsLowerThan:
+                        isApplicable = (isSmaller<float>(this) == true) ? true : false;
                         break;
-                    default:
+
+                    case ComparisonOperators.IFStatValueIsHigherThan:
+                        isApplicable = (isBigger<float>(this) == true) ? true : false;
                         break;
-                }
-                if (isApplicable == false) return false;
+
+                    case ComparisonOperators.IsNotEqualTo:
+                        if (comparisonValueType == ComparisonValueType.Float)
+                        {
+                            isApplicable = (isEquals<float>(this) == false) ? true : false;
+                        }
+                        else
+                        {
+                            isApplicable = (isEquals<string>(this) == false) ? true : false;
+                        }
+                        break;
+
+                case ComparisonOperators.IfStatDoesntExist:
+                    IStattable stat = StatsChecker.getPlayerStatByPrereq(this);
+                    return (stat == null) ? true : false;
+
+                case ComparisonOperators.IfStatIsAtleast:
+                    isApplicable = ((isBigger<float>(this) == true) || isEquals<float>(this) == true) ? true : false;
+                    break;
+                case ComparisonOperators.IfStatIsAtMost:
+                    isApplicable = ((isSmaller<float>(this) == true) || isEquals<float>(this) == true) ? true : false;
+                    break;
+
+
+
             }
             return isApplicable;
         }
     }
+    bool isBigger <T>(PrereqPair prereq)
+    {
+        IStattable stat = StatsChecker.getPlayerStatByPrereq(prereq);
+        bool isApplicable = false;
+        T comparisonValue = stat.getValue<T>();
+        T eventValue = getValue<T>(prereq);
+        isApplicable = (Comparer<T>.Default.Compare(comparisonValue, eventValue) > 0) ? true : false;
+        return isApplicable;
+    }
+    bool isSmaller <T>(PrereqPair prereq)
+    {
+        IStattable stat = StatsChecker.getPlayerStatByPrereq(prereq);
+        bool isApplicable = false;
+        T comparisonValue = stat.getValue<T>();
+        T eventValue = getValue<T>(prereq);
+        isApplicable = (Comparer<T>.Default.Compare(comparisonValue, eventValue) < 0) ? true : false;
+        return isApplicable;
+    }
+    bool isEquals <T>(PrereqPair prereq)
+    {
+        IStattable stat = StatsChecker.getPlayerStatByPrereq(prereq);
+        bool isApplicable = false;
+        T comparisonValue = stat.getValue<T>();
+        T eventValue = getValue<T>(prereq);
+        isApplicable = (Comparer<T>.Default.Compare(comparisonValue, eventValue) == 0) ? true : false;
+        return isApplicable;
+    }
+
 }
