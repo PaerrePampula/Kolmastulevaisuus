@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab8bb8bc03ef31478a6043fff10ee3d, type: 3}
   m_Name: Satisfaction2point5Up
   m_EditorClassIdentifier: 
-  event_Type: 0
+  event_Type: 16
   description: 
-  StatChangeAmount: 0
+  StatChangeAmount: 2.5
   simStatType: 0

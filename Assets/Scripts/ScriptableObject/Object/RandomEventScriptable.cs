@@ -21,6 +21,8 @@ public class eventText
 [System.Serializable]
 public class eventChoice
 {
+    public List<Flag> neededFlags;
+    public PrereqPair[] Prerequisites;
     public int nextDialog; //-1 on poistuminen.
     public string choiceDescriptor;
     public ScriptableAction[] clickActions; //scriptableaction on tämänhetkinen implementointi tapahtumista, jotka tapahtuvat kun näppäintä painetaan.

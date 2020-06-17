@@ -111,8 +111,8 @@ public class EventControl : MonoBehaviour
         //LINQ QUERY
         var listofEventsForThisLocationOrAnyLocation = from gameEvent in eventsFromScriptables //where komennon käyttö löytyy yllämainitusta linkistä standard query operaattoreiden alta
                                                        where (gameEvent.getFireLocations().Contains(LocationHandler.CurrentLocation.getLocation()) == true
-                                                       && (gameEvent.CheckPreRequisites() == true) || (gameEvent.getFireLocations().Contains(FIRE_LOCATION.ANY)) == true  
-                                                       && (gameEvent.CheckPreRequisites() == true))
+                                                       && (PrereqPair.CheckPreRequisites(gameEvent.getData().Prerequisites) == true) || (gameEvent.getFireLocations().Contains(FIRE_LOCATION.ANY)) == true  
+                                                       && (PrereqPair.CheckPreRequisites(gameEvent.getData().Prerequisites) == true))
                                                        select gameEvent;
         //Eli siis LINQ query, jossa haetaan gameeventtejä (from gameEvent in events = given a gameEvent in the events list...)
         //where gameEvent vastaa tämänhetkistä lokaatiotägiä, tai jos tägi on missä tahansa

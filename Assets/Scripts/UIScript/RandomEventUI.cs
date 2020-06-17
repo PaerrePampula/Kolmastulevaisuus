@@ -42,6 +42,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
         }
         for (int i = 0; i < currentEventText.eventDialogChoices.Length; i++)
         {
+            
             GameObject choice = InstantiatedChoiceButton();
             choice.GetComponent<ChoiceButton>().Init(currentEventText.eventDialogChoices[i],
                                                      choiceContainer,
