@@ -35,7 +35,7 @@
     public float getNetIncomeInAMonth()
     {
 
-        return incomeAmountTotalOneMonth * TaxationSystem.getPlayerTaxRateInverse();
+        return incomeAmountTotalOneMonth * TaxationSystem.netPaymentPercentage();
     }
     public void setIncome(float value)
     {

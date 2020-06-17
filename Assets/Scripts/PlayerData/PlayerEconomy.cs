@@ -19,7 +19,7 @@ public static class PlayerEconomy
         GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
         GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
 
-        TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
+        TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
 
         DateTimeSystem.OnMonthChange += PayFromIncomeSources;
 
@@ -70,7 +70,7 @@ public static class PlayerEconomy
         IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount(), job.job);
 
         incomeSources().Add(incomeSource);
-        TaxationSystem.calculateTaxRate(getAllIncomeSourceGrossTotals(12));
+        TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
 
         OnNewIncome.Invoke();
     }
@@ -79,7 +79,18 @@ public static class PlayerEconomy
     {
         for (int i = 0; i < incomeSources().Count; i++)
         {
-            PaerToolBox.changePlayerMoney(incomeSources()[i].getNetIncomeInAMonth());
+            if (GlobalGameFlags.GetFlag("PLAYER_HAS_APPLIED_TAXFORM") == null)
+            {
+                Flag taxFlag = new Flag("PLAYER_INFORMED_ABOUT_TAXFORM", 0, true);
+                taxFlag.FireFlag();
+                PaerToolBox.changePlayerMoney(incomeSources()[i].getNetIncomeInAMonth() * 0.6f); ; //Pelaaja ei ole hakenut verokorttia, rankaise
+
+            }
+            else
+            {
+                PaerToolBox.changePlayerMoney(incomeSources()[i].getNetIncomeInAMonth());
+            }
+
         }
         Flag flag = GlobalGameFlags.GetFlag("FIRST_INCOME_RECEIVED");
         if (flag == null)

@@ -1,58 +1,34 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-public static class TaxationSystem
+public static class TaxationSystem 
+    //HUOM: PELAAJA EI TODENNÄKÖISESTI TULE MAKSAMAAN OLLENKAAN VEROA PIENIEN TULOJEN TAKIA, 
+    //JOTEN TÄMÄN TILALLE TULEE VAIN PAKOLLISET MAKSUT JA 60% VEROT JOS PELAAJA EI HAE JA TOIMITA
+    //VEROKORTTIA
+    //VANHA KOODIN VEROLASKENTA EI OTA HUOMIOON VÄHENNYKSIÄ, KAIKEN TÄMÄN LISÄYS ENSTEKSI ON MELKO OVERKILL
+    //OSA-AIKAISILLE OPISKELIJOILLE, SILLÄ NIILLÄ YLEENSÄ VEROKORTISSA LUKEE 0%
 {
     #region Fields
     static float genericAverageMunincipalTax = 0.21f; //Ei varsinaisesti perustu mihinkään tietyn kunnan verotukseen, mutta on melko lähellä sitä, mitä useimmissa veronmäärä on.
-    static float PlayerCalculatedTaxRate = 0f;
+    static float elakeVakuutusPaymentPercentage = ConfigFileReader.getValue("TyottomyysMaksu");
+    static float tyottomyysVakuutusPayment = ConfigFileReader.getValue("ElakeMaksu");
+    static float calculatedPlayerNetRate = 0f;
     #endregion
-    #region Getters
-    public static float getPlayerTaxRateForIncome()
-    {
-        return PlayerCalculatedTaxRate;
-    }
-    public static float getPlayerTaxRateInverse()
-    {
-        float inverse = 1f;
-        inverse -= PlayerCalculatedTaxRate;
-        return inverse;
-    }
-    public static float getIncomeAfterTaxes(float allIncomesTotalGross)
+
+
+    public static float netPaymentPercentage()
     {
 
-        float IncomeAfterNationalTaxes = getIncomeAfterNationalTax(allIncomesTotalGross);
-        float InComeAfterMunincipalTaxes = IncomeAfterNationalTaxes *= (1f - genericAverageMunincipalTax);
-
-        return InComeAfterMunincipalTaxes; //Kerrotaan saatu arvo valtionverojen jälkeen vielä kunnallisveron jälkeen jäävällä prosenttimäärällä, 1 = 100%
-
+        //Pelaajalla on verokortti, palauta tieto.
+        return calculatedPlayerNetRate;
     }
-    public static void calculateTaxRate(float allIncomesTotalGross)
+    public static float getIncomeafterMandatoryPayments(float allIncomesTotalGross)
     {
-        float IncomeAfterNationalTaxes = getIncomeAfterNationalTax(allIncomesTotalGross);
-        float InComeAfterMunincipalTaxes = IncomeAfterNationalTaxes *= (1f - genericAverageMunincipalTax);
-        PlayerCalculatedTaxRate = 1 - (InComeAfterMunincipalTaxes / allIncomesTotalGross);
+
+        float incomeAfterMandatoryPayments = allIncomesTotalGross * (1 - elakeVakuutusPaymentPercentage - tyottomyysVakuutusPayment);
+        calculatedPlayerNetRate = (incomeAfterMandatoryPayments / allIncomesTotalGross);
+        return incomeAfterMandatoryPayments;
 
     }
-    static float getIncomeAfterNationalTax(float gross)
-    {
-        NationalIncomeTaxBracket foundBracket = TaxBrackets.NationalIncomeTaxBrackets.SingleOrDefault
-                    (bracket => PaerToolBox.isBetween(gross, bracket.getLower(), bracket.getUpper(), true) == true);
 
-        if (foundBracket == null) //Ansiot ovat alle minkään bracketin
-        {
-            
-            return gross;
-        }
-        else //Ansio kuuluu tiettyyn bracketiin.
-        {
-            float taxAmount = gross - foundBracket.getLower();
-            taxAmount *= foundBracket.getPercentileTax();
-            taxAmount += foundBracket.getBottomLineTax();
-
-            return gross - taxAmount;
-        }
-
-    }
-    #endregion
 }
