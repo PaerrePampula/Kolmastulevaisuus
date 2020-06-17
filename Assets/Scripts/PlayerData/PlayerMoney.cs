@@ -19,4 +19,8 @@ public class PlayerMoney : IStattable
     {
         amount += Chgamount;
     }
+    public void resetMoney()
+    {
+        amount = 0;
+    }
 }

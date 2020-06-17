@@ -6,6 +6,8 @@ public class GlobalGameFlags : MonoBehaviour
 {
     [SerializeField]
     public static List<Flag> AllGlobalFlags; //Näitä flageja ois ihan kiva katella inspectorissa joten monobehaviour 
+    public delegate void NewFlag(Flag flag);
+    public static event NewFlag OnNewFlag;
     private void Awake()
     {
         AllGlobalFlags = new List<Flag>();
@@ -35,6 +37,7 @@ public class GlobalGameFlags : MonoBehaviour
         if (uniqueFlagIsApplicable(flag))
         {
             AllGlobalFlags.Add(flag);
+            OnNewFlag?.Invoke(flag);
         }
     }
     public static void DisposeFlag(Flag flag)

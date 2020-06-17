@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: BelowMinus
+  m_EditorClassIdentifier: 
+  neededFlags:
+  - FlagName: PLAYER_LOST_HP
+    TimeToHappen: 0
+    uniqueFlag: 0
+  Prerequisites: []
+  fire_locations: 
+  eventTexts:
+  - eventDialog: "Sinulla ei riit\xE4 raha maksamaan kaikkea, ja menit miinukselle!\n\nVanhempasi
+      onneksesi on valmiita tukemaan sinua, ja he antoivat sinulle tarpeeksi rahaa,
+      ett\xE4 p\xE4rj\xE4\xE4t taas toistaiseksi\n\nJos joudut pyyt\xE4m\xE4\xE4n
+      liian monta kertaa rahaa vanhemmiltasi, peli loppuu"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Okei...
+      clickActions: []
+      firedFlags: []

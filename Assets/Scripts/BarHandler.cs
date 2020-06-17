@@ -68,7 +68,7 @@ public class BarHandler : MonoBehaviour
         while (slider.value != originalvalue + change)
         {
             currentFloat = Mathf.Lerp(originalvalue, newvalue, t);
-            t += 0.75f * Time.deltaTime;
+            t += 0.50f * Time.deltaTime;
             slider.value = currentFloat;
             image.color = gradient.Evaluate(slider.normalizedValue);
             yield return null;

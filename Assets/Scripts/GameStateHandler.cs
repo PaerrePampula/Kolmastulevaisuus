@@ -18,9 +18,18 @@ public class GameStateHandler : MonoBehaviour
     {
         maxBusts -= strikes;
         OnDamage.Invoke(strikes);
+
         if (maxBusts < 0)
         {
             gameFailEnd();
+        }
+        if (maxBusts > 0)
+        {
+            Flag flag = new Flag("PLAYER_LOST_HP",0,false);
+            flag.FireFlag();
+            PlayerDataHolder.PlayerMoney.resetMoney();
+            PaerToolBox.changePlayerMoney(100);
+            
         }
     }
     static void gameFailEnd()

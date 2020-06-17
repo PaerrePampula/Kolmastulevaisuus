@@ -132,6 +132,7 @@ public static class PlayerEconomy
         float checkedAmount = PlayerDataHolder.PlayerMoney.getValue<float>();
         if (checkedAmount < 0)
         {
+
             int strikesGenerated = (checkedAmount > 850f) ? 2 : 1;
             //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 850
             OnBust?.Invoke(strikesGenerated);
