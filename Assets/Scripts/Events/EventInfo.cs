@@ -6,6 +6,7 @@ public interface IInfoable
 {
 
 }
+[Serializable]
 public abstract class EventInfo : IInfoable
 {
     string eventDebugInformation;

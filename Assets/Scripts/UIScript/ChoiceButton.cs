@@ -17,6 +17,7 @@ public class ChoiceButton : BaseTrigger
         choiceofThisButton = choice; //Näppäimen edustama event valinta
         eventTriggers = choice.clickActions; //Näppäimen valinnan edustamat ScriptableActionit
         flags = choice.firedFlags; //Näppäimen valinnan global flagit.
+        customActions = choice.customRunTimeActions;
         thisRandomEventUI = ui;
         setChoiceText(buttonText);
     }

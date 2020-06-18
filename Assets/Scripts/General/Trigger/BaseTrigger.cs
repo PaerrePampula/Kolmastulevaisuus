@@ -9,6 +9,9 @@ public class BaseTrigger : MonoBehaviour
     [SerializeField]
     public Flag[] flags;
 
+    [SerializeField]
+    public CustomAction[] customActions;
+
     public virtual void FireTriggersAndFlags() //Kutsutaan kaikki ScriptableActionit sekä Global flag callit
     {
 
@@ -23,6 +26,10 @@ public class BaseTrigger : MonoBehaviour
             
                 flags[i].FireFlag();
                     
+            }
+            for (int i = 0; i < customActions.Length; i++)
+            {
+                customActions[i].PerformAction();
             }
 
 
