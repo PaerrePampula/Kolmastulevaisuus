@@ -68,7 +68,7 @@ public class CustomAction
 
                 break;
             case eventClassName.SimStat:
-                SimStatType type = (SimStatType)System.Enum.Parse(typeof(SimStatType), actionString1);
+                SimStatType type = (SimStatType)System.Enum.Parse(typeof(SimStatType), actionString1, false);
                 SimStatInfo simStatInfo = new SimStatInfo();
                 simStatInfo.SimStatName = type;
                 simStatInfo.StatChange = actionFloat1;
@@ -86,7 +86,7 @@ public class CustomAction
                 PurchaseInfo purchaseInfo = new PurchaseInfo();
                 purchaseInfo.purchaseCost = actionFloat1;
                 purchaseInfo.purchaseName = actionString1;
-                event_Type = Event_Type.FLAG_FIRE;
+                //event_Type = Event_Type.
                 PerformActionWithEventInfo(event_Type, purchaseInfo);
                 break;
             default:

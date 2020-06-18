@@ -18,15 +18,28 @@ MonoBehaviour:
   eventTexts:
   - eventDialog: "P\xE4\xE4sit pitk\xE4n loman j\xE4lkeen taas koulun penkille. Koulussasi
       pidettiin pikainen esittelytuokio, ja tutustuit sinun uusiin koulukavereihin.\nVanhempasi
-      muisti sinua antamalla sinulle 550 euroa, jotta p\xE4\xE4set helpommin jaloillesi\n\nTajuat,
-      ett\xE4 olet melko j\xE4lkijunassa raha-asioiden hallinnassa, ehk\xE4 sinun
-      kannattaisi menn\xE4 hakemaan tukia, tai t\xF6it\xE4?\t\n\n\n"
+      muisti sinua antamalla sinulle 550 euroa, jotta p\xE4\xE4set helpommin jaloillesi\n\nSiit\xE4
+      puheen ollen, tajuat ett\xE4 olet hieman j\xE4lkijunassa raha-asioiden hallinnassa,
+      ehk\xE4 sinun kannattaisi menn\xE4 hakemaan tukia, tai t\xF6it\xE4?\t\n\n\n"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: 1
       choiceDescriptor: "Miten min\xE4 sen teen?"
       clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: 550
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
   - eventDialog: "Tukia ja t\xF6it\xE4 saat molempia haettua l\xE4pp\xE4rilt\xE4,
       kokeile vaikka! Paina hiirell\xE4 l\xE4pp\xE4ri\xE4!"
@@ -38,4 +51,5 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: 47c71dc6f1bb43f4794cb56691d042ed, type: 2}
       - {fileID: 11400000, guid: d5c4370da9e8e1443bd5c87b1cbffbf0, type: 2}
+      customRunTimeActions: []
       firedFlags: []

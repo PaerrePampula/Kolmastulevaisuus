@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class BarHandler : MonoBehaviour
 {
     [SerializeField]
+    bool randomizedOffSetEffect;
+    [SerializeField]
     Slider slider;
     [SerializeField]
     Image image;
@@ -32,10 +34,10 @@ public class BarHandler : MonoBehaviour
             GameObject go = Instantiate(incText);
             string change = (valueChange > 0) ? valueChange + "+" : valueChange + "-";
             Color color = (valueChange > 0) ? Color.green : Color.red;
-            go.GetComponent<TextMeshProUGUI>().text = change;
-            go.GetComponent<TextMeshProUGUI>().color = color;
+            go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = change;
+            go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = color;
             go.transform.SetParent(transform);
-            go.transform.localPosition = incTextOffset;
+            go.transform.localPosition = (randomizedOffSetEffect) ? incTextOffset + new Vector3(Random.Range(-15,15), Random.Range(-15,15)) : incTextOffset;
 
             startIncrementing(valueChange);
         }

@@ -23,12 +23,14 @@ MonoBehaviour:
       nextDialog: 1
       choiceDescriptor: "K\xE4y kavereiden luona kyl\xE4ss\xE4"
       clickActions: []
+      customRunTimeActions: []
       firedFlags: []
     - neededFlags: []
       Prerequisites: []
       nextDialog: 2
       choiceDescriptor: "K\xE4y sy\xF6m\xE4ss\xE4"
       clickActions: []
+      customRunTimeActions: []
       firedFlags: []
   - eventDialog: "K\xE4vit kavereiden luona, ja teill\xE4 oli yhdess\xE4 todella
       hauskaa"
@@ -41,6 +43,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 50c7626e8d32e9e4ca78ded92cec2767, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions: []
       firedFlags: []
   - eventDialog: "Haluat sy\xF6d\xE4, mutta mit\xE4?\nT\xE4ytettyj\xE4 voileipi\xE4
       l\xF6ytyy halvalla, mutta niin my\xF6s pitsaakin\nYksi vaihtoehto olisi my\xF6s
@@ -61,6 +64,13 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 47d95330319d9024fb6ea13fc9cb580b, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: 6b9782bb61751d54fb5d8d2e55cacc74, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: -5
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
     - neededFlags: []
       Prerequisites:
@@ -77,6 +87,13 @@ MonoBehaviour:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: 97ff62e945a765741b740a2925eb0953, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: -10
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
     - neededFlags: []
       Prerequisites:
@@ -93,6 +110,13 @@ MonoBehaviour:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: a6ad08b4326e91149b13dc497d9867f4, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: -15
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
     - neededFlags: []
       Prerequisites:
@@ -103,11 +127,18 @@ MonoBehaviour:
         uniqueStatComparison: 1
         TypeOfComparison: 1
       nextDialog: -1
-      choiceDescriptor: "Ei ole varaa mihink\xE4\xE4n..."
+      choiceDescriptor: "Ei ole varaa mihink\xE4\xE4n... [Sinulle tuli kovempi n\xE4lk\xE4]"
       clickActions:
       - {fileID: 11400000, guid: fe6cb7e4c67b4e74993cd7615d9a2aba, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
     - neededFlags: []
       Prerequisites:
@@ -122,4 +153,5 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions: []
       firedFlags: []

@@ -10,7 +10,7 @@ public interface IInfoable
 public abstract class EventInfo : IInfoable
 {
     string eventDebugInformation;
-
+    
 
 }
 public class FloatChangeInfo : EventInfo

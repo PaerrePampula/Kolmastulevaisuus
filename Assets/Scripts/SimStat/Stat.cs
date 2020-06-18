@@ -36,6 +36,6 @@ public class Stat
     {
         StatFloat += amount;
         OnStatChange.Invoke(_statfloat, amount, simStatType);
-        Debug.Log("asdasdada");
+
     }
 }
