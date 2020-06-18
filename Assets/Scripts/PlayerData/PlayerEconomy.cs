@@ -29,7 +29,7 @@ public static class PlayerEconomy
     }
     public static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
     {
-        return PlayerDataHolder.IncomeSources;
+        return PlayerDataHolder.Current.IncomeSources;
     }
     #endregion
 
@@ -41,15 +41,15 @@ public static class PlayerEconomy
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         floatChange = floatChangeInfo.changeofFloat;
 
-        PlayerDataHolder.PlayerMoney.MoneyChange(floatChange);
-        OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney.getValue<float>());
+        PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
+        OnIncrease?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
     static void setMoney(float amount)
     {
         float floatChange = 0;
         floatChange = amount;
-        PlayerDataHolder.PlayerMoney.MoneyChange(floatChange);
-        OnIncrease?.Invoke(PlayerDataHolder.PlayerMoney.getValue<float>());
+        PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
+        OnIncrease?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
 
     public static float getAllIncomeSourceGrossTotals(int monthAmount)
@@ -125,11 +125,11 @@ public static class PlayerEconomy
     public static void createPurchase(string name, float amount)
     {
         setMoney(amount);
-        ListableExpense expense = new ListableExpense(PlayerDataHolder.OtherListableExpenses, (name, amount));
+        ListableExpense expense = new ListableExpense(PlayerDataHolder.Current.OtherListableExpenses, (name, amount));
     }
     static void checkBelowZeroMoney()
     {
-        float checkedAmount = PlayerDataHolder.PlayerMoney.getValue<float>();
+        float checkedAmount = PlayerDataHolder.Current.PlayerMoney.getValue<float>();
         if (checkedAmount < 0)
         {
 

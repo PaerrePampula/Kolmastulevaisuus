@@ -17,7 +17,7 @@ public class DynamicLocation : EventLocation
     {
         level = "store";
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
-        if (PlayerDataHolder.PlayerJob == null)
+        if (PlayerDataHolder.Current.PlayerJob == null)
         {
             dynamicLocationObject = null;
             setLocation(FIRE_LOCATION.URBANAREA);

@@ -17,8 +17,8 @@ public class ExpenseView : UiGeneric
     // Start is called before the first frame update
     void Start()
     {
-        populateExpense(PlayerDataHolder.MonthlyListableExpenses, monthlyExpenses, monthlyTotal);
-        populateExpense(PlayerDataHolder.OtherListableExpenses, otherExpenses, otherTotal);
+        populateExpense(PlayerDataHolder.Current.MonthlyListableExpenses, monthlyExpenses, monthlyTotal);
+        populateExpense(PlayerDataHolder.Current.OtherListableExpenses, otherExpenses, otherTotal);
     }
 
     // Update is called once per frame

@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 3890224519449009048, guid: b38df130bcf8eff42bc94da5555722c5, type: 3}
   objectName: Korkea kaappi
   objectValue: 50
+  satisfactionGain: 5

@@ -40,14 +40,14 @@ public class EconomyFields : MonoBehaviour
     void UpdateUI()
     {
         incomeEconomyText.text = (PlayerEconomy.totalNetIncomeInAMonth() + " euroa/kk");
-        expenseEconomyText.text = PlayerDataHolder.PlayerRent.getValue<float>() + " euroa/kk";
+        expenseEconomyText.text = PlayerDataHolder.Current.PlayerRent.getValue<float>() + " euroa/kk";
     }
     public IEnumerator startIncrementing(TextMeshProUGUI text)
     {
 
         float t = 0.0f;
         float originalvalue = currentFloat;
-        gottenValueMethod method = PlayerDataHolder.PlayerMoney.getValue<float>;
+        gottenValueMethod method = PlayerDataHolder.Current.PlayerMoney.getValue<float>;
 
         while (currentFloat != method())
         {

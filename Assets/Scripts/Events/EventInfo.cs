@@ -68,7 +68,7 @@ public class EventRegisterInfo : EventInfo
 public class SimStatInfo : EventInfo
 {
     public float StatChange;
-    public string SimStatName;
+    public SimStatType SimStatName;
 }
 public class PurchaseInfo : EventInfo
 {

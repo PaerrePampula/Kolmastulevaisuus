@@ -9,7 +9,7 @@
     public override float CalculatedSupport()
     {
 
-        float support = 0.8f * (PlayerDataHolder.PlayerRent.getTotal() - CalculatedPerusOmaVastuu());
+        float support = 0.8f * (PlayerDataHolder.Current.PlayerRent.getTotal() - CalculatedPerusOmaVastuu());
         return support;
     }
     float CalculatedPerusOmaVastuu() //Omavastuu ei vaikuta, jos tulot ovat liian pieniä... 

@@ -5,36 +5,60 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public static class PlayerDataHolder
+public class PlayerDataHolder : MonoBehaviour
 {
+    static private PlayerDataHolder _Current;
+    static public PlayerDataHolder Current
+    {
+        get
+        {
+            if (_Current == null)
+            {
+                _Current = FindObjectOfType<PlayerDataHolder>();
+            }
+            return _Current;
+        }
+    }
     #region TYÖT
-    private static Job playerJob;
+    private Job playerJob;
     #endregion
 
     #region RAHA, TALOUS
 
-    private static PlayerMoney playerMoney = new PlayerMoney();
-    private static List<IncomeSource> incomeSources = new List<IncomeSource>();
-    public static List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
-    public static List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
+    private PlayerMoney playerMoney;
+    private List<IncomeSource> incomeSources;
+    public  List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
+    public  List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
     #endregion
 
     #region ASUNTO, VUOKRA
-    private static Rent rent;
+    private Rent rent;
     private static RentableHome rentablehome;
     #endregion
     #region Statsit
-
+    public Stat Satisfaction = new Stat(SimStatType.Satisfaction);
+    public Stat Comfortableness = new Stat(SimStatType.Comfortableness);
     #endregion
-    public static Rent PlayerRent
+    public static RentableHome playerHome
+    {
+        get
+        {
+            return rentablehome;
+        }
+        set
+        {
+            rentablehome = value;
+        }
+    }
+    public  Rent PlayerRent
     {
         get
         {
 
-            if (rentablehome == null)
+            if (playerHome == null)
             {
                 RentableHome newrentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
-                rentablehome = newrentableHome;
+                playerHome = newrentableHome;
                 rent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
                 return rent;
                 //Ei tarvii käydä mainmenun kautta jos haluu testata jotain tämän avulla
@@ -50,22 +74,15 @@ public static class PlayerDataHolder
             rent = value;
         }
     }
-    public static RentableHome playerHome
+
+    public PlayerMoney PlayerMoney
     {
         get
         {
-            return rentablehome;
-        }
-        set
-        {
-            rentablehome = value;
-        }
-    }
-    public static PlayerMoney PlayerMoney
-    {
-        get
-        {
-            
+            if (playerMoney == null)
+            {
+                playerMoney = new PlayerMoney();
+            }
             return playerMoney;
         }
         set
@@ -73,10 +90,14 @@ public static class PlayerDataHolder
             playerMoney = value;
         }
     }
-    public static List<IncomeSource> IncomeSources
+    public List<IncomeSource> IncomeSources
     {
         get
         {
+            if (incomeSources == null)
+            {
+                incomeSources = new List<IncomeSource>();
+            }
             return incomeSources;
         }
         set
@@ -84,7 +105,7 @@ public static class PlayerDataHolder
             incomeSources = value;
         }
     }
-    public static Job PlayerJob
+    public Job PlayerJob
     {
         get
         {
@@ -95,12 +116,15 @@ public static class PlayerDataHolder
             playerJob = value;
         }
     }
-    [RuntimeInitializeOnLoadMethod(loadType: RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void Init()
+    void OnEnable()
     {
         DateTimeSystem.OnMonthChange += clearMonthBudget;
+        playerMoney = new PlayerMoney();
+        Satisfaction.Init();
+        Comfortableness.Init();
     }
-    static void clearMonthBudget()
+
+    void clearMonthBudget()
     {
         OtherListableExpenses.Clear();
     }

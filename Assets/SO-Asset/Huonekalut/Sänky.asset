@@ -15,3 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 6734517856631416237, guid: 0c7253711f08d394ca757ecacbd29da2, type: 3}
   objectName: "S\xE4nky"
   objectValue: 500
+  satisfactionGain: 15

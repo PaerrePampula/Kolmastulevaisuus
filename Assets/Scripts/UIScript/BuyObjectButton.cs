@@ -13,6 +13,8 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     BuyObjectScriptable buyObjectScriptable;
     [SerializeField]
     TextMeshProUGUI buttonText;
+    [SerializeField]
+    GameObject playerEconomyWarning;
 
     public BuyObjectScriptable BuyObjectScriptable { get => buyObjectScriptable; set => buyObjectScriptable = value; }
 
@@ -35,7 +37,17 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void BuyObject()
     {
         BuyObject buyObject = new BuyObject(BuyObjectScriptable);
-        OnObjectClicked.Invoke(buyObject);
+        if (PlayerDataHolder.Current.PlayerMoney.getValue<float>() >= buyObject.BuyValue)
+        {
+            OnObjectClicked.Invoke(buyObject);
+        }
+        else
+        {
+            GameObject go = Instantiate(playerEconomyWarning);
+            go.gameObject.transform.SetParent(MainCanvas.mainCanvas.transform);
+            go.transform.localPosition = Vector3.zero;
+        }
+
 
     }
 

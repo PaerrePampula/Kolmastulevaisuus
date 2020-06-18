@@ -8,7 +8,7 @@ public class SimStatChange : ScriptableAction
     public override void PerformAction()
     {
         SimStatInfo SimChangeAction = new SimStatInfo();
-        SimChangeAction.SimStatName = simStatType.ToString();
+        SimChangeAction.SimStatName = simStatType;
         SimChangeAction.StatChange = StatChangeAmount;
         thisEvent_Type = Event_Type.SIMSTAT_CHANGE;
 

@@ -15,6 +15,8 @@ public class PlacementHelper : MonoBehaviour
 
     public delegate void PurchaseCall(BuyObject gameObject);
     public static event PurchaseCall OnObjectPurchase;
+    public delegate void PurchaseSatisfactionCall(float satisfaction);
+    public static event PurchaseSatisfactionCall OnObjectSatisfaction;
     public delegate void BeginPlacementCall(bool isBegin);
     public static event BeginPlacementCall OnPlacementInteract;
 
@@ -106,8 +108,9 @@ public class PlacementHelper : MonoBehaviour
                 if (buying)
                 {
                     callForPurchase();
+                    Debug.Log("HÄr");
                 }
-                Debug.Log("HÄr");
+
                 placingObject = null;
                 SetPlacing(false);
                 SetMoving(false);
@@ -157,6 +160,8 @@ public class PlacementHelper : MonoBehaviour
     }
     void callForPurchase()
     {
+        OnObjectPurchase?.Invoke(currentBuyObject);
+        OnObjectSatisfaction?.Invoke(currentBuyObject.SatisfactionGain);
 
         PlayerEconomy.createPurchase(currentBuyObject.BuyName, -currentBuyObject.BuyValue);
         currentBuyObject = null;

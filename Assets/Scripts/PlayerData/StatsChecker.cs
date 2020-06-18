@@ -21,7 +21,9 @@ public static class StatsChecker
 
             if (searchForUniqueValue != null) return;
         }
+        
         currentStats.Add(StatChange);
+
 
     }
     public static IStattable getPlayerStatByPrereq(PrereqPair pair)
@@ -30,6 +32,7 @@ public static class StatsChecker
         {
             if (currentStats[i].ThisStatType == pair.playerStat)
             {
+                Debug.Log(currentStats[i].ThisStatType + "  " +  currentStats[i].getValue<float>());
                 return currentStats[i];
             }
 

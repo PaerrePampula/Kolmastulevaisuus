@@ -55,7 +55,7 @@ public class MainCanvas : SceneCanvas
     }
     void shouldPlayerBeFrozen()
     {
-        if ((parentOfNewTransforms.childCount) > 1 && (parentofGameEvents.childCount >= 0))
+        if ((parentofGameEvents.childCount >= 0))
         {
             OnFreeze?.Invoke(false);
         }

@@ -27,7 +27,7 @@ public class GameStateHandler : MonoBehaviour
         {
             Flag flag = new Flag("PLAYER_LOST_HP",0,false);
             flag.FireFlag();
-            PlayerDataHolder.PlayerMoney.resetMoney();
+            PlayerDataHolder.Current.PlayerMoney.resetMoney();
             PaerToolBox.changePlayerMoney(100);
             
         }

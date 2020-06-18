@@ -67,16 +67,16 @@ public class PrereqPair
                         }
                         break;
 
-                case ComparisonOperators.IfStatDoesntExist:
-                    IStattable stat = StatsChecker.getPlayerStatByPrereq(this);
-                    return (stat == null) ? true : false;
+                    case ComparisonOperators.IfStatDoesntExist:
+                        IStattable stat = StatsChecker.getPlayerStatByPrereq(this);
+                        return (stat == null) ? true : false;
 
-                case ComparisonOperators.IfStatIsAtleast:
-                    isApplicable = ((isBigger<float>(this) == true) || isEquals<float>(this) == true) ? true : false;
-                    break;
-                case ComparisonOperators.IfStatIsAtMost:
-                    isApplicable = ((isSmaller<float>(this) == true) || isEquals<float>(this) == true) ? true : false;
-                    break;
+                    case ComparisonOperators.IfStatIsAtleast:
+                        isApplicable = ((isBigger<float>(this) == true) | (isEquals<float>(this) == true)) ? true : false;
+                        break;
+                    case ComparisonOperators.IfStatIsAtMost:
+                        isApplicable = ((isSmaller<float>(this) == true) | (isEquals<float>(this) == true)) ? true : false;
+                        break;
 
 
 
@@ -90,6 +90,7 @@ public class PrereqPair
         bool isApplicable = false;
         T comparisonValue = stat.getValue<T>();
         T eventValue = getValue<T>(prereq);
+
         isApplicable = (Comparer<T>.Default.Compare(comparisonValue, eventValue) > 0) ? true : false;
         return isApplicable;
     }
@@ -99,6 +100,7 @@ public class PrereqPair
         bool isApplicable = false;
         T comparisonValue = stat.getValue<T>();
         T eventValue = getValue<T>(prereq);
+
         isApplicable = (Comparer<T>.Default.Compare(comparisonValue, eventValue) < 0) ? true : false;
         return isApplicable;
     }
@@ -109,6 +111,7 @@ public class PrereqPair
         T comparisonValue = stat.getValue<T>();
         T eventValue = getValue<T>(prereq);
         isApplicable = (Comparer<T>.Default.Compare(comparisonValue, eventValue) == 0) ? true : false;
+
         return isApplicable;
     }
 

@@ -6,4 +6,5 @@ public class BuyObjectScriptable : ScriptableObject
     public GameObject prefab;
     public string objectName;
     public float objectValue;
+    public float satisfactionGain;
 }

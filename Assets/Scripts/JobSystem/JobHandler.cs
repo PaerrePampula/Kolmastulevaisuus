@@ -140,11 +140,11 @@ public static class JobHandler
         JobInfo job = (JobInfo)info;
         Job newJob = createJob(job);
 
-        PlayerDataHolder.PlayerJob = newJob;
+        PlayerDataHolder.Current.PlayerJob = newJob;
         OnJobApply?.Invoke(job.jobNotice);
-        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
+        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.Current.PlayerJob);
 
-        createOnJobRegisterCall(PlayerDataHolder.PlayerJob);
+        createOnJobRegisterCall(PlayerDataHolder.Current.PlayerJob);
 
         List<GameEvent> gameEvents = EventControl.createEvents(job.jobNotice.scriptable.jobEvents);
 
@@ -154,9 +154,9 @@ public static class JobHandler
     }
     static void checkPlayerJobDuration()
     {
-        if (PlayerDataHolder.PlayerJob != null)
+        if (PlayerDataHolder.Current.PlayerJob != null)
         {
-            if (PlayerDataHolder.PlayerJob.hasExpired())
+            if (PlayerDataHolder.Current.PlayerJob.hasExpired())
             {
                 endPlayerJob();
             }
@@ -166,9 +166,9 @@ public static class JobHandler
     static void endPlayerJob()
     {
         OnJobEnd.Invoke();
-        EventControl.removeEvents(PlayerDataHolder.PlayerJob.getJobEvents());
-        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.PlayerJob);
-        PlayerDataHolder.PlayerJob = null;
+        EventControl.removeEvents(PlayerDataHolder.Current.PlayerJob.getJobEvents());
+        PaerToolBox.callNonUniqueStatChange(PlayerDataHolder.Current.PlayerJob);
+        PlayerDataHolder.Current.PlayerJob = null;
         Flag flag = new Flag("PLAYER_JOB_CONTRACT_END", 0, false);
         flag.FireFlag();
 

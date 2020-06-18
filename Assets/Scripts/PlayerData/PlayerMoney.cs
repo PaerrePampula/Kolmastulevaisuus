@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerMoney : IStattable
 {
     
-    float amount = 0;
+    float amount;
     public bool UniqueStat { get { return true; } }
     public StatType ThisStatType { get { return StatType.PlayerMoney; } }
     public PlayerMoney()

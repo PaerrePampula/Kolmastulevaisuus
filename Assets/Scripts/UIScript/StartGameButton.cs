@@ -9,13 +9,16 @@ public class StartGameButton : MonoBehaviour
     public void BeginGame()
     {
         RegisterPlayerHome();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
 
     }
     void RegisterPlayerHome()
     {
-        PlayerDataHolder.playerHome = rentableHome;
+        GameObject go = new GameObject();
+        go.AddComponent<MenuDataShuttle>();
+        go.GetComponent<MenuDataShuttle>().shuttledHome = rentableHome;
 
     }
     public void setRentable(RentableHome InforentableHome)
