@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305d6c8123673734b96b8e834d536297, type: 3}
   m_Name: "J\xE4\xE4kaappi"
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  objectName: 
-  objectValue: 0
-  satisfactionGain: 0
+  prefab: {fileID: 4403208289284918815, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7, type: 3}
+  objectName: "J\xE4\xE4kaappi"
+  objectValue: 149
+  satisfactionGain: 5

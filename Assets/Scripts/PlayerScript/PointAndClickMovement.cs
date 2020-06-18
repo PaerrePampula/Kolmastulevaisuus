@@ -50,7 +50,7 @@ public class PointAndClickMovement : MonoBehaviour
         if (Physics.Raycast(transform.position, Camera.main.transform.position - transform.position, out hit))
         {
 
-            Debug.Log("ads");
+            Debug.Log("Infrontofplayer");
         }
     }
     #endregion

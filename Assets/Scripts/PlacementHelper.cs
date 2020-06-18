@@ -63,7 +63,10 @@ public class PlacementHelper : MonoBehaviour
         meshBounds = placingObject.GetComponent<Collider>().bounds;
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;
-
+        if (placingObject.GetComponent<WorldInteractive>() != null)
+        {
+            placingObject.GetComponent<WorldInteractive>().beingMoved = true;
+        }
     }
     void movePlacement()
     {
@@ -103,6 +106,10 @@ public class PlacementHelper : MonoBehaviour
         {
             if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), 1, out hit, Mathf.Infinity, placementLayer))
             {
+                if (placingObject.GetComponent<WorldInteractive>() != null)
+                {
+                    placingObject.GetComponent<WorldInteractive>().beingMoved = false;
+                }
                 OnPlacementInteract?.Invoke(false);
                 placingObject.layer = 12;
                 if (buying)
@@ -157,6 +164,10 @@ public class PlacementHelper : MonoBehaviour
 
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;
+        if (placingObject.GetComponent<WorldInteractive>() != null)
+        {
+            placingObject.GetComponent<WorldInteractive>().beingMoved = true;
+        }
     }
     void callForPurchase()
     {

@@ -7,6 +7,7 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     public UnityEvent[] clickEvents;
     [SerializeField]
     string propName;
+    public bool beingMoved;
     public delegate void InteractHover(bool hoverstate, string text = "", Transform transform = null);
     public static event InteractHover OnHover;
     public delegate void InteractRequest(Transform objectToInteract);
@@ -32,7 +33,7 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     }
     private void OnMouseEnter()
     {
-        if (!MainCanvas.mainCanvas.isUIOverride)
+        if (!MainCanvas.mainCanvas.isUIOverride && beingMoved == false)
         {
             OnHover.Invoke(true, propName, this.transform);
         }
@@ -40,10 +41,7 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     }
     private void OnMouseExit()
     {
-
             OnHover.Invoke(false);
-
-
     }
     #endregion
 }
