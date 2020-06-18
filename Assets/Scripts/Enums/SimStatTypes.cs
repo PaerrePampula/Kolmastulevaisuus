@@ -1,5 +1,6 @@
 ﻿public enum SimStatType
 {
     Satisfaction,
-    Comfortableness
+    Comfortableness,
+    Hunger
 };

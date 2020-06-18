@@ -191,10 +191,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 0, b: 0, a: 1}
-    topRight: {r: 1, g: 0, b: 0, a: 1}
-    bottomLeft: {r: 0.33490568, g: 0.6099752, b: 1, a: 1}
-    bottomRight: {r: 0.33490568, g: 0.6099752, b: 1, a: 1}
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 0.5, g: 0.4693396, b: 0.4693396, a: 1}
+    bottomRight: {r: 0.5, g: 0.4693396, b: 0.4693396, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MAIN MENU
+  m_text: "KOLMAS TULEVAISUUS\nArkiel\xE4m\xE4n simulaattori"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 55747541203f4c34f9048a9607c98cf6, type: 2}
@@ -462,10 +462,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0.8584906, g: 0.71739906, b: 0.17412782, a: 1}
-    topRight: {r: 0.8584906, g: 0.71739906, b: 0.17412782, a: 1}
-    bottomLeft: {r: 0.754717, g: 0.18403283, b: 0.09611962, a: 1}
-    bottomRight: {r: 0.754717, g: 0.18403283, b: 0.09611962, a: 1}
+    topLeft: {r: 1, g: 0.5780174, b: 0, a: 1}
+    topRight: {r: 1, g: 0.5780174, b: 0, a: 1}
+    bottomLeft: {r: 0.7216981, g: 0.8733477, b: 1, a: 1}
+    bottomRight: {r: 0.7216981, g: 0.8733477, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 72
+  m_fontSize: 46.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -517,12 +517,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 394.0349}
   m_textInfo:
     textComponent: {fileID: 139661117}
-    characterCount: 9
+    characterCount: 42
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -698,8 +698,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 39
-  m_fontSizeBase: 39
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -744,7 +744,7 @@ MonoBehaviour:
     spaceCount: 1
     wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -946,15 +946,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "P\xE4\xE4tit etsi\xE4 k\xE4mpp\xE4\xE4 uuden koulusi l\xE4helt\xE4\nP\xE4\xE4tit
-    pohtia seuraavia asioita:\n-Monta huonetta tarvitsen? Yksi\xF6, kaksio, kolmio?\n-Kuinka
-    paljon varaa minulla on maksaa k\xE4mp\xE4st\xE4?\n-Joudunko maksamaan takuuvuokraa?\nOnneksesi
-    sait kysym\xE4ll\xE4 tiet\xE4\xE4, ett\xE4 vanhempasi ovat valmiita maksamaan
-    sinun puolesta takuuvuokran, kunhan muistat opiskella ahkerasti.\nOtat my\xF6s
-    huomioon ett\xE4 saat mahdollisia tukia. V\xE4himm\xE4ism\xE4\xE4r\xE4n\xE4 ainakin
-    opintotukea noin 250 euroa, asuntotuen m\xE4\xE4r\xE4 vaihtelee vahvasti riippuen,
-    siit\xE4 ett\xE4 kuinka paljon teet ansiota mahdollisista t\xF6ist\xE4. Tietoa
-    m\xE4\xE4rist\xE4 saat lis\xE4\xE4 Kelan sivuilta laskurien avulla"
+  m_text: "P\xE4\xE4t\xE4t etsi\xE4 k\xE4mpp\xE4\xE4 l\xE4helt\xE4 uutta korkeakoulua:\nOta
+    huomioon \nKoko\nHuoneet\nVuokra\nRakennuksen tyyppi"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 55747541203f4c34f9048a9607c98cf6, type: 2}
@@ -982,7 +975,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16.1
+  m_fontSize: 26.9
   m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1023,12 +1016,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 115.208954}
   m_textInfo:
     textComponent: {fileID: 823269813}
-    characterCount: 612
+    characterCount: 101
     spriteCount: 0
-    spaceCount: 75
-    wordCount: 76
+    spaceCount: 13
+    wordCount: 13
     linkCount: 0
-    lineCount: 10
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1253,8 +1246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 750, y: 300}
+  m_AnchoredPosition: {x: 0, y: -113}
+  m_SizeDelta: {x: 713.8, y: 78.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950358025
 MonoBehaviour:
@@ -1275,10 +1268,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Olet valmistunut viimein lukiosta ja saanut abin paperit k\xE4teen, mihin
-    jatkat seuraavaksi? Olet p\xE4\xE4tt\xE4nyt hakea korkeakouluun, ja onneksesi
-    p\xE4\xE4sit sis\xE4\xE4n. Ongelmana on vain se, ett\xE4 sinun tarvitsisi muuttaa
-    t\xE4t\xE4 varten kotoa pois..."
+  m_text: "Sin\xE4 olet valmistunut lukiosta, ja tarkoituksenasi on hakea itsellesi
+    k\xE4mpp\xE4\xE4 korkeakoulua varten. \nMenet koneellesi ja..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 55747541203f4c34f9048a9607c98cf6, type: 2}
@@ -1323,7 +1314,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1344,15 +1335,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 56.066162}
+  m_margin: {x: 0, y: 81.53473, z: 0, w: 73.50372}
   m_textInfo:
     textComponent: {fileID: 950358025}
-    characterCount: 232
+    characterCount: 122
     spriteCount: 0
-    spaceCount: 31
-    wordCount: 32
+    spaceCount: 15
+    wordCount: 15
     linkCount: 0
-    lineCount: 5
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1495,7 +1486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6994037, g: 0.8575857, b: 0.8773585, a: 0.0627451}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.34117648}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1518,167 +1509,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976081489}
-  m_CullTransparentMesh: 0
---- !u!1 &1313173698
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1313173699}
-  - component: {fileID: 1313173701}
-  - component: {fileID: 1313173700}
-  m_Layer: 5
-  m_Name: Text (TMP) (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1313173699
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313173698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1379141726}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 547, y: -67}
-  m_SizeDelta: {x: 750, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1313173700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313173698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "Kerrostalot ja soluasunnot ovat asuntovaihtoehdoista useimmiten kaikista
-    halvimpia, mutta kerrostaloissa ja soluasunnoissa saa harvemmin \"omaa rauhaa\".\n\nRivitalot
-    ja omakotitalot ovat edell\xE4mainittuja kalliimpia, mutta ne ovat useimmiten
-    v\xE4h\xE4n isompia, ja enempi yksityisempi\xE4. \n\nSe on harvinaista, ett\xE4
-    opiskelija vuokraisi omakotitaloa opiskelija-asunnoksi niiden korkean vuokran
-    vuoksi."
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 55747541203f4c34f9048a9607c98cf6, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontSize: 18
-  m_fontSizeBase: 18
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 257
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
-  m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
-  m_isTextTruncated: 0
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_ignoreRectMaskCulling: 0
-  m_ignoreCulling: 1
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 498.84027, w: -86.94028}
-  m_textInfo:
-    textComponent: {fileID: 1313173700}
-    characterCount: 389
-    spriteCount: 0
-    spaceCount: 45
-    wordCount: 43
-    linkCount: 0
-    lineCount: 18
-    pageCount: 1
-    materialCount: 1
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1313173701
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313173698}
   m_CullTransparentMesh: 0
 --- !u!1 &1354812634
 GameObject:
@@ -1730,7 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29125133, g: 0.3629047, b: 0.5188679, a: 1}
+  m_Color: {r: 0.43796724, g: 0.52318746, b: 0.6981132, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1784,8 +1614,6 @@ RectTransform:
   - {fileID: 1555331668}
   - {fileID: 6428688298467123414}
   - {fileID: 823269812}
-  - {fileID: 1863341867}
-  - {fileID: 1313173699}
   m_Father: {fileID: 93481489}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1992,168 +1820,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1863341866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1863341867}
-  - component: {fileID: 1863341869}
-  - component: {fileID: 1863341868}
-  m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1863341867
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863341866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1379141726}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87, y: -67}
-  m_SizeDelta: {x: 750, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1863341868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863341866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "Useimmiten ihan riitt\xE4v\xE4 koko opiskelijan k\xE4mp\xE4lle vaihtelee
-    yksi\xF6n ja kaksion v\xE4lill\xE4, ja se riippuu usein siit\xE4 kuinka paljon
-    tavaraa sinne toivoo saavansa\n\nPieneen yksi\xF6\xF6n ei v\xE4ltt\xE4m\xE4tt\xE4
-    mahdu isoa sohvaa, mutta sinne mahtuu useimmiten kuitenkin joku pieni ruokap\xF6yt\xE4,
-    s\xE4nky ja jonkinlainen toimistoalue tuoleineen\n\nKaksiota kannattaa siin\xE4
-    vaiheessa etenkin harkita, jos ei asu yksin. Etenkin jos toisen naama alkaa \xE4rsytt\xE4m\xE4\xE4n
-    liikaa, tai jos toisen hereill\xE4olloajat ovat paljon erilaisempia"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 55747541203f4c34f9048a9607c98cf6, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontSize: 17.4
-  m_fontSizeBase: 16
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 13.6
-  m_fontSizeMax: 18
-  m_fontStyle: 0
-  m_textAlignment: 257
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
-  m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
-  m_isTextTruncated: 0
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_ignoreRectMaskCulling: 0
-  m_ignoreCulling: 1
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 498.84027, w: -86.94028}
-  m_textInfo:
-    textComponent: {fileID: 1863341868}
-    characterCount: 496
-    spriteCount: 0
-    spaceCount: 67
-    wordCount: 66
-    linkCount: 0
-    lineCount: 19
-    pageCount: 1
-    materialCount: 1
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1863341869
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863341866}
-  m_CullTransparentMesh: 0
 --- !u!1 &1939806377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,10 +1854,10 @@ RectTransform:
   m_Father: {fileID: 824360775}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -4, y: -4}
+  m_SizeDelta: {x: 152.01, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939806379
 MonoBehaviour:

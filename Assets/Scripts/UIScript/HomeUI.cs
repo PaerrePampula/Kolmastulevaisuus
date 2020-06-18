@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class HomeUI : MonoBehaviour
 {
+    [SerializeField]
+    Transform[] buttons;
     private void OnEnable()
     {
+        setChildrenStatus(false);
+        LocationHandler.OnLocationChange += checkLocation;
 
-        CameraController.OnSceneChange += checkLocation;
     }
     void checkLocation()
     {
+
         if (LocationHandler.CurrentLocation.getLocation() == FIRE_LOCATION.HOME)
         {
-            gameObject.SetActive(true);
+            setChildrenStatus(true);
+
         }
         else
         {
-            gameObject.SetActive(false);
+            setChildrenStatus(false);
         }
+    }
+    void setChildrenStatus(bool status)
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].gameObject.SetActive(status);
+        };
     }
 }

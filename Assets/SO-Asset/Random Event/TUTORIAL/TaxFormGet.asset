@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: TaxFormGet
+  m_EditorClassIdentifier: 
+  neededFlags:
+  - FlagName: PLAYER_HAS_APPLIED_TAXFORM
+    TimeToHappen: 0
+    uniqueFlag: 1
+  Prerequisites: []
+  fire_locations: 
+  eventTexts:
+  - eventDialog: "Hyv\xE4, t\xE4ytit lomakkeen verokorttia varten, toimitat t\xE4m\xE4n
+      tiedon ty\xF6nantajalle tarvittaessa"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "Hyv\xE4"
+      clickActions: []
+      firedFlags: []

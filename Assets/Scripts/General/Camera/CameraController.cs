@@ -72,7 +72,7 @@ public class CameraController : MonoBehaviour
         }
         if (transform.rotation == Quaternion.Euler(25, Quaternion.Euler(referenceRotation).eulerAngles.y + 90, 0))
         {
-            OnSceneChange.Invoke();
+
             turnRequest = false;
         }
 
@@ -84,6 +84,7 @@ public class CameraController : MonoBehaviour
         endRotation = Quaternion.Euler(referenceRotation.x, Mathf.Round(referenceRotation.y + floatChangeInfo.changeofFloat), referenceRotation.z).eulerAngles;
         turnRequest = true;
         timelerped = 0;
+        OnSceneChange.Invoke();
     }
 
 }

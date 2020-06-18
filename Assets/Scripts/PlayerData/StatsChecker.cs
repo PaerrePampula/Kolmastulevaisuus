@@ -32,7 +32,7 @@ public static class StatsChecker
         {
             if (currentStats[i].ThisStatType == pair.playerStat)
             {
-                Debug.Log(currentStats[i].ThisStatType + "  " +  currentStats[i].getValue<float>());
+
                 return currentStats[i];
             }
 

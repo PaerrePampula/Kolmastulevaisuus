@@ -36,7 +36,7 @@ public class BarHandler : MonoBehaviour
             go.GetComponent<TextMeshProUGUI>().color = color;
             go.transform.SetParent(transform);
             go.transform.localPosition = incTextOffset;
-            Debug.Log(targetvalue);
+
             startIncrementing(valueChange);
         }
 
@@ -76,21 +76,21 @@ public class BarHandler : MonoBehaviour
         increments = change;
         originalValue = slider.value;
         targetvalue += increments;
-        Debug.Log(targetvalue);
+
 
     }
-    public IEnumerator whiler(float t, float originalvalue)
-    {
+    //public IEnumerator whiler(float t, float originalvalue)
+    //{
 
-        while (slider.value != targetvalue)
-        {
-            currentFloat = Mathf.Lerp(originalvalue, targetvalue, t);
+    //    while (slider.value != targetvalue)
+    //    {
+    //        currentFloat = Mathf.Lerp(originalvalue, targetvalue, t);
 
-            t += 0.50f * Time.deltaTime;
-            slider.value = currentFloat;
-            image.color = gradient.Evaluate(slider.normalizedValue);
-            yield return null;
+    //        t += 0.50f * Time.deltaTime;
+    //        slider.value = currentFloat;
+    //        image.color = gradient.Evaluate(slider.normalizedValue);
+    //        yield return null;
 
-        }
-    }
+    //    }
+    //}
 }

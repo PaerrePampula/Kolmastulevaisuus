@@ -36,8 +36,9 @@ public class PlayerDataHolder : MonoBehaviour
     private static RentableHome rentablehome;
     #endregion
     #region Statsit
-    public Stat Satisfaction = new Stat(SimStatType.Satisfaction);
-    public Stat Comfortableness = new Stat(SimStatType.Comfortableness);
+    private Stat satisfaction;
+    private Stat comfortableness;
+    private Stat hunger;
     #endregion
     public static RentableHome playerHome
     {
@@ -116,10 +117,60 @@ public class PlayerDataHolder : MonoBehaviour
             playerJob = value;
         }
     }
+
+    public Stat Satisfaction
+    {
+        get 
+        { 
+            if (satisfaction == null)
+            {
+               satisfaction  = new Stat(SimStatType.Satisfaction);
+            }
+            return satisfaction; 
+        }
+        set
+        {
+            satisfaction = value;
+        }
+    }
+
+    public Stat Comfortableness
+    {
+        get 
+        { 
+            if (comfortableness == null)
+            {
+                comfortableness = new Stat(SimStatType.Comfortableness);
+            }
+            return comfortableness; 
+        }
+        set
+        {
+            comfortableness = value;
+        }
+    }
+
+    public Stat Hunger
+    {
+        get 
+        {
+            if (hunger == null)
+            {
+                hunger  = new Stat(SimStatType.Hunger);
+            }
+            return hunger; 
+        }
+        set
+        {
+            hunger = value;
+        }
+    }
+
     void OnEnable()
     {
         DateTimeSystem.OnMonthChange += clearMonthBudget;
         playerMoney = new PlayerMoney();
+
         Satisfaction.Init();
         Comfortableness.Init();
     }
