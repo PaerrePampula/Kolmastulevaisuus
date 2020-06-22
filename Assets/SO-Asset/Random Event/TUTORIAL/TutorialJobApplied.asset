@@ -22,8 +22,16 @@ MonoBehaviour:
   - eventDialog: "Hyv\xE4, hait t\xF6it\xE4! Saat odotella ty\xF6nantajalta viel\xE4
       vastausta."
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: "Selv\xE4"
-      clickActions:
-      - {fileID: 11400000, guid: 50c7626e8d32e9e4ca78ded92cec2767, type: 2}
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
