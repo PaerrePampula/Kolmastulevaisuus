@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: "PelaajanHakemusHyv\xE4ksyttiin"
+  m_Name: PlayerStarving
   m_EditorClassIdentifier: 
   neededFlags:
-  - FlagName: ASUMISTUKI_ACCEPTED
+  - FlagName: INTENSE_HUNGER
     TimeToHappen: 0
     uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 04000000
+  fire_locations: 
   eventTexts:
-  - eventDialog: "Tukihakemuksesi hyv\xE4ksyttiin! Kela asetti tuelle aikaa vuoden
-      loppuun saakka, muista hakea vuoden loppuessa uudestaan t\xE4t\xE4 tukea, jos
-      sit\xE4 viel\xE4 tarvitset."
+  - eventDialog: "Olet aivan n\xE4\xE4nnyksiss\xE4! Onneksesi sait kuitenkin v\xE4h\xE4n
+      sy\xF6t\xE4v\xE4\xE4.\n\nJos sinulla ei ole viel\xE4 kotona j\xE4\xE4kaappia,
+      se olisi sin\xE4ns\xE4 ihan j\xE4rkev\xE4\xE4 ostaa sellainen..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Selv\xE4"
+      choiceDescriptor: Okei
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
         actionString1: Ranking
         actionString2: 
-        actionFloat1: 50
+        actionFloat1: -300
         actionFloat2: 0
         actionBool1: 0
       firedFlags: []

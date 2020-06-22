@@ -22,8 +22,17 @@ MonoBehaviour:
   - eventDialog: "Sait uuden ty\xF6paikan, onneksi olkoon!\nTy\xF6nantaja sanoi sinulle,
       ett\xE4 voit aloittaa heti t\xE4n\xE4\xE4n koulujen j\xE4lkeen."
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: Sinne sitten siis
       clickActions:
       - {fileID: 11400000, guid: e9d21254a7ec3994aacebf99dde4b446, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 200
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []

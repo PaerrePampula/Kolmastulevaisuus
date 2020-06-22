@@ -77,10 +77,8 @@ public class CustomAction
                 break;
             case eventClassName.FlagFire:
                 Flag flag = new Flag(actionString1, (int)actionFloat1, actionBool1);
-                FlagFireInfo fireInfo = new FlagFireInfo();
-                fireInfo.flag = flag;
-                event_Type = Event_Type.FLAG_FIRE;
-                PerformActionWithEventInfo(event_Type, fireInfo);
+                flag.FireFlag();
+
                 break;
             case eventClassName.Purchase:
                 PurchaseInfo purchaseInfo = new PurchaseInfo();

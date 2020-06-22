@@ -10,29 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: "PelaajanHakemusHyv\xE4ksyttiin"
+  m_Name: TooTired
   m_EditorClassIdentifier: 
   neededFlags:
-  - FlagName: ASUMISTUKI_ACCEPTED
+  - FlagName: NO_STAMINA
     TimeToHappen: 0
     uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 04000000
+  fire_locations: 
   eventTexts:
-  - eventDialog: "Tukihakemuksesi hyv\xE4ksyttiin! Kela asetti tuelle aikaa vuoden
-      loppuun saakka, muista hakea vuoden loppuessa uudestaan t\xE4t\xE4 tukea, jos
-      sit\xE4 viel\xE4 tarvitset."
+  - eventDialog: "Olet liian v\xE4synyt juuri nyt t\xE4h\xE4n, parasta olisi vain
+      menn\xE4 nukkumaan..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Selv\xE4"
+      choiceDescriptor: "Tehd\xE4\xE4n n\xE4in"
       clickActions: []
-      customRunTimeActions:
-      - eventClass: 1
-        actionString1: Ranking
-        actionString2: 
-        actionFloat1: 50
-        actionFloat2: 0
-        actionBool1: 0
+      customRunTimeActions: []
       firedFlags: []

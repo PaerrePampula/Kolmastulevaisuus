@@ -8,7 +8,9 @@ public class DateTimeSystem : MonoBehaviour
     static System.DateTime lastDate;
     [SerializeField]
     TextMeshProUGUI _thisdaytext;
-
+    int weekIndicator = 1;
+    [SerializeField]
+    GameObject weekIndicatorObject;
     public delegate void MonthChange();
     public static event MonthChange OnMonthChange;
 
@@ -49,11 +51,20 @@ public class DateTimeSystem : MonoBehaviour
         _thisdaytext.text = string.Format("{1}.{2}.{3}", currentDate.DayOfWeek.ToString(), currentDate.Day, currentDate.Month, currentDate.Year);
     }
 
+    void changeWeekIndicator()
+    {
+        weekIndicator++;
+        GameObject go = Instantiate(weekIndicatorObject);
+        go.transform.SetParent(MainCanvas.mainCanvas.transform);
+        go.transform.localPosition = Vector3.zero;
+        go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("Viikko" + weekIndicator);
+    }
     public void ChangeWeek()
     {
         lastDate = currentDate;
         currentDate = currentDate.AddDays(7);
         SetDate();
+        changeWeekIndicator();
         if (hasTheMonthChangedSinceLastTurn() == true)
         {
             OnMonthChange?.Invoke();

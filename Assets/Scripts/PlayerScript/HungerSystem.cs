@@ -13,6 +13,7 @@ public class HungerSystem : MonoBehaviour
     void incrementHunger()
     {
         PlayerDataHolder.Current.Hunger.ChangeStat(10f);
+        checkStarving();
     }
     void incrementHunger(EventInfo info)
     {
@@ -20,6 +21,21 @@ public class HungerSystem : MonoBehaviour
         if(simStatInfo.SimStatName == SimStatType.Hunger)
         {
             PlayerDataHolder.Current.Hunger.ChangeStat(simStatInfo.StatChange);
+            checkStarving();
         }
+    }
+    void checkStarving()
+    {
+        if (PlayerDataHolder.Current.Hunger.StatFloat >= 100)
+        {
+            PlayerDataHolder.Current.Satisfaction.ChangeStat(-25);
+            Flag flag = new Flag("INTENSE_HUNGER", 0, true);
+            flag.FireFlag();
+            PlayerDataHolder.Current.Hunger.ChangeStat(-30);
+        }
+    }
+    public static void EatFood(float amount)
+    {
+        PlayerDataHolder.Current.Hunger.ChangeStat(-amount);
     }
 }

@@ -2,5 +2,6 @@
 {
     Satisfaction,
     Comfortableness,
-    Hunger
+    Hunger,
+    Ranking
 };

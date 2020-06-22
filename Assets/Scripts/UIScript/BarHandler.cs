@@ -31,15 +31,8 @@ public class BarHandler : MonoBehaviour
     {
         if (type == simStatType)
         {
-            GameObject go = Instantiate(incText);
-            string change = (valueChange > 0) ? valueChange + "+" : valueChange + "-";
-            Color color = (valueChange > 0) ? Color.green : Color.red;
-            go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = change;
-            go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = color;
-            go.transform.SetParent(transform);
-            go.transform.localPosition = (randomizedOffSetEffect) ? incTextOffset + new Vector3(Random.Range(-15,15), Random.Range(-15,15)) : incTextOffset;
-
-            startIncrementing(valueChange);
+            FloatNumberHelper.createFloatingNumbers(incText, valueChange, transform, randomizedOffSetEffect, incTextOffset);
+            startIncrementing(value);
         }
 
 
@@ -75,9 +68,9 @@ public class BarHandler : MonoBehaviour
     }
     public void startIncrementing(float change)
     {
-        increments = change;
+ 
         originalValue = slider.value;
-        targetvalue += increments;
+        targetvalue = change;
 
 
     }

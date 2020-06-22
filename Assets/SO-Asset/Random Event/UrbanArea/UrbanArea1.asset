@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: UrbanArea1
+  m_EditorClassIdentifier: 
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 05000000
+  eventTexts:
+  - eventDialog: "Sinulla on viel\xE4 vapaata aikaa, p\xE4\xE4t\xE4t k\xE4ytt\xE4\xE4
+      sen ajan..."
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Salilla!
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Opiskeluun kirjastossa
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 0
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 0
+        actionFloat1: 30
+        actionFloat2: 0
+        actionBool1: 0
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: R-marketin edustalla maleksimiseen
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -25
+        actionFloat2: 0
+        actionBool1: 0
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Harrasteisiin
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 20
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      firedFlags: []

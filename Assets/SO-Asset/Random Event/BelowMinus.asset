@@ -29,4 +29,17 @@ MonoBehaviour:
       nextDialog: -1
       choiceDescriptor: Okei...
       clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -150
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: -25
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []

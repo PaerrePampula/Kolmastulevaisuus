@@ -29,4 +29,11 @@ MonoBehaviour:
       choiceDescriptor: ...Really?
       clickActions:
       - {fileID: 11400000, guid: 3e9eb97e89f6e6b4f91d8b71057f2e52, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -150
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []

@@ -12,6 +12,8 @@ public class EconomyFields : MonoBehaviour
     TextMeshProUGUI incomeEconomyText;
     [SerializeField]
     TextMeshProUGUI expenseEconomyText;
+    [SerializeField]
+    GameObject incText;
     float currentFloat;
     float incomeFloat;
     float expenseFloat;
@@ -34,6 +36,8 @@ public class EconomyFields : MonoBehaviour
     #endregion
     void UpdateUI(float amount) //Tämä on se metodi, joka lähtee automaattisesti raksuttamaan, jos skripti saa tietää kukkarossa tapahtuneesta muutoksesta. Tehokkaampaa kuin samankaltaisen metodin länttääminen updateen joka kutsuisi tätä joka ikinen frame....
     {
+
+
         StartCoroutine(startIncrementing(currentEconomyText));
 
     }

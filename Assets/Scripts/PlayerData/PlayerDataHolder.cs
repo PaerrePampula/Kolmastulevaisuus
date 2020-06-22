@@ -29,9 +29,13 @@ public class PlayerDataHolder : MonoBehaviour
     private List<IncomeSource> incomeSources;
     public  List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
     public  List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
-    #endregion
 
+    #endregion
+    #region META
+    int limitedUseWorldInteractableStamina = 2;
+    #endregion
     #region ASUNTO, VUOKRA
+    public List<FoodItem> playerFoods = new List<FoodItem>();
     private Rent rent;
     private static RentableHome rentablehome;
     #endregion
@@ -39,6 +43,7 @@ public class PlayerDataHolder : MonoBehaviour
     private Stat satisfaction;
     private Stat comfortableness;
     private Stat hunger;
+    private Stat ranking;
     #endregion
     public static RentableHome playerHome
     {
@@ -124,7 +129,7 @@ public class PlayerDataHolder : MonoBehaviour
         { 
             if (satisfaction == null)
             {
-               satisfaction  = new Stat(SimStatType.Satisfaction);
+               satisfaction  = new Stat(SimStatType.Satisfaction,0,100);
             }
             return satisfaction; 
         }
@@ -140,7 +145,8 @@ public class PlayerDataHolder : MonoBehaviour
         { 
             if (comfortableness == null)
             {
-                comfortableness = new Stat(SimStatType.Comfortableness);
+                comfortableness = new Stat(SimStatType.Comfortableness,0,100);
+
             }
             return comfortableness; 
         }
@@ -156,13 +162,41 @@ public class PlayerDataHolder : MonoBehaviour
         {
             if (hunger == null)
             {
-                hunger  = new Stat(SimStatType.Hunger);
+                hunger = new Stat(SimStatType.Hunger,0,100);
+
             }
             return hunger; 
         }
         set
         {
             hunger = value;
+        }
+    }
+
+    public Stat Ranking
+    {
+        get 
+        { 
+            if (ranking == null)
+            {
+                ranking = new Stat(SimStatType.Ranking,-5000,5000);
+
+            }
+            return ranking; 
+        }
+        set
+        {
+            
+            ranking = value;
+        }
+    }
+
+    public int LimitedUseWorldInteractableStamina
+    {
+        get { return limitedUseWorldInteractableStamina; }
+        set
+        {
+            limitedUseWorldInteractableStamina = value;
         }
     }
 
@@ -173,10 +207,28 @@ public class PlayerDataHolder : MonoBehaviour
 
         Satisfaction.Init();
         Comfortableness.Init();
+        Ranking.Init();
+        Hunger.Init();
+        FoodItem.onFoodExpire += removeExpiredFood;
+        WorldLimitedUseInteractable.onInteractUse += deductStamina;
+        LocationHandler.OnTurnEnd += resetStamina;
     }
 
     void clearMonthBudget()
     {
         OtherListableExpenses.Clear();
+    }
+    void removeExpiredFood(FoodItem food)
+    {
+        playerFoods.Remove(food);
+        Debug.Log("Food remove");
+    }
+    void deductStamina()
+    {
+        LimitedUseWorldInteractableStamina--;
+    }
+    void resetStamina()
+    {
+        LimitedUseWorldInteractableStamina = 2;
     }
 }

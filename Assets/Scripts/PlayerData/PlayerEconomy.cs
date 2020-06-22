@@ -122,10 +122,10 @@ public static class PlayerEconomy
         }
         return net;
     }
-    public static void createPurchase(string name, float amount)
+    public static void createPurchase(string name, float amount, bool stacked = false)
     {
         setMoney(amount);
-        ListableExpense expense = new ListableExpense(PlayerDataHolder.Current.OtherListableExpenses, (name, amount));
+        ListableExpense expense = new ListableExpense(PlayerDataHolder.Current.OtherListableExpenses, (name, amount), stacked);
     }
     static void checkBelowZeroMoney()
     {

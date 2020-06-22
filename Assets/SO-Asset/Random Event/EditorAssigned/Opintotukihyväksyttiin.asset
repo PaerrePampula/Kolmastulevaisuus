@@ -25,20 +25,41 @@ MonoBehaviour:
       kuluttaa sinun korkeakouluopintojen tukikuukausia. Tuki alkaa nyt, loppuu 31.5
       ja alkaa jatkossa  1.9."
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: "Pid\xE4n sen mieless\xE4..."
       clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []
-    - nextDialog: 1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
       choiceDescriptor: "Miten saan tukea kes\xE4kuukausina?"
       clickActions: []
+      customRunTimeActions: []
       firedFlags: []
   - eventDialog: "Saat tukea kes\xE4kuukausillekin, jos suoritat opintoja kes\xE4ll\xE4kin.
       Jos olet ep\xE4varma mist\xE4 syist\xE4 tukea saa, kysy opoltasi! Olennaisin
       tekij\xE4 tuen saamisessa on kuitenkin se, ett\xE4 saat riitt\xE4v\xE4n m\xE4\xE4r\xE4n
       opintopisteit\xE4 kes\xE4ll\xE4"
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: "Ymm\xE4rretty"
       clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []

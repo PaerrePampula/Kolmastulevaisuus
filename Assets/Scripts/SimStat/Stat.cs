@@ -7,17 +7,21 @@ public class Stat
     public delegate void StatChange(float value, float changeInValue, SimStatType simStatType);
     public static event StatChange OnStatChange;
     float _statfloat = 0;
+    float maxValue;
+    float minValue;
     public float StatFloat
     {
         get => _statfloat; set
         {
-            _statfloat = Mathf.Clamp(value, 0, 100);
+            _statfloat = Mathf.Clamp(value, minValue, maxValue);
 
         }
     }
-    public Stat(SimStatType type)
+    public Stat(SimStatType type, float min, float max)
     {
         simStatType = type;
+        minValue = min;
+        maxValue = max;
 
     }
     public void Init()

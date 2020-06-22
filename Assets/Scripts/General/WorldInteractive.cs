@@ -8,6 +8,8 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     [SerializeField]
     string propName;
     public bool beingMoved;
+
+
     public delegate void InteractHover(bool hoverstate, string text = "", Transform transform = null);
     public static event InteractHover OnHover;
     public delegate void InteractRequest(Transform objectToInteract);
@@ -18,7 +20,7 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     }
     #endregion
     #region MonobehaviourDefaults
-    public void OnInteract()
+    public virtual void OnInteract()
     {
         if (!MainCanvas.mainCanvas.isUIOverride)
         {

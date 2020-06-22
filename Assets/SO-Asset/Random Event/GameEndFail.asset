@@ -27,4 +27,11 @@ MonoBehaviour:
       nextDialog: -1
       choiceDescriptor: '[Siirry lopputuloksiin]'
       clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: -1500
+        actionFloat1: 0
+        actionFloat2: 0
+        actionBool1: 0
       firedFlags: []

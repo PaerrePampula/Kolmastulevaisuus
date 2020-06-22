@@ -10,24 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: "Ty\xF6t\xF6nkotona"
+  m_Name: InTheCity2
   m_EditorClassIdentifier: 
   neededFlags: []
-  Prerequisites:
-  - playerStat: 1
-    comparisonValueType: 2
-    StringComparatorValue: 
-    FloatComparatorValue: 0
-    uniqueStatComparison: 1
-    TypeOfComparison: 4
-  fire_locations: 03000000
+  Prerequisites: []
+  fire_locations: 02000000
   eventTexts:
   - eventDialog: 
-    eventDialogChoices:
-    - neededFlags: []
-      Prerequisites: []
-      nextDialog: -1
-      choiceDescriptor: OK
-      clickActions: []
-      customRunTimeActions: []
-      firedFlags: []
+    eventDialogChoices: []
