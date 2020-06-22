@@ -8,6 +8,8 @@ public class MainCanvas : SceneCanvas
     static Transform canvasTransform; //Main canvaksen transform, hyödyllinen esim UI elementtien parentoimisessa.
     public Transform parentOfNewTransforms;
     public Transform parentofGameEvents;
+    [SerializeField]
+    GameObject playerEconomyWarning;
     public delegate void Freezer(bool status);
     public static event Freezer OnFreeze;
     public bool freezeOverride;
@@ -86,5 +88,11 @@ public class MainCanvas : SceneCanvas
             return;
         }
 
+    }
+    public void createEconomyWarning()
+    {
+        GameObject go = Instantiate(playerEconomyWarning);
+        go.gameObject.transform.SetParent(MainCanvas.mainCanvas.transform);
+        go.transform.localPosition = Vector3.zero;
     }
 }

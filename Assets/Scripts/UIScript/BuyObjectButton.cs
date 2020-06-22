@@ -43,9 +43,7 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
         else
         {
-            GameObject go = Instantiate(playerEconomyWarning);
-            go.gameObject.transform.SetParent(MainCanvas.mainCanvas.transform);
-            go.transform.localPosition = Vector3.zero;
+            MainCanvas.mainCanvas.createEconomyWarning();
         }
 
 

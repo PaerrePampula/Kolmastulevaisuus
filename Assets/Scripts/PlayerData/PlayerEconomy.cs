@@ -138,4 +138,5 @@ public static class PlayerEconomy
             OnBust?.Invoke(strikesGenerated);
         }
     }
+
 }

@@ -18,9 +18,17 @@ public class FoodPreparer : MonoBehaviour
 
     public void PrepareFood()
     {
-        FoodItem food = new FoodItem(foodName, foodUseTimes, saturation);
-        onFoodPrepare?.Invoke(food);
-        PlayerEconomy.createPurchase(foodName, -cost, true);
+        if (PlayerDataHolder.Current.PlayerMoney.getValue<float>() >= cost)
+        {
+            FoodItem food = new FoodItem(foodName, foodUseTimes, saturation);
+            onFoodPrepare?.Invoke(food);
+            PlayerEconomy.createPurchase(foodName, -cost, true);
+        }
+        else
+        {
+            MainCanvas.mainCanvas.createEconomyWarning();
+        }
+
 
     }
 }
