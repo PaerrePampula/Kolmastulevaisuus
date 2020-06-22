@@ -3886,6 +3886,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentOfNewTransforms: {fileID: 196953142}
   parentofGameEvents: {fileID: 2099340534}
+  playerEconomyWarning: {fileID: 1893950466607269836, guid: fb8163606ea73434f951664b03ec01e0,
+    type: 3}
   freezeOverride: 0
 --- !u!114 &646239434
 MonoBehaviour:
