@@ -33,7 +33,7 @@ public class BaseTrigger : MonoBehaviour
                 customActions[i].PerformAction();
             }
         }
-        catch (System.Exception)
+        catch (System.NullReferenceException)
         {
             return;
         }
