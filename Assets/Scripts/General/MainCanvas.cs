@@ -54,6 +54,7 @@ public class MainCanvas : SceneCanvas
         GameObject calledObject = Instantiate(uiElementCall.elementToCall);
         calledObject.transform.SetParent(uiElementCall.elementParent);
         calledObject.transform.localPosition = Vector3.zero;
+        calledObject.transform.localScale = new Vector3(1, 1, 1);
     }
     void shouldPlayerBeFrozen()
     {
