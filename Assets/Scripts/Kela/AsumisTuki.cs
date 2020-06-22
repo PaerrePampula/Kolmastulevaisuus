@@ -1,4 +1,6 @@
-﻿public class AsumisTuki : BaseTuki
+﻿using UnityEngine;
+
+public class AsumisTuki : BaseTuki
 {
     #region Fields
     float maximumGrossIncomeWhereOmaVastuuDoesNotDecreaseSupportAmount = 726;
@@ -12,7 +14,8 @@
         float support = 0;
         if(PlayerDataHolder.Current.PlayerRent.getTotal() > maximumCostOfLivingUntilBracketMax)
         {
-            support = maximumCostOfLivingUntilBracketMax * 0.8f;
+            support = 0.8f*(maximumCostOfLivingUntilBracketMax - CalculatedPerusOmaVastuu());
+
         }
         else
         {

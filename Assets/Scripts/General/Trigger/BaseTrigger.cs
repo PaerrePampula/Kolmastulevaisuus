@@ -14,7 +14,8 @@ public class BaseTrigger : MonoBehaviour
 
     public virtual void FireTriggersAndFlags() //Kutsutaan kaikki ScriptableActionit sekä Global flag callit
     {
-
+        try
+        {
             for (int i = 0; i < eventTriggers.Length; i++)
             {
 
@@ -23,14 +24,20 @@ public class BaseTrigger : MonoBehaviour
             }
             for (int i = 0; i < flags.Length; i++)
             {
-            
+
                 flags[i].FireFlag();
-                    
+
             }
             for (int i = 0; i < customActions.Length; i++)
             {
                 customActions[i].PerformAction();
             }
+        }
+        catch (System.Exception)
+        {
+            return;
+        }
+
 
 
     }
