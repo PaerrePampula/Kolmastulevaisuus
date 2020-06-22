@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RentableUI : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class RentableUI : MonoBehaviour
     TextMeshProUGUI extrasInRentText;
     [SerializeField]
     StartGameButton startGameButton;
+    public delegate void UiOpen(GameObject gameObject);
+    public static UiOpen onUiOpen;
 
     public void setRentable(RentableHome rentableHome, Transform NewmenuTransform)
     {
@@ -26,6 +29,7 @@ public class RentableUI : MonoBehaviour
         setInfo();
         startGameButton.setRentable(rentable);
         menuTransform = NewmenuTransform;
+        onUiOpen?.Invoke(rentable.PrefabForDisplay);
     }
     public void goBackToMenu() //Voisi olla kaikki tälläset jossain geneerisemmässäkin, mutta en usko että kovin monta eri tämän tyylistä menua peliin tarvitaan.
     {
@@ -49,5 +53,7 @@ public class RentableUI : MonoBehaviour
         string shortForm = "";
         shortForm += rentable.ShortDescription;
         shortDescriptionText.text = shortForm;
+
+
     }
 }

@@ -22,6 +22,8 @@ MonoBehaviour:
   extrasOnRentableHome:
   - extraName: Pesutuvan maksu
     extraCostPerMonth: 5
+  displayPrefab: {fileID: 6883480185883364746, guid: f0d69262d4e610c4fb13d1fc90d8eb03,
+    type: 3}
   longFormDescription: "Uusi yksi\xF6 l\xE4hell\xE4 kouluja!"
   perks: oma sauna, pesutupa
   shortFormDescription: 1h + kh + kk

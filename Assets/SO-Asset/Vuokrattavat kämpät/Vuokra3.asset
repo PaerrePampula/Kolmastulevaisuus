@@ -22,6 +22,8 @@ MonoBehaviour:
   extrasOnRentableHome:
   - extraName: Saunamaksu
     extraCostPerMonth: 2.5
+  displayPrefab: {fileID: 6883480185883364746, guid: f0d69262d4e610c4fb13d1fc90d8eb03,
+    type: 3}
   longFormDescription: "Yksi\xF6 aivan keskustan siimeksess\xE4. Kaikki keskustan
     palvelut eritt\xE4in l\xE4hell\xE4 kohdetta! Lyhyt matka paikallisille korkeakouluille!
     S\xE4hk\xF6sopimus sis\xE4llytetty hintaan"

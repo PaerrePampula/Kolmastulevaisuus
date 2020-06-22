@@ -1957,7 +1957,7 @@ Transform:
   m_Children:
   - {fileID: 1348062714}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356009426
 GameObject:
@@ -10298,7 +10298,7 @@ Transform:
   - {fileID: 196550559}
   - {fileID: 1902487952}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626785102
 GameObject:
@@ -11694,7 +11694,7 @@ Transform:
   - {fileID: 1816596834}
   - {fileID: 1395335399}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027241070
 GameObject:
@@ -12555,66 +12555,6 @@ Transform:
   m_Father: {fileID: 1997520169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &263729383520750396
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464336815853548523}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0343347, y: 2, z: 0.6536234}
-  m_Center: {x: 0, y: 1, z: 0.062788755}
---- !u!1 &464336815853548523
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2483487376106469894}
-  - component: {fileID: 263729383520750396}
-  - component: {fileID: 4209263940444075657}
-  - component: {fileID: 464336815853548524}
-  m_Layer: 0
-  m_Name: Fridge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &464336815853548524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464336815853548523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102d80bd160bce840aa6cbbb007c52ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4209263940444075657}
-        m_MethodName: CreateMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  propName: "J\xE4\xE4kaappi"
-  beingMoved: 0
 --- !u!1001 &1706438988347552121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12689,31 +12629,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530c6bca9607b1f408d93db07a6642ef, type: 3}
---- !u!4 &2483487376106469894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464336815853548523}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5534753, y: 0.099999785, z: 32.55042}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4209263940444075657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464336815853548523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16600aa5b150b4f46a845ce046fe4784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodCircleUI: {fileID: 3199187564863826623, guid: 3fff8ce0045ca0646805d731ab1b8589,
-    type: 3}

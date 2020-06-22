@@ -14,7 +14,7 @@ public class RentableHomeScriptable : ScriptableObject
     public float homeInsurance;
     public bool needToHaveHomeInsurance;
     public ExtrasOnRentableHomes[] extrasOnRentableHome;
-
+    public GameObject displayPrefab;
     [TextArea]
     public string longFormDescription = "esim. uusi kolmio lähellä" +
         "keskustaa! Välittömässä läheisyydessä paljon kauppoja," +

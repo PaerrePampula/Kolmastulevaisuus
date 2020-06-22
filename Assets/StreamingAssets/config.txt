@@ -10,3 +10,4 @@ maxGrossForHouseHoldAsumistuki=1608
 #VERO, PAKOLLISET MAKSUT
 ElakeMaksu=0,0715
 TyottomyysMaksu=0,0125
+MaxCostOfLivingForAsumisTukiZone3=399

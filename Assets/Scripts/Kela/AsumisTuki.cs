@@ -2,14 +2,23 @@
 {
     #region Fields
     float maximumGrossIncomeWhereOmaVastuuDoesNotDecreaseSupportAmount = 726;
+    float maximumCostOfLivingUntilBracketMax = ConfigFileReader.getValue("MaxCostOfLivingForAsumisTukiZone3");
     #endregion
     #region constructors
     public AsumisTuki(System.DateTime start, System.DateTime end, bool Monthly, typeOfSupport TypeOfSupport) : base(start, end, Monthly, TypeOfSupport) { }
     #endregion
     public override float CalculatedSupport()
     {
+        float support = 0;
+        if(PlayerDataHolder.Current.PlayerRent.getTotal() > maximumCostOfLivingUntilBracketMax)
+        {
+            support = maximumCostOfLivingUntilBracketMax * 0.8f;
+        }
+        else
+        {
+            support = 0.8f * (PlayerDataHolder.Current.PlayerRent.getTotal() - CalculatedPerusOmaVastuu());
+        }
 
-        float support = 0.8f * (PlayerDataHolder.Current.PlayerRent.getTotal() - CalculatedPerusOmaVastuu());
         return support;
     }
     float CalculatedPerusOmaVastuu() //Omavastuu ei vaikuta, jos tulot ovat liian pieniä... 

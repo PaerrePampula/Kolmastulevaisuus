@@ -16,7 +16,7 @@ public class RentableHome
     string extrasDescription;
     string rentableScene = "StudioHomeNo1";
     ExtrasOnRentableHomes[] rentExtras;
-
+    GameObject prefabForDisplay;
     HuoneKoko huoneKoko;
     VuokraTyyppi tyyppi;
 
@@ -31,6 +31,8 @@ public class RentableHome
     public string ShortDescription => shortFormDescription;
     public HuoneKoko RentableHuoneKoko => huoneKoko;
     public VuokraTyyppi RentableVuokraTyyppi => tyyppi;
+
+    public GameObject PrefabForDisplay { get => prefabForDisplay; set => prefabForDisplay = value; }
 
     public string GetRentableScene()
     {
@@ -59,6 +61,7 @@ public class RentableHome
         huoneKoko = scriptable.huoneKoko;
         tyyppi = scriptable.vuokraTyyppi;
         size = scriptable.sizeInMetersSquared;
+        prefabForDisplay = scriptable.displayPrefab;
     }
     public float getRentTotalForAMonth()
     {
