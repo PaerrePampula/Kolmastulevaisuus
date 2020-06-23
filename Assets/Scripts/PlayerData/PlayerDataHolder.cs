@@ -27,8 +27,8 @@ public class PlayerDataHolder : MonoBehaviour
 
     private PlayerMoney playerMoney;
     private List<IncomeSource> incomeSources;
-    public  List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
-    public  List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
+    public List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
+    public List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
 
     #endregion
     #region META
@@ -44,6 +44,8 @@ public class PlayerDataHolder : MonoBehaviour
     private Stat comfortableness;
     private Stat hunger;
     private Stat ranking;
+    Stat social;
+    Stat study;
     #endregion
     public static RentableHome playerHome
     {
@@ -56,7 +58,7 @@ public class PlayerDataHolder : MonoBehaviour
             rentablehome = value;
         }
     }
-    public  Rent PlayerRent
+    public Rent PlayerRent
     {
         get
         {
@@ -125,13 +127,13 @@ public class PlayerDataHolder : MonoBehaviour
 
     public Stat Satisfaction
     {
-        get 
-        { 
+        get
+        {
             if (satisfaction == null)
             {
-               satisfaction  = new Stat(SimStatType.Satisfaction,0,100);
+                satisfaction = new Stat(SimStatType.Satisfaction, 0, 100);
             }
-            return satisfaction; 
+            return satisfaction;
         }
         set
         {
@@ -141,14 +143,14 @@ public class PlayerDataHolder : MonoBehaviour
 
     public Stat Comfortableness
     {
-        get 
-        { 
+        get
+        {
             if (comfortableness == null)
             {
-                comfortableness = new Stat(SimStatType.Comfortableness,0,100);
+                comfortableness = new Stat(SimStatType.Comfortableness, 0, 100);
 
             }
-            return comfortableness; 
+            return comfortableness;
         }
         set
         {
@@ -158,14 +160,14 @@ public class PlayerDataHolder : MonoBehaviour
 
     public Stat Hunger
     {
-        get 
+        get
         {
             if (hunger == null)
             {
-                hunger = new Stat(SimStatType.Hunger,0,100);
+                hunger = new Stat(SimStatType.Hunger, 0, 100);
 
             }
-            return hunger; 
+            return hunger;
         }
         set
         {
@@ -175,18 +177,18 @@ public class PlayerDataHolder : MonoBehaviour
 
     public Stat Ranking
     {
-        get 
-        { 
+        get
+        {
             if (ranking == null)
             {
-                ranking = new Stat(SimStatType.Ranking,-5000,5000);
+                ranking = new Stat(SimStatType.Ranking, -5000, 5000);
 
             }
-            return ranking; 
+            return ranking;
         }
         set
         {
-            
+
             ranking = value;
         }
     }
@@ -197,6 +199,38 @@ public class PlayerDataHolder : MonoBehaviour
         set
         {
             limitedUseWorldInteractableStamina = value;
+        }
+    }
+
+    public Stat Social
+    {
+        get 
+        {
+            if (social == null)
+            {
+                social = new Stat(SimStatType.Social,0,100);
+            }
+            return social; 
+        }
+        set
+        {
+            social = value;
+        }
+    }
+    public Stat Study
+    {
+        get
+        {
+            if (study == null)
+            {
+                study = new Stat(SimStatType.Study, 0, 100);
+            }
+            return study;
+        }
+
+        set
+        {
+            study = value;
         }
     }
 
@@ -212,6 +246,7 @@ public class PlayerDataHolder : MonoBehaviour
         FoodItem.onFoodExpire += removeExpiredFood;
         WorldLimitedUseInteractable.onInteractUse += deductStamina;
         LocationHandler.OnTurnEnd += resetStamina;
+        FoodPreparer.onFoodPrepare += ListFood;
     }
 
     void clearMonthBudget()
@@ -230,5 +265,9 @@ public class PlayerDataHolder : MonoBehaviour
     void resetStamina()
     {
         LimitedUseWorldInteractableStamina = 2;
+    }
+    void ListFood(FoodItem food)
+    {
+        playerFoods.Add(food);
     }
 }

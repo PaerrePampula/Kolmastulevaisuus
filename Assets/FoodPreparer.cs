@@ -9,14 +9,14 @@ public class FoodPreparer : MonoBehaviour
     [SerializeField]
     int foodUseTimes;
     [SerializeField]
-    float cost;
+    public float cost;
     [SerializeField]
     float saturation;
     [SerializeField]
     string foodName;
 
 
-    public void PrepareFood()
+    public virtual void PrepareFood()
     {
         if (PlayerDataHolder.Current.PlayerMoney.getValue<float>() >= cost)
         {

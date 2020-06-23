@@ -26,7 +26,7 @@ public class FoodLister : MonoBehaviour
     }
     void ListFood(FoodItem food)
     {
-        PlayerDataHolder.Current.playerFoods.Add(food);
+
         updateFood();
     }
     void RemoveFood(FoodItem food)

@@ -3,5 +3,7 @@
     Satisfaction,
     Comfortableness,
     Hunger,
-    Ranking
+    Ranking,
+    Social,
+    Study
 };

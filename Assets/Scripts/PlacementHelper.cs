@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class PlacementHelper : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class PlacementHelper : MonoBehaviour
     BuyObject currentBuyObject;
     public LayerMask placementLayer;
     public LayerMask furnitureLayer;
-
+    List<Component> ignoredPlanes = new List<Component>(); //Tähän listataan objektien sisäiset sijoittelu planet jota käytetään kun muita objekteja stäckätään päälle
 
     public delegate void PurchaseCall(BuyObject gameObject);
     public static event PurchaseCall OnObjectPurchase;
@@ -63,9 +65,35 @@ public class PlacementHelper : MonoBehaviour
         meshBounds = placingObject.GetComponent<Collider>().bounds;
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;
+        ignoredPlanes = getIgnorableTransforms(placingObject);
         if (placingObject.GetComponent<WorldInteractive>() != null)
         {
             placingObject.GetComponent<WorldInteractive>().beingMoved = true;
+        }
+    }
+    List<Component> getIgnorableTransforms(GameObject queryGameObject)
+    {
+
+        Component[] transformsinParent;
+
+        transformsinParent = queryGameObject.GetComponentsInChildren(typeof(Transform));
+
+        var transformQuery = from t in transformsinParent
+                      where t.gameObject.layer == 11
+                      select t;
+        List<Component> ignoreList = transformQuery.ToList();
+        foreach (var item in ignoreList)
+        {
+            item.gameObject.layer = 1;
+        }
+        Debug.Log(ignoreList.Count);
+        return ignoreList;
+    }
+    void resetPlaneLayers()
+    {
+        foreach (var plane in ignoredPlanes)
+        {
+            plane.gameObject.layer = 11;
         }
     }
     void movePlacement()
@@ -73,16 +101,16 @@ public class PlacementHelper : MonoBehaviour
 
         RaycastHit hit;
         Vector3 mousePos = Input.mousePosition;
-       
+        if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), meshBounds.extents.magnitude * 0.1f, out hit, Mathf.Infinity, placementLayer))
+        {
+            placingObject.transform.position = hit.point;
+        }
         if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), meshBounds.extents.sqrMagnitude*0.1f, out hit, Mathf.Infinity, furnitureLayer))
         {
             return;
 
         }
-        if (Physics.SphereCast(Camera.main.ScreenPointToRay(mousePos), meshBounds.extents.magnitude*0.1f, out hit, Mathf.Infinity, placementLayer))
-        {
-            placingObject.transform.position = hit.point;
-        }
+
     }
     void rotatePlacement()
     {
@@ -123,15 +151,20 @@ public class PlacementHelper : MonoBehaviour
                 SetMoving(false);
                 PointAndClickMovement.setMovementStatus(true);
                 MainCanvas.mainCanvas.freezeOverride = false;
+                resetPlaneLayers();
             }
 
         }
     }
     void cancelPlacement()
     {
-        if (Input.GetMouseButtonDown(3))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             SetPlacing(false);
+            SetMoving(false);
+            PointAndClickMovement.setMovementStatus(true);
+            MainCanvas.mainCanvas.freezeOverride = false;
+            ignoredPlanes.Clear();
             if (placingObject != null)
             {
                 Destroy(placingObject);
@@ -151,7 +184,7 @@ public class PlacementHelper : MonoBehaviour
                 placingObject = hit.transform.gameObject;
                 meshBounds = placingObject.GetComponent<Collider>().bounds;
                 placingObject.layer = 0;
-
+                ignoredPlanes = getIgnorableTransforms(placingObject);
             }
 
 
@@ -164,6 +197,7 @@ public class PlacementHelper : MonoBehaviour
 
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;
+
         if (placingObject.GetComponent<WorldInteractive>() != null)
         {
             placingObject.GetComponent<WorldInteractive>().beingMoved = true;
