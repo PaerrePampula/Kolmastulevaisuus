@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845d5cd94763b7f43bd5d068cde96aca, type: 3}
   m_Name: TwoIncTurn
   m_EditorClassIdentifier: 
-  event_Type: 0
+  event_Type: 6
   description: 
-  Turns: 0
+  Turns: 2

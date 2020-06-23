@@ -15,4 +15,33 @@ MonoBehaviour:
   neededFlags: []
   Prerequisites: []
   fire_locations: 
-  eventTexts: []
+  eventTexts:
+  - eventDialog: 'Chance test
+
+'
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 0
+      choiceDescriptor: Ok
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions:
+      - randomActions:
+        - eventClass: 2
+          actionString1: FLAG1
+          actionString2: 
+          actionFloat1: 0
+          actionFloat2: 0
+          actionBool1: 0
+          baseChance: 20
+          chanceIncreaseStat: 0
+        - eventClass: 2
+          actionString1: FLAG2
+          actionString2: 
+          actionFloat1: 0
+          actionFloat2: 0
+          actionBool1: 0
+          baseChance: 80
+          chanceIncreaseStat: 0
+      firedFlags: []

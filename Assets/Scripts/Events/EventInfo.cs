@@ -31,10 +31,15 @@ public class EventRaise : EventInfo //Event raiseri, käyttöesimerkkinä joku t
     public bool SpecificEventRaise; //Nostaako tämä raise jonkun tietyn eventin?
     public RandomEventScriptable InCaseSpecificEvent; //Jos nostaa, täytä tämä siihen.
 }
-public class JobInfo : EventInfo //Käytettty mm työn haussa 
+public class JobInfo : EventInfo, IChanceable //Käytettty mm työn haussa 
 {
     public JobNotice jobNotice;
     public int indexOnJobSearch;
+
+    public float getChance()
+    {
+        return jobNotice.scriptable.successMultiplier;
+    }
 }
 public class JobRegisterInfo : EventInfo
 {

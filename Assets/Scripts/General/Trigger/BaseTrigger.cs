@@ -11,6 +11,7 @@ public class BaseTrigger : MonoBehaviour
 
     [SerializeField]
     public CustomAction[] customActions;
+    public randomChoiceCustomAction[] randomizedChoiceActions;
 
     public virtual void FireTriggersAndFlags() //Kutsutaan kaikki ScriptableActionit sekä Global flag callit
     {
@@ -32,6 +33,11 @@ public class BaseTrigger : MonoBehaviour
             {
                 customActions[i].PerformAction();
             }
+            for (int i = 0; i < randomizedChoiceActions.Length; i++)
+            {
+                randomizedChoiceActions[i].getParameteredCustomActionsByChance().PerformAction();
+            }
+            
         }
         catch (System.NullReferenceException)
         {

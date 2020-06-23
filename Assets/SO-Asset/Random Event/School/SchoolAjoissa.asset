@@ -10,9 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: Uusi satunnainen event
+  m_Name: SchoolAjoissa
   m_EditorClassIdentifier: 
   neededFlags: []
   Prerequisites: []
-  fire_locations: 
-  eventTexts: []
+  fire_locations: 00000000
+  eventTexts:
+  - eventDialog: "Koulussa ei tapahtunut t\xE4n\xE4\xE4n mit\xE4\xE4n kovin mielenkiintoista,
+      mutta p\xE4\xE4sit t\xE4n\xE4\xE4n ainakin ajoissa!"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Jee!
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

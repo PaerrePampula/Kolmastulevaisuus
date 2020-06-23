@@ -14,5 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededFlags: []
   Prerequisites: []
-  fire_locations: 
-  eventTexts: []
+  fire_locations: 02000000
+  eventTexts:
+  - eventDialog: "Matkalla koulusta ajattelet kiirellist\xE4 kouluprojektia, sin\xE4
+      p\xE4\xE4t\xE4t..."
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "Kiirehti\xE4 nopeammin kotiin [K\xE4rsit stressi\xE4 mutta
+        saathan ainakin opiskeltua]"
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: -10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 0
+        actionFloat2: 25
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "Ota rauhassa, el\xE4t vain kerran [Et k\xE4rsi stressi\xE4,
+        mutta opiskelu k\xE4rsii]"
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 0
+        actionFloat2: -10
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

@@ -236,17 +236,28 @@ public class PlayerDataHolder : MonoBehaviour
 
     void OnEnable()
     {
-        DateTimeSystem.OnMonthChange += clearMonthBudget;
+
         playerMoney = new PlayerMoney();
 
         Satisfaction.Init();
         Comfortableness.Init();
         Ranking.Init();
         Hunger.Init();
+        Social.Init();
+        Study.Init();
         FoodItem.onFoodExpire += removeExpiredFood;
         WorldLimitedUseInteractable.onInteractUse += deductStamina;
         LocationHandler.OnTurnEnd += resetStamina;
         FoodPreparer.onFoodPrepare += ListFood;
+        DateTimeSystem.OnMonthChange += clearMonthBudget;
+    }
+    private void OnDisable()
+    {
+        FoodItem.onFoodExpire -= removeExpiredFood;
+        WorldLimitedUseInteractable.onInteractUse -= deductStamina;
+        LocationHandler.OnTurnEnd -= resetStamina;
+        FoodPreparer.onFoodPrepare -= ListFood;
+        DateTimeSystem.OnMonthChange -= clearMonthBudget;
     }
 
     void clearMonthBudget()

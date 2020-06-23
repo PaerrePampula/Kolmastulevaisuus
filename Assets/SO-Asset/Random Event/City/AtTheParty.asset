@@ -12,7 +12,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: AtTheParty
   m_EditorClassIdentifier: 
-  neededFlags: []
+  neededFlags:
+  - FlagName: WENT_TO_PARTY
+    TimeToHappen: 0
+    uniqueFlag: 0
   Prerequisites: []
   fire_locations: 
-  eventTexts: []
+  eventTexts:
+  - eventDialog: "Pidit bileiss\xE4 hauskaa ja t\xF6rm\xE4sit ihan uusiinkiin ihmisiinkin,
+      tunnet olosi paljon itsevarmemmaksi"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "[Poistu bileist\xE4]"
+      clickActions:
+      - {fileID: 11400000, guid: f90e1e408a6ae4b46a3c564b9785889d, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
+      choiceDescriptor: Mene jatkoille (Maksa jatkoilla 15 euroa)
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -15
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+  - eventDialog: "Menit jatkoille, et jostain sattuneesta syyst\xE4 kyll\xE4 muista
+      siit\xE4 mit\xE4\xE4n, mutta siell\xE4 oli jokatapauksessa tosi hauskaa"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: '[Poistu]'
+      clickActions:
+      - {fileID: 11400000, guid: f90e1e408a6ae4b46a3c564b9785889d, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

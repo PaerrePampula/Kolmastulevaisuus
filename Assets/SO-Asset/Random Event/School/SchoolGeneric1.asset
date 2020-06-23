@@ -14,5 +14,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neededFlags: []
   Prerequisites: []
-  fire_locations: 
-  eventTexts: []
+  fire_locations: 00000000
+  eventTexts:
+  - eventDialog: "Koulussa t\xE4n\xE4\xE4n oli aivan j\xE4rkytt\xE4v\xE4n pitk\xE4
+      hyppytunti, hy\xF6dynn\xE4t ajan..."
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Kavereille jutellessa [Kohentaa mielialaa]
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 0
+      choiceDescriptor: "Puolivalmiita projekteja ty\xF6st\xE4en [Saat paremmin opiskeltua]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 2.5
+        uniqueStatComparison: 0
+        TypeOfComparison: 0
+      nextDialog: 0
+      choiceDescriptor: "Kahvilassa sy\xF6dess\xE4 [N\xE4lk\xE4 ja mieliala kohenee]
+        (Maksaa 2.5 euroa)"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

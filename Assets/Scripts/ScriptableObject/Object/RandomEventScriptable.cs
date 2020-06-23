@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Uusi satunnainen event", menuName = "Satunnainen event tekstiboksi")]
@@ -30,6 +29,7 @@ public class eventChoice
     public ScriptableAction[] clickActions; //scriptableaction on tämänhetkinen implementointi tapahtumista, jotka tapahtuvat kun näppäintä painetaan.
     [Tooltip("Käytä tätä jos haluat luoda tiettyjä actioneita, jotka eivät vaadi valmiita assetteja.\n Hyvin alkeellinen eikä tue kaikkia actiontyyppejä")]
     public CustomAction[] customRunTimeActions;
+    public randomChoiceCustomAction[] randomizedChoiceCustomActions;
     public Flag[] firedFlags;
     //Lisää tästä scriptableactionin alla.
     //Tälle on aivan varmasti parempikin ja selkeämpi tapa toteuttaa, mutta en toistaiseksi ole löytänyt /osannut tehdä sellaista.
@@ -40,7 +40,7 @@ public class CustomAction
 
     public eventClassName eventClass;
     [Tooltip("FloatChange :\n" +
-        "SimStat : Enumin nimi (Satisfaction, Comfortableness, Hunger)\n"
+        "SimStat : Enumin nimi (Satisfaction, Comfortableness, Hunger, Ranking, Social, Study)\n"
         +"FlagFire : Flagin nimi\n"
         + "Purchase : Tuotteen nimi")]
     public string actionString1;
@@ -100,4 +100,25 @@ public class CustomAction
         );
     }
 
+}
+[System.Serializable]
+public class randomChoiceCustomAction
+{
+
+    public ParameteredCustomAction[] randomActions;
+    public ParameteredCustomAction getParameteredCustomActionsByChance()
+    {
+        return NormalizedChanceGenerator.getSelection<ParameteredCustomAction>(randomActions);
+    }
+}
+[System.Serializable]
+public class ParameteredCustomAction : CustomAction, IChanceable
+{
+    public float baseChance;
+    public SimStatType chanceIncreaseStat;
+
+    public float getChance()
+    {
+        return baseChance;
+    }
 }
