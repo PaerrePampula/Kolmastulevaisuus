@@ -116,9 +116,12 @@ public class ParameteredCustomAction : CustomAction, IChanceable
 {
     public float baseChance;
     public SimStatType chanceIncreaseStat;
-
-    public float getChance()
+    public bool statEffectChanceIncreaseOn;
+    public float getChance() //Jos bool on true, palauta arvo mukaanlukien stat kerroin, muuten palauta vaan base
     {
-        return baseChance;
+        return (statEffectChanceIncreaseOn) ?
+            baseChance + (((baseChance / 3f) * (0.20f * PlayerDataHolder.Current.getStatByEnum(chanceIncreaseStat).StatFloat))) :
+            baseChance;
+
     }
 }

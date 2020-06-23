@@ -44,6 +44,7 @@ public class PlayerDataHolder : MonoBehaviour
     private Stat comfortableness;
     private Stat hunger;
     private Stat ranking;
+    List<Stat> allStats;
     Stat social;
     Stat study;
     #endregion
@@ -132,6 +133,7 @@ public class PlayerDataHolder : MonoBehaviour
             if (satisfaction == null)
             {
                 satisfaction = new Stat(SimStatType.Satisfaction, 0, 100);
+                allStats.Add(satisfaction);
             }
             return satisfaction;
         }
@@ -148,6 +150,7 @@ public class PlayerDataHolder : MonoBehaviour
             if (comfortableness == null)
             {
                 comfortableness = new Stat(SimStatType.Comfortableness, 0, 100);
+                allStats.Add(comfortableness);
 
             }
             return comfortableness;
@@ -165,6 +168,7 @@ public class PlayerDataHolder : MonoBehaviour
             if (hunger == null)
             {
                 hunger = new Stat(SimStatType.Hunger, 0, 100);
+                allStats.Add(hunger);
 
             }
             return hunger;
@@ -182,6 +186,7 @@ public class PlayerDataHolder : MonoBehaviour
             if (ranking == null)
             {
                 ranking = new Stat(SimStatType.Ranking, -5000, 5000);
+                allStats.Add(ranking);
 
             }
             return ranking;
@@ -209,6 +214,7 @@ public class PlayerDataHolder : MonoBehaviour
             if (social == null)
             {
                 social = new Stat(SimStatType.Social,0,100);
+                allStats.Add(social);
             }
             return social; 
         }
@@ -224,6 +230,7 @@ public class PlayerDataHolder : MonoBehaviour
             if (study == null)
             {
                 study = new Stat(SimStatType.Study, 0, 100);
+                allStats.Add(study);
             }
             return study;
         }
@@ -236,7 +243,7 @@ public class PlayerDataHolder : MonoBehaviour
 
     void OnEnable()
     {
-
+        allStats = new List<Stat>();
         playerMoney = new PlayerMoney();
 
         Satisfaction.Init();
@@ -245,6 +252,7 @@ public class PlayerDataHolder : MonoBehaviour
         Hunger.Init();
         Social.Init();
         Study.Init();
+
         FoodItem.onFoodExpire += removeExpiredFood;
         WorldLimitedUseInteractable.onInteractUse += deductStamina;
         LocationHandler.OnTurnEnd += resetStamina;
@@ -280,5 +288,10 @@ public class PlayerDataHolder : MonoBehaviour
     void ListFood(FoodItem food)
     {
         playerFoods.Add(food);
+    }
+    public Stat getStatByEnum(SimStatType simStatType)
+    {
+        var stat = allStats.SingleOrDefault(givenStat => givenStat.SimStatType == simStatType);
+        return stat;
     }
 }

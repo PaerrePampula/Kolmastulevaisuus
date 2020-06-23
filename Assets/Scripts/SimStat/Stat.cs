@@ -17,9 +17,12 @@ public class Stat
 
         }
     }
+
+    public SimStatType SimStatType { get => simStatType; set => simStatType = value; }
+
     public Stat(SimStatType type, float min, float max)
     {
-        simStatType = type;
+        SimStatType = type;
         minValue = min;
         maxValue = max;
 
@@ -31,7 +34,7 @@ public class Stat
     void changeStat(EventInfo info)
     {
         SimStatInfo simStatInfo = (SimStatInfo)info;
-        if (simStatInfo.SimStatName == simStatType)
+        if (simStatInfo.SimStatName == SimStatType)
         {
             ChangeStat(simStatInfo.StatChange);
         }
@@ -39,7 +42,7 @@ public class Stat
     public void ChangeStat(float amount)
     {
         StatFloat += amount;
-        OnStatChange.Invoke(_statfloat, amount, simStatType);
+        OnStatChange.Invoke(_statfloat, amount, SimStatType);
 
     }
 }
