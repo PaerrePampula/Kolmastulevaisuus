@@ -21,4 +21,6 @@ MonoBehaviour:
   successMultiplier: 75
   chanceOfBeingHired: 60
   jobSiteScene: store
-  jobEvents: []
+  jobEvents:
+  - {fileID: 11400000, guid: 53606ef2d028256479fb166b89dd43a7, type: 2}
+  - {fileID: 11400000, guid: 5e41b3b3a704da54e9e326c8344667a8, type: 2}
