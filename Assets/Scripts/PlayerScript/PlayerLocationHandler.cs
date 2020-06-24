@@ -26,16 +26,22 @@ public class PlayerLocationHandler : MonoBehaviour
     {
         playerAgent.Warp(LocationHandler.CurrentLocation.getSpawnLocation().position);
     }
-    void storePlayer(bool isBegin)
+    void storePlayer(bool isBegin, bool isObjectChange = false)
     {
         switch (isBegin)
         {
             case true:
-                currentLocation = playerAgent.transform.position;
-                playerAgent.Warp(Vector3.zero);
+                if (isObjectChange == false)
+                {
+                    currentLocation = playerAgent.transform.position;
+                    playerAgent.Warp(Vector3.zero);
+
+                }
+
                 break;
             default:
                 playerAgent.Warp(currentLocation);
+
                 break;
         }
     }

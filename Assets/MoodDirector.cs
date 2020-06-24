@@ -10,7 +10,7 @@ public class MoodDirector : MonoBehaviour
     }
     void changeMood()
     {
-        float changeAmount = ((100 - PlayerDataHolder.Current.Comfortableness.StatFloat)/100 + (0.25f)) * 12;
+        float changeAmount = ((100 - PlayerDataHolder.Current.Comfortableness.StatFloat)/100 + (0.25f)) * 7.5f;
         PlayerDataHolder.Current.Satisfaction.ChangeStat(-changeAmount);
     }
 }

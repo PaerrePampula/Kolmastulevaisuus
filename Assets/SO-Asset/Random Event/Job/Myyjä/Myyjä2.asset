@@ -55,7 +55,7 @@ MonoBehaviour:
       customRunTimeActions: []
       randomizedChoiceCustomActions:
       - randomActions:
-        - eventClass: 0
+        - eventClass: 2
           actionString1: WORK_ISSUE_DEFUSED_1
           actionString2: 
           actionFloat1: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
           baseChance: 50
           chanceIncreaseStat: 0
           statEffectChanceIncreaseOn: 1
-        - eventClass: 0
+        - eventClass: 2
           actionString1: WORK_ISSUE_FAILURE_1
           actionString2: 
           actionFloat1: 0

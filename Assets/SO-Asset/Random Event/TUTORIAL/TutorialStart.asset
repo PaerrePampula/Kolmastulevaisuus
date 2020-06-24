@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: TutorialStart
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags: []
   Prerequisites: []
   fire_locations: 04000000
@@ -40,6 +42,7 @@ MonoBehaviour:
         actionFloat1: 10
         actionFloat2: 0
         actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []
   - eventDialog: "Tukia ja t\xF6it\xE4 saat molempia haettua l\xE4pp\xE4rilt\xE4.\n\nMuistat
       ett\xE4 k\xE4mpp\xE4si on melko tyhj\xE4, ajattelit, ett\xE4 voisit hankkia
@@ -52,6 +55,7 @@ MonoBehaviour:
       choiceDescriptor: "Selv\xE4!"
       clickActions:
       - {fileID: 11400000, guid: 47c71dc6f1bb43f4794cb56691d042ed, type: 2}
-      - {fileID: 11400000, guid: d5c4370da9e8e1443bd5c87b1cbffbf0, type: 2}
+      - {fileID: 11400000, guid: e9d21254a7ec3994aacebf99dde4b446, type: 2}
       customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []

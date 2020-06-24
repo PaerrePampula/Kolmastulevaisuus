@@ -12,9 +12,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: StartSaving
   m_EditorClassIdentifier: 
-  fireOnce: 0
-  weeksFromStartForFire: 0
+  fireOnce: 1
+  weeksFromStartForFire: 1
   neededFlags: []
   Prerequisites: []
-  fire_locations: 
-  eventTexts: []
+  fire_locations: 03000000
+  eventTexts:
+  - eventDialog: "Kun mietiskelet omaa rahank\xE4ytt\xF6\xE4si, olisi hyv\xE4 harkita
+      rahan s\xE4\xE4st\xE4mist\xE4, olisitko valmis tallettamaan tietyn rahasumman
+      joka kuukausi? \n[Voit esimerkiksi maksaa peliss\xE4 pahassa tilanteessa vuokrat
+      tai muut laskut s\xE4\xE4st\xF6ill\xE4]"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 50
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: "Voisin tallettaa 50 euroa kuukaudessa s\xE4\xE4st\xF6tilille"
+      clickActions:
+      - {fileID: 11400000, guid: d41b6dc4d413a1e449d009b6a8dffd0c, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 25
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: "Voisin tallettaa 25 euroa kuukaudessa s\xE4\xE4st\xF6tilille"
+      clickActions:
+      - {fileID: 11400000, guid: f692cd4289c5273478fafdc4456107d9, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 25
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: "\xC4l\xE4 s\xE4\xE4st\xE4 mit\xE4\xE4n"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

@@ -19,7 +19,7 @@ public class PlacementHelper : MonoBehaviour
     public static event PurchaseCall OnObjectPurchase;
     public delegate void PurchaseSatisfactionCall(float satisfaction);
     public static event PurchaseSatisfactionCall OnObjectSatisfaction;
-    public delegate void BeginPlacementCall(bool isBegin);
+    public delegate void BeginPlacementCall(bool isBegin, bool isChange = false);
     public static event BeginPlacementCall OnPlacementInteract;
 
     public static bool GetPlacing()
@@ -56,12 +56,17 @@ public class PlacementHelper : MonoBehaviour
         if (placingObject != null)
         {
             Destroy(placingObject);
+            OnPlacementInteract?.Invoke(true, true);
+        }
+        else
+        {
+
+            OnPlacementInteract?.Invoke(true);
         }
         placingObject = Instantiate(buyObject.GetBuyObjectScriptable().prefab);
         placingObject.transform.rotation = Quaternion.Euler(0, 130, 0);
         SetPlacing(true);
         currentBuyObject = buyObject;
-        OnPlacementInteract?.Invoke(true);
         meshBounds = placingObject.GetComponent<Collider>().bounds;
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;

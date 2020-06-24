@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8435d02dac60a3f49928bba79a2d19ef, type: 3}
-  m_Name: Save50PerMonth
+  m_Name: Save25PerMonth
   m_EditorClassIdentifier: 
   event_Type: 15
   description: 
-  eventToRise: {fileID: 11400000, guid: bcdd3563380085c4487ab38a05596237, type: 2}
+  eventToRise: {fileID: 11400000, guid: 61311dfd1e6fb3b4ab09c5b18f4e379c, type: 2}
   eventFireTime: 4

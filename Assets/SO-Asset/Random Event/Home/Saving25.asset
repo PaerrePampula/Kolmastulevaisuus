@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: Saving50
+  m_Name: Saving25
   m_EditorClassIdentifier: 
   fireOnce: 0
   weeksFromStartForFire: 0
@@ -18,44 +18,35 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 00000000
   eventTexts:
-  - eventDialog: "Olet tallettamassa 50 euroa s\xE4\xE4st\xF6tilille"
+  - eventDialog: "Olet tallettamassa 25 euroa s\xE4\xE4st\xF6tilille"
     eventDialogChoices:
     - neededFlags: []
-      Prerequisites:
-      - playerStat: 0
-        comparisonValueType: 0
-        StringComparatorValue: 
-        FloatComparatorValue: 50
-        uniqueStatComparison: 0
-        TypeOfComparison: 5
+      Prerequisites: []
       nextDialog: -1
       choiceDescriptor: Talleta
       clickActions:
-      - {fileID: 11400000, guid: d41b6dc4d413a1e449d009b6a8dffd0c, type: 2}
+      - {fileID: 11400000, guid: f692cd4289c5273478fafdc4456107d9, type: 2}
       customRunTimeActions:
       - eventClass: 2
-        actionString1: SAVE_50
+        actionString1: SAVING_25
         actionString2: 
         actionFloat1: 0
-        actionFloat2: 0
-        actionBool1: 0
-      - eventClass: 0
-        actionString1: 
-        actionString2: 
-        actionFloat1: -50
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
         actionString1: Ranking
         actionString2: 
-        actionFloat1: 15
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -25
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []
-      firedFlags:
-      - FlagName: SAVING_50
-        TimeToHappen: 0
-        uniqueFlag: 0
+      firedFlags: []
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
