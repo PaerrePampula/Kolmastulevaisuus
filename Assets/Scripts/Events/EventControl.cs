@@ -77,6 +77,10 @@ public class EventControl : MonoBehaviour
         go.transform.SetParent(MainCanvas.mainCanvas.getMainCanvasTransform(true)); //..mutta ensiksi vaihdetaan sen parentiksi meidän UI... (maincanvas on static transform Maincanvaksessa)
         go.transform.localPosition = Vector3.zero; //ja nollataan sen sijainti suhteessa "vanhempaan"
         randomeventUI.Init(newEvent);
+        if (newEvent.getData().fireOnce == true)
+        {
+            eventsFromScriptables.Remove(newEvent);
+        }
     }
     GameEvent getRandomizedEvent()
     {

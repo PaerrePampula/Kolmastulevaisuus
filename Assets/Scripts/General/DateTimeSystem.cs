@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class DateTimeSystem : MonoBehaviour
@@ -6,11 +7,15 @@ public class DateTimeSystem : MonoBehaviour
     #region Fields
     static System.DateTime currentDate;
     static System.DateTime lastDate;
+    static System.DateTime gameStartDate;
     [SerializeField]
     TextMeshProUGUI _thisdaytext;
     int weekIndicator = 1;
     [SerializeField]
     GameObject weekIndicatorObject;
+
+    public static DateTime GameStartDate { get => gameStartDate; set => gameStartDate = value; }
+
     public delegate void MonthChange();
     public static event MonthChange OnMonthChange;
 
@@ -20,6 +25,7 @@ public class DateTimeSystem : MonoBehaviour
     {
 
         currentDate = new System.DateTime(2020, 1, 9);
+        GameStartDate = currentDate;
         SetDate();
     }
 

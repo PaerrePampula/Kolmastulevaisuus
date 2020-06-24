@@ -10,6 +10,7 @@ public class GameEvent
     PrereqPair[] prerequisites;
     Flag[] neededFlags;
     int fireTime;
+    int fireWeeks; //Viikkoja pelin alusta, kunnes voi fireä
     public delegate void EventSelfTrigger(GameEvent thisEvent);
     public static event EventSelfTrigger OnEventSelfTriggered;
     public delegate void EventAfterTrigger(GameEvent thisEvent);
@@ -17,7 +18,7 @@ public class GameEvent
     #endregion
 
     #region constructor
-    public GameEvent(RandomEventScriptable eventScriptable, bool isThisTimed = false, int timer = 0, bool fireOnce = false)
+    public GameEvent(RandomEventScriptable eventScriptable, bool isThisTimed = false, int timer = 0)
     {
         scriptable = eventScriptable;
         fire_locations = eventScriptable.fire_locations;
@@ -26,7 +27,8 @@ public class GameEvent
         //Timed event
         isTimed = isThisTimed;
         fireTime = timer;
-        firedOnce = fireOnce;
+        firedOnce = eventScriptable.fireOnce;
+        fireWeeks = eventScriptable.weeksFromStartForFire;
         if(isTimed)
         {
             LocationHandler.OnTurnEnd += CheckForFiring;
@@ -58,6 +60,10 @@ public class GameEvent
     public bool checkPreRequisites()
     {
         bool check = false;
+        if (DateTimeSystem.GameStartDate.AddDays(7*fireWeeks) > DateTimeSystem.getCurrentDate())
+        {
+            return false;
+        }
         if (prerequisites.Length < 1)
         {
             return true;

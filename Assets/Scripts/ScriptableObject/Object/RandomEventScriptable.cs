@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Uusi satunnainen event", menuName = "Satunnainen event tekstiboksi")]
 public class RandomEventScriptable : ScriptableObject //Tämä on melko yksiselitteinen, lista stringejä ja dialogivalintoja, sekä scriptableactioneita
 {
+    public bool fireOnce;
+    [Tooltip("Kuinka monta viikkoa pitää vähintään kulua pelissä fireä varten")]
+    public int weeksFromStartForFire = 0;
     public List<Flag> neededFlags;
     public PrereqPair[] Prerequisites;
     public FIRE_LOCATION[] fire_locations;

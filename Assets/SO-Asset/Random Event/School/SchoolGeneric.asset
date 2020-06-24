@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: SchoolGeneric
   m_EditorClassIdentifier: 
-  neededFlags: []
+  neededFlags:
+  - FlagName: DEBUG_CHANCE
+    TimeToHappen: 0
+    uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 00000000
   eventTexts:
-  - eventDialog: 'Chance test
-
-'
+  - eventDialog: "T\xE4m\xE4 event arpoo kahden flagin v\xE4lill\xE4, ensimm\xE4iseen
+      vaikuttaa pelaajan hyvinvoinnin m\xE4\xE4r\xE4, toiseen mukavuus. Hyvinvoinnin
+      todenn\xE4k\xF6isyyskerroin on 50 ja mukavuusflagin 100. Korkealla hyvinvoinnilla
+      ensimm\xE4inen trigger\xF6ityy useammin. (N\xE4kyy logissa)"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: 0
-      choiceDescriptor: Ok
+      choiceDescriptor: Kokeile
       clickActions: []
       customRunTimeActions: []
       randomizedChoiceCustomActions:
@@ -34,14 +38,24 @@ MonoBehaviour:
           actionFloat1: 0
           actionFloat2: 0
           actionBool1: 0
-          baseChance: 20
+          baseChance: 90
           chanceIncreaseStat: 0
+          statEffectChanceIncreaseOn: 1
         - eventClass: 2
           actionString1: FLAG2
           actionString2: 
           actionFloat1: 0
           actionFloat2: 0
           actionBool1: 0
-          baseChance: 80
-          chanceIncreaseStat: 0
+          baseChance: 10
+          chanceIncreaseStat: 1
+          statEffectChanceIncreaseOn: 1
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Lopeta testaus
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []
