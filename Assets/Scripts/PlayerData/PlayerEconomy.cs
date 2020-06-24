@@ -130,9 +130,18 @@ public static class PlayerEconomy
     static void checkBelowZeroMoney()
     {
         float checkedAmount = PlayerDataHolder.Current.PlayerMoney.getValue<float>();
+        float bankBackUp = Bank.Current.SavedMoney.getValue<float>();
         if (checkedAmount < 0)
         {
-
+            float bankCheck = checkedAmount + bankBackUp;
+            if (bankCheck > 0)
+            {
+                Bank.Current.SavedMoney.MoneyChange(checkedAmount);
+                Flag savingsSave = new Flag("PLAYER_ECONOMY_SAVED_BY_SAVINGS", 0, false);
+                savingsSave.FireFlag();
+                PlayerDataHolder.Current.PlayerMoney.resetMoney();
+                return;
+            }
             int strikesGenerated = (checkedAmount > 850f) ? 2 : 1;
             //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 850
             OnBust?.Invoke(strikesGenerated);

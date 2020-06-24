@@ -6,7 +6,18 @@ public class Bank : MonoBehaviour
     PlayerMoney savedMoney;
 
     public PlayerMoney SavedMoney { get => savedMoney; set => savedMoney = value; }
-
+    static private Bank _Current;
+    static public Bank Current
+    {
+        get
+        {
+            if (_Current == null)
+            {
+                _Current = FindObjectOfType<Bank>();
+            }
+            return _Current;
+        }
+    }
     // Use this for initialization
     void OnEnable()
     {
@@ -40,4 +51,9 @@ public class Bank : MonoBehaviour
     {
         SavedMoney.MoneyChange(amount);
     }
+    public void DEBUG_ADDSAVINGS(float amount)
+    {
+        SavedMoney.MoneyChange(amount);
+    }
+
 }
