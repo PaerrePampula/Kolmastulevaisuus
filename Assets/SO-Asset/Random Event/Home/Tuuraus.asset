@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Tuuraus
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 2
+  neededFlags:
+  - FlagName: JOB_RECEIVED
+    TimeToHappen: 0
+    uniqueFlag: 0
+  Prerequisites: []
+  fire_locations: 000000000200000003000000
+  eventTexts:
+  - eventDialog: "Esimiehesi soitti sinulle, ja kertoi toisen kollegan sairauspoissaolosta.
+      Aiotko tuurata ty\xF6kaveriasi? "
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "Tottahan toki [Tienaat ekstraa t\xF6ist\xE4]"
+      clickActions:
+      - {fileID: 11400000, guid: bfa1e5ccd805ff34dbf80a1d031d47c3, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Ei pysty
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []

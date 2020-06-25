@@ -8842,6 +8842,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebd830b9eff8dbd4fb50d8b3a1970729, type: 2}
   - {fileID: 11400000, guid: 458af7bcef3298a4a84634338912593b, type: 2}
   - {fileID: 11400000, guid: 70a6522023462c947853c29430439fa7, type: 2}
+  - {fileID: 11400000, guid: 531fbe22a9185a04d879a349b30b2eef, type: 2}
+  - {fileID: 11400000, guid: d0b47283e90f7ea448e329653943dd73, type: 2}
+  - {fileID: 11400000, guid: 032c27c8986bb2144a34763cde26d822, type: 2}
+  - {fileID: 11400000, guid: a2c99e53808b4c34ba729286c7767604, type: 2}
+  - {fileID: 11400000, guid: a899523f02179314194ac5d0a362509f, type: 2}
+  - {fileID: 11400000, guid: 813eeb45d02843d42877d94504399bbd, type: 2}
+  - {fileID: 11400000, guid: 5877d357a3fdd974fa5ad1cbbffc6abf, type: 2}
+  - {fileID: 11400000, guid: cab5adf4f1fb29144ae4e698823cc5c7, type: 2}
+  - {fileID: 11400000, guid: 1dfe9e9d57737d34ba39c6c99396c989, type: 2}
 --- !u!114 &1348062716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8983,6 +8992,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f009de8c4c3a6bd4d8f621a2abe2e960, type: 2}
   - {fileID: 11400000, guid: ea395f0e3be6be44c9ca14f91074f9e6, type: 2}
   - {fileID: 11400000, guid: f6b37bbc968dfae46956dd96c67165e1, type: 2}
+  - {fileID: 11400000, guid: 31257185f9cbbdf4fb216926652b00b9, type: 2}
+  - {fileID: 11400000, guid: 2cd479d6255bdbe44834ccd95681453d, type: 2}
 --- !u!114 &1348062724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13492,17 +13503,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3490c5f5dbdd741479346c8045beead2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.705
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3490c5f5dbdd741479346c8045beead2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.968
+      value: 0.991
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3490c5f5dbdd741479346c8045beead2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.257
+      value: -2.177
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3490c5f5dbdd741479346c8045beead2,
         type: 3}

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: FoundMoney
+  m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 02000000
+  eventTexts:
+  - eventDialog: "Olit vaeltelemassa pitkin katuja, ja l\xF6ysit sattumalta kadunkulmasta
+      kahdenkymmenen euron setelin, mit\xE4 teet?\n"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
+      choiceDescriptor: Vapaata riistaa!
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: 20
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Unohda se
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+  - eventDialog: "Tekem\xE4si valinta on ihan hyv\xE4, sill\xE4 l\xF6yt\xE4j\xE4
+      saa pit\xE4\xE4 kahdenkympin tai alle l\xF6yd\xF6t kadulta"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: '[Poistu]'
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []

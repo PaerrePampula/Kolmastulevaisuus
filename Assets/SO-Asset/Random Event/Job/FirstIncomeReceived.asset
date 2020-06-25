@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: FirstIncomeReceived
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags:
   - FlagName: FIRST_INCOME_RECEIVED
     TimeToHappen: 0
@@ -20,25 +22,37 @@ MonoBehaviour:
   fire_locations: 04000000
   eventTexts:
   - eventDialog: "Ensimm\xE4inen palkkap\xE4iv\xE4si saapui! Pid\xE4 mieless\xE4
-      aina se, ett\xE4 osa palkastasi menee kuitenkin verotukseen, vaikka veroprosenttisi
-      olisi nolla"
+      aina se, ett\xE4 osa palkastasi menee kuitenkin ty\xF6el\xE4ke- ja ty\xF6vakuutusmaksuihin,
+      vaikka veroprosenttisi olisi nolla"
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: Okei...
       clickActions:
       - {fileID: 11400000, guid: d9711981f96d5684f9b235500fbccedb, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []
-    - nextDialog: 1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
       choiceDescriptor: Mihin palkkani siis menee?
       clickActions:
       - {fileID: 11400000, guid: d9711981f96d5684f9b235500fbccedb, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []
   - eventDialog: "Jos veroprosenttisi on yli 0%, sinun palkastasi menee osa valtionveroon.
       Vaikka sinulla olisi 0% verokortissa, osa t\xE4st\xE4 palkasta silti menisi
       ennakonpid\xE4tyksen yhteydess\xE4 kunnallisveroon, jonka suuruus riippuu asuinkunnastasi.
       Osa siit\xE4 palkasta my\xF6s oletuksena kuluu Ty\xF6tt\xF6myys- ja el\xE4kevakuutusmaksuihin"
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: Okei...
       clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []

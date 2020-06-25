@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Krypto
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 2
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 00000000
+  eventTexts:
+  - eventDialog: "Yksi kavereistasi, joka py\xF6ritt\xE4\xE4 sivussa Doubling Money
+      nimist\xE4 kryptovaluutanvaihtoyrityst\xE4 suositteli sinulle t\xE4n\xE4\xE4n
+      koulussa kryptovaluuttojen ostoa\nKaverisi v\xE4itt\xE4\xE4, ett\xE4 jos myyt
+      kryptovaluutan kahden kuukauden p\xE4\xE4st\xE4, saat siit\xE4 hyv\xE4t voitot.\n\nMit\xE4
+      vastaat kaverillesi?"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 100
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: Ostetaan sitten [Maksaa 100 euroa]
+      clickActions:
+      - {fileID: 0}
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -100
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 100
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: En osta
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []

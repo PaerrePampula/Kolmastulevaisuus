@@ -10,31 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: TutorialJobApplied
+  m_Name: KryptoLose
   m_EditorClassIdentifier: 
   fireOnce: 0
   weeksFromStartForFire: 0
   neededFlags:
-  - FlagName: TUTORIAL_FIRSTJOB
+  - FlagName: DOUBLINGMONEY_FAIL
     TimeToHappen: 0
-    uniqueFlag: 1
+    uniqueFlag: 0
   Prerequisites: []
   fire_locations: 
   eventTexts:
-  - eventDialog: "Hyv\xE4, hait t\xF6it\xE4! Saat odotella ty\xF6nantajalta viel\xE4
-      vastausta. Ty\xF6n saadessa sinun kannattaisi my\xF6s hakea verokorttia, sill\xE4
-      muuten palkastasi menee suuri osa ennakonpid\xE4tykseen palkkap\xE4iv\xE4n\xE4"
+  - eventDialog: "Katsoit kryptovaluuttojen kursseja, ja huomasit ett\xE4 tulokset
+      ovat aivan kuraa!\nSait onneksesi kuitenkin valuutan myynnist\xE4 pari euroa
+      takaisin..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Selv\xE4"
+      choiceDescriptor: Harmi...
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
         actionString1: Satisfaction
         actionString2: 
-        actionFloat1: 5
+        actionFloat1: -5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: 7.5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -50
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []

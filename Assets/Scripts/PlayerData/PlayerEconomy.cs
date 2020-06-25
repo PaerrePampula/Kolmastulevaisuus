@@ -20,6 +20,7 @@ public static class PlayerEconomy
         JobHandler.OnJobEnd += deleteCurrentJobIncomeIfCan;
         GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
         GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
+        GameEventSystem.RegisterListener(Event_Type.EXTRA_INCOME, registerExtraIncome);
 
         TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
 
@@ -77,6 +78,16 @@ public static class PlayerEconomy
 
         OnNewIncome.Invoke();
     }
+    static void registerExtraIncome(EventInfo info)
+    {
+        ExtraIncomeInfo extra = (ExtraIncomeInfo)info;
+        IncomeSource incomeSource = new IncomeSource(extra.extraIncomeAmount, extra.isAnExtra);
+        incomeSources().Add(incomeSource);
+
+        TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
+
+        OnNewIncome.Invoke();
+    }
 
     static void PayFromIncomeSources()
     {
@@ -102,7 +113,7 @@ public static class PlayerEconomy
             }
 
         }
-
+        removeExtras();
 
     }
     static void deleteCurrentJobIncomeIfCan()
@@ -146,6 +157,18 @@ public static class PlayerEconomy
             //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 850
             OnBust?.Invoke(strikesGenerated);
         }
+    }
+    static void removeExtras()
+    {
+        for (int i = 0; i < incomeSources().Count; i++)
+        {
+            if (incomeSources()[i].AnExtra == true)
+            {
+                incomeSources().Remove(incomeSources()[i]);
+            }
+        }
+
+        TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
     }
 
 }

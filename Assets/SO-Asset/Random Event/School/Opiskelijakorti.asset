@@ -10,48 +10,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: InTheCityParty
+  m_Name: Opiskelijakorti
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 2
+  weeksFromStartForFire: 1
   neededFlags: []
   Prerequisites: []
-  fire_locations: 02000000
+  fire_locations: 00000000
   eventTexts:
-  - eventDialog: "Kuulit koulussa n\xE4ill\xE4 hetkill\xE4 alkavista opiskelijabileist\xE4,
-      sin\xE4 p\xE4\xE4t\xE4t..."
+  - eventDialog: "Koulussasi mainostettiin opiskelijakorttia, koulusi opiskelijakortilla
+      on monia etuja, muunmuuassa julkisen liikenteen matkat ovat yleens\xE4 halvempia
+      opiskelijahintaan, ja monesti voit saada opiskelijaetuja mm. ravintoloissa.
+      Ostatko opiskelijakortin? \n[Maksaa 107 euroa koko opiskeluajaltasi]"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites:
       - playerStat: 0
         comparisonValueType: 0
         StringComparatorValue: 
-        FloatComparatorValue: 5
+        FloatComparatorValue: 107
         uniqueStatComparison: 0
         TypeOfComparison: 5
       nextDialog: -1
-      choiceDescriptor: "K\xE4yd\xE4 bileiss\xE4.  (Hinta 5 euroa)"
+      choiceDescriptor: Ostan!
       clickActions: []
       customRunTimeActions:
       - eventClass: 0
         actionString1: 
         actionString2: 
-        actionFloat1: -5
+        actionFloat1: -107
         actionFloat2: 0
         actionBool1: 0
-      randomizedChoiceCustomActions: []
-      firedFlags:
-      - FlagName: WENT_TO_PARTY
-        TimeToHappen: 0
-        uniqueFlag: 0
-    - neededFlags: []
-      Prerequisites: []
-      nextDialog: -1
-      choiceDescriptor: Unohda
-      clickActions:
-      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
-      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
-      customRunTimeActions: []
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 150
+        actionFloat2: 0
+        actionBool1: 0
       randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
@@ -59,14 +60,12 @@ MonoBehaviour:
       - playerStat: 0
         comparisonValueType: 0
         StringComparatorValue: 
-        FloatComparatorValue: 5
+        FloatComparatorValue: 107
         uniqueStatComparison: 0
-        TypeOfComparison: 1
+        TypeOfComparison: 5
       nextDialog: -1
-      choiceDescriptor: '[Ei ole varaa]'
-      clickActions:
-      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
-      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      choiceDescriptor: En osta
+      clickActions: []
       customRunTimeActions: []
       randomizedChoiceCustomActions: []
       firedFlags: []

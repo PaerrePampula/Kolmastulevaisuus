@@ -3,8 +3,12 @@
     #region Fields
     float incomeAmountTotalOneMonth;
     Job incomeSourceJob;
+    bool anExtra = false;
     public bool UniqueStat { get { return false; } }
     public StatType ThisStatType { get { return StatType.PlayerIncomeSource; } }
+
+    public bool AnExtra { get => anExtra; set => anExtra = value; }
+
     public delegate void IncomeMake();
     public static event IncomeMake OnNewIncomeRegister;
     #endregion
@@ -16,9 +20,10 @@
         StatsChecker.RegisterStat(this);
         OnNewIncomeRegister?.Invoke();
     }
-    public IncomeSource(float NewIncomeAmount)
+    public IncomeSource(float NewIncomeAmount, bool extra = false)
     {
         incomeAmountTotalOneMonth = NewIncomeAmount;
+        AnExtra = extra;
         StatsChecker.RegisterStat(this);
         OnNewIncomeRegister?.Invoke();
     }

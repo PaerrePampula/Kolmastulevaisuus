@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 [CreateAssetMenu(menuName = "Actions/FloatValueChange")]
-public class FloatValueChangeAction : ScriptableAction //Tämä on scriptableaction esimerkki, näitä käytetään dialogeissa, kun on tarve nostaa joku actioni valinnan perusteella.
+public class ExtraIncomeActio : ScriptableAction //Tämä on scriptableaction esimerkki, näitä käytetään dialogeissa, kun on tarve nostaa joku actioni valinnan perusteella.
 {
     public float amount;
     public override void PerformAction()

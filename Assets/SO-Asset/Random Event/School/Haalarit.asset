@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Haalarit
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 2
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 00000000
+  eventTexts:
+  - eventDialog: Koulussasi ilmoitettiin uusien opiskelijahaalarien tulosta, haluatko
+      ostaa sellaiset? [Maksaa 45 euroa]
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 45
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: 0
+      choiceDescriptor: Tottahan toki [Sosiaalisuutesi kasvaa]
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -45
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "\xC4l\xE4 osta"
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []

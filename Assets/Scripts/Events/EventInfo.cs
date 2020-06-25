@@ -26,6 +26,11 @@ public class CameraAngleChangeInfo : EventInfo
     public int increments;
     public float changeofFloat;
 }
+public class ExtraIncomeInfo : EventInfo
+{
+    public float extraIncomeAmount;
+    public bool isAnExtra;
+}
 public class EventRaise : EventInfo //Event raiseri, käyttöesimerkkinä joku triggerin triggeröinti nostaa uuden eventin eventcontrollista.
 {
     public bool SpecificEventRaise; //Nostaako tämä raise jonkun tietyn eventin?
