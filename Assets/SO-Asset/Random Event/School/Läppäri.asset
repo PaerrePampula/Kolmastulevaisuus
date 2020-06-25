@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: "L\xE4pp\xE4ri"
+  m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 
+  eventTexts:
+  - eventDialog: "Koulussasi k\xE4ytet\xE4\xE4n BYOD (Bring your own device) periaatetta.
+      Sen mukaan opiskelioiden tarvitsee tuoda omat l\xE4pp\xE4rit, tai muut vastaavat
+      laitteet. Sinun koulullasi ei yksinkertaisesti riit\xE4 laitteita ihan kaikille\n\nHuomasit,
+      ett\xE4 oma laitteesi on jo melko vanhahko, eik\xE4 toimi ihan parhaiten, hankitko
+      uuden?"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 150
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: Hankin uuden, mutta edullisen [Maksaa 150 euroa]
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -150
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 100
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions:
+      - randomActions:
+        - eventClass: 1
+          actionString1: Study
+          actionString2: 
+          actionFloat1: -2.5
+          actionFloat2: 0
+          actionBool1: 0
+          baseChance: 50
+          chanceIncreaseStat: 0
+          statEffectChanceIncreaseOn: 0
+        - eventClass: 1
+          actionString1: Satisfaction
+          actionString2: 
+          actionFloat1: 5
+          actionFloat2: 0
+          actionBool1: 0
+          baseChance: 50
+          chanceIncreaseStat: 0
+          statEffectChanceIncreaseOn: 0
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 350
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: "Ostan uuden ja tehokkaan [Maksaa 500, mutta vanhemmat auttaa
+        siin\xE4 150 euroa]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -350
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 20
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "En osta uutta, koitan p\xE4rj\xE4t\xE4 vanhalla"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: -10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: -10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
