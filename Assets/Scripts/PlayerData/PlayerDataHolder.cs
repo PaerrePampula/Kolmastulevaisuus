@@ -52,11 +52,18 @@ public class PlayerDataHolder : MonoBehaviour
     {
         get
         {
+            if (rentablehome == null)
+            {
+                RentableHome newrentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
+                rentablehome = newrentableHome;
+                Current.PlayerRent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
+            }
             return rentablehome;
         }
         set
         {
             rentablehome = value;
+
         }
     }
     public Rent PlayerRent
@@ -68,7 +75,7 @@ public class PlayerDataHolder : MonoBehaviour
             {
                 RentableHome newrentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
                 playerHome = newrentableHome;
-                rent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
+
                 return rent;
                 //Ei tarvii käydä mainmenun kautta jos haluu testata jotain tämän avulla
             }
@@ -253,6 +260,7 @@ public class PlayerDataHolder : MonoBehaviour
         Social.Init();
         Study.Init();
 
+
         FoodItem.onFoodExpire += removeExpiredFood;
         WorldLimitedUseInteractable.onInteractUse += deductStamina;
         LocationHandler.OnTurnEnd += resetStamina;
@@ -275,7 +283,7 @@ public class PlayerDataHolder : MonoBehaviour
     void removeExpiredFood(FoodItem food)
     {
         playerFoods.Remove(food);
-        Debug.Log("Food remove");
+
     }
     void deductStamina()
     {
@@ -293,5 +301,14 @@ public class PlayerDataHolder : MonoBehaviour
     {
         var stat = allStats.SingleOrDefault(givenStat => givenStat.SimStatType == simStatType);
         return stat;
+    }
+    public float getTotalCosts()
+    {
+        float result = 0;
+        for (int i = 0; i < MonthlyListableExpenses.Count; i++)
+        {
+            result += MonthlyListableExpenses[i].getTotal();
+        }
+        return result;
     }
 }

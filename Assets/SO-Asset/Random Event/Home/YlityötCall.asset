@@ -12,18 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: "Ylity\xF6tCall"
   m_EditorClassIdentifier: 
-  fireOnce: 0
+  fireOnce: 1
   weeksFromStartForFire: 0
   neededFlags: []
-  Prerequisites: []
-  fire_locations: 000000000200000003000000
+  Prerequisites:
+  - playerStat: 1
+    comparisonValueType: 2
+    StringComparatorValue: 
+    FloatComparatorValue: 0
+    uniqueStatComparison: 1
+    TypeOfComparison: 7
+  fire_locations: 0000000003000000
   eventTexts:
   - eventDialog: "Esimiehesi soitti sinulle t\xE4n\xE4\xE4n ja kysyi olisiko mahdollista
       sinulta tehd\xE4 huomenna ylit\xF6it\xE4, mit\xE4 vastaat?"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
-      nextDialog: 0
+      nextDialog: -1
       choiceDescriptor: "Tottahan toki [Saat enemm\xE4n rahaa]"
       clickActions:
       - {fileID: 11400000, guid: cc552d37613983c4fa74939572353f1f, type: 2}

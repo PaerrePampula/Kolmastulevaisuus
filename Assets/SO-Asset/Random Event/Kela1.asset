@@ -27,7 +27,8 @@ MonoBehaviour:
       nextDialog: -1
       choiceDescriptor: "No t\xE4ytet\xE4\xE4n sitten! [T\xE4yt\xE4t tarvittavat
         ja l\xE4het\xE4t liitteet]"
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: 485d344df30903348a78fa9df0ad9d22, type: 2}
       customRunTimeActions: []
       randomizedChoiceCustomActions: []
       firedFlags: []

@@ -35,7 +35,7 @@ MonoBehaviour:
         FloatComparatorValue: 39
         uniqueStatComparison: 0
         TypeOfComparison: 5
-      nextDialog: 0
+      nextDialog: -1
       choiceDescriptor: "Osta PC-pelej\xE4 [Kohentaa mielialaa ja maksaa 39 euroa]"
       clickActions: []
       customRunTimeActions:

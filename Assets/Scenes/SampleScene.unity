@@ -4483,7 +4483,7 @@ RectTransform:
   - {fileID: 361330822}
   - {fileID: 1725681217}
   m_Father: {fileID: 1622574775}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7467,7 +7467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1189944230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8795,6 +8795,7 @@ GameObject:
   - component: {fileID: 1348062728}
   - component: {fileID: 1348062729}
   - component: {fileID: 1348062730}
+  - component: {fileID: 1348062731}
   m_Layer: 0
   m_Name: GameDataContainer
   m_TagString: Untagged
@@ -9084,6 +9085,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 897185bb572e8d74fa5a30b83fdf8c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1348062731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348062713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa02f2f35943f6458972729833d23f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1370966440
@@ -11606,8 +11619,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 646239432}
   - {fileID: 1687994011}
+  - {fileID: 646239432}
   - {fileID: 499388853}
   - {fileID: 712930079}
   - {fileID: 196550559}
@@ -12194,13 +12207,14 @@ GameObject:
   - component: {fileID: 1687994013}
   - component: {fileID: 1687994012}
   - component: {fileID: 1687994015}
+  - component: {fileID: 1687994016}
   m_Layer: 0
   m_Name: EndScreenCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1687994011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12215,7 +12229,7 @@ RectTransform:
   - {fileID: 1189944230}
   - {fileID: 690318396}
   m_Father: {fileID: 1622574775}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12295,6 +12309,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScreen: {fileID: 690318396}
+--- !u!114 &1687994016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687994010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05885c906b233714e93c27a218f67bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1725681216
 GameObject:
   m_ObjectHideFlags: 0

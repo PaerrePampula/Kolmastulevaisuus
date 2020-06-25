@@ -10,7 +10,8 @@ public class RentableHomeScriptable : ScriptableObject
 
     public float electricityCost; //Simuloidaan sitten sähkönsiirto jonakin randomina arvona.
     //Tehdään myös oletus että sähkö kuuluu vuokraan.
-
+    [Tooltip("Jos false, pelaajan tarvitsee maksaa julkisen liikenteen käytöstä")]
+    public bool closeEnoughToSchoolToWalk;
     public float homeInsurance;
     public bool needToHaveHomeInsurance;
     public ExtrasOnRentableHomes[] extrasOnRentableHome;

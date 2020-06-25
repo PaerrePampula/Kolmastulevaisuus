@@ -56,13 +56,7 @@ MonoBehaviour:
       randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
-      Prerequisites:
-      - playerStat: 0
-        comparisonValueType: 0
-        StringComparatorValue: 
-        FloatComparatorValue: 107
-        uniqueStatComparison: 0
-        TypeOfComparison: 5
+      Prerequisites: []
       nextDialog: -1
       choiceDescriptor: En osta
       clickActions: []

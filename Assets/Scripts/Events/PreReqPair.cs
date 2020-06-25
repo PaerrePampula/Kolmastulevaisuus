@@ -70,6 +70,9 @@ public class PrereqPair
                     case ComparisonOperators.IfStatDoesntExist:
                         IStattable stat = StatsChecker.getPlayerStatByPrereq(this);
                         return (stat == null) ? true : false;
+                    case ComparisonOperators.IFStatExists:
+                        IStattable statcheck = StatsChecker.getPlayerStatByPrereq(this);
+                        return (statcheck != null) ? true : false;
 
                     case ComparisonOperators.IfStatIsAtleast:
                         isApplicable = ((isBigger<float>(this) == true) | (isEquals<float>(this) == true)) ? true : false;

@@ -5,15 +5,26 @@ public class GameStateHandler : MonoBehaviour
 {
     public delegate void Damage(int strikeCost);
     public static event Damage OnDamage;
+    public delegate void GameEnd();
+    public static event GameEnd OnGameEnd;
     static int maxBusts = 5;
+    static int monthsofPlay = 4;
     public void Start()
     {
+        DateTimeSystem.OnMonthChange += checkEnd;
         maxBusts = 5;
         PlayerEconomy.OnBust += checkBustState;
     }
 
 
-
+    static void checkEnd()
+    {
+        monthsofPlay--;
+        if (monthsofPlay <= 0)
+        {
+            OnGameEnd.Invoke();
+        }
+    }
     static void checkBustState(int strikes)
     {
         maxBusts -= strikes;

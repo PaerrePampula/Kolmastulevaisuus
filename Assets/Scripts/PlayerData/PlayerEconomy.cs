@@ -168,7 +168,8 @@ public static class PlayerEconomy
             }
         }
 
-        TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
+
+        OnIncrease?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
 
 }

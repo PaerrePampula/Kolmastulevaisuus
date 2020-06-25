@@ -7,6 +7,7 @@ public enum ComparisonOperators
     IsNotEqualTo,
     IfStatDoesntExist,
     IfStatIsAtleast,
-    IfStatIsAtMost
+    IfStatIsAtMost,
+    IFStatExists
 }
 #endregion

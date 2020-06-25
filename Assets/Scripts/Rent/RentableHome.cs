@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RentableHome
 {
+
+
     string address;
     float baseRentAmount;
     float waterCost;
@@ -14,6 +16,7 @@ public class RentableHome
     string perks;
     string shortFormDescription;
     string extrasDescription;
+    bool closeToSchool;
     string rentableScene = "StudioHomeNo1";
     ExtrasOnRentableHomes[] rentExtras;
     GameObject prefabForDisplay;
@@ -33,6 +36,7 @@ public class RentableHome
     public VuokraTyyppi RentableVuokraTyyppi => tyyppi;
 
     public GameObject PrefabForDisplay { get => prefabForDisplay; set => prefabForDisplay = value; }
+    public bool CloseToSchool { get => closeToSchool; set => closeToSchool = value; }
 
     public string GetRentableScene()
     {
@@ -62,6 +66,7 @@ public class RentableHome
         tyyppi = scriptable.vuokraTyyppi;
         size = scriptable.sizeInMetersSquared;
         prefabForDisplay = scriptable.displayPrefab;
+        closeToSchool = scriptable.closeEnoughToSchoolToWalk;
     }
     public float getRentTotalForAMonth()
     {

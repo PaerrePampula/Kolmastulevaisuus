@@ -19,7 +19,7 @@ MonoBehaviour:
     TimeToHappen: 0
     uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 000000000200000003000000
+  fire_locations: 0000000003000000
   eventTexts:
   - eventDialog: "Esimiehesi soitti sinulle, ja kertoi toisen kollegan sairauspoissaolosta.
       Aiotko tuurata ty\xF6kaveriasi? "

@@ -11,3 +11,6 @@ maxGrossForHouseHoldAsumistuki=1608
 ElakeMaksu=0,0715
 TyottomyysMaksu=0,0125
 MaxCostOfLivingForAsumisTukiZone3=399
+#Suurinpiirtein tarkka vr:n sivuilta katsottu kausilipun hinta
+#kolmellekymmenelle päivälle junalla lyhyen matkan
+SeasonTicketSmallTripPrice=45

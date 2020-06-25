@@ -35,7 +35,7 @@ MonoBehaviour:
       nextDialog: -1
       choiceDescriptor: Ostetaan sitten [Maksaa 100 euroa]
       clickActions:
-      - {fileID: 0}
+      - {fileID: 11400000, guid: b2ca5a8447e293749b53cb0bf9095e7d, type: 2}
       customRunTimeActions:
       - eventClass: 0
         actionString1: 

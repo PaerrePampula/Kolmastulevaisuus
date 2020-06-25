@@ -29,7 +29,7 @@ MonoBehaviour:
         FloatComparatorValue: 45
         uniqueStatComparison: 0
         TypeOfComparison: 5
-      nextDialog: 0
+      nextDialog: -1
       choiceDescriptor: Tottahan toki [Sosiaalisuutesi kasvaa]
       clickActions: []
       customRunTimeActions:
