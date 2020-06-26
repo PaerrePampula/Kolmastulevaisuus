@@ -64,6 +64,10 @@ public class PlayerDataHolder : MonoBehaviour
         {
             rentablehome = value;
             PlayerRent = new Rent(value.BaseRent, value.WaterCost, value.ElectricityCost);
+            for (int i = 0; i < rentablehome.RentExtras.Length; i++)
+            {
+                Bill bill = new Bill(rentablehome.RentExtras[i].extraName, rentablehome.RentExtras[i].extraCostPerMonth);
+            }
 
         }
     }

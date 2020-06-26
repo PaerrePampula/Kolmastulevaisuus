@@ -37,6 +37,7 @@ public class RentableHome
 
     public GameObject PrefabForDisplay { get => prefabForDisplay; set => prefabForDisplay = value; }
     public bool CloseToSchool { get => closeToSchool; set => closeToSchool = value; }
+    public ExtrasOnRentableHomes[] RentExtras { get => rentExtras; set => rentExtras = value; }
 
     public string GetRentableScene()
     {
@@ -58,7 +59,7 @@ public class RentableHome
         electricityCost = scriptable.electricityCost;
         homeInsurance = scriptable.homeInsurance;
         homeInsuranceNeeded = scriptable.needToHaveHomeInsurance;
-        rentExtras = scriptable.extrasOnRentableHome;
+        RentExtras = scriptable.extrasOnRentableHome;
         longFormDescription = scriptable.longFormDescription;
         perks = scriptable.perks;
         extrasDescription = scriptable.extrasDescription;
@@ -73,7 +74,7 @@ public class RentableHome
         float rentAmount = 0;
         rentAmount += baseRentAmount;
         rentAmount += waterCost;
-        foreach (var extras in rentExtras)
+        foreach (var extras in RentExtras)
         {
             rentAmount += extras.extraCostPerMonth;
         }
