@@ -13,7 +13,7 @@ public class Bill
         billName = instBillName;
         billAmount = price;
         DateTimeSystem.OnMonthChange += payBill;
-        ListableExpense listableExpense = new ListableExpense(PlayerDataHolder.Current.MonthlyListableExpenses, (billName, billAmount));
+        ListableExpense listableExpense = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses, (billName, billAmount));
         onBillingChange.Invoke();
     }
     void payBill()

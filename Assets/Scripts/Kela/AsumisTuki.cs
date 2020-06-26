@@ -12,14 +12,14 @@ public class AsumisTuki : BaseTuki
     public override float CalculatedSupport()
     {
         float support = 0;
-        if(PlayerDataHolder.Current.PlayerRent.getTotal() > maximumCostOfLivingUntilBracketMax)
+        if(PlayerDataHolder.PlayerRent.getTotal() > maximumCostOfLivingUntilBracketMax)
         {
             support = 0.8f*(maximumCostOfLivingUntilBracketMax - CalculatedPerusOmaVastuu());
 
         }
         else
         {
-            support = 0.8f * (PlayerDataHolder.Current.PlayerRent.getTotal() - CalculatedPerusOmaVastuu());
+            support = 0.8f * (PlayerDataHolder.PlayerRent.getTotal() - CalculatedPerusOmaVastuu());
         }
 
         return support;

@@ -136,7 +136,7 @@ public static class PlayerEconomy
     public static void createPurchase(string name, float amount, bool stacked = false)
     {
         setMoney(amount);
-        ListableExpense expense = new ListableExpense(PlayerDataHolder.Current.OtherListableExpenses, (name, amount), stacked);
+        ListableExpense expense = new ListableExpense(PlayerDataHolder.OtherListableExpenses, (name, amount), stacked);
     }
     static void checkBelowZeroMoney()
     {

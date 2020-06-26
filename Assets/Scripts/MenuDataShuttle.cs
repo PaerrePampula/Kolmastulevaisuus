@@ -9,10 +9,10 @@ public class MenuDataShuttle : MonoBehaviour
 
     void Start()
     {
+
         PlayerDataHolder.playerHome = shuttledHome;
 
-        Destroy(gameObject);
-
     }
+
 
 }

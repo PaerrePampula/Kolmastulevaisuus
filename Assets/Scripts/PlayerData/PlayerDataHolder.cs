@@ -27,8 +27,8 @@ public class PlayerDataHolder : MonoBehaviour
 
     private PlayerMoney playerMoney;
     private List<IncomeSource> incomeSources;
-    public List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
-    public List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
+    public static List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
+    public static List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
 
     #endregion
     #region META
@@ -36,7 +36,7 @@ public class PlayerDataHolder : MonoBehaviour
     #endregion
     #region ASUNTO, VUOKRA
     public List<FoodItem> playerFoods = new List<FoodItem>();
-    private Rent rent;
+    private static Rent rent;
     private static RentableHome rentablehome;
     #endregion
     #region Statsit
@@ -56,17 +56,18 @@ public class PlayerDataHolder : MonoBehaviour
             {
                 RentableHome newrentableHome = new RentableHome(Resources.Load<RentableHomeScriptable>("FallBack"));
                 rentablehome = newrentableHome;
-                Current.PlayerRent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
+                PlayerRent = new Rent(rentablehome.BaseRent, rentablehome.WaterCost, rentablehome.ElectricityCost);
             }
             return rentablehome;
         }
         set
         {
             rentablehome = value;
+            PlayerRent = new Rent(value.BaseRent, value.WaterCost, value.ElectricityCost);
 
         }
     }
-    public Rent PlayerRent
+    public static Rent PlayerRent
     {
         get
         {
