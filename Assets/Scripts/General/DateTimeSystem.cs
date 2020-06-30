@@ -63,7 +63,7 @@ public class DateTimeSystem : MonoBehaviour
         GameObject go = Instantiate(weekIndicatorObject);
         go.transform.SetParent(MainCanvas.mainCanvas.transform);
         go.transform.localPosition = Vector3.zero;
-        go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("Viikko" + weekIndicator);
+        go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("Viikko " + weekIndicator);
     }
     public void ChangeWeek()
     {
