@@ -17,7 +17,7 @@ MonoBehaviour:
     varastotiloissa. \nTy\xF6ntekij\xE4lt\xE4 ei vaadita trukkikorttia, mutta sit\xE4
     katsotaan hakuprosessissamme hyv\xE4ll\xE4. Tarvittaessa yritys kustantaa ty\xF6ntekij\xE4lle
     trukkikortin."
-  workHoursPerDay: 7
+  workHoursPerDay: 6
   payByHour: 11
   jobLengthInMonths: 5
   successMultiplier: 20
