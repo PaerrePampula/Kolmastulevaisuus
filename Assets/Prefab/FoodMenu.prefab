@@ -116,7 +116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Osta ruokaa, 12,50 euroa
+  m_text: Osta ruokaa, 20 euroa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
+  m_fontSize: 16
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -185,10 +185,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2339372826581808279}
-    characterCount: 24
+    characterCount: 21
     spriteCount: 0
     spaceCount: 3
-    wordCount: 5
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodUseTimes: 0
-  cost: 12.5
+  cost: 20
   saturation: 0
   foodName: 
   increaseAmount: 10

@@ -20,6 +20,10 @@ public class UiGeneric : MonoBehaviour //Jokaisen UI palikkaan sopivia ominaisuu
         Destroy(gameObject);
 
     }
+    public void DestroyAbove()
+    {
+        Destroy(gameObject.transform.parent.gameObject);
+    }
 
 
     public void CallElement() //Kutsutaan ui-elementti x peliin jossakin click eventissä esim.

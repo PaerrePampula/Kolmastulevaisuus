@@ -63,6 +63,7 @@ MonoBehaviour:
   cost: 1.5
   saturation: 10
   foodName: "Vehn\xE4puuro"
+  increaseAmount: 4
 --- !u!114 &4219505087066975571
 MonoBehaviour:
   m_ObjectHideFlags: 0

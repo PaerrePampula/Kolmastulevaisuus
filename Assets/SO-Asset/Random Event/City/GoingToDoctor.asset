@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: GoingToDoctor
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 4
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 03000000
+  eventTexts:
+  - eventDialog: "Koit jostain tuntemattomasta syyst\xE4 j\xE4rkytt\xE4v\xE4\xE4
+      kipua, jouduit k\xE4ym\xE4\xE4n l\xE4\xE4k\xE4rill\xE4! [L\xE4\xE4k\xE4rireissu
+      maksoi 23 euroa]"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "Selv\xE4"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -23
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 4
+        actionString1: "L\xE4\xE4k\xE4rireissu"
+        actionString2: 
+        actionFloat1: 23
+        actionFloat2: 0
+        actionBool1: 1
+      randomizedChoiceCustomActions: []
+      firedFlags: []

@@ -50,6 +50,7 @@ MonoBehaviour:
   cost: 2.65
   saturation: 15
   foodName: Kananuudelit
+  increaseAmount: 4
 --- !u!114 &114377417185420254
 MonoBehaviour:
   m_ObjectHideFlags: 0

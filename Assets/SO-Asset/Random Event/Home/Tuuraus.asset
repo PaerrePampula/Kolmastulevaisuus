@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tuuraus
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 2
+  weeksFromStartForFire: 4
   neededFlags:
   - FlagName: JOB_RECEIVED
     TimeToHappen: 0

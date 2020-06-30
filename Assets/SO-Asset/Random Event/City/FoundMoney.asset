@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: FoundMoney
   m_EditorClassIdentifier: 
-  fireOnce: 0
-  weeksFromStartForFire: 0
+  fireOnce: 1
+  weeksFromStartForFire: 3
   neededFlags: []
   Prerequisites: []
   fire_locations: 02000000

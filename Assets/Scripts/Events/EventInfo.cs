@@ -85,4 +85,5 @@ public class PurchaseInfo : EventInfo
 {
     public string purchaseName;
     public float purchaseCost;
+    public bool singleuse = false;
 }

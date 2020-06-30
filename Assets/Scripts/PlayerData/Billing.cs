@@ -18,6 +18,8 @@ public class Billing : MonoBehaviour
         {
             Bill trainPayment = new Bill("Juna kausilippu - 30 päivää", monthPaymentForTrains);
         }
+        Bill homeOtherPayments = new Bill("Kodin lyhytkestoiset tarvikkeet", 10f);
+        Bill homeHygiene = new Bill("Henkilökohtainen hygienia", 25f);
 
     }
     void addBill(Bill bill)
@@ -27,7 +29,7 @@ public class Billing : MonoBehaviour
     void createBillFromEvent(EventInfo info)
     {
         PurchaseInfo billInfo = (PurchaseInfo)info;
-        Bill bill = new Bill(billInfo.purchaseName, billInfo.purchaseCost);
+        Bill bill = new Bill(billInfo.purchaseName, billInfo.purchaseCost, billInfo.singleuse);
         addBill(bill);
     }
 }

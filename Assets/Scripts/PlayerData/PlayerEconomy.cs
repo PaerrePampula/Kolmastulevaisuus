@@ -93,6 +93,7 @@ public static class PlayerEconomy
     {
         for (int i = 0; i < incomeSources().Count; i++)
         {
+            if (incomeSources().Count == 0) return;
             if (GlobalGameFlags.GetFlag("PLAYER_HAS_APPLIED_TAXFORM") == null)
             {
                 Flag taxFlag = new Flag("PLAYER_INFORMED_ABOUT_TAXFORM", 0, true);
@@ -165,10 +166,11 @@ public static class PlayerEconomy
             if (incomeSources()[i].AnExtra == true)
             {
                 incomeSources().Remove(incomeSources()[i]);
+
+                OnNewIncome.Invoke();
             }
         }
 
-        OnNewIncome.Invoke();
     }
 
 }

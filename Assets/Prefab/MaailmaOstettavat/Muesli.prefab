@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7021122413227107971}
   - component: {fileID: 5311271163198341271}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Muesli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   cost: 2.5
   saturation: 15
   foodName: Muromysli
+  increaseAmount: 4
 --- !u!114 &5311271163198341271
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ MonoBehaviour:
       - eventClass: 0
         actionString1: 
         actionString2: 
-        actionFloat1: 25
+        actionFloat1: -25
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
@@ -75,7 +75,7 @@ MonoBehaviour:
         FloatComparatorValue: 34.99
         uniqueStatComparison: 0
         TypeOfComparison: 5
-      nextDialog: 0
+      nextDialog: -1
       choiceDescriptor: "[Osta v\xE4h\xE4n nopeampi 50 megan kaapelinnetti (Maksaa
         9,99 euroa kuussa]"
       clickActions: []
@@ -89,7 +89,7 @@ MonoBehaviour:
       - eventClass: 0
         actionString1: 
         actionString2: 
-        actionFloat1: 25
+        actionFloat1: -25
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1

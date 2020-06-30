@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: "Ylity\xF6tCall"
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 0
-  neededFlags: []
+  weeksFromStartForFire: 2
+  neededFlags:
+  - FlagName: JOB_RECEIVED
+    TimeToHappen: 0
+    uniqueFlag: 0
   Prerequisites:
   - playerStat: 1
     comparisonValueType: 2

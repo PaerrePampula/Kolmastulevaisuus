@@ -94,6 +94,10 @@ public class CustomAction
                 PurchaseInfo billingInfo = new PurchaseInfo();
                 billingInfo.purchaseCost = actionFloat1;
                 billingInfo.purchaseName = actionString1;
+                if (actionBool1 == true)
+                {
+                    billingInfo.singleuse = true;
+                }
                 PerformActionWithEventInfo(Event_Type.CREATE_BILLING, billingInfo);
                 break;
             default:

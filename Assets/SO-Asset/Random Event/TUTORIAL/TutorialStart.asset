@@ -20,7 +20,7 @@ MonoBehaviour:
   eventTexts:
   - eventDialog: "P\xE4\xE4sit pitk\xE4n loman j\xE4lkeen taas koulun penkille. Koulussasi
       pidettiin pikainen esittelytuokio, ja tutustuit sinun uusiin koulukavereihin.\nVanhempasi
-      muisti sinua antamalla sinulle 250 euroa, jotta p\xE4\xE4set helpommin jaloillesi\n\nSiit\xE4
+      muisti sinua antamalla sinulle 350 euroa, jotta p\xE4\xE4set helpommin jaloillesi\n\nSiit\xE4
       puheen ollen, tajuat ett\xE4 olet hieman j\xE4lkijunassa raha-asioiden hallinnassa,
       ehk\xE4 sinun kannattaisi menn\xE4 hakemaan tukia, tai t\xF6it\xE4?\t\n\n\n"
     eventDialogChoices:
@@ -33,7 +33,7 @@ MonoBehaviour:
       - eventClass: 0
         actionString1: 
         actionString2: 
-        actionFloat1: 250
+        actionFloat1: 350
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1

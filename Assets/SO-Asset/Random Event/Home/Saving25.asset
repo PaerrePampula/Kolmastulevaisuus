@@ -21,7 +21,13 @@ MonoBehaviour:
   - eventDialog: "Olet tallettamassa 25 euroa s\xE4\xE4st\xF6tilille"
     eventDialogChoices:
     - neededFlags: []
-      Prerequisites: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: -25
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
       nextDialog: -1
       choiceDescriptor: Talleta
       clickActions:

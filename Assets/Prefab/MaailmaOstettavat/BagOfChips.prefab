@@ -50,6 +50,7 @@ MonoBehaviour:
   cost: 1.5
   saturation: 5
   foodName: Sipsit
+  increaseAmount: 1
 --- !u!114 &2386634150124097727
 MonoBehaviour:
   m_ObjectHideFlags: 0
