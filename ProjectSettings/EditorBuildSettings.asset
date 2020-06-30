@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home/TwoRoomAptNo1.unity
     guid: 67bed30735eb8724d8c079dfabcc35d8
+  - enabled: 1
+    path: Assets/Scenes/storage.unity
+    guid: 8f6518ed3bd20834190757ad677cbc74
   m_configObjects: {}
