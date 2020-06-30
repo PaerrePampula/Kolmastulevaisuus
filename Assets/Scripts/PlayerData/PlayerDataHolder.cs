@@ -44,6 +44,7 @@ public class PlayerDataHolder : MonoBehaviour
     private Stat comfortableness;
     private Stat hunger;
     private Stat ranking;
+    Stat foodamount;
     List<Stat> allStats;
     Stat social;
     Stat study;
@@ -253,6 +254,23 @@ public class PlayerDataHolder : MonoBehaviour
         }
     }
 
+    public Stat Foodamount
+    {
+        get 
+        {
+            if (foodamount == null)
+            {
+                foodamount = new Stat(SimStatType.FoodResources, 0, 100);
+                allStats.Add(foodamount);
+            }
+            return foodamount; 
+        }
+        set
+        {
+            foodamount = value;
+        }
+    }
+
     void OnEnable()
     {
         allStats = new List<Stat>();
@@ -269,7 +287,7 @@ public class PlayerDataHolder : MonoBehaviour
         FoodItem.onFoodExpire += removeExpiredFood;
         WorldLimitedUseInteractable.onInteractUse += deductStamina;
         LocationHandler.OnTurnEnd += resetStamina;
-        FoodPreparer.onFoodPrepare += ListFood;
+        //FoodPreparer.onFoodPrepare += ListFood;
         DateTimeSystem.OnMonthChange += clearMonthBudget;
     }
     private void OnDisable()
@@ -277,7 +295,7 @@ public class PlayerDataHolder : MonoBehaviour
         FoodItem.onFoodExpire -= removeExpiredFood;
         WorldLimitedUseInteractable.onInteractUse -= deductStamina;
         LocationHandler.OnTurnEnd -= resetStamina;
-        FoodPreparer.onFoodPrepare -= ListFood;
+        //FoodPreparer.onFoodPrepare -= ListFood;
         DateTimeSystem.OnMonthChange -= clearMonthBudget;
     }
 

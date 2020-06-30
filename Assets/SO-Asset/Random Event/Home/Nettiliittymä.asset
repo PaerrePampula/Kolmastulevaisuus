@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: "Nettiliittym\xE4"
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 1
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 03000000
+  eventTexts:
+  - eventDialog: "Olet toistaiseksi k\xE4ytt\xE4nyt asunnossasi taloyhti\xF6n tarjoamaa
+      10mt/s netti\xE4, mutta olet todennut sen melko hitaaksi vauhdiksi, harkitsetko
+      parempaa?\nJos ostat uuden, joudut my\xF6s maksamaan uuden reitittimen toimituksesta
+      25 euroa"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 44.99
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: '[Osta 100 megan kaapelinetti (Maksaa 19,99 euroa kuussa)]'
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 4
+        actionString1: "Kaapeliverkkoliittym\xE4 - 100mt/s"
+        actionString2: 
+        actionFloat1: 19.99
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Comfortableness
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 34.99
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: 0
+      choiceDescriptor: "[Osta v\xE4h\xE4n nopeampi 50 megan kaapelinnetti (Maksaa
+        9,99 euroa kuussa]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 4
+        actionString1: "Kaapeliverkkoliittym\xE4 - 50mt/s"
+        actionString2: 
+        actionFloat1: 9.99
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Comfortableness
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "En osta mit\xE4\xE4n"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

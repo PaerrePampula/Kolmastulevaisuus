@@ -81,7 +81,7 @@ public static class PlayerEconomy
     static void registerExtraIncome(EventInfo info)
     {
         ExtraIncomeInfo extra = (ExtraIncomeInfo)info;
-        IncomeSource incomeSource = new IncomeSource(extra.extraIncomeAmount, extra.isAnExtra);
+        IncomeSource incomeSource = new IncomeSource(extra.extraIncomeAmount, true);
         incomeSources().Add(incomeSource);
 
         TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
@@ -168,8 +168,7 @@ public static class PlayerEconomy
             }
         }
 
-
-        OnIncrease?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
+        OnNewIncome.Invoke();
     }
 
 }

@@ -6,6 +6,6 @@ public enum eventClassName
     FloatChange,
     SimStat,
     FlagFire,
-    Purchase
-
+    Purchase,
+    Billing
 }

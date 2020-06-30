@@ -17,13 +17,12 @@ MonoBehaviour:
   waterCost: 10
   sizeInMetersSquared: 36
   electricityCost: 10
+  closeEnoughToSchoolToWalk: 0
   homeInsurance: 0
   needToHaveHomeInsurance: 1
   extrasOnRentableHome:
   - extraName: Sauna
     extraCostPerMonth: 3.5
-  - extraName: "L\xE4mmitetty autoparkki"
-    extraCostPerMonth: 10
   displayPrefab: {fileID: 2546730403149268248, guid: f8f5aec31c9397d4e867eeb6a2f01c79,
     type: 3}
   longFormDescription: "Rivitalo l\xE4hell\xE4 kouluja ja keskustaa. L\xE4hell\xE4

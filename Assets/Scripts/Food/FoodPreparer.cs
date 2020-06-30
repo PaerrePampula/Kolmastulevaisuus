@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FoodPreparer : MonoBehaviour
 {
-    public delegate void FoodPrepare(FoodItem food);
-    public static event FoodPrepare onFoodPrepare;
+
     [SerializeField]
     int foodUseTimes;
     [SerializeField]
@@ -14,15 +13,17 @@ public class FoodPreparer : MonoBehaviour
     float saturation;
     [SerializeField]
     string foodName;
+    [SerializeField]
+    float increaseAmount;
 
 
     public virtual void PrepareFood()
     {
         if (PlayerDataHolder.Current.PlayerMoney.getValue<float>() >= cost)
         {
-            FoodItem food = new FoodItem(foodName, foodUseTimes, saturation);
-            onFoodPrepare?.Invoke(food);
-            PlayerEconomy.createPurchase(foodName, -cost, true);
+            PlayerDataHolder.Current.Foodamount.ChangeStat(increaseAmount);
+
+            PlayerEconomy.createPurchase("Ruokakauppareissut", -cost, true);
         }
         else
         {

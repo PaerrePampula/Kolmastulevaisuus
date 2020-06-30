@@ -5,5 +5,6 @@
     Hunger,
     Ranking,
     Social,
-    Study
+    Study,
+    FoodResources
 };

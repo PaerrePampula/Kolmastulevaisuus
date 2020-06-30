@@ -90,6 +90,12 @@ public class CustomAction
                 //event_Type = Event_Type.
                 PerformActionWithEventInfo(event_Type, purchaseInfo);
                 break;
+            case eventClassName.Billing:
+                PurchaseInfo billingInfo = new PurchaseInfo();
+                billingInfo.purchaseCost = actionFloat1;
+                billingInfo.purchaseName = actionString1;
+                PerformActionWithEventInfo(Event_Type.CREATE_BILLING, billingInfo);
+                break;
             default:
                 break;
         }

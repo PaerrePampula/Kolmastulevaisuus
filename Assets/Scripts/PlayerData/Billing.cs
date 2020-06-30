@@ -12,6 +12,7 @@ public class Billing : MonoBehaviour
     }
     private void Start()
     {
+        GameEventSystem.RegisterListener(Event_Type.CREATE_BILLING, createBillFromEvent);
         monthPaymentForTrains = ConfigFileReader.getValue("SeasonTicketSmallTripPrice");
         if (PlayerDataHolder.playerHome.CloseToSchool == false)
         {
@@ -22,5 +23,11 @@ public class Billing : MonoBehaviour
     void addBill(Bill bill)
     {
         listOfBills.Add(bill);
+    }
+    void createBillFromEvent(EventInfo info)
+    {
+        PurchaseInfo billInfo = (PurchaseInfo)info;
+        Bill bill = new Bill(billInfo.purchaseName, billInfo.purchaseCost);
+        addBill(bill);
     }
 }

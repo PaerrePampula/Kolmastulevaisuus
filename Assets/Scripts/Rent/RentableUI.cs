@@ -54,6 +54,17 @@ public class RentableUI : MonoBehaviour
         shortForm += rentable.ShortDescription;
         shortDescriptionText.text = shortForm;
 
+        if (rentable.RentExtras.Length < 1)
+        {
+            extrasInRentText.text = "Ei lisäkuluja";
+        }
+        else
+        {
+            for (int i = 0; i < rentable.RentExtras.Length; i++)
+            {
+                extrasInRentText.text += rentable.RentExtras[i].extraName + ", hinta: " + rentable.RentExtras[i].extraCostPerMonth + "e/kk\n";
+            }
+        }
 
     }
 }

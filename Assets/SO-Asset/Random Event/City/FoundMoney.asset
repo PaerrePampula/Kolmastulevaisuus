@@ -25,7 +25,9 @@ MonoBehaviour:
       Prerequisites: []
       nextDialog: -1
       choiceDescriptor: Vapaata riistaa!
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       customRunTimeActions:
       - eventClass: 0
         actionString1: 
@@ -45,7 +47,9 @@ MonoBehaviour:
       Prerequisites: []
       nextDialog: -1
       choiceDescriptor: Unohda se
-      clickActions: []
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       customRunTimeActions: []
       randomizedChoiceCustomActions: []
       firedFlags: []

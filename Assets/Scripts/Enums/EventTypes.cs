@@ -18,6 +18,7 @@ public enum Event_Type
     FLAG_FIRE,
     EVENT_REGISTER,
     SIMSTAT_CHANGE,
-    EXTRA_INCOME
+    EXTRA_INCOME,
+    CREATE_BILLING
 }
 #endregion

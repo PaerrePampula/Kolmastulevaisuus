@@ -12,7 +12,20 @@ public class HungerSystem : MonoBehaviour
     }
     void incrementHunger()
     {
-        PlayerDataHolder.Current.Hunger.ChangeStat(10f);
+        float startvalue = PlayerDataHolder.Current.Foodamount.StatFloat;
+        PlayerDataHolder.Current.Foodamount.ChangeStat(-10);
+        float endvalue = startvalue - 10;
+        if (endvalue < 0)
+        {
+
+            PlayerDataHolder.Current.Hunger.ChangeStat(-endvalue);
+
+        }
+        else
+        {
+            PlayerDataHolder.Current.Hunger.ChangeStat(-10);
+        }
+
         checkStarving();
     }
     void incrementHunger(EventInfo info)
