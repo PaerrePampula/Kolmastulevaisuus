@@ -7,12 +7,12 @@ public class GameStateHandler : MonoBehaviour
     public static event Damage OnDamage;
     public delegate void GameEnd();
     public static event GameEnd OnGameEnd;
-    static int maxBusts = 5;
+    static int maxBusts = 2;
     static int monthsofPlay = 4;
     public void Start()
     {
         DateTimeSystem.OnMonthChange += checkEnd;
-        maxBusts = 5;
+        maxBusts = 2;
         PlayerEconomy.OnBust += checkBustState;
     }
 
