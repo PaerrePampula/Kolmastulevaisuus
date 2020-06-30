@@ -14,6 +14,7 @@ public class GameStateHandler : MonoBehaviour
         DateTimeSystem.OnMonthChange += checkEnd;
         maxBusts = 2;
         PlayerEconomy.OnBust += checkBustState;
+        Flag.OnFlagFire += checkFlag;
     }
 
 
@@ -21,6 +22,13 @@ public class GameStateHandler : MonoBehaviour
     {
         monthsofPlay--;
         if (monthsofPlay <= 0)
+        {
+            OnGameEnd.Invoke();
+        }
+    }
+    static void checkFlag(Flag flag)
+    {
+        if (flag.FlagName == "GAME_END")
         {
             OnGameEnd.Invoke();
         }

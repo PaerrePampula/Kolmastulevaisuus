@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: GameEndFail
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags:
   - FlagName: PLAYER_FAIL
     TimeToHappen: 0
@@ -34,4 +36,11 @@ MonoBehaviour:
         actionFloat1: 0
         actionFloat2: 0
         actionBool1: 0
+      - eventClass: 2
+        actionString1: GAME_END
+        actionString2: 
+        actionFloat1: 0
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []
