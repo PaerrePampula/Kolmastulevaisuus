@@ -30,11 +30,9 @@ public class JobNoticeInfoBehaviour : UiGeneric
             flag.FireFlag();
         }
 
-        TimedActionRaise timedActionRaise = new TimedActionRaise(Event_Type.JOB_APPLY);
-
         JobInfo jobInfo = new JobInfo();
         jobInfo.jobNotice = _jobNotice;
-        timedActionRaise.infoable = jobInfo;
+
         GameEventSystem.DoEvent(
             Event_Type.JOB_APPLY,
             jobInfo

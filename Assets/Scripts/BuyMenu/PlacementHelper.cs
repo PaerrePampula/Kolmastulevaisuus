@@ -65,12 +65,20 @@ public class PlacementHelper : MonoBehaviour
         }
         placingObject = Instantiate(buyObject.GetBuyObjectScriptable().prefab);
         placingObject.transform.rotation = Quaternion.Euler(0, 130, 0);
-        SetPlacing(true);
+        if (placingObject.GetComponent<BuyObjectBehaviour>() == null)
+        {
+            placingObject.AddComponent<BuyObjectBehaviour>();
+        }
+        placingObject.GetComponent<BuyObjectBehaviour>().Initialize(buyObject.BuyValue, buyObject.SatisfactionGain);
+
         currentBuyObject = buyObject;
         meshBounds = placingObject.GetComponent<Collider>().bounds;
+        ignoredPlanes = getIgnorableTransforms(placingObject);
+
         PointAndClickMovement.setMovementStatus(false);
         MainCanvas.mainCanvas.freezeOverride = true;
-        ignoredPlanes = getIgnorableTransforms(placingObject);
+        SetPlacing(true);
+
         if (placingObject.GetComponent<WorldInteractive>() != null)
         {
             placingObject.GetComponent<WorldInteractive>().beingMoved = true;
@@ -165,18 +173,22 @@ public class PlacementHelper : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            SetPlacing(false);
-            SetMoving(false);
-            PointAndClickMovement.setMovementStatus(true);
-            MainCanvas.mainCanvas.freezeOverride = false;
-            ignoredPlanes.Clear();
-            if (placingObject != null)
-            {
-                Destroy(placingObject);
-                currentBuyObject = null;
-            }
-            OnPlacementInteract?.Invoke(false);
+            resetInteraction();
         }
+    }
+    void resetInteraction()
+    {
+        SetPlacing(false);
+        SetMoving(false);
+        PointAndClickMovement.setMovementStatus(true);
+        MainCanvas.mainCanvas.freezeOverride = false;
+        ignoredPlanes.Clear();
+        if (placingObject != null)
+        {
+            Destroy(placingObject);
+            currentBuyObject = null;
+        }
+        OnPlacementInteract?.Invoke(false);
     }
     void clickOnPlacement()
     {
@@ -190,6 +202,10 @@ public class PlacementHelper : MonoBehaviour
                 meshBounds = placingObject.GetComponent<Collider>().bounds;
                 placingObject.layer = 0;
                 ignoredPlanes = getIgnorableTransforms(placingObject);
+            }
+            if (placingObject.GetComponent<WorldInteractive>() != null)
+            {
+                placingObject.GetComponent<WorldInteractive>().beingMoved = true;
             }
 
 
@@ -217,10 +233,10 @@ public class PlacementHelper : MonoBehaviour
         currentBuyObject = null;
 
     }
-    // Use this for initialization
-    void Start()
+    void sellItem()
     {
-
+        placingObject.GetComponent<BuyObjectBehaviour>().SellItem();
+        resetInteraction();
     }
 
     // Update is called once per frame
@@ -241,6 +257,10 @@ public class PlacementHelper : MonoBehaviour
                 movePlacement();
                 rotatePlacement();
                 placePlacement(false);
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    sellItem();
+                }
             }
 
         }
