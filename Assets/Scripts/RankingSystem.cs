@@ -17,12 +17,11 @@ public class RankingSystem : MonoBehaviour
     {
         LocationHandler.OnTurnEnd += deliberateNewRankChangeBasedOnWeek;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        LocationHandler.OnTurnEnd -= deliberateNewRankChangeBasedOnWeek;
     }
+
     void changeRank(float rankingChange)
     {
         PlayerDataHolder.Current.Ranking.ChangeStat(rankingChange);

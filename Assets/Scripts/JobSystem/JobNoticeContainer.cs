@@ -23,6 +23,7 @@ public class JobNoticeContainer : MonoBehaviour
     private void OnDisable()
     {
         JobHandler.OnJobApply -= updateNotices;
+        JobSearcher.OnMenuInitialized -= transferNoticeData;
     }
     void Start()
     {

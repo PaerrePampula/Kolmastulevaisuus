@@ -7,15 +7,14 @@ public class LifeBarUI : MonoBehaviour
     [SerializeField]
     List<Animator> hearts = new List<Animator>();
     // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
         GameStateHandler.OnDamage += VizualizeDamage;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        GameStateHandler.OnDamage -= VizualizeDamage;
     }
     void VizualizeDamage(int times)
     {

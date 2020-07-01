@@ -7,6 +7,10 @@ public class PlayerColorChanger : MonoBehaviour //Tämä oli vain debugia ja eve
     {
         GameEventSystem.RegisterListener(Event_Type.DEBUG_COLOR_CHANGE, changeColor);
     }
+    private void OnDisable()
+    {
+        GameEventSystem.UnRegisterListener(Event_Type.DEBUG_COLOR_CHANGE, changeColor);
+    }
 
     void changeColor(EventInfo info)
     {

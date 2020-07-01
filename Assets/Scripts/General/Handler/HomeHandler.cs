@@ -9,13 +9,17 @@ public static class HomeHandler
     static void Init()
     {
         DateTimeSystem.OnMonthChange += PayRent;
+        ResetButton.onReset += UnInit;
+    }
+    static void UnInit()
+    {
+        DateTimeSystem.OnMonthChange -= PayRent;
+        ResetButton.onReset -= UnInit;
     }
     #endregion
-
     static void PayRent()
     {
         PaerToolBox.changePlayerMoney(-PlayerDataHolder.PlayerRent.getTotal());
-
     }
 
 }

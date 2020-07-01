@@ -5,14 +5,20 @@ using System.Collections.Generic;
 public class Billing : MonoBehaviour
 {
     float monthPaymentForTrains = 0;
-    List<Bill> listOfBills = new List<Bill>();
+    List<Bill> listOfBills;
     private void OnEnable()
     {
+        GameEventSystem.RegisterListener(Event_Type.CREATE_BILLING, createBillFromEvent);
         Bill.onBillingCreate += addBill;
+    }
+    private void OnDisable()
+    {
+        GameEventSystem.UnRegisterListener(Event_Type.CREATE_BILLING, createBillFromEvent);
+        Bill.onBillingCreate -= addBill;
     }
     private void Start()
     {
-        GameEventSystem.RegisterListener(Event_Type.CREATE_BILLING, createBillFromEvent);
+        listOfBills = new List<Bill>();
         monthPaymentForTrains = ConfigFileReader.getValue("SeasonTicketSmallTripPrice");
         if (PlayerDataHolder.playerHome.CloseToSchool == false)
         {

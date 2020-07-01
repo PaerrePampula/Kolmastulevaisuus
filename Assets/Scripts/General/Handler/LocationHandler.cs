@@ -4,8 +4,8 @@ using UnityEngine;
 public class LocationHandler : MonoBehaviour
 {
     #region Fields
-    public List<EventLocation> eventLocations;
-    static EventLocation currentLocation;
+    public List<EventLocation> eventLocations = new List<EventLocation>();
+    EventLocation currentLocation;
 
     public delegate void LocationChange();
     public static event LocationChange OnLocationChange;
@@ -29,22 +29,46 @@ public class LocationHandler : MonoBehaviour
     #endregion
 
     #region Getters and setters
-    public static EventLocation CurrentLocation => currentLocation;
+    public EventLocation CurrentLocation
+    {
+        get
+        {
+            if(currentLocation == null)
+            {
+                currentLocation = eventLocations[0]; //Aloitetaan ekasta lokaatiosta aina, kun peli alkaa
+            }
+            return currentLocation;
+        }
+        set
+        {
+            currentLocation = value;
+        }
+    }
+
     int CurrentIndex => eventLocations.IndexOf(currentLocation);
 
     void setCurrentLocation(int index)
     {
-        currentLocation = eventLocations[index];
+        Current.currentLocation = eventLocations[index];
     }
     #endregion
 
     #region MonobehaviourDefaults
-    void Awake()
+    void Start()
     {
-        currentLocation = eventLocations[0]; //Aloitetaan ekasta lokaatiosta aina, kun peli alkaa
+        currentLocation = eventLocations[0];
+
+
+    }
+    private void OnEnable()
+    {
         GameEventSystem.RegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
         //Kamera kääntyy? Sijainti muuttuu
-
+    }
+    private void OnDisable()
+    {
+        GameEventSystem.UnRegisterListener(Event_Type.CAMERA_TURN, ChangeLocationForward);
+        //Kamera kääntyy? Sijainti muuttuu
     }
     #endregion
 

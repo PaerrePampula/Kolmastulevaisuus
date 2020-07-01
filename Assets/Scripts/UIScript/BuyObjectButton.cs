@@ -29,11 +29,6 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
         buttonText.text = BuyObjectScriptable.objectName + " - Hinta: " + BuyObjectScriptable.objectValue + "e";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void BuyObject()
     {
         BuyObject buyObject = new BuyObject(BuyObjectScriptable);
@@ -52,7 +47,7 @@ public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         rendImage.gameObject.SetActive(true);
-        OnHover.Invoke(BuyObjectScriptable);
+        OnHover?.Invoke(BuyObjectScriptable);
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)

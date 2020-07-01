@@ -7,18 +7,15 @@ public class EndScreenGenerator : MonoBehaviour
     [SerializeField]
     Transform endScreen;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         EndScreenFadeOut.OnEnd += startEnd;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        EndScreenFadeOut.OnEnd -= startEnd;
     }
+
     void startEnd()
     {
         endScreen.gameObject.SetActive(true);

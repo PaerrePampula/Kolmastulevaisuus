@@ -35,7 +35,7 @@ public class PlayerDataHolder : MonoBehaviour
     int limitedUseWorldInteractableStamina = 2;
     #endregion
     #region ASUNTO, VUOKRA
-    public List<FoodItem> playerFoods = new List<FoodItem>();
+
     private static Rent rent;
     private static RentableHome rentablehome;
     #endregion
@@ -273,6 +273,7 @@ public class PlayerDataHolder : MonoBehaviour
 
     void OnEnable()
     {
+
         allStats = new List<Stat>();
         playerMoney = new PlayerMoney();
 
@@ -284,30 +285,29 @@ public class PlayerDataHolder : MonoBehaviour
         Study.Init();
 
 
-        FoodItem.onFoodExpire += removeExpiredFood;
+
         WorldLimitedUseInteractable.onInteractUse += deductStamina;
         LocationHandler.OnTurnEnd += resetStamina;
-        //FoodPreparer.onFoodPrepare += ListFood;
+
         DateTimeSystem.OnMonthChange += clearMonthBudget;
     }
     private void OnDisable()
     {
-        FoodItem.onFoodExpire -= removeExpiredFood;
+
         WorldLimitedUseInteractable.onInteractUse -= deductStamina;
         LocationHandler.OnTurnEnd -= resetStamina;
-        //FoodPreparer.onFoodPrepare -= ListFood;
+
         DateTimeSystem.OnMonthChange -= clearMonthBudget;
+        MonthlyListableExpenses = new List<ListableExpense>();
+        OtherListableExpenses = new List<ListableExpense>();
+
     }
 
     void clearMonthBudget()
     {
         OtherListableExpenses.Clear();
     }
-    void removeExpiredFood(FoodItem food)
-    {
-        playerFoods.Remove(food);
 
-    }
     void deductStamina()
     {
         LimitedUseWorldInteractableStamina--;
@@ -316,10 +316,7 @@ public class PlayerDataHolder : MonoBehaviour
     {
         LimitedUseWorldInteractableStamina = 2;
     }
-    void ListFood(FoodItem food)
-    {
-        playerFoods.Add(food);
-    }
+
     public Stat getStatByEnum(SimStatType simStatType)
     {
         var stat = allStats.SingleOrDefault(givenStat => givenStat.SimStatType == simStatType);

@@ -51,7 +51,7 @@ public class GameEvent
     {
         fireTime--;
 
-        if ((fireTime <= 0) && (fire_locations.Contains(LocationHandler.CurrentLocation.getLocation()) || fire_locations.Contains(FIRE_LOCATION.ANY)))
+        if ((fireTime <= 0) && (fire_locations.Contains(LocationHandler.Current.CurrentLocation.getLocation()) || fire_locations.Contains(FIRE_LOCATION.ANY)))
         {
             OnEventSelfTriggered.Invoke(this);
             LocationHandler.OnTurnEnd -= CheckForFiring;

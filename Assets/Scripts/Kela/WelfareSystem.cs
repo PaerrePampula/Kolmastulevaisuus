@@ -29,18 +29,21 @@ public class WelfareSystem : MonoBehaviour //Tää säilöö muutaman scriptable
     private void Start()
     {
         maximumHouseholdGrossIncomeForAsuntotukiEligibilityInZone3WhenLivingAlone = ConfigFileReader.getValue("maxGrossForHouseHoldAsumistuki");
-        GameEventSystem.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
+
 
     }
     private void OnEnable()
     {
         DateTimeSystem.OnMonthChange += givePlayerMonthlySupport;
         IncomeSource.OnNewIncomeRegister += checkEligiblityOnNewIncomeArrival;
+        GameEventSystem.RegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
     }
     private void OnDisable()
     {
         DateTimeSystem.OnMonthChange -= givePlayerMonthlySupport;
         IncomeSource.OnNewIncomeRegister -= checkEligiblityOnNewIncomeArrival;
+        GameEventSystem.UnRegisterListener(Event_Type.PLAYER_WANTS_WELFARE, OnAWelfareApply);
+
     }
     #endregion
 

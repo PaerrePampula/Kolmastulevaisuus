@@ -16,7 +16,7 @@ public class PlayerPointer : MonoBehaviour
     private void OnDisable()
     {
         PointAndClickMovement.OnMoveStart -= MovePointerTo;
-        PointAndClickMovement.OnMoveStopped += DisablePointer;
+        PointAndClickMovement.OnMoveStopped -= DisablePointer;
     }
     void MovePointerTo(Vector3 vector3)
     {
@@ -32,9 +32,4 @@ public class PlayerPointer : MonoBehaviour
         pointerPrefab = Instantiate(pointerPrefab);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

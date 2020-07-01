@@ -21,11 +21,6 @@ public class DynamicHomeLocation : EventLocation
 
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
 
 }

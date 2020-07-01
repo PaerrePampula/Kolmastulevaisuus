@@ -34,8 +34,17 @@ public class MainCanvas : SceneCanvas
     {
 
         canvasTransform = parentOfNewTransforms;
+
+    }
+    private void OnEnable()
+    {
         GameEventSystem.RegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
         RandomEventUI.newEventTriggered += checkEventUIEnable;
+    }
+    private void OnDisable()
+    {
+        GameEventSystem.UnRegisterListener(Event_Type.UI_ELEMENT_CALL, callNewUI);
+        RandomEventUI.newEventTriggered -= checkEventUIEnable;
     }
 
     // Update is called once per frame
@@ -79,9 +88,9 @@ public class MainCanvas : SceneCanvas
     {
         try
         {
-            if (parentofGameEvents.GetChild(index).gameObject.activeSelf != true)
+            if (MainCanvas.mainCanvas.parentofGameEvents.GetChild(index).gameObject.activeSelf != true)
             {
-                parentofGameEvents.GetChild(index).gameObject.SetActive(true);
+                MainCanvas.mainCanvas.parentofGameEvents.GetChild(index).gameObject.SetActive(true);
             }
         }
         catch (UnityException)

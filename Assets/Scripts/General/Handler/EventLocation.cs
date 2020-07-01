@@ -38,6 +38,8 @@ public class EventLocation : MonoBehaviour //Eventlocation behaviour löytyy jok
     #endregion
     public FIRE_LOCATION getLocation()
     {
+
+
         return _location;
     }
     public void setLocation(FIRE_LOCATION fire_location)

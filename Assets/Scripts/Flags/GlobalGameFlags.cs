@@ -8,10 +8,18 @@ public class GlobalGameFlags : MonoBehaviour
     public static List<Flag> AllGlobalFlags; //Näitä flageja ois ihan kiva katella inspectorissa joten monobehaviour 
     public delegate void NewFlag(Flag flag);
     public static event NewFlag OnNewFlag;
-    private void Awake()
+    private void Start()
     {
         AllGlobalFlags = new List<Flag>();
+
+    }
+    private void OnEnable()
+    {
         GameEventSystem.RegisterListener(Event_Type.FLAG_FIRE, addFlag);
+    }
+    private void OnDisable()
+    {
+        GameEventSystem.UnRegisterListener(Event_Type.FLAG_FIRE, addFlag);
     }
     public static Flag GetFlag(string flagName)
     {

@@ -12,10 +12,14 @@ public class HomeUI : MonoBehaviour
         LocationHandler.OnLocationChange += checkLocation;
 
     }
+    private void OnDisable()
+    {
+        LocationHandler.OnLocationChange -= checkLocation;
+    }
     void checkLocation()
     {
 
-        if (LocationHandler.CurrentLocation.getLocation() == FIRE_LOCATION.HOME)
+        if (LocationHandler.Current.CurrentLocation.getLocation() == FIRE_LOCATION.HOME)
         {
             setChildrenStatus(true);
 

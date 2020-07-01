@@ -28,11 +28,7 @@ public class Bank : MonoBehaviour
     {
         Flag.OnFlagFire -= checkFlag;
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     void checkFlag(Flag flag)
     {
         switch (flag.FlagName)

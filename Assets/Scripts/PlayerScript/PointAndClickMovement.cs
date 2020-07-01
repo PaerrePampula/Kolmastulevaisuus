@@ -34,10 +34,7 @@ public class PointAndClickMovement : MonoBehaviour
     {
         MainCanvas.OnFreeze -= setMovementStatus;
     }
-    void storePlayer()
-    {
 
-    }
     // Update is called once per frame
     void Update()
     {

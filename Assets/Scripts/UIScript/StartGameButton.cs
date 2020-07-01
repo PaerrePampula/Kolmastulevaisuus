@@ -9,9 +9,7 @@ public class StartGameButton : MonoBehaviour
     public void BeginGame()
     {
         RegisterPlayerHome();
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
 
     }
     void RegisterPlayerHome()

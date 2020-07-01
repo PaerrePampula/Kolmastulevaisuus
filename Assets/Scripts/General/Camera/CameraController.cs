@@ -24,18 +24,15 @@ public class CameraController : MonoBehaviour
     #endregion
 
     #region MonoBehaviourDefaults
-    private void Awake()
+    private void Start()
     {
         GameEventSystem.RegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
 
     }
-    // Start is called before the first frame update
-    void Start()
+    private void OnDisable()
     {
-
-
+        GameEventSystem.UnRegisterListener(Event_Type.CAMERA_TURN, assignReferenceRotation);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -84,7 +81,7 @@ public class CameraController : MonoBehaviour
         endRotation = Quaternion.Euler(referenceRotation.x, Mathf.Round(referenceRotation.y + floatChangeInfo.changeofFloat), referenceRotation.z).eulerAngles;
         turnRequest = true;
         timelerped = 0;
-        OnSceneChange.Invoke();
+        OnSceneChange?.Invoke();
     }
 
 }

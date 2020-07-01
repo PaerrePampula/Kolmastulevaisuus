@@ -33,6 +33,7 @@ public class EconomyFields : MonoBehaviour
         PlayerEconomy.OnIncrease -= UpdateUI; //Jos tämä skripti poistuu, se ottaa sen tilauksen ensin pois. Miksi? Koska muuten tulisi null reference exceptioneita, jos tilaus on olemassa, mutta ei vastaanottajaa...
         PlayerEconomy.OnNewIncome += UpdateUI;
         Bill.onBillingChange -= UpdateUI;
+        StopAllCoroutines();
     }
     #endregion
     void UpdateUI(float amount) //Tämä on se metodi, joka lähtee automaattisesti raksuttamaan, jos skripti saa tietää kukkarossa tapahtuneesta muutoksesta. Tehokkaampaa kuin samankaltaisen metodin länttääminen updateen joka kutsuisi tätä joka ikinen frame....

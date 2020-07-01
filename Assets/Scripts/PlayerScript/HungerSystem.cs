@@ -10,6 +10,11 @@ public class HungerSystem : MonoBehaviour
         GameEventSystem.RegisterListener(Event_Type.SIMSTAT_CHANGE, incrementHunger);
 
     }
+    private void OnDisable()
+    {
+        LocationHandler.OnLocationChange -= incrementHunger;
+        GameEventSystem.UnRegisterListener(Event_Type.SIMSTAT_CHANGE, incrementHunger);
+    }
     void incrementHunger()
     {
         float startvalue = PlayerDataHolder.Current.Foodamount.StatFloat;

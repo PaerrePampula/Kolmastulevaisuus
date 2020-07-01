@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class DebugRanking : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
     private void OnEnable()
     {
         Stat.OnStatChange += ChangeText;
+    }
+    private void OnDisable()
+    {
+        Stat.OnStatChange -= ChangeText;
     }
     void ChangeText(float value, float valueChange, SimStatType type)
     {
@@ -23,9 +23,5 @@ public class DebugRanking : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

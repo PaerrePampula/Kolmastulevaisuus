@@ -11,12 +11,20 @@ public class GameStateHandler : MonoBehaviour
     static int monthsofPlay = 4;
     public void Start()
     {
-        DateTimeSystem.OnMonthChange += checkEnd;
         maxBusts = 2;
+    }
+    private void OnEnable()
+    {
+        DateTimeSystem.OnMonthChange += checkEnd;
         PlayerEconomy.OnBust += checkBustState;
         Flag.OnFlagFire += checkFlag;
     }
-
+    private void OnDisable()
+    {
+        DateTimeSystem.OnMonthChange -= checkEnd;
+        PlayerEconomy.OnBust -= checkBustState;
+        Flag.OnFlagFire -= checkFlag;
+    }
 
     static void checkEnd()
     {

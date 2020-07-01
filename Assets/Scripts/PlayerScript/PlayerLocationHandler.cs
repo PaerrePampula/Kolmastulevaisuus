@@ -4,7 +4,8 @@ using UnityEngine.AI;
 public class PlayerLocationHandler : MonoBehaviour
 {
     #region Fields
-    public NavMeshAgent playerAgent;
+    [SerializeField]
+    NavMeshAgent playerAgent;
     Transform locationTransform;
     Vector3 currentLocation;
 
@@ -24,7 +25,7 @@ public class PlayerLocationHandler : MonoBehaviour
     #endregion
     void SpawnPlayerCharacterToNewLocation()
     {
-        playerAgent.Warp(LocationHandler.CurrentLocation.getSpawnLocation().position);
+        playerAgent.Warp(LocationHandler.Current.CurrentLocation.getSpawnLocation().position);
     }
     void storePlayer(bool isBegin, bool isObjectChange = false)
     {

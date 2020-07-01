@@ -30,6 +30,12 @@ public class Stat
     public void Init()
     {
         GameEventSystem.RegisterListener(Event_Type.SIMSTAT_CHANGE, changeStat);
+        ResetButton.onReset += unInit;
+    }
+    void unInit()
+    {
+        GameEventSystem.UnRegisterListener(Event_Type.SIMSTAT_CHANGE, changeStat);
+        ResetButton.onReset -= unInit;
     }
     void changeStat(EventInfo info)
     {

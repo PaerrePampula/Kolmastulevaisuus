@@ -74,18 +74,5 @@ public class BarHandler : MonoBehaviour
 
 
     }
-    //public IEnumerator whiler(float t, float originalvalue)
-    //{
 
-    //    while (slider.value != targetvalue)
-    //    {
-    //        currentFloat = Mathf.Lerp(originalvalue, targetvalue, t);
-
-    //        t += 0.50f * Time.deltaTime;
-    //        slider.value = currentFloat;
-    //        image.color = gradient.Evaluate(slider.normalizedValue);
-    //        yield return null;
-
-    //    }
-    //}
 }

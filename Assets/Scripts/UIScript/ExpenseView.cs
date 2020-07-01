@@ -21,11 +21,6 @@ public class ExpenseView : UiGeneric
         populateExpense(PlayerDataHolder.OtherListableExpenses, otherExpenses, otherTotal);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void populateExpense(List<ListableExpense> expenseList, TextMeshProUGUI expenseListing, TextMeshProUGUI expenseTotaling)
     {
         string listingText = "";

@@ -16,11 +16,6 @@ public class EndScreenUI : MonoBehaviour
         StartCoroutine(startIncrementing(testGrade));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public IEnumerator startIncrementing(PlayerGrade test)
     {
 
@@ -30,8 +25,7 @@ public class EndScreenUI : MonoBehaviour
         PlayerGrade goalGrade = (PlayerGrade)newvalue;
         while (gradeText.text != goalGrade.ToString())
         {
-            Debug.Log(currentInt);
-            Debug.Log(newvalue);
+
             currentInt = Mathf.Lerp(startValue, newvalue, t);
             float gradientValue = currentInt / 8;
             t += 0.65f * Time.fixedDeltaTime;

@@ -8,6 +8,12 @@ public static class StatChangeCreator
     static void OnRuntimeMethodLoad()
     { 
         PlacementHelper.OnObjectSatisfaction += comfortChange;
+        ResetButton.onReset += unInit;
+    }
+    static void unInit()
+    {
+        PlacementHelper.OnObjectSatisfaction -= comfortChange;
+        ResetButton.onReset -= unInit;
     }
     static void comfortChange(float change)
     {

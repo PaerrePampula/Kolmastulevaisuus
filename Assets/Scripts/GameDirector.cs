@@ -23,11 +23,6 @@ public class GameDirector : MonoBehaviour
         EventControl.RaiseAnEvent(tutorialStart);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void CheckForFlagEvents(Flag flag)
     {
         

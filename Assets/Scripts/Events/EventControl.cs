@@ -14,37 +14,45 @@ public class EventControl : MonoBehaviour
     [SerializeField]
     List<RandomEventScriptable> RandomEvents; //Kaikki mahdolliset randomeventit scriptableobjekteissa
 
-    static List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
+    List<GameEvent> eventsFromScriptables = new List<GameEvent>(); //ylläoleva listaus käännetty gameevent objekteiksi
     List<GameEvent> filteredListOfEvents = new List<GameEvent>(); //Ylläolevasta listauksesta käännetty filteröity lista kaikille tietyssä sijainnissa mahdollisille eventeille
     List<GameEvent> toTriggerEvents = new List<GameEvent>();
-
+    static private EventControl _Current;
+    static public EventControl Current
+    {
+        get
+        {
+            if (_Current == null)
+            {
+                _Current = FindObjectOfType<EventControl>();
+            }
+            return _Current;
+        }
+    }
 
 
     #endregion
 
     #region MonoBehaviourDefaults
-    private void Awake()
+    private void Start()
     {
-        GameEventSystem.RegisterListener
-            (Event_Type.TRIGGER_EVENT,
-             CallEventWithEventInfo); //Event subscribe : Triggeröityy aina trigger_event kutsusta
-        GameEventSystem.RegisterListener(
-            Event_Type.EVENT_REGISTER,
-            RegisterEventToBeQueued);
+
 
         randomEventUIBox = Resources.Load<GameObject>("RandomEventContainer");
-    }
-    void Start()
-    {
-        
         AggregateNewGameEvents(createEvents(RandomEvents));
         //Aggregoidaan eli kootaan kaikki ylläolevassa RandomEvents listassa mainitut objektit uuteen GameEvent listaukseen osina näitä uusia gameeventtejä.
         AggregateAppliableEventsForThisLocation();
 
-
     }
+
     private void OnEnable()
     {
+        GameEventSystem.RegisterListener
+        (Event_Type.TRIGGER_EVENT,
+         CallEventWithEventInfo); //Event subscribe : Triggeröityy aina trigger_event kutsusta
+        GameEventSystem.RegisterListener(
+        Event_Type.EVENT_REGISTER,
+        RegisterEventToBeQueued);
         CameraController.OnSceneChange += AggregateAppliableEventsForThisLocation;
         GameEvent.OnEventSelfTriggered += startTriggeringTimedEvent;
         GameEvent.AfterTimedEventTriggered += UnRegisterEventFromQueue; 
@@ -54,6 +62,12 @@ public class EventControl : MonoBehaviour
         CameraController.OnSceneChange -= AggregateAppliableEventsForThisLocation;
         GameEvent.OnEventSelfTriggered -= startTriggeringTimedEvent;
         GameEvent.AfterTimedEventTriggered -= UnRegisterEventFromQueue;
+        GameEventSystem.UnRegisterListener
+        (Event_Type.TRIGGER_EVENT,
+        CallEventWithEventInfo); //Event subscribe : Triggeröityy aina trigger_event kutsusta
+        GameEventSystem.UnRegisterListener(
+        Event_Type.EVENT_REGISTER,
+        RegisterEventToBeQueued);
     }
     #endregion
 
@@ -102,7 +116,7 @@ public class EventControl : MonoBehaviour
     {
         for (int i = 0; i < list.Count; i++)
         {
-            eventsFromScriptables.Add(list[i]);
+            Current.eventsFromScriptables.Add(list[i]);
         }
     }
     void AggregateAppliableEventsForThisLocation() //Poimitaan events listasta kaikki ne eventit, jota nyk. sijainnissa voi firettää sekä tsekataan, että onko kaikki ehdot täyttynyt eventin triggeröitymiseen.
@@ -114,8 +128,8 @@ public class EventControl : MonoBehaviour
     List<GameEvent> FindEventsOfLocation()
     {
         //LINQ QUERY
-        var listofEventsForThisLocationOrAnyLocation = from gameEvent in eventsFromScriptables //where komennon käyttö löytyy yllämainitusta linkistä standard query operaattoreiden alta
-                                                       where (gameEvent.getFireLocations().Contains(LocationHandler.CurrentLocation.getLocation()) == true
+        var listofEventsForThisLocationOrAnyLocation = from gameEvent in Current.eventsFromScriptables //where komennon käyttö löytyy yllämainitusta linkistä standard query operaattoreiden alta
+                                                       where (gameEvent.getFireLocations().Contains(LocationHandler.Current.CurrentLocation.getLocation()) == true
                                                        && (gameEvent.checkPreRequisites() == true) || (gameEvent.getFireLocations().Contains(FIRE_LOCATION.ANY)) == true  
                                                        && (gameEvent.checkPreRequisites() == true))
                                                        select gameEvent;
@@ -191,7 +205,7 @@ public class EventControl : MonoBehaviour
     {
         for (int i = 0; i < gameEvents.Count; i++)
         {
-            eventsFromScriptables.Remove(gameEvents[i]);
+            Current.eventsFromScriptables.Remove(gameEvents[i]);
         }
     }
 }

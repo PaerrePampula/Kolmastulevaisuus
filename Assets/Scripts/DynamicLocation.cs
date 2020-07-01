@@ -9,8 +9,14 @@ public class DynamicLocation : EventLocation
     string level;
     private void OnEnable()
     {
+
         JobHandler.OnJobApply += onNewJob;
 
+    }
+    private void OnDisable()
+    {
+        level = "store";
+        JobHandler.OnJobApply -= onNewJob;
     }
     // Start is called before the first frame update
     void Start()
@@ -25,18 +31,26 @@ public class DynamicLocation : EventLocation
         }
 
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void onNewJob(JobNotice jobNotice)
     {
-        SceneManager.UnloadSceneAsync(level);
-        level = jobNotice.scriptable.jobSiteScene;
+
         setLocation(FIRE_LOCATION.WORK);
-        SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
+        string newlevel = jobNotice.scriptable.jobSiteScene;
+        StartCoroutine(reloadSceneAsync(level, newlevel));
     }
+    IEnumerator reloadSceneAsync(string levelOriginal, string levelname)
+    {
+        AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(levelOriginal);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        SceneManager.LoadSceneAsync(levelname, LoadSceneMode.Additive);
+        level = levelname;
+    }
+
+
+
 }

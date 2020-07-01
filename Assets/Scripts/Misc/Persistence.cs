@@ -6,7 +6,7 @@ public class Persistence : MonoBehaviour
 {
     #region MonobehaviourDefaults
 
-    private void Awake() //Tämä objekti ei katoa scenen vaihdossa
+    private void Start() //Tämä objekti ei katoa scenen vaihdossa
     {
         DontDestroyOnLoad(gameObject);
     }

@@ -5,11 +5,7 @@ using UnityEngine;
 public class GenericMovementDisabler : MonoBehaviour
 {
     bool clickStatus;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
     public void setMovement()
     {
         switch (clickStatus)
@@ -24,9 +20,5 @@ public class GenericMovementDisabler : MonoBehaviour
                 break;
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
