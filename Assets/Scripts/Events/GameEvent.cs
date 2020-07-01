@@ -34,9 +34,13 @@ public class GameEvent
             LocationHandler.OnTurnEnd += CheckForFiring;
         }
         //Timed event
+        ResetButton.onReset += unInit;
     }
     #endregion
-
+    void unInit()
+    {
+        LocationHandler.OnTurnEnd -= CheckForFiring;
+    }
     
 
     public RandomEventScriptable getData() //Hakee siis scriptablen eventistä tiedonhallintaa varten.

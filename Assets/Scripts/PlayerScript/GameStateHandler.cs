@@ -12,6 +12,7 @@ public class GameStateHandler : MonoBehaviour
     public void Start()
     {
         maxBusts = 2;
+        monthsofPlay = 4;
     }
     private void OnEnable()
     {
