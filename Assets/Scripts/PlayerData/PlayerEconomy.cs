@@ -6,7 +6,7 @@ public static class PlayerEconomy
 {
     #region Fields
     public delegate void IncreaseAction(float amount);
-    public static event IncreaseAction OnIncrease;
+    public static event IncreaseAction OnMoneyChange;
     public delegate void NewIncomeApply();
     public static event NewIncomeApply OnNewIncome;
     public delegate void MoneyAlert(int strikeCost);
@@ -25,7 +25,7 @@ public static class PlayerEconomy
         TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
 
         DateTimeSystem.OnMonthChange += PayFromIncomeSources;
-        DateTimeSystem.OnMonthChange += checkBelowZeroMoney;
+        DateTimeSystem.OnMonthChange += deductExpenses;
 
     }
     public static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
@@ -43,14 +43,14 @@ public static class PlayerEconomy
         floatChange = floatChangeInfo.changeofFloat;
 
         PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
-        OnIncrease?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
+        OnMoneyChange?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
     static void setMoney(float amount)
     {
         float floatChange = 0;
         floatChange = amount;
         PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
-        OnIncrease?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
+        OnMoneyChange?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
 
     public static float getAllIncomeSourceGrossTotals(int monthAmount)
@@ -158,6 +158,14 @@ public static class PlayerEconomy
             //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 850
             OnBust?.Invoke(strikesGenerated);
         }
+    }
+    static void deductExpenses()
+    {
+        for (int i = 0; i < PlayerDataHolder.MonthlyListableExpenses.Count; i++)
+        {
+            PaerToolBox.changePlayerMoney(-PlayerDataHolder.MonthlyListableExpenses[i].getTotal());
+        }
+        checkBelowZeroMoney();
     }
     static void removeExtras()
     {

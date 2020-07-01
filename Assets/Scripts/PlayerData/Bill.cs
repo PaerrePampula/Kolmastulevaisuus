@@ -17,7 +17,7 @@ public class Bill
         if (billOnce == false)
         {
             ListableExpense listableExpense = new ListableExpense(PlayerDataHolder.MonthlyListableExpenses, (billName, billAmount));
-            DateTimeSystem.OnMonthChange += payBill;
+
         }
         else
         {
@@ -26,8 +26,5 @@ public class Bill
         onBillingChange?.Invoke();
         onBillingCreate?.Invoke(this);
     }
-    void payBill()
-    {
-        PaerToolBox.changePlayerMoney(-billAmount);
-    }
+
 }
