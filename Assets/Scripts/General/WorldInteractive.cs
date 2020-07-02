@@ -29,7 +29,7 @@ public class WorldInteractive : MonoBehaviour, IHoverable
             {
                 clickEvents[i].Invoke();
             }
-            OnHover.Invoke(false);
+            OnHover?.Invoke(false);
         }
 
     }
@@ -37,13 +37,13 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     {
         if (!MainCanvas.mainCanvas.isUIOverride && beingMoved == false)
         {
-            OnHover.Invoke(true, propName, this.transform);
+            OnHover?.Invoke(true, propName, this.transform);
         }
 
     }
     private void OnMouseExit()
     {
-            OnHover.Invoke(false);
+            OnHover?.Invoke(false);
     }
     #endregion
 }

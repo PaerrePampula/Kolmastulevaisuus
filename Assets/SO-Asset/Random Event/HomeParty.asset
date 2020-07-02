@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: KelaResponse
+  m_Name: HomeParty
   m_EditorClassIdentifier: 
   fireOnce: 0
   weeksFromStartForFire: 0
@@ -18,26 +18,38 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 03000000
   eventTexts:
-  - eventDialog: "Sait kelalta vastauksen, ja he v\xE4itt\xE4v\xE4t kovasti, ett\xE4
-      et olisi l\xE4hett\xE4nyt liitteit\xE4, vaikka n\xE4in kuitenkin olet tehnyt,
-      tappelet hetken kelan asiakaspalvelun kanssa, mutta saat ongelman lopulta ratkaistua."
+  - eventDialog: "Pidit kotona j\xE4rjest\xE4m\xE4si tuparit, tapasit vanhoja kavereitasi,
+      ja er\xE4s kavereistasikin onnitteli sinua opinnoista ja k\xE4mp\xE4st\xE4
+      niin, ett\xE4 h\xE4n antoi sinun opiskelun edist\xE4mist\xE4 varten 50 euroa!"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "No niin [Mielialasi hieman laskee stressist\xE4]"
+      choiceDescriptor: ...Nice
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
         actionString1: Satisfaction
         actionString2: 
-        actionFloat1: -5
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 5
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
         actionString1: Ranking
         actionString2: 
-        actionFloat1: 15
+        actionFloat1: 10
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []

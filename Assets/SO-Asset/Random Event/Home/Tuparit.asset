@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Tuparit
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 2
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 03000000
+  eventTexts:
+  - eventDialog: "Et ole viel\xE4 j\xE4rjest\xE4nyt uuden k\xE4mpp\xE4si vuoksi viel\xE4
+      tupareita, milt\xE4 kuulostaisi niiden j\xE4rjest\xE4minen nyt?"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
+      choiceDescriptor: "Hyv\xE4 idea! [Tupareiden suunnittelussa sinulla kuluu 20
+        euroa rahaa]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -20
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: En ehdi opiskellessa sellasia
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: -2.5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+  - eventDialog: "Kerroit l\xE4heisille kavereillesi tupareista, ja sovit, ett\xE4
+      ne j\xE4rjestett\xE4isiin ensiviikolla"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
+      choiceDescriptor: Hienoa
+      clickActions:
+      - {fileID: 11400000, guid: 34c59310a66d52540aa8e97c66c94415, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []

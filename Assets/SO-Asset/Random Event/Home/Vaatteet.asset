@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Vaatteet
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 3
+  neededFlags: []
+  Prerequisites:
+  - playerStat: 0
+    comparisonValueType: 0
+    StringComparatorValue: 
+    FloatComparatorValue: 25
+    uniqueStatComparison: 0
+    TypeOfComparison: 5
+  fire_locations: 03000000
+  eventTexts:
+  - eventDialog: "K\xF6yh\xE4n\xE4 opiskelijana et ole hetkeen ehtinyt etsi\xE4 paremmin
+      p\xE4\xE4lle sopivia vaatteita, olisiko aika k\xE4yd\xE4 vaateostoksilla?\t"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 60
+        uniqueStatComparison: 0
+        TypeOfComparison: 2
+      nextDialog: -1
+      choiceDescriptor: Osta laadukkaita vaatteita [Maksaa 60 euroa]
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -60
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Comfortableness
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 25
+        uniqueStatComparison: 0
+        TypeOfComparison: 2
+      nextDialog: -1
+      choiceDescriptor: Osta halppisvaatteita [Maksaa 25 euroa]
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -25
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "\xC4l\xE4 osta mit\xE4\xE4n turhaa"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 100
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

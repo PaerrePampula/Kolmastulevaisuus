@@ -13,6 +13,7 @@ public class EndScreenUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        testGrade = Grader.getGrade(PlayerDataHolder.Current.Ranking.StatFloat);
         StartCoroutine(startIncrementing(testGrade));
     }
 

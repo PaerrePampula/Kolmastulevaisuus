@@ -202,6 +202,7 @@ public class PlacementHelper : MonoBehaviour
                 meshBounds = placingObject.GetComponent<Collider>().bounds;
                 placingObject.layer = 0;
                 ignoredPlanes = getIgnorableTransforms(placingObject);
+                OnPlacementInteract.Invoke(true);
             }
             if (placingObject.GetComponent<WorldInteractive>() != null)
             {

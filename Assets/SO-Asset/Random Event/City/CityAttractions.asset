@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: CityAttractions
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 3
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 
+  eventTexts:
+  - eventDialog: "Olet py\xF6rim\xE4ss\xE4 kylill\xE4, mutta toistaiseksi et ole
+      keksinyt mit\xE4\xE4n tekemist\xE4. Et ole sen pahemmin ehtinyt tutkia, ett\xE4
+      mit\xE4 n\xE4ht\xE4vyyksi\xE4 on l\xE4hialueella, joten p\xE4\xE4t\xE4t ottaa
+      yhden kavereistasi mukaan, ja k\xE4yt..."
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Paikallisella rannalla
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 40
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: 1
+      choiceDescriptor: Huvipuistossa [Ranneke maksaa 40 euroa
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -40
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 12
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: 2
+      choiceDescriptor: "El\xE4ntarhassa [Lippu maksaa 12 euroa]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -12
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+  - eventDialog: "K\xE4vit kaverisi kanssa huvipuistossa, ja k\xE4vitte niin monessa
+      laitteessa kuin mahdollista, moikkasit lopulta kaveriasi"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Moikka! [Itsevarmuutesi kasvoi hieman]
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+  - eventDialog: "K\xE4vit kaverisi kanssa el\xE4intarhassa, ja ehditte k\xE4yd\xE4
+      koko paikan l\xE4pi, lopulta p\xE4\xE4dyit moikkaaman kaveriasi"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Moikka! [Itsevarmuutesi kasvoi hieman]
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []

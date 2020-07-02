@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: CityBike
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 5
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 02000000
+  eventTexts:
+  - eventDialog: "Kaupungilla k\xE4velless\xE4si t\xF6rm\xE4sit tarjoukseen polkupy\xF6rist\xE4,
+      ja tajusit ett\xE4 et itse omista sellaista lainkaan. Sen avulla p\xE4\xE4sisit
+      paljon helpommalla paikasta toiseen, mutta p\xE4\xE4asiallinen ongelma on se,
+      ett\xE4 polkupy\xF6r\xE4t ovat kuitenkin suhteellisen kalliita. Onneksesi polkupy\xF6r\xE4
+      on tarjouksessa ja vanhempasi voisi sponssata siit\xE4kin hinnasta sinulle
+      50 euroa, mit\xE4 teet?"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 150
+        uniqueStatComparison: 0
+        TypeOfComparison: 2
+      nextDialog: -1
+      choiceDescriptor: "Ostan polkupy\xF6r\xE4n! [Maksaa 150 euroa"
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Comfortableness
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 4
+        actionString1: "Polkupy\xF6r\xE4"
+        actionString2: 
+        actionFloat1: -150
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -150
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Silti kallista, en osta!
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 100
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
