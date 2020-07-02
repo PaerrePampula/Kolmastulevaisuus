@@ -57,11 +57,11 @@ MonoBehaviour:
       randomizedChoiceCustomActions: []
       firedFlags: []
   - eventDialog: "Kerroit l\xE4heisille kavereillesi tupareista, ja sovit, ett\xE4
-      ne j\xE4rjestett\xE4isiin ensiviikolla"
+      ne j\xE4rjestett\xE4isiin viikon p\xE4\xE4st\xE4"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
-      nextDialog: 1
+      nextDialog: -1
       choiceDescriptor: Hienoa
       clickActions:
       - {fileID: 11400000, guid: 34c59310a66d52540aa8e97c66c94415, type: 2}

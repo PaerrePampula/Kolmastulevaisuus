@@ -16,7 +16,7 @@ MonoBehaviour:
   weeksFromStartForFire: 0
   neededFlags: []
   Prerequisites: []
-  fire_locations: 03000000
+  fire_locations: 04000000
   eventTexts:
   - eventDialog: "Sait kelalta vastauksen, ja he v\xE4itt\xE4v\xE4t kovasti, ett\xE4
       et olisi l\xE4hett\xE4nyt liitteit\xE4, vaikka n\xE4in kuitenkin olet tehnyt,

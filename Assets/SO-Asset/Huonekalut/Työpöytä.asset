@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8435d02dac60a3f49928bba79a2d19ef, type: 3}
-  m_Name: KelaScrewingAround
+  m_Script: {fileID: 11500000, guid: 305d6c8123673734b96b8e834d536297, type: 3}
+  m_Name: "Ty\xF6p\xF6yt\xE4"
   m_EditorClassIdentifier: 
-  event_Type: 15
-  description: 
-  eventToRise: {fileID: 11400000, guid: 30dbcc1ec4c94694aa7434dc43cc7f29, type: 2}
-  eventFireTime: 1
+  prefab: {fileID: 7599789252578317165, guid: 4a00ec19a82036a43861c1d5a529377c, type: 3}
+  objectName: "Ty\xF6p\xF6yt\xE4"
+  objectValue: 80
+  satisfactionGain: 5

@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: dc8c0159b1065774385c2d9e4e19dfe8, type: 3}
+  - {fileID: 2100000, guid: eb3f2931b2882d1429193415448c6327, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: dc8c0159b1065774385c2d9e4e19dfe8, type: 3}
+  - {fileID: 2100000, guid: ff09ec433f5552a40896e60c6dc31698, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,8 +222,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.75, z: 2.35}
-  m_Center: {x: 0, y: 0.27, z: 0}
+  m_Size: {x: 1, y: 0.75, z: 2.05}
+  m_Center: {x: 0, y: 0.27, z: -0.09}
 --- !u!114 &3525110521028458765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
     actionFloat1: 0
     actionFloat2: 0
     actionBool1: 1
+  randomizedChoiceActions: []
 --- !u!114 &3525110521028458766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +332,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: dc8c0159b1065774385c2d9e4e19dfe8, type: 3}
+  - {fileID: 2100000, guid: ff09ec433f5552a40896e60c6dc31698, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7298415501444936996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 0.4997, z: -0.3604}
+  m_LocalPosition: {x: 0.296, y: 0.925, z: 0.091}
   m_LocalScale: {x: 0.067395814, y: 0.084308, z: 0.07031374}
   m_Children: []
   m_Father: {fileID: 7078586194538482135}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 7078586194538482135}
   - component: {fileID: 6166530934435497586}
   - component: {fileID: 8248092576375943864}
-  - component: {fileID: 1297109127840061222}
+  - component: {fileID: 7654009219623253612}
   m_Layer: 0
   m_Name: desk
   m_TagString: Untagged
@@ -120,14 +120,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7599789252578317165}
-  m_LocalRotation: {x: 0, y: 0.3420201, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: -28.248, y: 0.57545, z: -2.414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5389446279793851726}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6166530934435497586
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1297109127840061222
+--- !u!65 &7654009219623253612
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,5 +186,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3000004, y: 0.92342496, z: 0.70000046}
-  m_Center: {x: -0.00000023841858, y: 0.036264673, z: -0.34999987}
+  m_Size: {x: 1.3000004, y: 0.92342496, z: 0.7000005}
+  m_Center: {x: -0.00000071525574, y: 0.46171224, z: 0.09333323}

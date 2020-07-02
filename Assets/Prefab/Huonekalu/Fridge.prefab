@@ -262,11 +262,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4aa58ec9483bc744cafc1c51987399d6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb3f2931b2882d1429193415448c6327, type: 2}
     - target: {fileID: 919132149155446097, guid: 4aa58ec9483bc744cafc1c51987399d6,
         type: 3}
       propertyPath: m_Name
       value: fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 3917641809326862542, guid: 4aa58ec9483bc744cafc1c51987399d6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb3f2931b2882d1429193415448c6327, type: 2}
+    - target: {fileID: 5577353708533190505, guid: 4aa58ec9483bc744cafc1c51987399d6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb3f2931b2882d1429193415448c6327, type: 2}
+    - target: {fileID: 6286883682212301822, guid: 4aa58ec9483bc744cafc1c51987399d6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb3f2931b2882d1429193415448c6327, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa58ec9483bc744cafc1c51987399d6, type: 3}
 --- !u!1 &6758813341009426421 stripped

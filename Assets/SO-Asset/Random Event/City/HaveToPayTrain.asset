@@ -10,46 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: HomeParty
+  m_Name: HaveToPayTrain
   m_EditorClassIdentifier: 
   fireOnce: 0
   weeksFromStartForFire: 0
-  neededFlags: []
+  neededFlags:
+  - FlagName: DISTANT_FRIEND_MEET_HAVETOPAY
+    TimeToHappen: 0
+    uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 04000000
+  fire_locations: 
   eventTexts:
-  - eventDialog: "Pidit kotona j\xE4rjest\xE4m\xE4si tuparit, tapasit vanhoja kavereitasi,
-      ja er\xE4s kavereistasikin onnitteli sinua opinnoista ja k\xE4mp\xE4st\xE4
-      niin, ett\xE4 h\xE4n antoi sinun opiskelun edist\xE4mist\xE4 varten 50 euroa!"
+  - eventDialog: "J\xE4it kiinni junamatkan pummaamisesta! \nSait sen vuoksi 80 euron
+      sakon... [Saatat menn\xE4 sakon takia miinuksen puolelle]\nMeet kuitenkin kaverillesi
+      kyl\xE4\xE4n"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: ...Nice
+      choiceDescriptor: No just...
       clickActions: []
       customRunTimeActions:
-      - eventClass: 1
-        actionString1: Satisfaction
+      - eventClass: 2
+        actionString1: DISTANT_FRIEND_MEET
         actionString2: 
-        actionFloat1: 10
+        actionFloat1: 0
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 0
         actionString1: 
         actionString2: 
-        actionFloat1: 50
-        actionFloat2: 0
-        actionBool1: 0
-      - eventClass: 1
-        actionString1: Social
-        actionString2: 
-        actionFloat1: 5
+        actionFloat1: -80
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
         actionString1: Ranking
         actionString2: 
-        actionFloat1: 10
+        actionFloat1: -100
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []
