@@ -13,7 +13,7 @@ public class EndScreenFadeOut : MonoBehaviour
     }
     public void EndScreen()
     {
-        animator.speed = 0;
+
         OnEnd?.Invoke();
     }
 }

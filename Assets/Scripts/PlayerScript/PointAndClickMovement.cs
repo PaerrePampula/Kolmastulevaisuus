@@ -43,7 +43,7 @@ public class PointAndClickMovement : MonoBehaviour
             Movement();
         }
         RaycastHit hit;
-        Debug.DrawRay(transform.position, Camera.main.transform.position - transform.position, Color.green);
+
         if (Physics.Raycast(transform.position, Camera.main.transform.position - transform.position, out hit))
         {
 

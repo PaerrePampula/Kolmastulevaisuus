@@ -6,6 +6,8 @@ public class EndScreenGenerator : MonoBehaviour
 {
     [SerializeField]
     Transform endScreen;
+    [SerializeField]
+    GameObject endScreenCamera;
 
     private void OnEnable()
     {
@@ -19,5 +21,10 @@ public class EndScreenGenerator : MonoBehaviour
     void startEnd()
     {
         endScreen.gameObject.SetActive(true);
+        Camera.main.gameObject.SetActive(false);
+        endScreenCamera.gameObject.SetActive(true);
+        endScreenCamera.gameObject.tag = "MainCamera";
+        MainCanvas.mainCanvas.gameObject.SetActive(false);
+        
     }
 }
