@@ -68,9 +68,14 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: 47d95330319d9024fb6ea13fc9cb580b, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
-      - {fileID: 0}
       customRunTimeActions:
       - eventClass: 1
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: -5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
         actionString1: Hunger
         actionString2: 
         actionFloat1: -5
@@ -100,6 +105,12 @@ MonoBehaviour:
         actionFloat1: -10
         actionFloat2: 0
         actionBool1: 0
+      - eventClass: 0
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: -8.75
+        actionFloat2: 0
+        actionBool1: 0
       randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
@@ -122,6 +133,12 @@ MonoBehaviour:
         actionString1: Hunger
         actionString2: 
         actionFloat1: -15
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: Hunger
+        actionString2: 
+        actionFloat1: -17.5
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []
