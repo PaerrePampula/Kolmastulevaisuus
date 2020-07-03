@@ -9764,8 +9764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RandomEvents:
-  - {fileID: 11400000, guid: 2a6424555f824434686160b45a703ddd, type: 2}
-  - {fileID: 11400000, guid: 0f45eeb056729fb4bb595bc47f82c04f, type: 2}
+  - {fileID: 11400000, guid: 04363e2bbc16b6e4ba5f798f8adf967c, type: 2}
+  - {fileID: 11400000, guid: 065c27f1df3bdc646ab747b04eda4a99, type: 2}
   - {fileID: 11400000, guid: 8c5e9ac08f1fd4940ac8f71bbdce8bd4, type: 2}
   - {fileID: 11400000, guid: b7db3ce31fd8a744198488f6c5ad5937, type: 2}
   - {fileID: 11400000, guid: 7fee3eddb1f161849b365ef0f4dd2b4e, type: 2}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EasterEgg : MonoBehaviour
 {
@@ -25,18 +26,20 @@ public class EasterEgg : MonoBehaviour
         if (eggEnable == true && Input.GetMouseButtonDown(0))
         {
 
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = transformCamera.nearClipPlane;
+            Vector3 worldPosition = transformCamera.ScreenToWorldPoint(mousePos);
 
-            Vector3 pointInScreen = transformCamera.ScreenToWorldPoint(Input.mousePosition);
             GameObject easterEggBox = Instantiate(easterEgg);
-            easterEggBox.transform.position = new Vector3(pointInScreen.x, pointInScreen.y, pointInScreen.z);
+            easterEggBox.transform.position = new Vector3(worldPosition.x, worldPosition.y, worldPosition.z);
             easterEggBox.GetComponent<Rigidbody>().AddForce(transformCamera.transform.forward * 500f);
 
 
 
         }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-
-        }
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    SceneManager.LoadScene("EasterEgg");
+        //}
     }
 }

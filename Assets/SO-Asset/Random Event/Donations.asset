@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Donations
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 2
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 00000000
+  eventTexts:
+  - eventDialog: "Koulussa kuulit tilaisuudesta lahjoittaa er\xE4\xE4seen hyv\xE4ntekev\xE4isyyteen.
+      T\xE4m\xE4 hyv\xE4ntekev\xE4isyys on hyv\xE4st\xE4 syyst\xE4, ja vakavasti
+      harkitset siihen lahjoittamista, lahjoitat..."
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Vaatteita!
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 100
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Comfortableness
+        actionString2: 
+        actionFloat1: -2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 100
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: Rahaa (100 euroa)
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -100
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 150
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "En mit\xE4\xE4n!"
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []

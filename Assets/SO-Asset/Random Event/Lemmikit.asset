@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: Lemmikit
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 5
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 03000000
+  eventTexts:
+  - eventDialog: "Huomasit vuokrasopimuksesta, ett\xE4 k\xE4mpp\xE4\xE4si olisi mahdollista
+      hankkia lemmikkej\xE4, ja aloit vakavasti harkitsemaan, ett\xE4 pit\xE4isik\xF6
+      sit\xE4 hankkia jonkinlainen lemmikki sinne seuraksi, hankit..."
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 550
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: Koiran (Maksaa 550 euroa)
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -550
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 4
+        actionString1: Koiran kulut (ruoka)
+        actionString2: 
+        actionFloat1: 35
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 80
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: Maatiaiskissan (Maksaa 80 euroa)
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -80
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 4
+        actionString1: Kissan kulut (ruoka)
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 40
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: Hamsterin (Maksaa 40 euroa)
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 50
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -40
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 4
+        actionString1: Hamsterin kulut (ruoka)
+        actionString2: 
+        actionFloat1: 15
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "En pysty ottamaan lemmikki\xE4"
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []
