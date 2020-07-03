@@ -7,6 +7,8 @@ public static class PlayerEconomy
     #region Fields
     public delegate void IncreaseAction(float amount);
     public static event IncreaseAction OnMoneyChange;
+    public delegate void FloatValue(float amount);
+    public static event FloatValue OnChangeFetch;
     public delegate void NewIncomeApply();
     public static event NewIncomeApply OnNewIncome;
     public delegate void MoneyAlert(int strikeCost);
@@ -41,7 +43,7 @@ public static class PlayerEconomy
 
         FloatChangeInfo floatChangeInfo = (FloatChangeInfo)info;
         floatChange = floatChangeInfo.changeofFloat;
-
+        OnChangeFetch?.Invoke(floatChangeInfo.changeofFloat);
         PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
         OnMoneyChange?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
@@ -50,6 +52,7 @@ public static class PlayerEconomy
         float floatChange = 0;
         floatChange = amount;
         PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
+        OnChangeFetch?.Invoke(amount);
         OnMoneyChange?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
     }
 

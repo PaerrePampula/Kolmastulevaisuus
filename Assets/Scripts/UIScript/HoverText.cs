@@ -20,7 +20,7 @@ public class HoverText : MonoBehaviour
         }
 
         prefabClone = Instantiate(hoverObjectPrefab);
-        TextMeshProUGUI textComp = prefabClone.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI textComp = prefabClone.GetComponentInChildren<TextMeshProUGUI>();
         textComp.text = text;
 
         prefabClone.transform.position = camera.WorldToScreenPoint(objectTransform.position);
