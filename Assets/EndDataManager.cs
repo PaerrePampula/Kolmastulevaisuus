@@ -8,7 +8,7 @@ using System;
 public class EndDataManager : MonoBehaviour
 {
     
-    TextMeshProUGUI dataTextContainer;
+    public TextMeshProUGUI dataTextContainer;
 
     public TextMeshProUGUI nonAbstractDescriptor;
     public TextMeshProUGUI playerTitle;
