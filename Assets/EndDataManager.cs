@@ -11,8 +11,12 @@ public class EndDataManager : MonoBehaviour
     TextMeshProUGUI dataTextContainer;
 
     public TextMeshProUGUI nonAbstractDescriptor;
-
+    public TextMeshProUGUI playerTitle;
+    public TextMeshProUGUI palyerTitleDescription;
     public EndDescriptorScriptable descriptors;
+
+
+    List<SortedRankingTitle> rankingTitles;
 
     float receivedMoney = 0;
     float lostMoney = 0;
@@ -21,7 +25,7 @@ public class EndDataManager : MonoBehaviour
     (string, float, int) jobAndPayPlusHours;
     private void OnEnable()
     {
-
+        rankingTitles = new List<SortedRankingTitle>();
         PlayerEconomy.OnChangeFetch += addMoneyData;
         JobHandler.OnJobApply += addJobData;
         GameStateHandler.OnGameEnd += addDataToDescriptor;
@@ -54,13 +58,30 @@ public class EndDataManager : MonoBehaviour
                     comparedStat = PlayerDataHolder.Current.Comfortableness;
                     break;
             }
-            var listing = descriptors.rankingDescriptors.FirstOrDefault(givenListing => (givenListing.statToRank == comparedStat.SimStatType) && (PaerToolBox.isBetween(comparedStat.StatFloat, givenListing.minrange, givenListing.maxrange)));
+            var listing = descriptors.rankingDescriptors.FirstOrDefault(givenListing => (givenListing.statToRank == comparedStat.SimStatType) && (PaerToolBox.isBetweenOrAsBig(comparedStat.StatFloat, givenListing.minrange, givenListing.maxrange, true)));
 
             nonAbstractDescriptor.text += listing.text + "\n\n";
-
+            chooseTitle();
 
         }
     }
+    void chooseTitle()
+    {
+        for (int i = 0; i < descriptors.rankingTitles.Length; i++)
+        {
+            SortedRankingTitle sortedRankingTitle = new SortedRankingTitle(descriptors.rankingTitles[i]);
+            if (sortedRankingTitle.canBeApplied)
+            {
+                rankingTitles.Add(sortedRankingTitle);
+            }
+
+        }
+        var maximumValue = rankingTitles.Max(given => given.points);
+        var maximumObject = rankingTitles.FirstOrDefault(maxObject => maxObject.points == maximumValue);
+        playerTitle.text = maximumObject.rankingTitles.TitleName;
+        palyerTitleDescription.text = maximumObject.rankingTitles.ReasonDescriptor;
+    }
+
     void addMoneyData(float amount)
     {
         switch (amount >= 0)

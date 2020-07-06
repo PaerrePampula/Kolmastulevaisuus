@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
 {
@@ -24,4 +26,11 @@ public static class PaerToolBox //Satunnaisten työkalujen työkaluloota.
         return orEqualsBottom ? lowerLimit <= comparedValue && comparedValue < upperLimit //Jos value voi olla myös tasan, mutta ei ylälimitissä (verotus)...
             : lowerLimit < comparedValue && comparedValue < upperLimit; //Jos value ei voi olla myös tasan...
     }
+    public static bool isBetweenOrAsBig(float comparedValue, float lowerLimit, float upperLimit, bool orEqualsLimit = false)
+    {
+        return orEqualsLimit ? lowerLimit < comparedValue && comparedValue <= upperLimit 
+            : lowerLimit < comparedValue && comparedValue < upperLimit; 
+    }
+
 }
+

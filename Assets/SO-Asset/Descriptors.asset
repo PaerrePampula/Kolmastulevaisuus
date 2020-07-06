@@ -79,6 +79,84 @@ MonoBehaviour:
     minrange: 33
     maxrange: 66
   - statToRank: 1
-    text: "KOTI V\xC4LI 66-100"
+    text: "K\xE4ytit todella paljon vaivaa ja aikaa sisustukseen! Hyvin sisustettu
+      koti tuntuu aina enemm\xE4n kodilta, vaikka olisikin kaukana \"omasta oikeasta
+      kodista\", joten se on oman mielenterveytesi puolesta aina aivan j\xE4rkytt\xE4v\xE4n
+      hyv\xE4 asia, etenkin jos samassa k\xE4mp\xE4ss\xE4 asuu pitk\xE4n opiskeluajan.
+      SIt\xE4paitsi kodikkaaseen k\xE4mpp\xE4\xE4n on aina mukava tuoda vieraita,
+      ja siell\xE4 on paljon mukavampi opiskella, tai ihan muuten vaan viett\xE4\xE4
+      aikaa!"
     minrange: 66
     maxrange: 100
+  rankingTitles:
+  - titleStats:
+    - affectedStat: 5
+      minimumStatScore: 80
+    TitleName: Megaopiskelija
+    ReasonDescriptor: '[Opiskelit ankarasti pelin aikana]'
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats:
+    - affectedStat: 4
+      minimumStatScore: 80
+    TitleName: Bilehile
+    ReasonDescriptor: '[Sosialisoiduit ankarasti pelin aikana]'
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats:
+    - affectedStat: 1
+      minimumStatScore: 80
+    TitleName: Sisustaja
+    ReasonDescriptor: '[Sisustit ankarasti pelin aikana]'
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats:
+    - affectedStat: 1
+      minimumStatScore: 40
+    - affectedStat: 4
+      minimumStatScore: 40
+    - affectedStat: 4
+      minimumStatScore: 40
+    TitleName: Tasapainoteltu
+    ReasonDescriptor: '[Pidit huolta kaikista tarpeistasi pelin aikana]'
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats:
+    - affectedStat: 5
+      minimumStatScore: 50
+    - affectedStat: 4
+      minimumStatScore: 50
+    TitleName: "Opiskelija p\xE4ivisin, bilehile \xF6isin"
+    ReasonDescriptor: "[Sosialisoiduit sek\xE4 opiskelit tasapainotetusti pelin aikana]"
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats:
+    - affectedStat: 1
+      minimumStatScore: 50
+    - affectedStat: 4
+      minimumStatScore: 50
+    TitleName: Sosialisoitunut sisustaja
+    ReasonDescriptor: "[Sosialisoiduit sek\xE4 sisustit tasapainotetusti pelin aikana]"
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats:
+    - affectedStat: 5
+      minimumStatScore: 0
+    - affectedStat: 5
+      minimumStatScore: 0
+    - affectedStat: 5
+      minimumStatScore: 0
+    TitleName: "El\xE4m\xE4m_koululainen"
+    ReasonDescriptor: "[Et tehnyt mit\xE4\xE4n merkitsev\xE4\xE4 oman kehityksesi
+      eteen]"
+    boosterFlags: []
+    maximumStatScore: 300
+  - titleStats: []
+    TitleName: "Ty\xE4_mi\xE4s"
+    ReasonDescriptor: "[Teit paljon ylit\xF6it\xE4]"
+    boosterFlags:
+    - FlagName: WORK_OVERTIME1
+      flagBoost: 20
+    - FlagName: WORK_OVERTIME2
+      flagBoost: 20
+    maximumStatScore: 300
