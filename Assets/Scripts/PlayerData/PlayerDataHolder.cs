@@ -43,7 +43,11 @@ public class PlayerDataHolder : MonoBehaviour
     private Stat satisfaction;
     private Stat comfortableness;
     private Stat hunger;
-    private Stat ranking;
+    private Stat generalRanking;
+    private Stat homeRanking;
+    private Stat socialRanking;
+    private Stat studyRanking;
+
     Stat foodamount;
     List<Stat> allStats;
     Stat social;
@@ -192,22 +196,76 @@ public class PlayerDataHolder : MonoBehaviour
         }
     }
 
-    public Stat Ranking
+    public Stat GeneralRanking
     {
         get
         {
-            if (ranking == null)
+            if (generalRanking == null)
             {
-                ranking = new Stat(SimStatType.Ranking, -5000, 5000);
-                allStats.Add(ranking);
+                generalRanking = new Stat(SimStatType.Ranking, -5000, 5000);
+                allStats.Add(generalRanking);
 
             }
-            return ranking;
+            return generalRanking;
         }
         set
         {
 
-            ranking = value;
+            generalRanking = value;
+        }
+    }
+    public Stat HomeRanking
+    {
+        get
+        {
+            if (homeRanking == null)
+            {
+                homeRanking = new Stat(SimStatType.Ranking, 0, 100);
+                allStats.Add(homeRanking);
+
+            }
+            return homeRanking;
+        }
+        set
+        {
+
+            homeRanking = value;
+        }
+    }
+    public Stat SocialRanking
+    {
+        get
+        {
+            if (socialRanking == null)
+            {
+                socialRanking = new Stat(SimStatType.Ranking, 0, 100);
+                allStats.Add(socialRanking);
+
+            }
+            return socialRanking;
+        }
+        set
+        {
+
+            socialRanking = value;
+        }
+    }
+    public Stat StudyRanking
+    {
+        get
+        {
+            if (studyRanking == null)
+            {
+                studyRanking = new Stat(SimStatType.Ranking, 0, 100);
+                allStats.Add(studyRanking);
+
+            }
+            return studyRanking;
+        }
+        set
+        {
+
+            studyRanking = value;
         }
     }
 
@@ -279,7 +337,7 @@ public class PlayerDataHolder : MonoBehaviour
 
         Satisfaction.Init();
         Comfortableness.Init();
-        Ranking.Init();
+        GeneralRanking.Init();
         Hunger.Init();
         Social.Init();
         Study.Init();

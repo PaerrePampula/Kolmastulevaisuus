@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Descriptors
+  m_EditorClassIdentifier: Assembly-CSharp::EndDescriptorScriptable
+  rankingDescriptors:
+  - statToRank: 4
+    text: "Annoit sosiaaliselle el\xE4m\xE4lle v\xE4h\xE4n arvoa, vaikka saatoitkin
+      v\xE4lill\xE4 viett\xE4\xE4 aikaa kavereiden kanssa, muista vain, ett\xE4 se
+      on oman mielenterveyden ja hyvinvoinnin kannalta hyv\xE4, ett\xE4 l\xF6ytyy
+      tarvittaessa seuraa, sill\xE4 ihminen on melko sosiaalinen el\xE4in!"
+    minrange: -1
+    maxrange: 33
+  - statToRank: 4
+    text: "K\xE4vit pelin aikana suhteellisen tasapainotetusti kavereidesi luona,
+      ja pidit ihmissuhteistasi hyv\xE4\xE4 huolta, jatka samaan malliin, ihmiselle
+      ihmiskontakti on aina t\xE4rke\xE4\xE4 yll\xE4pit\xE4\xE4!"
+    minrange: 33
+    maxrange: 66
+  - statToRank: 4
+    text: "K\xE4ytit tosi paljon aikaa sosialisoitumiseen kavereidesi kanssa! Muista
+      my\xF6s se, ett\xE4 pit\xE4\xE4 el\xE4\xE4 tasapainotetusti, huoltaen itse\xE4si
+      ja rakentaen el\xE4m\xE4\xE4si itsesi ymp\xE4rille. Mik\xE4\xE4n ei sin\xE4ns\xE4
+      tietenk\xE4\xE4n kiell\xE4 bailaamasta joka ikinen p\xE4iv\xE4, mutta sin\xE4
+      itse on se kaikista t\xE4rkein"
+    minrange: 66
+    maxrange: 100
+  - statToRank: 5
+    text: "Et huomioinut valtavasti opiskelua, mutta saatoit silloin t\xE4ll\xF6in
+      t\xE4ydent\xE4\xE4 oppimaasi. Korkeakouluissa on t\xE4rke\xE4\xE4, ett\xE4
+      itse oma-aloitteisesti ryhtyy opiskelemaan, sill\xE4 yl\xE4-asteen tai lukion
+      tavoin, kukaan ei ole valvomassa, ett\xE4 saat suoritteesi tehty\xE4, arvosanalla
+      ja palautuksilla on enemm\xE4n merkityst\xE4, mutta opiskelu l\xE4htee usein
+      sinusta itse."
+    minrange: -1
+    maxrange: 33
+  - statToRank: 5
+    text: "Opiskelit melko tasapuolisesti, ja pidit huolta siit\xE4, ett\xE4 opit
+      kokoajan uutta. Korkeakouluissa on t\xE4rke\xE4\xE4, ett\xE4 osaat olla oma-aloitteinen
+      opiskelija, joka usein joutuu itse hakemaan paljon tietoa. Valvonta on tosi
+      v\xE4h\xE4ist\xE4, jonka takia oma-aloitteinen suorittaminen on koulumenestyksen
+      ja oman kehittymisen kannalta elint\xE4rke\xE4\xE4. Jos n\xE4in jatkaisit oikeassa
+      el\xE4m\xE4ss\xE4, p\xE4rj\xE4isit takuulla hyvin."
+    minrange: 33
+    maxrange: 66
+  - statToRank: 5
+    text: "K\xE4ytit hyvin paljon aikaa opiskeluun! T\xE4m\xE4 ei ole mitenk\xE4\xE4n
+      huono asia, mutta my\xF6s muutkin asiat kuin opiskelu kannattaa ottaa huomioon,
+      kuten esimerkiksi sosialisoituminen, tai itsest\xE4si huolehtiminen. Koulu
+      ei ole kaikki kaikessa, mutta tietenkin se, ett\xE4 jos p\xE4rj\xE4\xE4 koulussa
+      erinomaisesti sek\xE4 samanaikaisesti on hyv\xE4 hallitsemaan ja tasapainottelemaan
+      muuta el\xE4m\xE4\xE4, niin p\xE4rj\xE4\xE4 eritt\xE4in pitk\xE4lle!"
+    minrange: 66
+    maxrange: 100
+  - statToRank: 1
+    text: "Oman k\xE4mpp\xE4si sisustuksessa p\xE4\xE4osin s\xE4\xE4stelit, pist\xE4
+      kuitenkin mieleen, ett\xE4 sit\xE4 kotoisampi koti, sit\xE4 enemm\xE4n k\xE4mpp\xE4\xE4
+      kotona pit\xE4\xE4. Ihminen p\xE4rj\xE4\xE4 periaatteessa hyvin kunnon \"itsemurhayksi\xF6iss\xE4kin\"
+      nimest\xE4 huolimatta (tietenkin v\xE4h\xE4n henkil\xF6st\xE4 riippuen), mutta
+      se on kielt\xE4m\xE4tt\xE4 mukavampaa asua sisustetussa ja siistiss\xE4 k\xE4mp\xE4ss\xE4,
+      ja sinne on my\xF6s mukavampi tuoda vieraita kyl\xE4\xE4n."
+    minrange: -1
+    maxrange: 33
+  - statToRank: 1
+    text: "K\xE4ytit suhteellisen tasapainotetun ajan ja vaivan oman k\xE4mpp\xE4si
+      sisustuksessa, mik\xE4 on positiivinen asia! Omaa k\xE4mpp\xE4\xE4 on helpompi
+      pit\xE4\xE4 omana kotina, jos se on hyvin sisustettu (sek\xE4 siisti).\nSiistiin
+      ja hyv\xE4nn\xE4k\xF6seen k\xE4mpp\xE4\xE4n on my\xF6s mukavampi tuoda vieraita,
+      mink\xE4 kannattaa pist\xE4\xE4 mieleen..."
+    minrange: 33
+    maxrange: 66
+  - statToRank: 1
+    text: "KOTI V\xC4LI 66-100"
+    minrange: 66
+    maxrange: 100

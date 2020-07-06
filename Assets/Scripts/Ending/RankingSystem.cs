@@ -12,6 +12,7 @@ public class RankingSystem : MonoBehaviour
         float boostBasedOnEconomy = PlayerDataHolder.Current.PlayerMoney.getValue<float>();
         boostBasedOnEconomy *= 0.20f; //Rahasta saa myös boostia
         changeRank(boostBasedOnStats + boostBasedOnEconomy);
+        changeStatRanks();
     }
     private void OnEnable()
     {
@@ -24,6 +25,15 @@ public class RankingSystem : MonoBehaviour
 
     void changeRank(float rankingChange)
     {
-        PlayerDataHolder.Current.Ranking.ChangeStat(rankingChange);
+        PlayerDataHolder.Current.GeneralRanking.ChangeStat(rankingChange);
+    }
+    void changeStatRanks()
+    {
+        float studyBoost = PlayerDataHolder.Current.Study.StatFloat / 20.5f;
+        PlayerDataHolder.Current.StudyRanking.ChangeStat(studyBoost);
+        float socialBoost = PlayerDataHolder.Current.SocialRanking.StatFloat / 20.5f;
+        PlayerDataHolder.Current.SocialRanking.ChangeStat(socialBoost);
+        float homeBoost = PlayerDataHolder.Current.HomeRanking.StatFloat / 20.5f;
+        PlayerDataHolder.Current.HomeRanking.ChangeStat(homeBoost);
     }
 }
