@@ -19,9 +19,18 @@ public class JobNoticeButtonBehaviour : MonoBehaviour
     {
         _jobNotice = jobNotice;
     }
-    public void setButtonText(string jobTitle, float pay, int hours)
+    public void setButtonText(string jobTitle, float pay, int hoursMin, int hoursMax = 0)
     {
-        buttonText.text = string.Format("{0}.\n{1} euroa per tunti.\nSopimuksessa {2} tuntia viikossa", jobTitle, pay.ToString(), (hours * 3).ToString());
+        string range = "";
+        if (hoursMax != 0)
+        {
+            range = hoursMin + "-" + hoursMax;
+        }
+        else
+        {
+            range = hoursMin.ToString();
+        }
+        buttonText.text = string.Format("{0}.\n{1} euroa per tunti.\nSopimuksessa {2} tuntia viikossa", jobTitle, pay.ToString(), range);
     }
     public void displayJob()
     {

@@ -19,7 +19,7 @@ public static class PlayerEconomy
 
     static PlayerEconomy()
     {
-        JobHandler.OnJobEnd += deleteCurrentJobIncomeIfCan;
+
         GameEventSystem.RegisterListener(Event_Type.FLOAT_CHANGE, SetMoney);
         GameEventSystem.RegisterListener(Event_Type.JOB_REGISTERED_TO_PLAYER, RegisterAnIncomeSourceFromJob);
         GameEventSystem.RegisterListener(Event_Type.EXTRA_INCOME, registerExtraIncome);
@@ -30,7 +30,7 @@ public static class PlayerEconomy
         DateTimeSystem.OnMonthChange += deductExpenses;
 
     }
-    public static List<IncomeSource> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
+    public static List<Incomeable> incomeSources() //Shorthand PlayerDataHolder.IncomeSources
     {
         return PlayerDataHolder.Current.IncomeSources;
     }
@@ -72,11 +72,10 @@ public static class PlayerEconomy
     static void RegisterAnIncomeSourceFromJob(EventInfo info)
     {
         JobRegisterInfo job = (JobRegisterInfo)info;
-        deleteCurrentJobIncomeIfCan(); //Poistetaan mahdollinen entinen työpaikka
 
-        IncomeSource incomeSource = new IncomeSource(job.job.getMonthlyPaymentAmount(), job.job);
 
-        incomeSources().Add(incomeSource);
+
+        incomeSources().Add(job.job);
         TaxationSystem.getIncomeafterMandatoryPayments(getAllIncomeSourceGrossTotals(12));
 
         OnNewIncome.Invoke();
@@ -120,23 +119,17 @@ public static class PlayerEconomy
         removeExtras();
 
     }
-    static void deleteCurrentJobIncomeIfCan()
-    {
-        var hadJob = incomeSources().SingleOrDefault(income => income.GetJob() != null);
-        if (hadJob != null)
-        {
-            incomeSources().Remove(hadJob);
-        }
-    }
-    public static float totalNetIncomeInAMonth()
+
+    public static float totalSpeculatedNetIncomeInAMonth()
     {
         float net = 0;
         for (int i = 0; i < incomeSources().Count; i++)
         {
-            net += incomeSources()[i].getNetIncomeInAMonth();
+            net += incomeSources()[i].getSpeculatedNetIncomeInAMonth();
         }
         return net;
     }
+
     public static void createPurchase(string name, float amount, bool stacked = false)
     {
         setMoney(amount);

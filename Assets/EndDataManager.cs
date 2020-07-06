@@ -41,7 +41,7 @@ public class EndDataManager : MonoBehaviour
     }
     void addJobData(JobNotice jobNotice)
     {
-        jobAndPayPlusHours = (jobNotice.scriptable.jobTitle, jobNotice.scriptable.payByHour, jobNotice.scriptable.workHoursPerDay * 3);
+        jobAndPayPlusHours = (jobNotice.scriptable.jobTitle, jobNotice.scriptable.payByHour, jobNotice.scriptable.minimumHoursPerWeek);
     }
     void addTimesOfHunger(Flag flag)
     {
@@ -59,7 +59,7 @@ public class EndDataManager : MonoBehaviour
         else
         {
             return "Sinun työpaikkasi oli " + jobAndPayPlusHours.Item1 + ", teit siellä tunnissa " + jobAndPayPlusHours.Item2 +
-                "euroa rahaa, tunteja viikossa sinulla oli " + jobAndPayPlusHours.Item3 + "\n";
+                "euroa rahaa, tunteja viikossa sinulla oli vähintään " + jobAndPayPlusHours.Item3 + "\n";
         }
     }
     string getStats()

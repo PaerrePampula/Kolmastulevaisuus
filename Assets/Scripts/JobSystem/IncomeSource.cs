@@ -1,4 +1,4 @@
-﻿public class IncomeSource : IStattable
+﻿public class IncomeSource : IStattable, Incomeable
 {
     #region Fields
     float incomeAmountTotalOneMonth;
@@ -41,6 +41,10 @@
     {
 
         return incomeAmountTotalOneMonth * TaxationSystem.netPaymentPercentage();
+    }
+    public float getSpeculatedNetIncomeInAMonth()
+    {
+        return getNetIncomeInAMonth();
     }
     public void setIncome(float value)
     {

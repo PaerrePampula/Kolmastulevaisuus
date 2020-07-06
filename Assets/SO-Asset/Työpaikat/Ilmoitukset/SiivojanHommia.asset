@@ -15,7 +15,8 @@ MonoBehaviour:
   jobTitle: Siivooja
   jobDescriptionOnNotice: "Haetaan ahkeraa henkil\xF6\xE4 siivoust\xF6ihin! Vaatimuksia
     ei ole, mutta hakijan reippautta ja tunnollisuutta arvostetaan!"
-  workHoursPerDay: 6
+  minimumHoursPerWeek: 10
+  maximumHoursPerWeek: 15
   payByHour: 10
   jobLengthInMonths: 5
   successMultiplier: 75

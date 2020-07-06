@@ -9,7 +9,8 @@ public class JobNoticeScriptable : ScriptableObject
     public string jobDescriptionOnNotice;
 
     [Header("Palkka ja tunnit")]
-    public int workHoursPerDay;
+    public int minimumHoursPerWeek;
+    public int maximumHoursPerWeek;
     public float payByHour;
     [Header("Aika")]
     public int jobLengthInMonths;

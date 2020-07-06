@@ -26,7 +26,7 @@ public class PlayerDataHolder : MonoBehaviour
     #region RAHA, TALOUS
 
     private PlayerMoney playerMoney;
-    private List<IncomeSource> incomeSources;
+    private List<Incomeable> incomeSources;
     public static List<ListableExpense> MonthlyListableExpenses = new List<ListableExpense>();
     public static List<ListableExpense> OtherListableExpenses = new List<ListableExpense>(); //Kaikki epäsäännölliset kulut
 
@@ -112,13 +112,13 @@ public class PlayerDataHolder : MonoBehaviour
             playerMoney = value;
         }
     }
-    public List<IncomeSource> IncomeSources
+    public List<Incomeable> IncomeSources
     {
         get
         {
             if (incomeSources == null)
             {
-                incomeSources = new List<IncomeSource>();
+                incomeSources = new List<Incomeable>();
             }
             return incomeSources;
         }
