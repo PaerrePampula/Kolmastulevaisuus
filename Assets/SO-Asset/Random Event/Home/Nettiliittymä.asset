@@ -21,7 +21,17 @@ MonoBehaviour:
   - eventDialog: "Olet toistaiseksi k\xE4ytt\xE4nyt asunnossasi taloyhti\xF6n tarjoamaa
       10mt/s netti\xE4, mutta olet todennut sen melko hitaaksi vauhdiksi, harkitsetko
       parempaa?\nJos ostat uuden, joudut my\xF6s maksamaan uuden reitittimen toimituksesta
-      25 euroa"
+      25 euroa\n\nNettilittymiin on voi olla sidottuna m\xE4\xE4r\xE4aikainen sopimus,
+      jonka saa kuitenkin purettua esimerkiksi muuttamalla k\xE4mp\xE4st\xE4si pois,
+      mutta sit\xE4 voi olla muuten hankala saada pois ennen m\xE4\xE4r\xE4aikaa\nJos
+      ostat laitteen suoraan palveluntarjoajaltasi, nettilaskuusi on eriteltyn\xE4
+      usein osamaksu laitteestasi, kunnes saat sen kokonaan maksettua pois (voi kest\xE4\xE4
+      esimerkiksi 9kk). Osamaksun m\xE4\xE4r\xE4 ei kuitenkaan ole kovinkaan valtava.\nValvo
+      nopeuksiasi, ja vaihda tarvittaessa. Nettilittym\xE4n saat helposti my\xF6s
+      kilpailutettua, sill\xE4 palveluntarjoajasi tarvitsee kuitenkin asiakkaansa.
+      LIittym\xE4si tekniikka on my\xF6s iso vaikuttava tekij\xE4 nettisi nopeuteen,
+      esimerksiksi yhdenvertaisessa kilpailussa kaapeliverkon nopeus p\xE4ihitt\xE4isi
+      langattoman verkon."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites:

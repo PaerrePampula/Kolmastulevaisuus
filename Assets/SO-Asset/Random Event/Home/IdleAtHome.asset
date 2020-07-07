@@ -18,12 +18,13 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 03000000
   eventTexts:
-  - eventDialog: "Olet kotona, mutta et osaa keksi\xE4 mit\xE4 tehd\xE4"
+  - eventDialog: "Viikonloppu l\xE4hestyy, ja olet kotona viett\xE4m\xE4ss\xE4 aikaa.
+      P\xE4\xE4t\xE4t ett\xE4 seuraavaksi..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Ehk\xE4 menen lenkille? [Mieliala kohenee]"
+      choiceDescriptor: Menen lenkille! [Mieliala kohenee]
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
@@ -48,6 +49,26 @@ MonoBehaviour:
       customRunTimeActions: []
       randomizedChoiceCustomActions: []
       firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Opiskelen!
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 2
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
   - eventDialog: "Sait kutsuttua kaverisi kyl\xE4\xE4n, mutta mit\xE4 tekisitte?"
     eventDialogChoices:
     - neededFlags: []
@@ -59,8 +80,8 @@ MonoBehaviour:
         uniqueStatComparison: 0
         TypeOfComparison: 5
       nextDialog: -1
-      choiceDescriptor: "Hankitaan jotain mahdollisen ep\xE4terveellist\xE4 ja katsotaan
-        ohjelmia [Maksaa 10 euroa]"
+      choiceDescriptor: "Ostetaan l\xE4hikaupasta jotain sy\xF6t\xE4v\xE4\xE4 ja
+        katsotaan ohjelmia [Maksaa 10 euroa]"
       clickActions: []
       customRunTimeActions:
       - eventClass: 0
@@ -112,6 +133,32 @@ MonoBehaviour:
         actionString1: Satisfaction
         actionString2: 
         actionFloat1: 10
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Suunniteltiin jo valmiiksi yhteisopiskelua
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 2
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 2
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []

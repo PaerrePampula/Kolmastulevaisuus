@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: InTheCityParty
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 2
+  weeksFromStartForFire: 5
   neededFlags: []
   Prerequisites: []
   fire_locations: 02000000
   eventTexts:
-  - eventDialog: "Kuulit koulussa n\xE4ill\xE4 hetkill\xE4 alkavista opiskelijabileist\xE4,
-      sin\xE4 p\xE4\xE4t\xE4t..."
+  - eventDialog: "Kuulit koulussa, ett\xE4 l\xE4hialueella j\xE4rjestet\xE4\xE4n
+      kohta opiskelijabileet, p\xE4\xE4t\xE4t..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites:

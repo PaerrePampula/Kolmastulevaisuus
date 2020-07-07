@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StartSaving
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 1
+  weeksFromStartForFire: 5
   neededFlags: []
   Prerequisites: []
   fire_locations: 03000000

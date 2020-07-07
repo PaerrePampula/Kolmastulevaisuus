@@ -12,23 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: UrbanArea1
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags: []
   Prerequisites: []
   fire_locations: 05000000
   eventTexts:
-  - eventDialog: "Sinulla on viel\xE4 vapaata aikaa, p\xE4\xE4t\xE4t k\xE4ytt\xE4\xE4
-      sen ajan..."
+  - eventDialog: "Olet k\xE4mpp\xE4si l\xE4hettyvill\xE4, ja p\xE4\xE4t\xE4t k\xE4ytt\xE4\xE4
+      aikasi..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: Salilla!
+      choiceDescriptor: "Menem\xE4ll\xE4 kotiin ja opiskellen"
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
         actionString1: Satisfaction
         actionString2: 
-        actionFloat1: 15
+        actionFloat1: 5
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
@@ -37,11 +39,18 @@ MonoBehaviour:
         actionFloat1: 15
         actionFloat2: 0
         actionBool1: 0
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 2
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: Opiskeluun kirjastossa
+      choiceDescriptor: "K\xE4ym\xE4ll\xE4 l\xE4hell\xE4 asuvien kavereiden luona"
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
@@ -53,28 +62,48 @@ MonoBehaviour:
       - eventClass: 1
         actionString1: Ranking
         actionString2: 0
-        actionFloat1: 30
+        actionFloat1: 15
         actionFloat2: 0
         actionBool1: 0
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 0
+        actionFloat1: 2
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: R-marketin edustalla maleksimiseen
+      choiceDescriptor: "K\xE4velem\xE4ll\xE4 puistossa"
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
         actionString1: Satisfaction
         actionString2: 
-        actionFloat1: 15
+        actionFloat1: 5
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
-        actionString1: Ranking
+        actionString1: Social
         actionString2: 
-        actionFloat1: -25
+        actionFloat1: 1
         actionFloat2: 0
         actionBool1: 0
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 1
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Comfortableness
+        actionString2: 
+        actionFloat1: 1
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
       Prerequisites: []
@@ -85,7 +114,7 @@ MonoBehaviour:
       - eventClass: 1
         actionString1: Satisfaction
         actionString2: 
-        actionFloat1: 20
+        actionFloat1: 10
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
@@ -94,4 +123,5 @@ MonoBehaviour:
         actionFloat1: 25
         actionFloat2: 0
         actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []

@@ -13,13 +13,22 @@ MonoBehaviour:
   m_Name: Haalarit
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 2
+  weeksFromStartForFire: 4
   neededFlags: []
   Prerequisites: []
   fire_locations: 00000000
   eventTexts:
-  - eventDialog: Koulussasi ilmoitettiin uusien opiskelijahaalarien tulosta, haluatko
-      ostaa sellaiset? [Maksaa 45 euroa]
+  - eventDialog: "Sait koulussa kuulla, ett\xE4 uudet opiskelijahaalarit ovat saapuneet,
+      haluatko ostaa sellaiset? [Maksaa 45 euroa]\nOpiskelijahaalarit ovat yliopistojen
+      ja ammattikorkeakoulujen opiskelijoiden pit\xE4mi\xE4 haalareita, johon usein\nommellaan
+      j\xE4rkytt\xE4v\xE4 m\xE4\xE4r\xE4 kangasmerkkej\xE4, jota voi mm. ostaa tai
+      vaihtaa muiden opiskelijoiden kanssa.\nHarvemmin se mik\xE4\xE4n yleinen arkiasu
+      on, mutta sit\xE4 monet k\xE4ytt\xE4\xE4 esimerkiksi opiskelijajuhlissa\nOpiskelijahaalareiden
+      v\xE4ri on my\xF6s merkitsev\xE4, sill\xE4 se merkitsee opiskelijan koulutusohjelmaa.\nErikoisena
+      faktana joskus my\xF6s joissakin opiskelijapiireiss\xE4 seurustelukumppanit
+      saattavat vaihtaa haalareistaan kesken\xE4\xE4n osan lahkeesta.\nTrendi rantautui
+      Suomeen Ruotsista, ja ensimm\xE4inen ilmentym\xE4 on todenn\xE4k\xF6isesti
+      er\xE4\xE4n Rakennusinsin\xF6\xF6rikillan hankkimat ty\xF6maahaalarit"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites:

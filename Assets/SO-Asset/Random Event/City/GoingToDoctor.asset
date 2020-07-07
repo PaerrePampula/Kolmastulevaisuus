@@ -20,7 +20,10 @@ MonoBehaviour:
   eventTexts:
   - eventDialog: "Koit jostain tuntemattomasta syyst\xE4 j\xE4rkytt\xE4v\xE4\xE4
       kipua, jouduit k\xE4ym\xE4\xE4n l\xE4\xE4k\xE4rill\xE4! [L\xE4\xE4k\xE4rireissu
-      maksoi 23 euroa]"
+      maksoi 23 euroa]\nJos k\xE4yt kunnallisessa terveydenhuollossa, ota huomioon
+      ett\xE4 sairaalak\xE4yntiesi laskuilla on Suomessa kalenterivuosittainen maksukatto.\nEt
+      siis joudu maksamaan sairaalakuluja en\xE4\xE4 yli sen maksukaton. Siihen ei
+      kuitenkaan lasketa mukaan muun muuassa \n-Hammashoidoista\n-Sairaankuljetuksesta\n-L\xE4\xE4k\xE4rintodistuksesta"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

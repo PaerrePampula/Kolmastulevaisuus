@@ -20,9 +20,18 @@ MonoBehaviour:
   eventTexts:
   - eventDialog: "Koulussasi k\xE4ytet\xE4\xE4n BYOD (Bring your own device) periaatetta.
       Sen mukaan opiskelioiden tarvitsee tuoda omat l\xE4pp\xE4rit, tai muut vastaavat
-      laitteet. Sinun koulullasi ei yksinkertaisesti riit\xE4 laitteita ihan kaikille\n\nHuomasit,
+      laitteet. Sinun koulullasi ei yksinkertaisesti riit\xE4 laitteita ihan kaikille\nHuomasit,
       ett\xE4 oma laitteesi on jo melko vanhahko, eik\xE4 toimi ihan parhaiten, hankitko
-      uuden?"
+      uuden?\n\nJos vilkaiset korkeakolun sivuja, niin sielt\xE4 useimmiten my\xF6s
+      l\xF6ytyy jonkinlainen osio opiskelijan omista tavaroista. Sielt\xE4 voi l\xF6yty\xE4
+      muunmuuassa yksityiskohtaiset tekniset tiedot/vaatimukset laitteille, mit\xE4
+      opiskelija mit\xE4 todenn\xE4k\xF6isemmin tarvitsee, jotta opiskelu laitteiden
+      kanssa sujuu sulavasti.\nTietokoneelle asetetut vaatimukset ovat melko paljolti
+      alasta riippuvaisia, kuten esimerkiksi humanistialalla opiskeleva ei todenn\xE4k\xF6isesti
+      tarvitse sen ihmeellisemp\xE4\xE4 laitetta, mutta sitten taas tieto- ja viestint\xE4tekniikan
+      insin\xF6\xF6rille hyv\xE4 laite on todenn\xE4k\xF6isesti tulevaisuudessa melkein
+      t\xE4ysin vaatimus jatkuvan tietoteknisen toiminnnan, raskaiden ohjelmien k\xE4yt\xF6n
+      sek\xE4 BYOD-periaatteen vuoksi"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites:
@@ -123,7 +132,8 @@ MonoBehaviour:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "En osta uutta, koitan p\xE4rj\xE4t\xE4 vanhalla"
+      choiceDescriptor: "En osta uutta, koitan p\xE4rj\xE4t\xE4 vanhalla [Opiskelu
+        k\xE4rsii hieman, mutta samalla s\xE4\xE4st\xE4t]"
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
@@ -135,7 +145,7 @@ MonoBehaviour:
       - eventClass: 1
         actionString1: Study
         actionString2: 
-        actionFloat1: -10
+        actionFloat1: -5
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1

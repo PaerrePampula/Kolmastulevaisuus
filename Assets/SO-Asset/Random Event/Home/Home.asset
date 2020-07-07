@@ -18,9 +18,14 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 03000000
   eventTexts:
-  - eventDialog: "Saavuit kotiin, sinun kannattaisi harkita uusien huonekalujen ostoa\n\nK\xE4mp\xE4ss\xE4si
-      jostain syyst\xE4 ei ole j\xE4\xE4kaappia, mutta tarvitset sellaisen ruuan
-      valmistusta ja sy\xF6mist\xE4 varten"
+  - eventDialog: "Viikonloppu h\xE4\xE4m\xF6tt\xE4\xE4, ja olet saapunut kotiin.
+      Mit\xE4 tehd\xE4?\nHuomaa, ett\xE4 k\xE4mpp\xE4si on harvinaisen tyhj\xE4n
+      n\xE4k\xF6inen, mutta saat onneksi ostettua itsellesi huonekaluja.\nSinulta
+      toistaiseksi uupuu j\xE4\xE4kaappi, mutta saat todenn\xE4k\xF6isesti ostettua
+      sen nyt sinun t\xE4m\xE4n hetkisill\xE4 varoilla.\nKannattaa tutustua kauppamenun
+      k\xE4ytt\xF6\xF6n, ja ostaa j\xE4\xE4kaappi.\n[T\xE4ss\xE4 peliss\xE4 tarvitset
+      j\xE4\xE4kaapin ruuan ostamista ja sy\xF6mist\xE4 varten, olet vaarassa n\xE4\xE4nty\xE4
+      ilman sit\xE4!!]"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

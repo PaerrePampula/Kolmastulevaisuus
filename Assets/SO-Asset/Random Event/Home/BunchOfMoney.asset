@@ -60,11 +60,35 @@ MonoBehaviour:
       randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
-      Prerequisites: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 25
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
       nextDialog: -1
-      choiceDescriptor: "Harkitse uusien huonekalujen ostoa [Osta niiit\xE4 ostomenusta]"
+      choiceDescriptor: Soita kavereille ja tarjoa heille pitsat! (Maksaa 25 euroa)
       clickActions: []
-      customRunTimeActions: []
+      customRunTimeActions:
+      - eventClass: 0
+        actionString1: 
+        actionString2: 
+        actionFloat1: -25
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 3
+        actionString1: Tarjotut pitsat
+        actionString2: 
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 1
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
       randomizedChoiceCustomActions: []
       firedFlags: []
     - neededFlags: []
@@ -97,13 +121,13 @@ MonoBehaviour:
       - eventClass: 1
         actionString1: Comfortableness
         actionString2: 
-        actionFloat1: 5
+        actionFloat1: 2
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
         actionString1: Social
         actionString2: 
-        actionFloat1: 5
+        actionFloat1: 3
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []

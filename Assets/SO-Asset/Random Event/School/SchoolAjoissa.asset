@@ -12,23 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: SchoolAjoissa
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags: []
   Prerequisites: []
   fire_locations: 00000000
   eventTexts:
-  - eventDialog: "Koulussa ei tapahtunut t\xE4n\xE4\xE4n mit\xE4\xE4n kovin mielenkiintoista,
-      mutta p\xE4\xE4sit t\xE4n\xE4\xE4n ainakin ajoissa!"
+  - eventDialog: "Koulup\xE4iv\xE4si ei ollut t\xE4n\xE4\xE4n sen erikoisempi, koulun
+      p\xE4\xE4ttymisaika oli t\xE4n\xE4\xE4n melko aikaisin!"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: Jee!
+      choiceDescriptor: Nice... [Poistu]
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
         actionString1: Satisfaction
         actionString2: 
         actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Tee kouluprojekteja hiljaisessa tilassa
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 2.5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites:
+      - playerStat: 0
+        comparisonValueType: 0
+        StringComparatorValue: 
+        FloatComparatorValue: 2.5
+        uniqueStatComparison: 0
+        TypeOfComparison: 5
+      nextDialog: -1
+      choiceDescriptor: "K\xE4y viel\xE4 sy\xF6m\xE4ss\xE4 kavereiden kanssa ennenkuin
+        l\xE4hdet [Maksaa 2.5 euroa]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Social
+        actionString2: 
+        actionFloat1: 2
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: 5
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 0
+        actionString1: 0
+        actionString2: 
+        actionFloat1: -2.5
         actionFloat2: 0
         actionBool1: 0
       randomizedChoiceCustomActions: []
