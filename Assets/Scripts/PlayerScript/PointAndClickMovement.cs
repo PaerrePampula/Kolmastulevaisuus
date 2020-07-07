@@ -75,15 +75,17 @@ public class PointAndClickMovement : MonoBehaviour
         }
         if ((hasAMoveCommand == true) && (playerNavMeshAgent.velocity == Vector3.zero) && (!playerNavMeshAgent.pathPending))
         {
-            if (playerNavMeshAgent.remainingDistance < 1.5)
+            if (playerNavMeshAgent.remainingDistance < playerNavMeshAgent.stoppingDistance)
             {
-                hasAMoveCommand = false;
-                OnMoveStopped?.Invoke();
-                if (interactedObject != null)
+
+                if ((interactedObject != null))
                 {
+                    Debug.Log((playerNavMeshAgent.transform.position - interactedObject.transform.position).sqrMagnitude);
                     interactedObject.OnInteract();
                     interactedObject = null;
                 }
+                hasAMoveCommand = false;
+                OnMoveStopped?.Invoke();
             }
 
         }
