@@ -33,10 +33,11 @@ public class Job : IStattable, Incomeable
         var finalDayint = System.DateTime.DaysInMonth(newDate.Year,newDate.Month);
         var finalDayDate = new System.DateTime(newDate.Year, newDate.Month, finalDayint);
         jobEndDate = finalDayDate;
+        JobHandler.OnJobApply += JobChange;
         DateTimeSystem.OnMonthChange += resetHours;
         LocationHandler.OnTurnEnd += addHoursToJob;
         JobHandler.OnJobEnd += JobEnd;
-        JobHandler.OnJobApply += JobChange;
+
         ResetButton.onReset += RemoveJob;
 
 
@@ -69,7 +70,11 @@ public class Job : IStattable, Incomeable
     }
     void JobChange(JobNotice job)
     {
-        RemoveJob();
+        if (job.scriptable.jobTitle != _jobTitle)
+        {
+            RemoveJob();
+        }
+
     }
     void JobEnd()
     {
@@ -81,12 +86,14 @@ public class Job : IStattable, Incomeable
         JobHandler.OnJobEnd -= JobEnd;
         JobHandler.OnJobApply -= JobChange;
         DateTimeSystem.OnMonthChange -= resetHours;
+        LocationHandler.OnTurnEnd -= addHoursToJob;
         ResetButton.onReset -= RemoveJob;
     }
     void addHoursToJob()
     {
         int hours = Random.Range(hoursRange.Item1, hoursRange.Item2 + 1);
         currentHours += hours;
+        Debug.Log(currentHours);
     }
     float speculatedPay()
     {

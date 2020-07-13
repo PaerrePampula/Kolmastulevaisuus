@@ -18,7 +18,7 @@ MonoBehaviour:
     katsotaan hakuprosessissamme hyv\xE4ll\xE4. Tarvittaessa yritys kustantaa ty\xF6ntekij\xE4lle
     trukkikortin."
   minimumHoursPerWeek: 17
-  maximumHoursPerWeek: 0
+  maximumHoursPerWeek: 17
   payByHour: 11
   jobLengthInMonths: 5
   successMultiplier: 20

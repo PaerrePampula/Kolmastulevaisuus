@@ -15,4 +15,4 @@ MonoBehaviour:
   event_Type: 15
   description: 
   eventToRise: {fileID: 11400000, guid: 32cd17500de67a24d97dfb3cc2879cfc, type: 2}
-  eventFireTime: 2
+  eventFireTime: 4
