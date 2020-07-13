@@ -13,8 +13,30 @@ public class DateTimeSystem : MonoBehaviour
     int weekIndicator = 1;
     [SerializeField]
     GameObject weekIndicatorObject;
+    [SerializeField]
+    GameObject dayIndicatorObject;
+    string[] gameDays = { "Maanantai", "Keskiviikko", "Perjantai", "Lauantai" };
+    int dayIndicator = 0;
 
     public static DateTime GameStartDate { get => gameStartDate; set => gameStartDate = value; }
+    public int DayIndicator
+    {
+        get 
+        { 
+            return dayIndicator; 
+        }
+        set
+        {
+            if (value > 3)
+            {
+                dayIndicator = 0;
+                return;
+            }
+            dayIndicator = value;
+
+
+        }
+    }
 
     public delegate void MonthChange();
     public static event MonthChange OnMonthChange;
@@ -40,6 +62,7 @@ public class DateTimeSystem : MonoBehaviour
     private void OnEnable() //Kun tämä skripti aktivoituu, se automaattisesti tilaa Kukkaroskriptin OnIncrease tapahtuman
     {
         LocationHandler.OnTurnEnd += ChangeWeek;
+        LocationHandler.OnLocationChange += changeDayIndicator;
     }
 
     private void OnDisable()
@@ -60,10 +83,19 @@ public class DateTimeSystem : MonoBehaviour
     void changeWeekIndicator()
     {
         weekIndicator++;
-        GameObject go = Instantiate(weekIndicatorObject);
-        go.transform.SetParent(MainCanvas.mainCanvas.transform);
-        go.transform.localPosition = Vector3.zero;
-        go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("Viikko " + weekIndicator);
+        GameObject weekIndication = Instantiate(weekIndicatorObject);
+        weekIndication.transform.SetParent(MainCanvas.mainCanvas.transform);
+        weekIndication.transform.localPosition = Vector3.zero;
+        weekIndication.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format("Viikko " + weekIndicator);
+    }
+    void changeDayIndicator()
+    {
+        DayIndicator++;
+        GameObject dayIndication = Instantiate(dayIndicatorObject);
+        dayIndication.transform.SetParent(MainCanvas.mainCanvas.transform);
+        dayIndication.transform.localPosition = new Vector3(0, Screen.height/2f - 60);
+
+        dayIndication.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format(gameDays[dayIndicator]);
     }
     public void ChangeWeek()
     {
