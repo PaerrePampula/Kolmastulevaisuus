@@ -22,7 +22,7 @@ public class JobNoticeButtonBehaviour : MonoBehaviour
     public void setButtonText(string jobTitle, float pay, int hoursMin, int hoursMax = 0)
     {
         string range = "";
-        if (hoursMax != 0)
+        if (hoursMax != hoursMin)
         {
             range = hoursMin + "-" + hoursMax;
         }
