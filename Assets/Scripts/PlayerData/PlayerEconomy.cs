@@ -5,8 +5,7 @@ using UnityEngine;
 public static class PlayerEconomy
 {
     #region Fields
-    public delegate void IncreaseAction(float amount);
-    public static event IncreaseAction OnMoneyChange;
+
     public delegate void FloatValue(float amount);
     public static event FloatValue OnChangeFetch;
     public delegate void NewIncomeApply();

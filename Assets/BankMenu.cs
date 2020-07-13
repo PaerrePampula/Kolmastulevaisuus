@@ -30,9 +30,5 @@ public class BankMenu : MonoBehaviour
     {
         savedFundsIndicator.text = amount.ToString();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
