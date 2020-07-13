@@ -34,10 +34,10 @@ MonoBehaviour:
       - {fileID: 11400000, guid: d41b6dc4d413a1e449d009b6a8dffd0c, type: 2}
       customRunTimeActions:
       - eventClass: 2
-        actionString1: SAVE_50
+        actionString1: SAVING
         actionString2: 
         actionFloat1: 0
-        actionFloat2: 0
+        actionFloat2: 50
         actionBool1: 0
       - eventClass: 0
         actionString1: 
@@ -56,6 +56,7 @@ MonoBehaviour:
       - FlagName: SAVING_50
         TimeToHappen: 0
         uniqueFlag: 0
+        flagOptionalValue: 0
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1

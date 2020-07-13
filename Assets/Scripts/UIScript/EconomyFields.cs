@@ -22,7 +22,7 @@ public class EconomyFields : MonoBehaviour
     #region MonobehaviourDefaults
     private void OnEnable() //Kun tämä skripti aktivoituu, se automaattisesti tilaa Kukkaroskriptin OnIncrease tapahtuman
     {
-        PlayerEconomy.OnMoneyChange += UpdateUI;
+        PlayerDataHolder.Current.PlayerMoney.onMoneyChange += UpdateUI;
         PlayerEconomy.OnNewIncome += UpdateUI;
         Bill.onBillingChange += UpdateUI;
         UpdateUI();
@@ -30,7 +30,7 @@ public class EconomyFields : MonoBehaviour
     }
     private void OnDisable()
     {
-        PlayerEconomy.OnMoneyChange -= UpdateUI; //Jos tämä skripti poistuu, se ottaa sen tilauksen ensin pois. Miksi? Koska muuten tulisi null reference exceptioneita, jos tilaus on olemassa, mutta ei vastaanottajaa...
+        PlayerDataHolder.Current.PlayerMoney.onMoneyChange -= UpdateUI;
         PlayerEconomy.OnNewIncome += UpdateUI;
         Bill.onBillingChange -= UpdateUI;
         StopAllCoroutines();

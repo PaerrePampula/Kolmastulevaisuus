@@ -34,10 +34,10 @@ MonoBehaviour:
       - {fileID: 11400000, guid: f692cd4289c5273478fafdc4456107d9, type: 2}
       customRunTimeActions:
       - eventClass: 2
-        actionString1: SAVING_25
+        actionString1: SAVING
         actionString2: 
         actionFloat1: 0
-        actionFloat2: 0
+        actionFloat2: 25
         actionBool1: 0
       - eventClass: 1
         actionString1: Ranking

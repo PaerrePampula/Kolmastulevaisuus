@@ -3,9 +3,17 @@ using System.Collections;
 
 public class Bank : MonoBehaviour
 {
-    PlayerMoney savedMoney;
+    PlayerMoney savedMoney = new PlayerMoney();
+    public delegate void MoneySave();
+    public static event MoneySave onMoneySave;
+    public PlayerMoney SavedMoney
+    {
+        get => savedMoney; set
+        {
+            savedMoney = value;
 
-    public PlayerMoney SavedMoney { get => savedMoney; set => savedMoney = value; }
+        }
+    }
     static private Bank _Current;
     static public Bank Current
     {
@@ -18,11 +26,16 @@ public class Bank : MonoBehaviour
             return _Current;
         }
     }
+    public override string ToString()
+    {
+        return savedMoney.getValue<float>().ToString();
+    }
+
     // Use this for initialization
     void OnEnable()
     {
         Flag.OnFlagFire += checkFlag;
-        SavedMoney = new PlayerMoney();
+
     }
     private void OnDestroy()
     {
@@ -31,21 +44,16 @@ public class Bank : MonoBehaviour
 
     void checkFlag(Flag flag)
     {
-        switch (flag.FlagName)
+        if (flag.FlagName == "SAVING")
         {
-            case "SAVING_50":
-                addSavings(50);
-                break;
-            case "SAVING_25":
-                addSavings(25);
-                break;
-            default:
-                break;
+            addSavings(flag.flagOptionalValue);
         }
+
     }
     void addSavings(float amount)
     {
         SavedMoney.MoneyChange(amount);
+        onMoneySave.Invoke();
     }
     public void DEBUG_ADDSAVINGS(float amount)
     {

@@ -45,7 +45,7 @@ public static class PlayerEconomy
         floatChange = floatChangeInfo.changeofFloat;
         OnChangeFetch?.Invoke(floatChangeInfo.changeofFloat);
         PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
-        OnMoneyChange?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
+
     }
     static void setMoney(float amount)
     {
@@ -53,7 +53,7 @@ public static class PlayerEconomy
         floatChange = amount;
         PlayerDataHolder.Current.PlayerMoney.MoneyChange(floatChange);
         OnChangeFetch?.Invoke(amount);
-        OnMoneyChange?.Invoke(PlayerDataHolder.Current.PlayerMoney.getValue<float>());
+
     }
 
     public static float getAllIncomeSourceGrossTotals(int monthAmount)

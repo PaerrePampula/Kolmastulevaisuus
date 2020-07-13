@@ -7,6 +7,7 @@ public class UiGeneric : MonoBehaviour //Jokaisen UI palikkaan sopivia ominaisuu
     public static event UIOpen OnUIOpened;
     public GameObject OnClickResourceToCall; //Esim shortcuttien painamisesta nousevat elementit canvakselle.
     public Transform OnClickResourceParent;
+
     #endregion
     #region MonobehaviourDefaults
     private void Start()
@@ -32,6 +33,7 @@ public class UiGeneric : MonoBehaviour //Jokaisen UI palikkaan sopivia ominaisuu
         UiElementCall uiCall = new UiElementCall();
         uiCall.elementToCall = OnClickResourceToCall;
         uiCall.elementParent = OnClickResourceParent;
+
         GameEventSystem.DoEvent(
             Event_Type.UI_ELEMENT_CALL,
             uiCall

@@ -58,6 +58,7 @@ public class UiElementCall : EventInfo
 {
     public GameObject elementToCall;
     public Transform elementParent;
+
 }
 public class WelfareApplyFormInfo : EventInfo
 {

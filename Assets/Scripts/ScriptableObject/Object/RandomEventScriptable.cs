@@ -79,7 +79,7 @@ public class CustomAction
                 PerformActionWithEventInfo(event_Type, simStatInfo);
                 break;
             case eventClassName.FlagFire:
-                Flag flag = new Flag(actionString1, (int)actionFloat1, actionBool1);
+                Flag flag = new Flag(actionString1, (int)actionFloat1, actionBool1, (int)actionFloat2);
                 flag.FireFlag();
 
                 break;
