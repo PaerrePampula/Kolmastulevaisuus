@@ -19,7 +19,7 @@ MonoBehaviour:
     TimeToHappen: 0
     uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 04000000
   eventTexts:
   - eventDialog: "Myit valuuttasi ja huomasit, ett\xE4 sait investoimasi raham\xE4\xE4r\xE4n
       takaisin viisinkertaisena!"

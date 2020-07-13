@@ -16,9 +16,9 @@ MonoBehaviour:
   weeksFromStartForFire: 0
   neededFlags: []
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 04000000
   eventTexts:
-  - eventDialog: "On kulunut kaksi kuukautta siit\xE4, kun kaverisi myi sinulle kryptovaluuttojen
+  - eventDialog: "On kulunut kuukausi siit\xE4, kun kaverisi myi sinulle kryptovaluuttojen
       ostamista, mik\xE4h\xE4n on lopputulos?"
     eventDialogChoices:
     - neededFlags: []
@@ -38,7 +38,7 @@ MonoBehaviour:
           baseChance: 20
           chanceIncreaseStat: 0
           statEffectChanceIncreaseOn: 0
-        - eventClass: 0
+        - eventClass: 2
           actionString1: DOUBLINGMONEY_FAIL
           actionString2: 
           actionFloat1: 0

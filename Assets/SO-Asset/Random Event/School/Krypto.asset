@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Krypto
   m_EditorClassIdentifier: 
   fireOnce: 1
-  weeksFromStartForFire: 5
+  weeksFromStartForFire: 4
   neededFlags: []
   Prerequisites: []
   fire_locations: 00000000
@@ -21,7 +21,7 @@ MonoBehaviour:
   - eventDialog: "Yksi kavereistasi, joka py\xF6ritt\xE4\xE4 sivussa Doubling Money
       nimist\xE4 kryptovaluutanvaihtoyrityst\xE4 suositteli sinulle t\xE4n\xE4\xE4n
       koulussa kryptovaluuttojen ostoa\nKaverisi v\xE4itt\xE4\xE4, ett\xE4 jos myyt
-      kryptovaluutan kahden kuukauden p\xE4\xE4st\xE4, saat siit\xE4 hyv\xE4t voitot.\n\nMit\xE4
+      kryptovaluutan kuukauden p\xE4\xE4st\xE4, saat siit\xE4 hyv\xE4t voitot.\n\nMit\xE4
       vastaat kaverillesi?"
     eventDialogChoices:
     - neededFlags: []

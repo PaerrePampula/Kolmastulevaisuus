@@ -19,7 +19,7 @@ MonoBehaviour:
     TimeToHappen: 0
     uniqueFlag: 0
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 04000000
   eventTexts:
   - eventDialog: "Katsoit kryptovaluuttojen kursseja, ja huomasit ett\xE4 tulokset
       ovat aivan kuraa!\nSait onneksesi kuitenkin valuutan myynnist\xE4 pari euroa
