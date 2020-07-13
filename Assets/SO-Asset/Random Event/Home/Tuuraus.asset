@@ -18,7 +18,13 @@ MonoBehaviour:
   - FlagName: JOB_RECEIVED
     TimeToHappen: 0
     uniqueFlag: 0
-  Prerequisites: []
+  Prerequisites:
+  - playerStat: 1
+    comparisonValueType: 2
+    StringComparatorValue: 
+    FloatComparatorValue: 0
+    uniqueStatComparison: 1
+    TypeOfComparison: 7
   fire_locations: 0000000003000000
   eventTexts:
   - eventDialog: "Esimiehesi soitti sinulle, ja kertoi toisen kollegan sairauspoissaolosta.

@@ -15,7 +15,13 @@ MonoBehaviour:
   fireOnce: 0
   weeksFromStartForFire: 0
   neededFlags: []
-  Prerequisites: []
+  Prerequisites:
+  - playerStat: 1
+    comparisonValueType: 0
+    StringComparatorValue: 
+    FloatComparatorValue: 0
+    uniqueStatComparison: 0
+    TypeOfComparison: 7
   fire_locations: 
   eventTexts:
   - eventDialog: "T\xE4n\xE4\xE4n esimiehesi kysyi ett\xE4 onnistuuko ylit\xF6iden

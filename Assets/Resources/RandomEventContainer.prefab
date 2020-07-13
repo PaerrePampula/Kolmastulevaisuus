@@ -479,12 +479,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum."'
+  m_text: "Sait koulussa kuulla, ett\xE4 uudet opiskelijahaalarit ovat saapuneet,
+    haluatko ostaa sellaiset? [Maksaa 45 euroa]\nOpiskelijahaalarit ovat yliopistojen
+    ja ammattikorkeakoulujen opiskelijoiden pit\xE4mi\xE4 haalareita, johon usein
+    ommellaan j\xE4rkytt\xE4v\xE4 m\xE4\xE4r\xE4 kangasmerkkej\xE4, jota voi mm.
+    ostaa tai vaihtaa muiden opiskelijoiden kanssa.\n\nHarvemmin se mik\xE4\xE4n
+    yleinen arkiasu on, mutta sit\xE4 monet k\xE4ytt\xE4\xE4 esimerkiksi opiskelijajuhlissa
+    Opiskelijahaalareiden v\xE4ri on my\xF6s merkitsev\xE4, sill\xE4 se merkitsee
+    opiskelijan koulutusohjelmaa.\n\nErikoisena faktana joskus my\xF6s joissakin
+    opiskelijapiireiss\xE4 seurustelukumppanit saattavat vaihtaa haalareistaan kesken\xE4\xE4n
+    osan lahkeesta.\nTrendi rantautui Suomeen Ruotsista, ja ensimm\xE4inen ilmentym\xE4
+    on todenn\xE4k\xF6isesti er\xE4\xE4n Rakennusinsin\xF6\xF6rikillan hankkimat
+    ty\xF6maahaalarit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -512,16 +518,16 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 22.7
+  m_fontSize: 18.1
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 13
+  m_fontSizeMin: 16
   m_fontSizeMax: 25
   m_fontStyle: 0
   m_textAlignment: 258
   m_characterSpacing: 0
-  m_wordSpacing: 2
+  m_wordSpacing: 5
   m_lineSpacing: 2
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -550,15 +556,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.0216064, y: -0.52219284, z: 7.4388123, w: 1355.416}
+  m_margin: {x: 2.0216064, y: -0.52219284, z: 7.4388123, w: 1252.7189}
   m_textInfo:
     textComponent: {fileID: 7560299311673117691}
-    characterCount: 447
+    characterCount: 792
     spriteCount: 0
-    spaceCount: 68
-    wordCount: 69
+    spaceCount: 86
+    wordCount: 85
     linkCount: 0
-    lineCount: 12
+    lineCount: 20
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
