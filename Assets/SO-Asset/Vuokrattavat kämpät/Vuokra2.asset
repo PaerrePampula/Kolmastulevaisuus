@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vuokra2
   m_EditorClassIdentifier: 
   address: Koulukatu 5 B 10
-  baseRentAmount: 750
+  baseRentAmount: 530
   waterCost: 10
   sizeInMetersSquared: 36
   electricityCost: 10
@@ -21,12 +21,13 @@ MonoBehaviour:
   homeInsurance: 0
   needToHaveHomeInsurance: 1
   extrasOnRentableHome:
-  - extraName: Sauna
+  - extraName: Saunamaksu
     extraCostPerMonth: 3.5
   displayPrefab: {fileID: 2546730403149268248, guid: f8f5aec31c9397d4e867eeb6a2f01c79,
     type: 3}
   longFormDescription: "Rivitalo l\xE4hell\xE4 kouluja ja keskustaa. L\xE4hell\xE4
-    ruokakauppa"
+    ruokakauppa, ja muita palveluita.\n[T\xE4m\xE4 asunto on tarpeeksi kaukana koulusta
+    siihen, ett\xE4 sinun tarvitsee ostaa julkisen liikenteen matkalippuja]"
   perks: 'Oma sauna, takapiha, '
   shortFormDescription: 2h + 1k + kh
   extrasDescription: "vuokraan sis\xE4ltyy taloyhti\xF6n laajakaista"

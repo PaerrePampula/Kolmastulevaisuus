@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Vuokra3
   m_EditorClassIdentifier: 
   address: Keskustankatu 1 A 5
-  baseRentAmount: 650
-  waterCost: 5
-  sizeInMetersSquared: 29
+  baseRentAmount: 300
+  waterCost: 0
+  sizeInMetersSquared: 20
   electricityCost: 0
+  closeEnoughToSchoolToWalk: 1
   homeInsurance: 0
   needToHaveHomeInsurance: 0
-  extrasOnRentableHome:
-  - extraName: Saunamaksu
-    extraCostPerMonth: 2.5
+  extrasOnRentableHome: []
   displayPrefab: {fileID: 6883480185883364746, guid: f0d69262d4e610c4fb13d1fc90d8eb03,
     type: 3}
-  longFormDescription: "Yksi\xF6 aivan keskustan siimeksess\xE4. Kaikki keskustan
+  longFormDescription: "Soluasunto aivan keskustan siimeksess\xE4. Kaikki keskustan
     palvelut eritt\xE4in l\xE4hell\xE4 kohdetta! Lyhyt matka paikallisille korkeakouluille!
-    S\xE4hk\xF6sopimus sis\xE4llytetty hintaan"
-  perks: "taloyhti\xF6n sauna, lasitettu parveke"
+    S\xE4hk\xF6 ja vesi osa vuokraa\n[T\xE4m\xE4 soluasunto on k\xE4yt\xE4nn\xF6ss\xE4
+    heti koulusi vieress\xE4, joten sinulle ei tule matkakuluja koulumatkoista]"
+  perks: "taloyhti\xF6n sauna, yhteinen keitti\xF6, wc ja kylpyhuone"
   shortFormDescription: 1h + 1kh + 1k
   extrasDescription: 
-  rentableScene: StudioHomeNo1
+  rentableScene: SoluAsunto
   huoneKoko: 0
-  vuokraTyyppi: 0
+  vuokraTyyppi: 3

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Vuokra1
   m_EditorClassIdentifier: 
   address: Koulukatu 1 A 5
-  baseRentAmount: 550
+  baseRentAmount: 440
   waterCost: 5
   sizeInMetersSquared: 24
   electricityCost: 5
+  closeEnoughToSchoolToWalk: 0
   homeInsurance: 0
   needToHaveHomeInsurance: 0
   extrasOnRentableHome:
@@ -24,7 +25,10 @@ MonoBehaviour:
     extraCostPerMonth: 5
   displayPrefab: {fileID: 6883480185883364746, guid: f0d69262d4e610c4fb13d1fc90d8eb03,
     type: 3}
-  longFormDescription: "Uusi yksi\xF6 l\xE4hell\xE4 kouluja!"
+  longFormDescription: "Yksi\xF6 l\xE4hell\xE4 keskustaa, ja muita palveluita. Lyhyt
+    matka korkeakouluihin, ja sijaitsee hyvin rauhallisessa taloyhti\xF6ss\xE4. Rakennuksesta
+    l\xF6ytyy hissi.\n[T\xE4m\xE4 asunto on tarpeeksi kaukana koulusta siihen, ett\xE4
+    sinun tarvitsee ostaa julkisen liikenteen matkalippuja]"
   perks: oma sauna, pesutupa
   shortFormDescription: 1h + kh + kk
   extrasDescription: "vuokraan sis\xE4ltyy 25M laajakaista"
