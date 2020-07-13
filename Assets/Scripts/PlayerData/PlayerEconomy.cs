@@ -10,8 +10,9 @@ public static class PlayerEconomy
     public static event FloatValue OnChangeFetch;
     public delegate void NewIncomeApply();
     public static event NewIncomeApply OnNewIncome;
-    public delegate void MoneyAlert(int strikeCost);
-    public static event MoneyAlert OnBust;
+    public delegate void PaidExpenses();
+    public static event PaidExpenses onExpensesPay;
+
     //Delegatesta ja eventistä. Näillä kukkaro saa lähetettyä rahanmuutoksesta viestin kaikille onincreasen tilanneille 
     //classeille viestin siitä, että rahatilanne on muuttunut, delegaten ja eventin avulla näitä tilaajia ei tarvitse
     //erikseen unityn editorissä määritellä, eli toisinsanoen pelaajan kukkaron ei tarvitse tietää, kenelle tätä viestiä lähetetään.
@@ -134,33 +135,33 @@ public static class PlayerEconomy
         setMoney(amount);
         ListableExpense expense = new ListableExpense(PlayerDataHolder.OtherListableExpenses, (name, amount), stacked);
     }
-    static void checkBelowZeroMoney()
-    {
-        float checkedAmount = PlayerDataHolder.Current.PlayerMoney.getValue<float>();
-        float bankBackUp = Bank.Current.SavedMoney.getValue<float>();
-        if (checkedAmount < 0)
-        {
-            float bankCheck = checkedAmount + bankBackUp;
-            if (bankCheck > 0)
-            {
-                Bank.Current.SavedMoney.MoneyChange(checkedAmount);
-                Flag savingsSave = new Flag("PLAYER_ECONOMY_SAVED_BY_SAVINGS", 0, false);
-                savingsSave.FireFlag();
-                PlayerDataHolder.Current.PlayerMoney.resetMoney();
-                return;
-            }
-            int strikesGenerated = (checkedAmount > 850f) ? 2 : 1;
-            //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 850
-            OnBust?.Invoke(strikesGenerated);
-        }
-    }
+    //static void checkBelowZeroMoney()
+    //{
+    //    float checkedAmount = PlayerDataHolder.Current.PlayerMoney.getValue<float>();
+    //    float bankBackUp = Bank.Current.SavedMoney.getValue<float>();
+    //    if (checkedAmount < 0)
+    //    {
+    //        float bankCheck = checkedAmount + bankBackUp;
+    //        if (bankCheck > 0)
+    //        {
+    //            Bank.Current.SavedMoney.MoneyChange(checkedAmount);
+    //            Flag savingsSave = new Flag("PLAYER_ECONOMY_SAVED_BY_SAVINGS", 0, false);
+    //            savingsSave.FireFlag();
+    //            PlayerDataHolder.Current.PlayerMoney.resetMoney();
+    //            return;
+    //        }
+    //        int strikesGenerated = (checkedAmount > 500f) ? 2 : 1;
+    //        //Pelaaja menettää kaksi "elämää" jos hänen velkansa on yli 500
+    //        OnBust?.Invoke(strikesGenerated);
+    //    }
+    //}
     static void deductExpenses()
     {
         for (int i = 0; i < PlayerDataHolder.MonthlyListableExpenses.Count; i++)
         {
             PaerToolBox.changePlayerMoney(-PlayerDataHolder.MonthlyListableExpenses[i].getTotal());
         }
-        checkBelowZeroMoney();
+        onExpensesPay?.Invoke();
     }
     static void removeExtras()
     {

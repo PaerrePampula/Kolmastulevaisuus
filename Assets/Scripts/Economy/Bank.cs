@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bank : MonoBehaviour
 {
-    PlayerMoney savedMoney = new PlayerMoney();
+    PlayerMoney savedMoney = new PlayerMoney(false);
     public delegate void MoneySave();
     public static event MoneySave onMoneySave;
     public PlayerMoney SavedMoney

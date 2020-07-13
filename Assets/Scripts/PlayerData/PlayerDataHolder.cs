@@ -107,7 +107,7 @@ public class PlayerDataHolder : MonoBehaviour
         {
             if (playerMoney == null)
             {
-                playerMoney = new PlayerMoney();
+                playerMoney = new PlayerMoney(true);
             }
             return playerMoney;
         }
@@ -333,7 +333,7 @@ public class PlayerDataHolder : MonoBehaviour
     {
 
         allStats = new List<Stat>();
-        playerMoney = new PlayerMoney();
+        playerMoney = new PlayerMoney(true);
 
         Satisfaction.Init();
         Comfortableness.Init();

@@ -17,13 +17,13 @@ public class GameStateHandler : MonoBehaviour
     private void OnEnable()
     {
         DateTimeSystem.OnMonthChange += checkEnd;
-        PlayerEconomy.OnBust += checkBustState;
+        PlayerDataHolder.Current.PlayerMoney.OnBust += checkBustState;
         Flag.OnFlagFire += checkFlag;
     }
     private void OnDisable()
     {
         DateTimeSystem.OnMonthChange -= checkEnd;
-        PlayerEconomy.OnBust -= checkBustState;
+        PlayerDataHolder.Current.PlayerMoney.OnBust -= checkBustState;
         Flag.OnFlagFire -= checkFlag;
     }
 
