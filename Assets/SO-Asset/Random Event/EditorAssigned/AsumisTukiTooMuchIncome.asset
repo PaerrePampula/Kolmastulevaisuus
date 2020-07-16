@@ -12,17 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: AsumisTukiTooMuchIncome
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags:
   - FlagName: PLAYER_HAS_TOO_MUCH_INCOME
     TimeToHappen: 0
     uniqueFlag: 1
+    flagOptionalValue: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
   - eventDialog: "Menetit yleisen asumistukesi, sill\xE4 teet t\xE4ll\xE4 hetkell\xE4
-      liikaa ansiota tukea saadaksesi!"
+      liikaa ansiota tukea saadaksesi! T\xE4m\xE4 harvemmin osuu kenenk\xE4\xE4n
+      opiskelijan kohdalle, l\xE4heskin jos he asuvat yksin, mutta muista ett\xE4
+      kela voi laskea monen muunkin asian tuloiksi, kuten satunnaiset vanhempien
+      rahalliset avustukset."
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: Harmi!
       clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []

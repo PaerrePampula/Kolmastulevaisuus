@@ -6,6 +6,8 @@ public class Bank : MonoBehaviour
     PlayerMoney savedMoney = new PlayerMoney(false);
     public delegate void MoneySave();
     public static event MoneySave onMoneySave;
+    bool canLoan = false;
+    public bool CanLoan { get => canLoan; set => canLoan = value; }
     public PlayerMoney SavedMoney
     {
         get => savedMoney; set
@@ -47,6 +49,10 @@ public class Bank : MonoBehaviour
         if (flag.FlagName == "SAVING")
         {
             addSavings(flag.flagOptionalValue);
+        }
+        if (flag.FlagName == "LOANTIME")
+        {
+            canLoan = true;
         }
 
     }

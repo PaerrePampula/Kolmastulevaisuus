@@ -12,23 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: "Opintotukihyv\xE4ksyttiin"
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags:
   - FlagName: OPINTOTUKI_ACCEPTED
     TimeToHappen: 0
     uniqueFlag: 0
+    flagOptionalValue: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Opintotukihakemuksesi hyv\xE4ksyttiin! Korkeakouluopintojesi laajuden
-      vuoksi sait opintotukikuukausia yhteens\xE4 39. Et saa tukea kes\xE4kuukausilta,
-      paitsi jos haet sit\xE4 erikseen, ja sille on sopiva syy, ja jokainen opiskelukuukausi
-      kuluttaa sinun korkeakouluopintojen tukikuukausia. Tuki alkaa nyt, loppuu 31.5
-      ja alkaa jatkossa  1.9."
+  - eventDialog: "Opintotukihakemuksesi hyv\xE4ksyttiin! \n\nOikeassa el\xE4m\xE4ss\xE4
+      saat opintotukea tietyn kuukausim\xE4\xE4r\xE4n, joka riippuu opintojesi laajuudesta,
+      jokainen kuukausi, jota opiskelet, kuluttaa sit\xE4 m\xE4\xE4r\xE4\xE4, mukaanlukien
+      mahdolliset kes\xE4projektit, tai muut vastaavat.\n\nHuomaa, ett\xE4 voit nyt
+      my\xF6s hakea opintolainan valtiontakausta, oikeassa el\xE4m\xE4ss\xE4 kelan
+      sivuilla pystyt hakemaan t\xE4t\xE4 samalla automaattisesti, kun haet opintotukea
+      kelan sivuilta\n"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Pid\xE4n sen mieless\xE4..."
+      choiceDescriptor: OK
       clickActions: []
       customRunTimeActions:
       - eventClass: 1
@@ -37,29 +42,5 @@ MonoBehaviour:
         actionFloat1: 50
         actionFloat2: 0
         actionBool1: 0
-      firedFlags: []
-    - neededFlags: []
-      Prerequisites: []
-      nextDialog: 1
-      choiceDescriptor: "Miten saan tukea kes\xE4kuukausina?"
-      clickActions: []
-      customRunTimeActions: []
-      firedFlags: []
-  - eventDialog: "Saat tukea kes\xE4kuukausillekin, jos suoritat opintoja kes\xE4ll\xE4kin.
-      Jos olet ep\xE4varma mist\xE4 syist\xE4 tukea saa, kysy opoltasi! Olennaisin
-      tekij\xE4 tuen saamisessa on kuitenkin se, ett\xE4 saat riitt\xE4v\xE4n m\xE4\xE4r\xE4n
-      opintopisteit\xE4 kes\xE4ll\xE4"
-    eventDialogChoices:
-    - neededFlags: []
-      Prerequisites: []
-      nextDialog: -1
-      choiceDescriptor: "Ymm\xE4rretty"
-      clickActions: []
-      customRunTimeActions:
-      - eventClass: 1
-        actionString1: Ranking
-        actionString2: 
-        actionFloat1: 50
-        actionFloat2: 0
-        actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []

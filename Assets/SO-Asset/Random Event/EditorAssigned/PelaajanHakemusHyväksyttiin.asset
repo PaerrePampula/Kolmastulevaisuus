@@ -12,16 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: "PelaajanHakemusHyv\xE4ksyttiin"
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags:
   - FlagName: ASUMISTUKI_ACCEPTED
     TimeToHappen: 0
     uniqueFlag: 0
+    flagOptionalValue: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Tukihakemuksesi hyv\xE4ksyttiin! Kela asetti tuelle aikaa vuoden
-      loppuun saakka, muista hakea vuoden loppuessa uudestaan t\xE4t\xE4 tukea, jos
-      sit\xE4 viel\xE4 tarvitset."
+  - eventDialog: "Tekem\xE4si tukihakemus on hyv\xE4ksytty, saat t\xE4st\xE4 edesp\xE4in
+      hakemaasi tukea, tai valtion lainatakauksen kohdalla nostettua opintolainaa.\nHuomioi
+      aina oikeassa el\xE4m\xE4ss\xE4 saamasi tukesi ehdot, sill\xE4 tuki on muuten
+      helppo menett\xE4\xE4 (esimerkiksi tiettyjen tukien kohdalla voit menett\xE4\xE4
+      tukesi, jos teet tarpeeksi ansiotuloja, tai opintotuen kohdalla voi k\xE4yd\xE4
+      niin, ett\xE4 et saa tarpeeksi opintopisteit\xE4)"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
@@ -35,4 +41,5 @@ MonoBehaviour:
         actionFloat1: 50
         actionFloat2: 0
         actionBool1: 0
+      randomizedChoiceCustomActions: []
       firedFlags: []

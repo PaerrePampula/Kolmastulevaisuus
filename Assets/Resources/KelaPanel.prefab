@@ -3387,7 +3387,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTriggers:
   - {fileID: 11400000, guid: 023399dc5422ad842a86ec8425567b58, type: 2}
-  flags: []
+  flags:
+  - FlagName: LOANTIME
+    TimeToHappen: 0
+    uniqueFlag: 0
+    flagOptionalValue: 0
   customActions: []
   randomizedChoiceActions: []
 --- !u!1 &6175888735329389156
