@@ -93,7 +93,7 @@ public class DateTimeSystem : MonoBehaviour
         DayIndicator++;
         GameObject dayIndication = Instantiate(dayIndicatorObject);
         dayIndication.transform.SetParent(MainCanvas.mainCanvas.transform);
-        dayIndication.transform.localPosition = new Vector3(0, Screen.height/2f - 60);
+        dayIndication.transform.localPosition = new Vector3(0, Screen.height/2f-120);
 
         dayIndication.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = string.Format(gameDays[dayIndicator]);
     }
