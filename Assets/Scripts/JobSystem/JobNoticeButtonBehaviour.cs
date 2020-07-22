@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class JobNoticeButtonBehaviour : MonoBehaviour
 {
     #region Fields
-    public Text buttonText;
+    public TextMeshProUGUI buttonText;
     JobNotice _jobNotice;
     GameObject noticeInfoGraphic;
     #endregion
@@ -30,7 +31,7 @@ public class JobNoticeButtonBehaviour : MonoBehaviour
         {
             range = hoursMin.ToString();
         }
-        buttonText.text = string.Format("{0}.\n{1} euroa per tunti.\nSopimuksessa {2} tuntia viikossa", jobTitle, pay.ToString(), range);
+        buttonText.text = string.Format("{0}.\n{1}€ / 1h.\n{2}h / Viikko ", jobTitle, pay.ToString(), range);
     }
     public void displayJob()
     {

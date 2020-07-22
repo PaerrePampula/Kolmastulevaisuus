@@ -13,7 +13,7 @@ public class ChoiceButton : BaseTrigger
     #endregion
     public void Init(eventChoice choice, Transform newTransformParent, string buttonText, RandomEventUI ui)
     {
-        gameObject.transform.SetParent(newTransformParent); //Parentiksi event UI
+        gameObject.transform.parent.transform.SetParent(newTransformParent); //Parentiksi event UI
         choiceofThisButton = choice; //Näppäimen edustama event valinta
         eventTriggers = choice.clickActions; //Näppäimen valinnan edustamat ScriptableActionit
         flags = choice.firedFlags; //Näppäimen valinnan global flagit.

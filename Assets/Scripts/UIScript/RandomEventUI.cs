@@ -15,7 +15,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
 
     eventText currentEventText; //String sisältö eventin kuvaukselle
 
-    GameObject InstantiatedChoiceButton() => Instantiate(Resources.Load<GameObject>("ChoicePrototype"));
+    GameObject InstantiatedChoiceButton() => Instantiate(Resources.Load<GameObject>("ChoiceButton"));
 
     public delegate void NewEventTrigger(int index);
     public static event NewEventTrigger newEventTriggered;
@@ -60,7 +60,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
             if (check == true)
             {
                 GameObject choice = InstantiatedChoiceButton();
-                choice.GetComponent<ChoiceButton>().Init(currentEventText.eventDialogChoices[i],
+                choice.transform.GetChild(1).GetComponent<ChoiceButton>().Init(currentEventText.eventDialogChoices[i],
                                                          choiceContainer,
                                                          currentEventText.eventDialogChoices[i].choiceDescriptor, this);//Haetaan toisesta metodista näppäin, jolle passataan se teksti, mitä halutaan valintanäppäimeen.
             }

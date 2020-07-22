@@ -42,8 +42,8 @@ public class JobSearcher : MonoBehaviour
                 go.transform.SetParent(NoticePanel);
                 go.transform.localScale = new Vector3(1, 1, 1);
                 InstantiatedNoticeUIButtons.Add(go.transform);
-                go.GetComponent<JobNoticeButtonBehaviour>().setJobNotice(notices[i]);
-                go.GetComponent<JobNoticeButtonBehaviour>().setButtonText(notices[i].scriptable.jobTitle, notices[i].scriptable.payByHour, notices[i].scriptable.minimumHoursPerWeek, notices[i].scriptable.maximumHoursPerWeek);
+                go.transform.GetChild(1).GetComponent<JobNoticeButtonBehaviour>().setJobNotice(notices[i]);
+                go.transform.GetChild(1).GetComponent<JobNoticeButtonBehaviour>().setButtonText(notices[i].scriptable.jobTitle, notices[i].scriptable.payByHour, notices[i].scriptable.minimumHoursPerWeek, notices[i].scriptable.maximumHoursPerWeek);
             }
         }
               
