@@ -21,7 +21,7 @@ public class BuyMenu : UiGeneric
         for (int i = 0; i < buyObjects.Count; i++)
         {
             GameObject go = Instantiate(buyObjectButtonPrefab, storeContentTransform);
-            go.GetComponent<BuyObjectButton>().BuyObjectScriptable = buyObjects[i];
+            go.transform.GetChild(1).GetComponent<BuyObjectButton>().BuyObjectScriptable = buyObjects[i];
         }
     }
 

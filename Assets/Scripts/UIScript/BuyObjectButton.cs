@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BuyObjectButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    RawImage rendImage;
+    Image rendImage;
     [SerializeField]
     BuyObjectScriptable buyObjectScriptable;
     [SerializeField]
