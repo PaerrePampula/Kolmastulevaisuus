@@ -5,32 +5,41 @@ using UnityEngine;
 
 public class ExpenseView : UiGeneric
 {
-    [SerializeField]
-    TextMeshProUGUI monthlyExpenses;
+
     [SerializeField]
     TextMeshProUGUI monthlyTotal;
     [SerializeField]
-    TextMeshProUGUI otherExpenses;
-    [SerializeField]
     TextMeshProUGUI otherTotal;
-
+    [SerializeField]
+    GameObject prefabbedTextObject;
+    [SerializeField]
+    Transform monthlyGrid;
+    [SerializeField]
+    Transform otherExpensesGrid;
+    public delegate void CompletedTask();
+    public static event CompletedTask onEventComplete;
     // Start is called before the first frame update
     void Start()
     {
-        populateExpense(PlayerDataHolder.MonthlyListableExpenses, monthlyExpenses, monthlyTotal);
-        populateExpense(PlayerDataHolder.OtherListableExpenses, otherExpenses, otherTotal);
+
+        createTextsForGrid(PlayerDataHolder.OtherListableExpenses, otherTotal, otherExpensesGrid);
+        createTextsForGrid(PlayerDataHolder.MonthlyListableExpenses, monthlyTotal, monthlyGrid);
     }
 
-    void populateExpense(List<ListableExpense> expenseList, TextMeshProUGUI expenseListing, TextMeshProUGUI expenseTotaling)
+    void createTextsForGrid(List<ListableExpense> expenseList, TextMeshProUGUI expenseTotaling, Transform grid)
     {
-        string listingText = "";
         float total = 0;
-        foreach (var item in expenseList)
+        for (int i = 0; i < expenseList.Count; i++)
         {
-            listingText += item.ToString() + "\n";
-            total += item.getTotal();
+            GameObject nameObject = Instantiate(prefabbedTextObject);
+            nameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = expenseList[i].getName();
+            GameObject costObject = Instantiate(prefabbedTextObject);
+            costObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = expenseList[i].getTotal().ToString() + " euroa/kk";
+            nameObject.transform.SetParent(grid);
+            costObject.transform.SetParent(grid);
+            total += expenseList[i].getTotal();
         }
-        expenseListing.text = listingText;
-        expenseTotaling.text = "Yhteensä: " + total.ToString() + "euroa";
+        onEventComplete?.Invoke();
+        expenseTotaling.text = "Yhteensä: " + total.ToString() + " euroa/kk";
     }
 }

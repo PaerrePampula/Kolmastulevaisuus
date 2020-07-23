@@ -31,6 +31,10 @@ public class ListableExpense
     {
         return expenseName + ": " + Mathf.Abs(expenseAmount).ToString("F2") + " €";
     }
+    public string getName()
+    {
+        return expenseName;
+    }
     public float getTotal()
     {
         return Mathf.Abs(expenseAmount);
