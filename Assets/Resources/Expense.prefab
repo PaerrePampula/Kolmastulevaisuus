@@ -421,7 +421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 530.9, y: 259.1}
+  m_AnchoredPosition: {x: 527.2, y: 257.10025}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2225456604867665767
@@ -767,9 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnClickResourceToCall: {fileID: 0}
   OnClickResourceParent: {fileID: 0}
-  monthlyExpenses: {fileID: 0}
   monthlyTotal: {fileID: 6739690255607650680}
-  otherExpenses: {fileID: 0}
   otherTotal: {fileID: 968212938101731792}
   prefabbedTextObject: {fileID: 5128357293551952049, guid: 2c105bff2c6ecf747982fc7844908c67,
     type: 3}
