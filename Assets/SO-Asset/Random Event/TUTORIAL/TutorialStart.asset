@@ -18,16 +18,19 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
-  - eventDialog: "P\xE4\xE4sit pitk\xE4n loman j\xE4lkeen taas koulun penkille. Koulussasi
-      pidettiin pikainen esittelytuokio, ja tutustuit sinun uusiin koulukavereihin.\nVanhempasi
-      muisti sinua antamalla sinulle 350 euroa, jotta p\xE4\xE4set helpommin jaloillesi\n\nSiit\xE4
-      puheen ollen, tajuat ett\xE4 olet hieman j\xE4lkijunassa raha-asioiden hallinnassa,
-      ehk\xE4 sinun kannattaisi menn\xE4 hakemaan tukia, tai t\xF6it\xE4?\t\n\n\n"
+  - eventDialog: "Opiskeluaikasi korkeakoulussa on alkanut. Ensimm\xE4isen\xE4 p\xE4iv\xE4n\xE4
+      koulussa pidettiin lyhyt esittely koulusta, ja uusia opiskelijoita ohjattiin.\nSait
+      tutustua muutamaan uuteen kaveriin korkeakoulun opiskelijakunnan tuutorien
+      johdolla!\nMuistit ennen koulusta l\xE4ht\xF6\xE4, ett\xE4 vanhempasi antoivat
+      sinulle muuton yhteydess\xE4 350 euroa, jotta p\xE4rj\xE4isit paremmin.\n\nSinulla
+      ei ole t\xE4ll\xE4 hetkell\xE4 mit\xE4\xE4n tuloja, eik\xE4 jostain syyst\xE4
+      tukiakaan, mutta onneksesi niit\xE4 ei ole hankala hakea. Tutustu p\xF6yd\xE4ll\xE4
+      olevaan tietokoneeseen, ja hanki itsellesi tukia tai t\xF6it\xE4!\n\n"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: 1
-      choiceDescriptor: "Miten min\xE4 sen teen?"
+      choiceDescriptor: "Selv\xE4!"
       clickActions: []
       customRunTimeActions:
       - eventClass: 0
@@ -44,10 +47,14 @@ MonoBehaviour:
         actionBool1: 0
       randomizedChoiceCustomActions: []
       firedFlags: []
-  - eventDialog: "Tukia ja t\xF6it\xE4 saat molempia haettua l\xE4pp\xE4rilt\xE4.\n\nMuistat
-      ett\xE4 k\xE4mpp\xE4si on melko tyhj\xE4, ajattelit, ett\xE4 voisit hankkia
-      uuden j\xE4\xE4kaapin v\xE4hint\xE4\xE4n, kun saavut kotiin.\n[Tarvitset j\xE4\xE4kaapin
-      saadaksesi kotona ruokaa]"
+  - eventDialog: "Muista valvoa, ett\xE4 paljon sinulla menee kuukaudessa rahaa.
+      T\xE4ss\xE4 peliss\xE4 saat lopulta arvion siit\xE4, ett\xE4 kuinka hyvin p\xE4rj\xE4sit.
+      Siihen vaikuttaa muun muuassa kuinka paljon keskityit sellaisiin tekij\xF6ihin
+      kuten opiskeluun, sosialisoitumiseen sek\xE4 sisustamiseen.\n\nP\xE4rj\xE4t\xE4ksesi
+      taloudellisesti hyvin, tarvitset kelan tukien lis\xE4ksi joko nostaa opintolainaa
+      tai sitten hankkia jotain t\xF6it\xE4, jota teet viikonloppuisin. Seuraa kuinka
+      paljon rahaa sinulla j\xE4\xE4 kuukausittain, n\xE4hd\xE4ksesi t\xE4m\xE4n
+      eron."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

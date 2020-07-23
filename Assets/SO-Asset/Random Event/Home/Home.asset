@@ -20,12 +20,9 @@ MonoBehaviour:
   eventTexts:
   - eventDialog: "Viikonloppu h\xE4\xE4m\xF6tt\xE4\xE4, ja olet saapunut kotiin.
       Mit\xE4 tehd\xE4?\nHuomaa, ett\xE4 k\xE4mpp\xE4si on harvinaisen tyhj\xE4n
-      n\xE4k\xF6inen, mutta saat onneksi ostettua itsellesi huonekaluja.\n\nSinulta
-      toistaiseksi uupuu j\xE4\xE4kaappi, mutta saat todenn\xE4k\xF6isesti ostettua
-      sen nyt sinun t\xE4m\xE4n hetkisill\xE4 varoilla.\n\nKannattaa tutustua kauppamenun
-      k\xE4ytt\xF6\xF6n, ja ostaa j\xE4\xE4kaappi.\n[T\xE4ss\xE4 peliss\xE4 tarvitset
-      j\xE4\xE4kaapin ruuan ostamista ja sy\xF6mist\xE4 varten, olet vaarassa n\xE4\xE4nty\xE4
-      ilman sit\xE4!!]"
+      n\xE4k\xF6inen, mutta saat onneksi ostettua itsellesi huonekaluja.\nKotona
+      voit ostaa huonekaluja alla olevasta valikosta, mutta pid\xE4 mieless\xE4 kuitenkin
+      kuluttamasi raham\xE4\xE4r\xE4!"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

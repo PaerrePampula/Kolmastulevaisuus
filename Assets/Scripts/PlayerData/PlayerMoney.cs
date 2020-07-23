@@ -19,8 +19,9 @@ public class PlayerMoney : IStattable
             usableMoney = true;
             PlayerEconomy.onExpensesPay += checkForBelowZero;
             ResetButton.onReset += unInit;
+            StatsChecker.RegisterStat(this);
         }
-        StatsChecker.RegisterStat(this);
+
     }
     void checkForBelowZero()
     {
@@ -52,18 +53,19 @@ public class PlayerMoney : IStattable
     }
     public T getValue<T>()
     {
+
         return (T)(object)amount;
     }
     public void MoneyChange(float Chgamount)
     {
-
+        Debug.Log(amount);
         amount += Chgamount;
 
-        onMoneyChange.Invoke(amount);
+        onMoneyChange?.Invoke(amount);
     }
     public void resetMoney()
     {
         amount = 0;
-        onMoneyChange.Invoke(amount);
+        onMoneyChange?.Invoke(amount);
     }
 }

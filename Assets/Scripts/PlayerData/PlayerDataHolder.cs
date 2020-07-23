@@ -105,10 +105,7 @@ public class PlayerDataHolder : MonoBehaviour
     {
         get
         {
-            if (playerMoney == null)
-            {
-                playerMoney = new PlayerMoney(true);
-            }
+
             return playerMoney;
         }
         set

@@ -6074,6 +6074,7 @@ MonoBehaviour:
   - FlagName: STUDYING_BOOKS
     TimeToHappen: 0
     uniqueFlag: 0
+    flagOptionalValue: 0
   customActions: []
   randomizedChoiceActions: []
 --- !u!114 &819459189
@@ -6463,6 +6464,105 @@ Transform:
   m_Father: {fileID: 1997520169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 130, z: 0}
+--- !u!1001 &1628017242
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1165540295452772071, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9063079
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.42261827
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809866370071529458, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896995480530302252, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403208289284918815, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403208289284918815, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299968879751207794, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758813341009426421, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7746164003786351556, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 953ca2c0c51aa8e4c9049c72bfb44fa7, type: 3}
 --- !u!1 &1997520168
 GameObject:
   m_ObjectHideFlags: 0

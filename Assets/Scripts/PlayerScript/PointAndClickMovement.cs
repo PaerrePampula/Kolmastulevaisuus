@@ -80,7 +80,7 @@ public class PointAndClickMovement : MonoBehaviour
 
                 if ((interactedObject != null))
                 {
-                    Debug.Log((playerNavMeshAgent.transform.position - interactedObject.transform.position).sqrMagnitude);
+                    //Debug.Log((playerNavMeshAgent.transform.position - interactedObject.transform.position).sqrMagnitude);
                     interactedObject.OnInteract();
                     interactedObject = null;
                 }

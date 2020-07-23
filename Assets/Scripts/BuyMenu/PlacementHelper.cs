@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 public class PlacementHelper : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlacementHelper : MonoBehaviour
     GameObject placingObject;
     Bounds meshBounds;
     BuyObject currentBuyObject;
+    [SerializeField]
+    GameObject cantSellPrefabText;
     public LayerMask placementLayer;
     public LayerMask furnitureLayer;
     List<Component> ignoredPlanes = new List<Component>(); //Tähän listataan objektien sisäiset sijoittelu planet jota käytetään kun muita objekteja stäckätään päälle
@@ -236,8 +239,20 @@ public class PlacementHelper : MonoBehaviour
     }
     void sellItem()
     {
-        placingObject.GetComponent<BuyObjectBehaviour>().SellItem();
-        resetInteraction();
+        try
+        {
+            placingObject.GetComponent<BuyObjectBehaviour>().SellItem();
+
+            resetInteraction();
+        }
+        catch (System.NullReferenceException)
+        {
+            GameObject go = Instantiate(cantSellPrefabText);
+            go.transform.SetParent(MainCanvas.mainCanvas.transform);
+            go.transform.localPosition = Vector3.zero;
+            go.GetComponent<TextMeshProUGUI>().text = "Et voi myydä tätä!";
+        }
+
     }
 
     // Update is called once per frame

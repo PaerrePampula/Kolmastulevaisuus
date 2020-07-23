@@ -68,6 +68,7 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: 47d95330319d9024fb6ea13fc9cb580b, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       customRunTimeActions:
       - eventClass: 1
         actionString1: Hunger
@@ -96,7 +97,6 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: 50c7626e8d32e9e4ca78ded92cec2767, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
-      - {fileID: 0}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       customRunTimeActions:
       - eventClass: 1
@@ -126,7 +126,6 @@ MonoBehaviour:
       clickActions:
       - {fileID: 11400000, guid: d9711981f96d5684f9b235500fbccedb, type: 2}
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
-      - {fileID: 0}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
       customRunTimeActions:
       - eventClass: 1
