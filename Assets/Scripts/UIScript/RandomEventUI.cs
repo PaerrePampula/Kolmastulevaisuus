@@ -15,7 +15,8 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
 
     eventText currentEventText; //String sisältö eventin kuvaukselle
 
-    GameObject InstantiatedChoiceButton() => Instantiate(Resources.Load<GameObject>("ChoiceButton"));
+    GameObject InstantiatedChoiceButton() => Instantiate(ChoiceButton);
+    GameObject ChoiceButton;
 
     public delegate void NewEventTrigger(int index);
     public static event NewEventTrigger newEventTriggered;
@@ -25,7 +26,10 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
 
 
     #endregion
-
+    private void OnEnable()
+    {
+        ChoiceButton = Resources.Load<GameObject>("ChoiceButton");
+    }
     void dialogueData(int index = 0)
     {
         currentEventText = gameEvent.getData().eventTexts[index]; //Haetaan ensimmäinen event teksti käsiin.
