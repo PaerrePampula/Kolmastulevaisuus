@@ -19,7 +19,16 @@ public class BuyObjectRendMesh : MonoBehaviour
         {
             Destroy(displayObject);
         }
+
+
         displayObject = Instantiate(newHover.prefab, transform);
+        //Optimoitu layer jota buyobjektin kamera renderöi
+        var childAndParentTransforms = displayObject.GetComponentsInChildren<Transform>();
+        for (int i = 0; i < childAndParentTransforms.Length; i++)
+        {
+            childAndParentTransforms[i].gameObject.layer = 15;
+        }
+       
         displayObject.transform.localPosition = Vector3.zero;
         displayObject.transform.rotation = Quaternion.identity;
 
