@@ -67,6 +67,7 @@ public class RandomEventUI : MonoBehaviour //Toistaiseksi melko WIP ja makeshift
                 choice.transform.GetChild(1).GetComponent<ChoiceButton>().Init(currentEventText.eventDialogChoices[i],
                                                          choiceContainer,
                                                          currentEventText.eventDialogChoices[i].choiceDescriptor, this);//Haetaan toisesta metodista näppäin, jolle passataan se teksti, mitä halutaan valintanäppäimeen.
+
             }
 
 
