@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3806276040887326285}
   - component: {fileID: 2678035451293801517}
+  - component: {fileID: 2813614029674416784}
   m_Layer: 0
   m_Name: Kaappi
   m_TagString: Untagged
@@ -45,6 +46,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5789887, y: 2.18485, z: 0.88061696}
   m_Center: {x: 0, y: 1.1, z: -0.008858532}
+--- !u!208 &2813614029674416784
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890224519449009048}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.7894945, y: 1.092425, z: 0.4403085}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.1, z: -0.008858532}
+  m_TimeToStationary: 0.5
 --- !u!208 &6147418388314823773
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -127,7 +144,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3e2cfc0aaa63e7f4aa43ff648e969d28, type: 2}
+      objectReference: {fileID: 2100000, guid: 0ffbfb1e639d0884d992e4dbea50996b, type: 2}
     - target: {fileID: -927199367670048503, guid: 8a4270f338044134b8a1bd5494bc6c1f,
         type: 3}
       propertyPath: m_Name

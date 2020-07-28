@@ -120,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4370341821304220408}
   - component: {fileID: 466054118661280414}
+  - component: {fileID: 2805855757475572958}
   m_Layer: 0
   m_Name: CheapSofa
   m_TagString: Untagged
@@ -156,6 +157,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9114903, y: 0.37447912, z: 0.91724056}
   m_Center: {x: 0, y: 0.18719044, z: -0.087742716}
+--- !u!208 &2805855757475572958
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342643266955183579}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.955745, y: 0.18723954, z: 0.4586203}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.1871904, z: -0.08774272}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4356066736303261456
 PrefabInstance:
   m_ObjectHideFlags: 0

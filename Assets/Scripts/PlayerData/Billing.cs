@@ -35,7 +35,7 @@ public class Billing : MonoBehaviour
     void createBillFromEvent(EventInfo info)
     {
         PurchaseInfo billInfo = (PurchaseInfo)info;
-        Bill bill = new Bill(billInfo.purchaseName, billInfo.purchaseCost, billInfo.singleuse);
+        Bill bill = new Bill(billInfo.purchaseName, billInfo.purchaseCost,0, billInfo.singleuse);
         addBill(bill);
     }
 }

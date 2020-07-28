@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305d6c8123673734b96b8e834d536297, type: 3}
+  m_Name: LargeDiningTable
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5492966213080550762, guid: ddd000cbddc3db841a846b98bb147b75, type: 3}
+  objectName: "Iso ruokap\xF6yt\xE4"
+  objectValue: 175
+  satisfactionGain: 15

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
+  m_Name: UrbanScam
+  m_EditorClassIdentifier: 
+  fireOnce: 1
+  weeksFromStartForFire: 2
+  neededFlags: []
+  Prerequisites: []
+  fire_locations: 05000000
+  eventTexts:
+  - eventDialog: "N\xE4it lehti-ilmoituksissa ilmoituksen ty\xF6paikasta, joka on
+      sinun kotiisi ja kouluun suhteessa melko ideaalisella sijainnilla, mutta sen
+      j\xE4lkeen kun l\xE4hetit t\xE4lle ty\xF6nantajalle s\xE4hk\xF6postia, sait
+      varsin h\xE4m\xE4r\xE4n vastauksen takaisin. \n\nHe pyyt\xE4v\xE4t sinua tulemaan
+      paikalle tiettyyn kellonaikaan, ja suorittamaan yhden ty\xF6p\xE4iv\xE4n, jonka
+      j\xE4lkeen katsoitte yhdess\xE4 jatkoa... miten toimit?"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
+      choiceDescriptor: "Vastaan, ett\xE4 tulen paikalle"
+      clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: Unohdan koko jutun!
+      clickActions:
+      - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
+      - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: R
+        actionFloat1: 25
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
+  - eventDialog: "Saavuit loppuen lopulta kotiasi l\xE4hell\xE4 olevalle ty\xF6paikalle,
+      ja tapasit ty\xF6nantajan, er\xE4s ty\xF6ntekij\xF6ist\xE4 koulutti sinua hetken
+      hommissa, ja sait sen j\xE4lkeen vapaat k\xE4det toimia, jotta he saisivat
+      \"arvioitua\" sinut.\n\nTy\xF6p\xE4iv\xE4 lopulta loppui, ja ty\xF6nantaja
+      sanoit morot, mutta ei puhunut mit\xE4\xE4n jatkosta, kotiin tullessa tajusit
+      ett\xE4 teit heille t\xF6it\xE4 ilmaiseksi! Sinua on huijattu"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: "Olisi pit\xE4nyt vaatia ty\xF6sopimus ennen mit\xE4\xE4n
+        ty\xF6t\xE4... [Mielialasi heikentyi]"
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: -10
+        actionFloat2: 0
+        actionBool1: 0
+      - eventClass: 1
+        actionString1: Ranking
+        actionString2: 
+        actionFloat1: -15
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
