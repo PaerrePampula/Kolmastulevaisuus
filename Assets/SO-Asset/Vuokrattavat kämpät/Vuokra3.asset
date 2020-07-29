@@ -21,8 +21,7 @@ MonoBehaviour:
   homeInsurance: 0
   needToHaveHomeInsurance: 0
   extrasOnRentableHome: []
-  displayPrefab: {fileID: 6883480185883364746, guid: f0d69262d4e610c4fb13d1fc90d8eb03,
-    type: 3}
+  displayPrefab: SingleRoom
   longFormDescription: "Soluasunto aivan keskustan siimeksess\xE4. Kaikki keskustan
     palvelut eritt\xE4in l\xE4hell\xE4 kohdetta! Lyhyt matka paikallisille korkeakouluille!
     S\xE4hk\xF6 ja vesi osa vuokraa\n[T\xE4m\xE4 soluasunto on k\xE4yt\xE4nn\xF6ss\xE4
