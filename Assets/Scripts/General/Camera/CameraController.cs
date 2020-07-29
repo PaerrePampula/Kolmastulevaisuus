@@ -19,6 +19,10 @@ public class CameraController : MonoBehaviour
     Vector3 referenceRotation; //Tämä on pelaajan kameran kulma ennen kameran kääntämistä, asetetaan aina uudelleen kun kameran kääntämispyyntöä tehdään
     Vector3 endRotation; //Tämä on taas kameran kulma + 90 astetta y-akselilla. Asetetaan aina uudelleen, kun kameran kääntämispyyntöä tehdään
     float timelerped; //Tätä tarvitaan kameran lineaarisessa interpoloinnissa, lerpissä on se ongelma että se hidastuu kun lähestytään tarvittua rotaatiota, tämä korjaa sen niin, että tätä käytetään lerpin t muuttujassa osoittajana.
+    bool canTurnCameraWithKey = false;
+
+    public bool CanTurnCameraWithKey { get => canTurnCameraWithKey; set => canTurnCameraWithKey = value; }
+
     public delegate void CameraTurn();
     public static event  CameraTurn OnSceneChange;
     #endregion
@@ -39,7 +43,7 @@ public class CameraController : MonoBehaviour
 
         //Tämä on debugia varten. Jos painat näppäimistön R-näppäintä, classi kutsuu assignreferencerotationia.
         //Tämä ei tietenkään ole loppuversiossa ihan tämänkaltainen, kun kameran kääntäminen pitäisi varmaan sitoa siihen, kun jonkun tapahtuman valinta on valittu peliruuudulla...
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && CanTurnCameraWithKey)
         {
             CameraAngleChangeInfo valueChangeAction = new CameraAngleChangeInfo();
             valueChangeAction.changeofFloat = 90;
