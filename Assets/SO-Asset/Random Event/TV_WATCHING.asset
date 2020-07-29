@@ -14,7 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireOnce: 0
   weeksFromStartForFire: 0
-  neededFlags: []
+  neededFlags:
+  - FlagName: TV_WATCHING
+    TimeToHappen: 0
+    uniqueFlag: 0
+    flagOptionalValue: 0
   Prerequisites: []
-  fire_locations: 
-  eventTexts: []
+  fire_locations: 04000000
+  eventTexts:
+  - eventDialog: "Katsoit pari tuntia televisiota, mielialasi koheni t\xE4st\xE4
+      hieman mutta v\xE4syit my\xF6s pikkasen"
+    eventDialogChoices:
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
+      choiceDescriptor: '[Poistu]'
+      clickActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Satisfaction
+        actionString2: 
+        actionFloat1: 3
+        actionFloat2: 0
+        actionBool1: 0
+      randomizedChoiceCustomActions: []
+      firedFlags: []
