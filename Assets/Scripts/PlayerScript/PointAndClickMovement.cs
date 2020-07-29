@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +17,7 @@ public class PointAndClickMovement : MonoBehaviour
     public delegate void MovedPlayer();
     public static event MovedPlayer OnMoveStopped;
     public LayerMask IgnoreMe;
+    Dictionary<Transform, int> hiddenObjects = new Dictionary<Transform, int>();
     #endregion
 
     #region MonobehaviourDefaults
@@ -44,14 +47,50 @@ public class PointAndClickMovement : MonoBehaviour
         }
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Camera.main.transform.position - transform.position, out hit))
+        if (Physics.Raycast(transform.position + Vector3.up, Camera.main.transform.position - transform.position, out hit))
         {
 
+            if (!hiddenObjects.Keys.Contains(hit.transform))
+            {
+                hiddenObjects.Add(hit.transform, hit.transform.gameObject.layer);
+                hideObjectsOnFront();
+            }
             Debug.Log("Infrontofplayer");
+        }
+        else if (hiddenObjects.Count > 0)
+        {
+            if (!Physics.Raycast(transform.position + Vector3.up, Camera.main.transform.position - transform.position, out hit))
+            {
+                unHideObjects();
+            }
         }
     }
     #endregion
+    void hideObjectsOnFront()
+    {
+        foreach (var item in hiddenObjects)
+        {
+            item.Key.gameObject.layer = 14;
+            foreach (Transform tra in item.Key.transform)
+            {
+                tra.gameObject.layer = 14;
+            }
 
+        }
+    }
+    void unHideObjects()
+    {
+        foreach (var item in hiddenObjects)
+        {
+            item.Key.gameObject.layer = item.Value;
+            foreach (Transform tra in item.Key.transform)
+            {
+                tra.gameObject.layer = item.Value;
+            }
+
+            hiddenObjects.Remove(item.Key);
+        }
+    }
     void Movement()
     {
 

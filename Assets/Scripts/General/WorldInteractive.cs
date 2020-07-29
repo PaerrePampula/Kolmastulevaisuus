@@ -8,6 +8,8 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     [SerializeField]
     string propName;
     public bool beingMoved;
+    [SerializeField]
+    bool needsACanvasCheck = true;
 
 
     public delegate void InteractHover(bool hoverstate, string text = "", Transform transform = null);
@@ -22,7 +24,15 @@ public class WorldInteractive : MonoBehaviour, IHoverable
     #region MonobehaviourDefaults
     public virtual void OnInteract()
     {
-        if (!MainCanvas.mainCanvas.isUIOverride)
+        bool checkedCanvas = true;
+        if (needsACanvasCheck)
+        {
+            if (MainCanvas.mainCanvas.isUIOverride)
+            {
+                checkedCanvas = false;
+            }
+        }
+        if (checkedCanvas)
         {
 
             for (int i = 0; i < clickEvents.Length; i++)
