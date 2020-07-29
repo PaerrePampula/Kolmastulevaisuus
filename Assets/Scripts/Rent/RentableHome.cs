@@ -19,7 +19,7 @@ public class RentableHome
     bool closeToSchool;
     string rentableScene = "StudioHomeNo1";
     ExtrasOnRentableHomes[] rentExtras;
-    GameObject prefabForDisplay;
+    string prefabForDisplay;
     HuoneKoko huoneKoko;
     VuokraTyyppi tyyppi;
 
@@ -35,7 +35,7 @@ public class RentableHome
     public HuoneKoko RentableHuoneKoko => huoneKoko;
     public VuokraTyyppi RentableVuokraTyyppi => tyyppi;
 
-    public GameObject PrefabForDisplay { get => prefabForDisplay; set => prefabForDisplay = value; }
+    public string PrefabForDisplay { get => prefabForDisplay; set => prefabForDisplay = value; }
     public bool CloseToSchool { get => closeToSchool; set => closeToSchool = value; }
     public ExtrasOnRentableHomes[] RentExtras { get => rentExtras; set => rentExtras = value; }
 

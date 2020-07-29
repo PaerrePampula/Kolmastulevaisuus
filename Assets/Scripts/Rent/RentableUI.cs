@@ -20,7 +20,7 @@ public class RentableUI : MonoBehaviour
     TextMeshProUGUI extrasInRentText;
     [SerializeField]
     StartGameButton startGameButton;
-    public delegate void UiOpen(GameObject gameObject);
+    public delegate void UiOpen(string gameObject);
     public static UiOpen onUiOpen;
 
     public void setRentable(RentableHome rentableHome, Transform NewmenuTransform)
