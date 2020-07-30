@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: TooTired
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
   neededFlags:
   - FlagName: NO_STAMINA
     TimeToHappen: 0
     uniqueFlag: 0
+    flagOptionalValue: 0
   Prerequisites: []
   fire_locations: 
   eventTexts:
-  - eventDialog: "Olet liian v\xE4synyt juuri nyt t\xE4h\xE4n, parasta olisi vain
-      menn\xE4 nukkumaan..."
+  - eventDialog: "Olet juuri nyt liian v\xE4synyt t\xE4h\xE4n!"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
@@ -28,4 +30,5 @@ MonoBehaviour:
       choiceDescriptor: "Tehd\xE4\xE4n n\xE4in"
       clickActions: []
       customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags: []

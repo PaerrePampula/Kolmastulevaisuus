@@ -51,4 +51,9 @@ public class Stat
         OnStatChange.Invoke(_statfloat, amount, SimStatType);
 
     }
+    public void SetStat(float amount)
+    {
+        StatFloat = amount;
+        OnStatChange.Invoke(_statfloat, amount, SimStatType);
+    }
 }

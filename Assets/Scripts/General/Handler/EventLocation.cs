@@ -6,10 +6,17 @@ public class EventLocation : MonoBehaviour //Eventlocation behaviour löytyy jok
 {
     #region Fields
     [SerializeField]
+    string locationName;
+    [SerializeField]
     FIRE_LOCATION _location; //Määritelty locationtyyppi
     string locationFadeOutText;
     [SerializeField]
     Transform playerSpawnLocation;
+    public override string ToString()
+    {
+        return LocationName;
+    }
+    public string LocationName { get => locationName; set => locationName = value; }
 
     public string GetLocationFadeOutText()
     {

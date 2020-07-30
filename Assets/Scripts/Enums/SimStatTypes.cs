@@ -6,5 +6,6 @@
     Ranking,
     Social,
     Study,
-    FoodResources
+    FoodResources,
+    Stamina
 };

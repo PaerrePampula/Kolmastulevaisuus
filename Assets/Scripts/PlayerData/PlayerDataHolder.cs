@@ -32,7 +32,7 @@ public class PlayerDataHolder : MonoBehaviour
 
     #endregion
     #region META
-    int limitedUseWorldInteractableStamina = 2;
+    private Stat stamina;
     #endregion
     #region ASUNTO, VUOKRA
 
@@ -266,14 +266,7 @@ public class PlayerDataHolder : MonoBehaviour
         }
     }
 
-    public int LimitedUseWorldInteractableStamina
-    {
-        get { return limitedUseWorldInteractableStamina; }
-        set
-        {
-            limitedUseWorldInteractableStamina = value;
-        }
-    }
+
 
     public Stat Social
     {
@@ -326,6 +319,24 @@ public class PlayerDataHolder : MonoBehaviour
         }
     }
 
+    public Stat Stamina
+    {
+        get 
+        {
+            if(stamina == null)
+            {
+                stamina = new Stat(SimStatType.Stamina, 0, 100);
+                stamina.SetStat(2);
+                allStats.Add(stamina);
+            }
+            return stamina; 
+        }
+        set
+        {
+            stamina = value;
+        }
+    }
+
     void OnEnable()
     {
 
@@ -365,11 +376,12 @@ public class PlayerDataHolder : MonoBehaviour
 
     void deductStamina()
     {
-        LimitedUseWorldInteractableStamina--;
+        Stamina.ChangeStat(-1);
     }
     void resetStamina()
     {
-        LimitedUseWorldInteractableStamina = 2;
+        Stamina.SetStat(2);
+
     }
 
     public Stat getStatByEnum(SimStatType simStatType)

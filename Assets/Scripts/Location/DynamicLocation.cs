@@ -42,7 +42,10 @@ public class DynamicLocation : EventLocation
     IEnumerator reloadSceneAsync(string levelOriginal, string levelname)
     {
         AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(levelOriginal);
-
+        if (levelname == "storage")
+        {
+            LocationName = "Varasto";
+        }
         while (!asyncLoad.isDone)
         {
             yield return null;

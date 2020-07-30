@@ -18,7 +18,7 @@ public class HungerSystem : MonoBehaviour
     void incrementHunger()
     {
         float startvalue = PlayerDataHolder.Current.Foodamount.StatFloat;
-        PlayerDataHolder.Current.Foodamount.ChangeStat(-10);
+        PlayerDataHolder.Current.Foodamount.ChangeStat(-20);
         float endvalue = startvalue - 10;
         if (endvalue < 0)
         {
@@ -28,7 +28,7 @@ public class HungerSystem : MonoBehaviour
         }
         else
         {
-            PlayerDataHolder.Current.Hunger.ChangeStat(-10);
+            PlayerDataHolder.Current.Hunger.ChangeStat(-30);
         }
 
         checkStarving();

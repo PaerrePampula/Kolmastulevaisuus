@@ -10,23 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
-  m_Name: TutorialWeekPassed
+  m_Name: Computerstydy2x
   m_EditorClassIdentifier: 
   fireOnce: 0
   weeksFromStartForFire: 0
-  neededFlags: []
+  neededFlags:
+  - FlagName: STUDY_SUCCESS2X
+    TimeToHappen: 0
+    uniqueFlag: 0
+    flagOptionalValue: 0
   Prerequisites: []
   fire_locations: 04000000
   eventTexts:
-  - eventDialog: "Viikko on kulunut, ja kuukausi etenee hiljalleen.\nMuista pit\xE4\xE4
-      edelleen mieless\xE4si mik\xE4 oma rahatilanteesi on, ja hae tukia tai t\xF6it\xE4
-      tietokoneella, jos et ole viel\xE4 ehtinyt tehd\xE4 niin!"
+  - eventDialog: "Sait opiskeltua koneella.\nKeskittymisesi oli niin valtava, ett\xE4
+      opiskelutaitosi kasvoi paljon! [T\xE4m\xE4 toiminto v\xE4sytti sinua]"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Pid\xE4n mieless\xE4"
+      choiceDescriptor: '[Jatka]'
       clickActions: []
-      customRunTimeActions: []
+      customRunTimeActions:
+      - eventClass: 1
+        actionString1: Study
+        actionString2: 
+        actionFloat1: 3.5
+        actionFloat2: 0
+        actionBool1: 0
       randomizedChoiceCustomActions: []
       firedFlags: []

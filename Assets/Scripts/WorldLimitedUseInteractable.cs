@@ -16,7 +16,7 @@ public class WorldLimitedUseInteractable : WorldInteractive
     {
         get 
         {
-            if ((PlayerDataHolder.Current.LimitedUseWorldInteractableStamina > 0) && checkLocationIfCanUse() == true)
+            if ((PlayerDataHolder.Current.Stamina.StatFloat > 0) && checkLocationIfCanUse() == true)
             {
                 return true;
             }

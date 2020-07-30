@@ -19,16 +19,10 @@ MonoBehaviour:
   fire_locations: 0300000000000000
   eventTexts:
   - eventDialog: "Sait s\xE4hk\xF6postia kelalta, jossa he pyyt\xE4v\xE4t t\xE4ytt\xE4m\xE4\xE4n
-      jonkilaisen selvityksen tuloistasi, tai muuten he joutuvat perim\xE4\xE4n sinulta
-      rahaa\n\nMonesti voi olla, ett\xE4 joudut t\xE4ytt\xE4m\xE4\xE4n jonkinlaisen
+      jonkilaisen selvityksen tuloistasi,\n tai muuten he joutuvat perim\xE4\xE4n
+      sinulta rahaa\n\nMonesti voi olla, ett\xE4 joudut t\xE4ytt\xE4m\xE4\xE4n jonkinlaisen
       selvityksen tai\n jonkun muun asiakirjan kelalle, sill\xE4 kela valvoo tietojesi
-      oikeellisuutta,\njotta ne voivat antaa sinulle tukia. \n\nJos t\xE4ytt\xE4m\xE4si
-      tiedot huomataan olevan virheellisi\xE4,\n joudut monesti maksamaan kelalle
-      takaisin saamastasi liiallisesta tuesta.\nKatso tarkkaan, jos saat kelalta
-      postia, niiss\xE4 usein on my\xF6s jonkinlainen p\xE4iv\xE4m\xE4\xE4r\xE4,\njota
-      ennen tarvitsee kelalle vastata.\n Kelan p\xE4\xE4t\xF6sten j\xE4lkeen on kuitenkin
-      mahdollista tehd\xE4 valitus, jolla t\xE4rke\xE4t asiat saa laitettua eteenp\xE4in,
-      jos koet ett\xE4 kela teki virheen.\n"
+      oikeellisuutta,\njotta ne voivat antaa sinulle tukia. "
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

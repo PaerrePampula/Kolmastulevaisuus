@@ -18,8 +18,9 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 01000000
   eventTexts:
-  - eventDialog: "Ty\xF6p\xE4iv\xE4si on loppunut, mutta onneksesi olet edelleen
-      melko pirte\xE4n\xE4, t\xE4n\xE4\xE4n oli hyv\xE4 p\xE4iv\xE4"
+  - eventDialog: "K\xE4vit t\xE4n\xE4\xE4n t\xF6iss\xE4, ilman ett\xE4 siell\xE4
+      tapahtui sen kummempia. Illan p\xE4\xE4ttyess\xE4 samoin loppui ty\xF6p\xE4iv\xE4si,
+      olet t\xE4lt\xE4 p\xE4iv\xE4lt\xE4 vapaa."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

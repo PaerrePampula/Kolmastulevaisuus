@@ -19,13 +19,13 @@ MonoBehaviour:
   fire_locations: 04000000
   eventTexts:
   - eventDialog: "Opiskeluaikasi korkeakoulussa on alkanut. Ensimm\xE4isen\xE4 p\xE4iv\xE4n\xE4
-      koulussa pidettiin lyhyt esittely koulusta, ja uusia opiskelijoita ohjattiin.\nSait
-      tutustua muutamaan uuteen kaveriin korkeakoulun opiskelijakunnan tuutorien
-      johdolla!\nMuistit ennen koulusta l\xE4ht\xF6\xE4, ett\xE4 vanhempasi antoivat
-      sinulle muuton yhteydess\xE4 350 euroa, jotta p\xE4rj\xE4isit paremmin.\n\nSinulla
-      ei ole t\xE4ll\xE4 hetkell\xE4 mit\xE4\xE4n tuloja, eik\xE4 jostain syyst\xE4
-      tukiakaan, mutta onneksesi niit\xE4 ei ole hankala hakea. Tutustu p\xF6yd\xE4ll\xE4
-      olevaan tietokoneeseen, ja hanki itsellesi tukia tai t\xF6it\xE4!\n\n"
+      k\xE4ytiin erilaisia esittelyj\xE4 l\xE4pi ja uusia opiskelijoita ohjattiin
+      tuutorien johdolla tutustumaan toisiinsa ett\xE4 kouluun.\nMuistit ennen koulusta
+      l\xE4ht\xF6\xE4, ett\xE4 vanhempasi antoivat sinulle muuton yhteydess\xE4 350
+      euroa, jotta p\xE4rj\xE4isit paremmin.\n\nSinulla ei ole t\xE4ll\xE4 hetkell\xE4
+      mit\xE4\xE4n tuloja, eik\xE4 jostain syyst\xE4 tukiakaan, mutta onneksesi niit\xE4
+      ei ole hankala hakea. Tutustu p\xF6yd\xE4ll\xE4 olevaan tietokoneeseen, ja
+      hanki itsellesi tukia tai t\xF6it\xE4!\n\n"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []
@@ -47,14 +47,13 @@ MonoBehaviour:
         actionBool1: 0
       randomizedChoiceCustomActions: []
       firedFlags: []
-  - eventDialog: "Muista valvoa, ett\xE4 paljon sinulla menee kuukaudessa rahaa.
-      T\xE4ss\xE4 peliss\xE4 saat lopulta arvion siit\xE4, ett\xE4 kuinka hyvin p\xE4rj\xE4sit.
-      Siihen vaikuttaa muun muuassa kuinka paljon keskityit sellaisiin tekij\xF6ihin
-      kuten opiskeluun, sosialisoitumiseen sek\xE4 sisustamiseen.\n\nP\xE4rj\xE4t\xE4ksesi
-      taloudellisesti hyvin, tarvitset kelan tukien lis\xE4ksi joko nostaa opintolainaa
-      tai sitten hankkia jotain t\xF6it\xE4, jota teet viikonloppuisin. Seuraa kuinka
-      paljon rahaa sinulla j\xE4\xE4 kuukausittain, n\xE4hd\xE4ksesi t\xE4m\xE4n
-      eron."
+  - eventDialog: "Pid\xE4 mieless\xE4 pelin aikana, ett\xE4 kuinka paljon rahaa sinulla
+      kuluu kuukaudessa, sit\xE4 voit tarkastella \"N\xE4yt\xE4 menot\" ikkunasta.\n\nJoudut
+      my\xF6s tarvittaessa ostamaan ruokaa, jonka m\xE4\xE4r\xE4\xE4 merkitsee ruokavarantopalkki,\nsen
+      sy\xF6misest\xE4 ei tarvitse itse murehtia, mutta sen rahallinen arvo per kuukausi
+      vastaa todellisuutta.\n\nP\xE4rj\xE4t\xE4ksesi taloudellisesti hyvin, tarvitset
+      kelan tukien lis\xE4ksi joko nostaa opintolainaa tai sitten hankkia jotain
+      t\xF6it\xE4, jota teet viikonloppuisin.\n"
     eventDialogChoices:
     - neededFlags: []
       Prerequisites: []

@@ -18,8 +18,9 @@ MonoBehaviour:
   Prerequisites: []
   fire_locations: 02000000
   eventTexts:
-  - eventDialog: "Kylill\xE4 py\xF6riess\xE4si er\xE4s koulukavereista pyysi sinua
-      yhdess\xE4 tekem\xE4\xE4n jotain, p\xE4\xE4titte yhdess\xE4 menn\xE4..."
+  - eventDialog: "Kylill\xE4 k\xE4velless\xE4si t\xF6rm\xE4sit sattumalta kaveriisi,
+      ja p\xE4\xE4titte yhdess\xE4, ett\xE4 suunnitelisitte jotain yhteist\xE4 tekemist\xE4.
+      P\xE4\xE4t\xE4tte, ett\xE4 menette..."
     eventDialogChoices:
     - neededFlags: []
       Prerequisites:
@@ -42,9 +43,9 @@ MonoBehaviour:
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
-        actionString1: Hunger
+        actionString1: FoodResources
         actionString2: 
-        actionFloat1: -10
+        actionFloat1: 10
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1
@@ -64,7 +65,7 @@ MonoBehaviour:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: Frisbeegolffaamassa
+      choiceDescriptor: Frisbeegolffaamaan
       clickActions:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
@@ -98,7 +99,7 @@ MonoBehaviour:
         uniqueStatComparison: 0
         TypeOfComparison: 0
       nextDialog: -1
-      choiceDescriptor: Keilaamassa (Maksaa 15 euroa tunnilta)
+      choiceDescriptor: Keilaamaan (Maksaa 15 euroa tunnilta)
       clickActions:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}
@@ -126,7 +127,7 @@ MonoBehaviour:
     - neededFlags: []
       Prerequisites: []
       nextDialog: -1
-      choiceDescriptor: "Opiskelemassa yhdess\xE4"
+      choiceDescriptor: "Opiskelemaan yhdess\xE4"
       clickActions:
       - {fileID: 11400000, guid: a0226c4a9c238fc44857014e34f3d2b9, type: 2}
       - {fileID: 11400000, guid: d2b938515da50404fa4b59d3081cb44d, type: 2}

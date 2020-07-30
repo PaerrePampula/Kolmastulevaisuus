@@ -16,7 +16,7 @@ MonoBehaviour:
   weeksFromStartForFire: 2
   neededFlags: []
   Prerequisites: []
-  fire_locations: 
+  fire_locations: 02000000
   eventTexts:
   - eventDialog: "Olet k\xE4velem\xE4ss\xE4 koulusta, ja p\xE4\xE4t\xE4t..."
     eventDialogChoices:
@@ -44,7 +44,7 @@ MonoBehaviour:
       - eventClass: 1
         actionString1: FoodResources
         actionString2: 
-        actionFloat1: 60
+        actionFloat1: 40
         actionFloat2: 0
         actionBool1: 0
       - eventClass: 1

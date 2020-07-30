@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4f3a6d015b27c4baeb7ce87041becd, type: 3}
   m_Name: EhtoEvent 5
   m_EditorClassIdentifier: 
+  fireOnce: 0
+  weeksFromStartForFire: 0
+  neededFlags: []
   Prerequisites:
   - playerStat: 0
     comparisonValueType: 0
@@ -19,35 +22,50 @@ MonoBehaviour:
     FloatComparatorValue: 1
     uniqueStatComparison: 0
     TypeOfComparison: 1
-  fire_locations: 00000000
+  fire_locations: 
   eventTexts:
   - eventDialog: "T\xE4m\xE4 event trigger\xF6ityy mm. jos peli alkaa, ja pelaajalla
       ei ole rahaa, ja pelaaja on koulussa. Saat trigger\xF6ity\xE4 erikoisehdoilla
       lis\xE4\xE4 eventtej\xE4, jos k\xE4velet vihreit\xE4 palikoita p\xE4in! (Trigger\xF6it
       t\xE4st\xE4 flagin FLAG_FIRSTCHOICE)"
     eventDialogChoices:
-    - nextDialog: 1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: 1
       choiceDescriptor: Okei, jatka
       clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags:
       - FlagName: FLAG_FIRSTCHOICE
         TimeToHappen: 0
         uniqueFlag: 1
-    - nextDialog: -1
+        flagOptionalValue: 0
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: "Paina t\xE4st\xE4 niin saat viikon p\xE4\xE4st\xE4 ajastetun
         eventin"
       clickActions:
       - {fileID: 11400000, guid: d5541d9b2a2d8294e82e41db19ca4404, type: 2}
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags:
       - FlagName: FLAG_TEST
         TimeToHappen: 0
         uniqueFlag: 0
+        flagOptionalValue: 0
   - eventDialog: "T\xE4m\xE4 on jatkoteksti"
     eventDialogChoices:
-    - nextDialog: -1
+    - neededFlags: []
+      Prerequisites: []
+      nextDialog: -1
       choiceDescriptor: "Okei, moikka! (Trigger\xF6it flagin FLAG_TEST_2"
       clickActions: []
+      customRunTimeActions: []
+      randomizedChoiceCustomActions: []
       firedFlags:
       - FlagName: FLAG_TEST2
         TimeToHappen: 0
         uniqueFlag: 0
+        flagOptionalValue: 0
