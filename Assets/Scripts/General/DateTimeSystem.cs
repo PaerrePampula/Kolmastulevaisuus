@@ -51,13 +51,6 @@ public class DateTimeSystem : MonoBehaviour
         SetDate();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChangeWeek();
-        }
-    }
 
     private void OnEnable() //Kun tämä skripti aktivoituu, se automaattisesti tilaa Kukkaroskriptin OnIncrease tapahtuman
     {

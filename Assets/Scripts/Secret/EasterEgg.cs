@@ -19,10 +19,7 @@ public class EasterEgg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //    eggEnable = true;
-        //}
+
         if (eggEnable == true && Input.GetMouseButtonDown(0))
         {
 
@@ -37,9 +34,6 @@ public class EasterEgg : MonoBehaviour
 
 
         }
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    SceneManager.LoadScene("EasterEgg");
-        //}
+
     }
 }

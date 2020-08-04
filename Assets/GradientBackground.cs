@@ -20,13 +20,6 @@ public class GradientBackground : MonoBehaviour
         SetColor(color1,color2);
         backgroundTexture.Apply();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SetColor(color1, color2);
-        }
-    }
 
     public void SetColor(Color32 color1, Color32 color2)
     {
